@@ -21,3 +21,7 @@ export const timeSince = (date) => {
 
   return `${count} ${interval.label}${count !== 1 ? 's' : ''} ago`
 }
+
+export const sleep = async (ms) => {
+  return new Promise((resolve, reject) => setTimeout(resolve, ms))
+}

@@ -4,12 +4,10 @@ import './ProjectComponent.scss'
 import InlineSvg from './InlineSvg'
 import leftArrow from './leftArrow.svg'
 import rightArrow from './rightArrow.svg'
-import ProjectDescriptionComponent from './ProjectDescriptionComponent'
-import ProjectAppComponent from './ProjectAppComponent'
 import {
-  nextProject,
-  previousProject
+  setProject
 } from 'Actions/index'
+import projectsData from './ProjectsData'
 
 class ProjectComponent extends React.Component {
   constructor(props) {
@@ -19,8 +17,15 @@ class ProjectComponent extends React.Component {
   render() {
     const {
       nextProject,
-      previousProject
+      previousProject,
+      currentProjectFade
     } = this.props
+
+    const {
+      id,
+      title,
+      component
+    } = this.props.currentProject
 
     return(
       <div id='project-container'>
@@ -29,20 +34,20 @@ class ProjectComponent extends React.Component {
             <InlineSvg
               src={leftArrow}
               className='arrow-img'
-              onClick={previousProject}
+              onClick={() => previousProject(id)}
               />
             <InlineSvg
               src={rightArrow}
               className='arrow-img'
-              onClick={nextProject}
+              onClick={() => nextProject(id)}
               />
           </div>
         </div>
-        <div id='project-left-panel'>
-          <ProjectDescriptionComponent />
+        <div id='project-left-panel' className={currentProjectFade} >
+          {title}
         </div>
-        <div id='project-right-panel'>
-          <ProjectAppComponent />
+        <div id='project-right-panel' className={currentProjectFade} >
+          {component}
         </div>
       </div>
     )
@@ -52,14 +57,27 @@ class ProjectComponent extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-
+    currentProject: state.currentProject,
+    currentProjectFade: state.currentProjectFade
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    nextProject: () => dispatch(nextProject()),
-    previousProject: () => dispatch(previousProject()),
+    nextProject: (currentId) => {
+      const length = projectsData.length
+      const nextId = currentId + 1 >= length ? 0 : currentId + 1
+      const nextProject = projectsData[nextId]
+
+      dispatch(setProject(nextProject))
+    },
+    previousProject: (currentId) => {
+      const length = projectsData.length
+      const nextId = currentId - 1 < 0 ? length - 1 : currentId - 1
+      const nextProject = projectsData[nextId]
+
+      dispatch(setProject(nextProject))
+    },
   }
 }
 
