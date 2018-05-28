@@ -4,10 +4,10 @@ import './ProjectComponent.scss'
 import InlineSvg from './InlineSvg'
 import leftArrow from './leftArrow.svg'
 import rightArrow from './rightArrow.svg'
+import projectsData from './ProjectsData'
 import {
   setProject
 } from 'Actions/index'
-import projectsData from './ProjectsData'
 
 class ProjectComponent extends React.Component {
   constructor(props) {
