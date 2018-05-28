@@ -2,6 +2,7 @@ const fs = require('fs')
 
 fs.writeFile('./public/index.html', `
   <!DOCTYPE html>
+  
   <html>
     <head>
     </head>
