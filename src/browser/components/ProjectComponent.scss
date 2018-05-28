@@ -1,0 +1,46 @@
+#project-container {
+  width: 100%;
+  height: 100vh;
+  background-color: blue;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
+  #project-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 42;
+    background-color: yellow;
+    opacity: 0.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    #project-controls {
+      width: 100%;
+      height: 200px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      .arrow-img {
+        width: 100px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  #project-left-panel {
+    flex-grow: 0;
+    width: 35%;
+    background-color: orange;
+  }
+
+  #project-right-panel {
+    flex-grow: 0;
+    width: 65%;
+    background-color: purple;
+  }
+}

@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import './App.scss'
+import PresentationComponent from './PresentationComponent'
+import ProjectComponent from './ProjectComponent'
 
 class App extends React.Component {
   constructor(props) {
@@ -9,7 +11,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <h1>App</h1>
+      <div id='app-container'>
+        <PresentationComponent />
+        <ProjectComponent />
+      </div>
     )
   }
 }

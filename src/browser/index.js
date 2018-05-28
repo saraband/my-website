@@ -14,10 +14,17 @@ const store = createStore(
   applyMiddleware(thunk)
 )
 
+// Retrieving lang
+const lang = window.__LANG__
+
+if(lang !== undefined) {
+  // Set lang
+}
+
 const renderApp = (App) => {
   ReactDOM.render(
     <Provider store={store} >
-      <App date={Date.now()} />
+      <App />
     </Provider>,
     document.getElementById('root')
   )
