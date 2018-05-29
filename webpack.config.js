@@ -54,24 +54,15 @@ module.exports = {
       }
     ]
   },
-  optimization: {
-    minimize: true
-
-  },
   plugins: [
-    
-
-new webpack.DefinePlugin({
-  'process.env.NODE_ENV': JSON.stringify('production')
-})
-
-
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ],
   stats: {
     warnings: false
   },
-
-
+  devtool: 'eval',
+  watch: true,
   watchOptions: {
     ignored: /node_modules/
   }
