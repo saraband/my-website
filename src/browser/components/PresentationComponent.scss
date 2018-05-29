@@ -1,5 +1,137 @@
 #presentation-container {
   width: 100%;
   height: 100vh;
-  background-color: orange;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+
+  #presentation-header {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    #logo {
+      transition: all 0.2s ease;
+      width: 70px;
+      margin-left: 100px;
+      cursor: pointer;
+    }
+
+    #logo:hover {
+      opacity: 0.8;
+    }
+
+    #presentation-lang-container {
+      margin-right: 100px;
+      display: flex;
+      flex-direction: row;
+
+      .presentation-lang-item {
+        margin-left: 20px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        border-bottom: 3px solid transparent;
+        font-family: Arial;
+        cursor: pointer;
+      }
+
+      .presentation-lang-item:first-child {
+        margin-left: 0;
+      }
+
+      .presentation-lang-item:hover {
+        color: #e5424a;
+        border-bottom: 3px solid #e5424a;
+      }
+    }
+  }
+
+  #presentation-body {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    #presentation-title {
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h1 {
+        font-family: Arial;
+        font-size: 50px;
+        color: #3a3a3a;
+      }
+
+      h2 {
+        font-family: Arial;
+        color: #3a3a3a;
+      }
+    }
+
+    #presentation-projects {
+      margin-top: 100px;
+      width: 768px;
+      height: 200px;
+      position: relative;
+      border: 3px solid #e5424a;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      #presentation-logos-container {
+        background-color: white;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 50px;
+        position: absolute;
+        top: -60px;
+
+        .presentation-logo-item {
+          height: 70px;
+          background-color: white;
+          margin-right: 20px;
+        }
+
+        .presentation-logo-item:last-child {
+          margin-right: 0; 
+        }
+      }
+
+      button {
+        margin-top: 50px;
+        font-size: 35px;
+        font-family: Arial;
+        color: #e5424a;
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border: 3px solid #e5424a;
+        border-radius: 50px;
+        position: absolute;
+        z-index: 50;
+        background-color: white;
+        bottom: -30px;
+        cursor: pointer;
+      }
+
+      button::-moz-focus-inner {
+        border: 0;
+      }
+
+      button:hover {
+        color: white;
+        background-color: #e5424a;
+      }
+    }
+  }
 }
