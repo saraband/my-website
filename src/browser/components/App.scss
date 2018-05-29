@@ -19,6 +19,12 @@
   }
 }
 
+@keyframes trimPath {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 .fadeIn {
   animation: fadeIn 0.5s forwards linear;
 }

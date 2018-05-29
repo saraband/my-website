@@ -1,7 +1,7 @@
 #project-container {
   width: 100%;
   height: 100vh;
-  background-color: blue;
+  background-color: white;
   display: flex;
   flex-direction: row;
   position: relative;
@@ -33,12 +33,11 @@
   #project-left-panel {
     flex-grow: 0;
     width: 35%;
-    background-color: orange;
+    border-right: 3px solid #e5424a;
   }
 
   #project-right-panel {
     flex-grow: 0;
     width: 65%;
-    background-color: purple;
   }
 }
