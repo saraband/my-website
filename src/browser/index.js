@@ -14,12 +14,15 @@ const store = createStore(
   applyMiddleware(thunk)
 )
 
-// Retrieving lang
-const lang = window.__LANG__
+const lang = window.location.pathname.slice(1)
 
-if(lang !== undefined) {
-  // Set lang
-}
+if(lang.length > 0
+&& (lang === 'es'
+|| lang === 'fr'))
+  store.dispatch({
+    type: 'SET_LANG',
+    lang
+  })
 
 const renderApp = (App) => {
   ReactDOM.render(

@@ -1,9 +1,16 @@
 const translations = {
   'en': {
-    'test': 'yeaaah'
+    'presentation-title': 'Front-end developper',
+    'presentation-subtitle': 'I design, implement and connect user interfaces.'
   },
-  'fr': {},
-  'es': {}
+  'fr': {
+    'presentation-title': 'Développeur front-end',
+    'presentation-subtitle': 'Je conçois, implémente et connecte des interfaces utilisateur.'
+  },
+  'es': {
+    'presentation-title': 'Front-end developper',
+    'presentation-subtitle': 'I design, implement and connect user interfaces.'
+  }
 }
 
 export default (lang) => (key) => {

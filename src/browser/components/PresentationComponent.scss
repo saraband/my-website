@@ -38,13 +38,13 @@
         cursor: pointer;
       }
 
-      .presentation-lang-item:first-child {
-        margin-left: 0;
-      }
-
-      .presentation-lang-item:hover {
+      .selectedLang {
         color: #e5424a;
         border-bottom: 3px solid #e5424a;
+      }
+
+      .presentation-lang-item:first-child {
+        margin-left: 0;
       }
     }
   }

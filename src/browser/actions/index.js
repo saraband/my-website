@@ -23,7 +23,15 @@ export const setProject = (project) => {
   }
 }
 
-export const setLang = (lang) => ({
-  type: SET_LANG,
-  lang
-})
+export const setLang = (lang) => {
+  return (dispatch) => {
+    if(lang === 'fr'
+    || lang === 'es')
+      window.history.pushState('test', 'yoo', `/${lang}`)
+    
+    dispatch({
+      type: SET_LANG,
+      lang
+    })
+  }
+}
