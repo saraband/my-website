@@ -1,6 +1,9 @@
-const fs = require('fs')
+import fs from 'fs'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './src/browser/components/App'
 
-fs.writeFile('./public/index.html', `
+fs.writeFile('./public/test.html', `
   <!DOCTYPE html>
   
   <html>
