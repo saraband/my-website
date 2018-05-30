@@ -12,7 +12,7 @@
       }
     },
     "Plugin dev-404-page": {
-      "resolve": "/home/saraband/Desktop/DEV/my-website NEXT/node_modules/gatsby/dist/internal-plugins/dev-404-page",
+      "resolve": "/home/saraband/Desktop/DEV/my-website/node_modules/gatsby/dist/internal-plugins/dev-404-page",
       "id": "Plugin dev-404-page",
       "name": "dev-404-page",
       "version": "1.0.0",
@@ -24,7 +24,7 @@
       ],
       "browserAPIs": [],
       "ssrAPIs": [],
-      "pluginFilepath": "/home/saraband/Desktop/DEV/my-website NEXT/node_modules/gatsby/dist/internal-plugins/dev-404-page",
+      "pluginFilepath": "/home/saraband/Desktop/DEV/my-website/node_modules/gatsby/dist/internal-plugins/dev-404-page",
       "packageJson": {
         "name": "dev-404-page",
         "description": "Internal plugin to add a 404 page in development with helpful information",
@@ -41,13 +41,13 @@
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "3d92d36ac71a630ec844ba80277b53e1",
+        "contentDigest": "917a0fc8f1ba149b2a0882889899d510",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
     },
     "Plugin component-page-creator": {
-      "resolve": "/home/saraband/Desktop/DEV/my-website NEXT/node_modules/gatsby/dist/internal-plugins/component-page-creator",
+      "resolve": "/home/saraband/Desktop/DEV/my-website/node_modules/gatsby/dist/internal-plugins/component-page-creator",
       "id": "Plugin component-page-creator",
       "name": "component-page-creator",
       "version": "1.0.0",
@@ -59,7 +59,7 @@
       ],
       "browserAPIs": [],
       "ssrAPIs": [],
-      "pluginFilepath": "/home/saraband/Desktop/DEV/my-website NEXT/node_modules/gatsby/dist/internal-plugins/component-page-creator",
+      "pluginFilepath": "/home/saraband/Desktop/DEV/my-website/node_modules/gatsby/dist/internal-plugins/component-page-creator",
       "packageJson": {
         "name": "component-page-creator",
         "description": "An internal Gatsby plugin that creates pages from component files in src/pages",
@@ -80,13 +80,13 @@
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "502f162bee52aa4cedee3ccdc31c4fde",
+        "contentDigest": "013946672dfb0e3b2342e0f5023aab49",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
     },
     "Plugin component-layout-creator": {
-      "resolve": "/home/saraband/Desktop/DEV/my-website NEXT/node_modules/gatsby/dist/internal-plugins/component-layout-creator",
+      "resolve": "/home/saraband/Desktop/DEV/my-website/node_modules/gatsby/dist/internal-plugins/component-layout-creator",
       "id": "Plugin component-layout-creator",
       "name": "component-layout-creator",
       "version": "1.0.0",
@@ -98,7 +98,7 @@
       ],
       "browserAPIs": [],
       "ssrAPIs": [],
-      "pluginFilepath": "/home/saraband/Desktop/DEV/my-website NEXT/node_modules/gatsby/dist/internal-plugins/component-layout-creator",
+      "pluginFilepath": "/home/saraband/Desktop/DEV/my-website/node_modules/gatsby/dist/internal-plugins/component-layout-creator",
       "packageJson": {
         "name": "component-layout-creator",
         "description": "An internal Gatsby plugin that creates pages from component files in src/layouts",
@@ -119,13 +119,13 @@
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "aa49bb231b054ed7b7323508b09aa580",
+        "contentDigest": "6aae9a486aae1ff7cdd6ef6e6adae674",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
     },
     "Plugin internal-data-bridge": {
-      "resolve": "/home/saraband/Desktop/DEV/my-website NEXT/node_modules/gatsby/dist/internal-plugins/internal-data-bridge",
+      "resolve": "/home/saraband/Desktop/DEV/my-website/node_modules/gatsby/dist/internal-plugins/internal-data-bridge",
       "id": "Plugin internal-data-bridge",
       "name": "internal-data-bridge",
       "version": "1.0.0",
@@ -138,7 +138,7 @@
       ],
       "browserAPIs": [],
       "ssrAPIs": [],
-      "pluginFilepath": "/home/saraband/Desktop/DEV/my-website NEXT/node_modules/gatsby/dist/internal-plugins/internal-data-bridge",
+      "pluginFilepath": "/home/saraband/Desktop/DEV/my-website/node_modules/gatsby/dist/internal-plugins/internal-data-bridge",
       "packageJson": {
         "name": "internal-data-bridge",
         "description": "An internal Gatsby plugin which creates data nodes from internal data",
@@ -155,13 +155,13 @@
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "5cf1bc142d018a1758c2e1c7c1bd0f14",
+        "contentDigest": "14847d2d2f0362ca2c36e969000be130",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
     },
     "Plugin prod-404": {
-      "resolve": "/home/saraband/Desktop/DEV/my-website NEXT/node_modules/gatsby/dist/internal-plugins/prod-404",
+      "resolve": "/home/saraband/Desktop/DEV/my-website/node_modules/gatsby/dist/internal-plugins/prod-404",
       "id": "Plugin prod-404",
       "name": "prod-404",
       "version": "1.0.0",
@@ -173,7 +173,7 @@
       ],
       "browserAPIs": [],
       "ssrAPIs": [],
-      "pluginFilepath": "/home/saraband/Desktop/DEV/my-website NEXT/node_modules/gatsby/dist/internal-plugins/prod-404",
+      "pluginFilepath": "/home/saraband/Desktop/DEV/my-website/node_modules/gatsby/dist/internal-plugins/prod-404",
       "packageJson": {
         "name": "prod-404",
         "description": "Internal plugin to detect various flavors of 404 pages and ensure there's a 404.html path created as well to ensure compatability with static hosts",
@@ -190,13 +190,13 @@
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "c08a6e4f00af82269e924a3aa47b038f",
+        "contentDigest": "53560109116ca190b72a317093649a43",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
     },
     "Plugin query-runner": {
-      "resolve": "/home/saraband/Desktop/DEV/my-website NEXT/node_modules/gatsby/dist/internal-plugins/query-runner",
+      "resolve": "/home/saraband/Desktop/DEV/my-website/node_modules/gatsby/dist/internal-plugins/query-runner",
       "id": "Plugin query-runner",
       "name": "query-runner",
       "version": "1.0.0",
@@ -209,7 +209,7 @@
       ],
       "browserAPIs": [],
       "ssrAPIs": [],
-      "pluginFilepath": "/home/saraband/Desktop/DEV/my-website NEXT/node_modules/gatsby/dist/internal-plugins/query-runner",
+      "pluginFilepath": "/home/saraband/Desktop/DEV/my-website/node_modules/gatsby/dist/internal-plugins/query-runner",
       "packageJson": {
         "name": "query-runner",
         "description": "Internal plugin for running queries",
@@ -226,13 +226,13 @@
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "fda9348ec8bbb096b26c524c2ef88e05",
+        "contentDigest": "357e3226160e36e237ea4313bc2993e6",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
     },
     "Plugin gatsby-plugin-react-helmet": {
-      "resolve": "/home/saraband/Desktop/DEV/my-website NEXT/node_modules/gatsby-plugin-react-helmet",
+      "resolve": "/home/saraband/Desktop/DEV/my-website/node_modules/gatsby-plugin-react-helmet",
       "id": "Plugin gatsby-plugin-react-helmet",
       "name": "gatsby-plugin-react-helmet",
       "version": "2.0.11",
@@ -244,7 +244,7 @@
       "ssrAPIs": [
         "onRenderBody"
       ],
-      "pluginFilepath": "/home/saraband/Desktop/DEV/my-website NEXT/node_modules/gatsby-plugin-react-helmet",
+      "pluginFilepath": "/home/saraband/Desktop/DEV/my-website/node_modules/gatsby-plugin-react-helmet",
       "packageJson": {
         "name": "gatsby-plugin-react-helmet",
         "description": "Manage document head data with react-helmet. Provides drop-in server rendering support for Gatsby.",
@@ -300,13 +300,13 @@
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "db81ee4d0ff9aaab1ca492e8a763ac39",
+        "contentDigest": "12eb4433e633200594f9be844d28f952",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
     },
     "Plugin gatsby-plugin-sass": {
-      "resolve": "/home/saraband/Desktop/DEV/my-website NEXT/node_modules/gatsby-plugin-sass",
+      "resolve": "/home/saraband/Desktop/DEV/my-website/node_modules/gatsby-plugin-sass",
       "id": "Plugin gatsby-plugin-sass",
       "name": "gatsby-plugin-sass",
       "version": "1.0.26",
@@ -318,7 +318,7 @@
       ],
       "browserAPIs": [],
       "ssrAPIs": [],
-      "pluginFilepath": "/home/saraband/Desktop/DEV/my-website NEXT/node_modules/gatsby-plugin-sass",
+      "pluginFilepath": "/home/saraband/Desktop/DEV/my-website/node_modules/gatsby-plugin-sass",
       "packageJson": {
         "name": "gatsby-plugin-sass",
         "description": "Gatsby plugin to handle scss/sass files",
@@ -380,13 +380,13 @@
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "112c69a4ce7d0ac2b25714a42e9df6cb",
+        "contentDigest": "65ec5beebe2297734758c6321bd7113c",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
     },
     "Plugin @jacobmischka/gatsby-plugin-react-svg": {
-      "resolve": "/home/saraband/Desktop/DEV/my-website NEXT/node_modules/@jacobmischka/gatsby-plugin-react-svg",
+      "resolve": "/home/saraband/Desktop/DEV/my-website/node_modules/@jacobmischka/gatsby-plugin-react-svg",
       "id": "Plugin @jacobmischka/gatsby-plugin-react-svg",
       "name": "@jacobmischka/gatsby-plugin-react-svg",
       "version": "1.1.0",
@@ -398,7 +398,7 @@
       ],
       "browserAPIs": [],
       "ssrAPIs": [],
-      "pluginFilepath": "/home/saraband/Desktop/DEV/my-website NEXT/node_modules/@jacobmischka/gatsby-plugin-react-svg",
+      "pluginFilepath": "/home/saraband/Desktop/DEV/my-website/node_modules/@jacobmischka/gatsby-plugin-react-svg",
       "packageJson": {
         "name": "@jacobmischka/gatsby-plugin-react-svg",
         "description": "Adds svg-react-loader to gatsby webpack config.",
@@ -425,21 +425,21 @@
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "a58491f3861978687464ef6834cbd940",
+        "contentDigest": "ebdc1e7f10f5055a765fc2ff7db81ced",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
     },
     "Plugin default-site-plugin": {
-      "resolve": "/home/saraband/Desktop/DEV/my-website NEXT",
+      "resolve": "/home/saraband/Desktop/DEV/my-website",
       "id": "Plugin default-site-plugin",
       "name": "default-site-plugin",
-      "version": "9854b1439a21a9bccb14fc9250169f8d",
+      "version": "db4bad0706a910670093aebf3cee7975",
       "pluginOptions": {
         "plugins": []
       },
       "nodeAPIs": [
-        "modifyBabelrc"
+        "onCreatePage"
       ],
       "browserAPIs": [
         "replaceRouterComponent"
@@ -447,7 +447,7 @@
       "ssrAPIs": [
         "replaceRenderer"
       ],
-      "pluginFilepath": "/home/saraband/Desktop/DEV/my-website NEXT",
+      "pluginFilepath": "/home/saraband/Desktop/DEV/my-website",
       "packageJson": {
         "name": "gatsby-starter-default",
         "description": "Gatsby default starter",
@@ -473,6 +473,10 @@
           {
             "name": "gatsby-link",
             "version": "^1.6.40"
+          },
+          {
+            "name": "gatsby-plugin-purify-css",
+            "version": "^2.2.1"
           },
           {
             "name": "gatsby-plugin-react-helmet",
@@ -512,7 +516,7 @@
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "1d76d3ca4a961f06b38349c33bd7758a",
+        "contentDigest": "11c56173de3c0d06000ace9a06d78c07",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -523,12 +527,12 @@
       },
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2018-05-30T10:05:08.698Z",
+      "buildTime": "2018-05-30T11:34:52.248Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "2aa0b6e5b582b589dfbd549200b630b8",
+        "contentDigest": "60ffd899dfab17e56e2e8265c7115b6a",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -538,29 +542,34 @@
       "jsonName": "index.json",
       "internalComponentName": "ComponentIndex",
       "path": "/",
-      "component": "/home/saraband/Desktop/DEV/my-website NEXT/src/pages/index.js",
+      "matchPath": "/index.html",
+      "component": "/home/saraband/Desktop/DEV/my-website/src/pages/index.js",
       "componentChunkName": "component---src-pages-index-js",
       "context": {},
-      "pluginCreator___NODE": "Plugin component-page-creator",
-      "pluginCreatorId": "Plugin component-page-creator",
-      "componentPath": "/home/saraband/Desktop/DEV/my-website NEXT/src/pages/index.js",
+      "pluginCreator___NODE": "Plugin default-site-plugin",
+      "pluginCreatorId": "Plugin default-site-plugin",
+      "componentPath": "/home/saraband/Desktop/DEV/my-website/src/pages/index.js",
       "id": "SitePage /",
       "parent": "SOURCE",
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "0a470ac934843629cdd94ba4fa2afa7d",
-        "description": "Plugin component-page-creator",
+        "contentDigest": "4cf0ac6ea8aac4179ec62db23aa16c0e",
+        "description": "Your site's \"gatsby-node.js\"",
         "owner": "internal-data-bridge"
       }
     }
   },
   "status": {
     "plugins": {},
-    "PLUGINS_HASH": "c2f679ac8fb6bbd19401e4b1988b3e00"
+    "PLUGINS_HASH": "35b59dab0080fc28ef4796f001114aa6"
   },
   "componentDataDependencies": {
     "nodes": {},
-    "connections": {}
+    "connections": {
+      "SitePage": [
+        "/dev-404-page/"
+      ]
+    }
   }
 }
