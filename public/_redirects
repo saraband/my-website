@@ -2,4 +2,4 @@
 
 /es/index.html  /es/  200
 /fr/index.html  /fr/  200
-/index.html  /  200
+/index.html  /*  200

@@ -1,5 +1,12 @@
 [
     {
+        "componentChunkName": "component---cache-dev-404-page-js",
+        "layout": null,
+        "jsonName": "dev-404-page.json",
+        "path": "/dev-404-page/",
+        "matchPath": "/index.html"
+    },
+    {
         "componentChunkName": "component---src-pages-es-index-js",
         "layout": null,
         "jsonName": "es.json",

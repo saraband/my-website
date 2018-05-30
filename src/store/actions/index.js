@@ -29,10 +29,13 @@ export const setProject = (project) => {
 
 export const setLang = (lang) => {
   return (dispatch) => {
+    if(lang === 'en')
+      window.history.pushState('', '', `/`)
+
     if(lang === 'fr'
     || lang === 'es') {
       if(window !== undefined) {
-        window.history.pushState('test', 'yoo', `/${lang}`)
+        window.history.pushState('', '', `/${lang}`)
       }
     }
     

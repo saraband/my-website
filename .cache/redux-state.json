@@ -1,13 +1,24 @@
 {
   "nodes": {
     "SitePage /dev-404-page/": {
+      "layout": null,
+      "jsonName": "dev-404-page.json",
+      "internalComponentName": "ComponentDev404Page",
       "path": "/dev-404-page/",
+      "matchPath": "/index.html",
+      "component": "/home/saraband/Desktop/DEV/my-website/.cache/dev-404-page.js",
+      "componentChunkName": "component---cache-dev-404-page-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin default-site-plugin",
+      "pluginCreatorId": "Plugin default-site-plugin",
+      "componentPath": "/home/saraband/Desktop/DEV/my-website/.cache/dev-404-page.js",
       "id": "SitePage /dev-404-page/",
       "parent": "SOURCE",
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "f91d29e10ba680b413138cf9ed86e655",
+        "contentDigest": "4a16ac939e93be57be1263433404b4c4",
+        "description": "Your site's \"gatsby-node.js\"",
         "owner": "internal-data-bridge"
       }
     },
@@ -602,14 +613,16 @@
       "siteMetadata": {
         "title": "Yassine Hermellin"
       },
+      "port": "8000",
+      "host": "localhost",
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2018-05-30T11:57:16.343Z",
+      "buildTime": "2018-05-30T12:02:31.479Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "1f372f37c0c253d6073180a523fa48b7",
+        "contentDigest": "5bd0698b5b5e2d61d813a53e429061be",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -631,7 +644,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "b342493a91aa05893e675a77cd647a59",
+        "contentDigest": "db3d2736dd7f0708587bd8e5b1cc0878",
         "description": "Your site's \"gatsby-node.js\"",
         "owner": "internal-data-bridge"
       }
@@ -653,7 +666,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "99034a51d157de6ad4071ca2a880952a",
+        "contentDigest": "13d317ef087f5a9574b9f0795c9d6c03",
         "description": "Your site's \"gatsby-node.js\"",
         "owner": "internal-data-bridge"
       }
@@ -675,7 +688,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "1de0e6d88274bf8294141f8b32f8ac12",
+        "contentDigest": "c395f4d1c2bf3201be4bc2bc0baa5b32",
         "description": "Your site's \"gatsby-node.js\"",
         "owner": "internal-data-bridge"
       }
@@ -687,6 +700,10 @@
   },
   "componentDataDependencies": {
     "nodes": {},
-    "connections": {}
+    "connections": {
+      "SitePage": [
+        "/dev-404-page/"
+      ]
+    }
   }
 }
