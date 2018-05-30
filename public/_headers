@@ -1,0 +1,23 @@
+## Created with gatsby-plugin-netlify
+
+/*
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+/static/*
+  Cache-Control: max-age=31536000
+/es/
+  Link: </commons-6946c0fcda1fe037956e.js>; rel=preload; as=script
+  Link: </app-3812d92c1e14aa180262.js>; rel=preload; as=script
+  Link: </path---es-a0e39f21c11f6a62c5ab.js>; rel=preload; as=script
+  Link: </component---src-pages-es-index-js-43967b765002af7e20c7.js>; rel=preload; as=script
+/fr/
+  Link: </commons-6946c0fcda1fe037956e.js>; rel=preload; as=script
+  Link: </app-3812d92c1e14aa180262.js>; rel=preload; as=script
+  Link: </path---fr-a0e39f21c11f6a62c5ab.js>; rel=preload; as=script
+  Link: </component---src-pages-fr-index-js-7ff55d79ffb1186a864f.js>; rel=preload; as=script
+/
+  Link: </commons-6946c0fcda1fe037956e.js>; rel=preload; as=script
+  Link: </app-3812d92c1e14aa180262.js>; rel=preload; as=script
+  Link: </path---index-a0e39f21c11f6a62c5ab.js>; rel=preload; as=script
+  Link: </component---src-pages-index-js-9f176f1dce129a2a1f52.js>; rel=preload; as=script

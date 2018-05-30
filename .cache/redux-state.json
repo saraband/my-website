@@ -430,11 +430,84 @@
         "owner": "internal-data-bridge"
       }
     },
+    "Plugin gatsby-plugin-netlify": {
+      "resolve": "/home/saraband/Desktop/DEV/my-website/node_modules/gatsby-plugin-netlify",
+      "id": "Plugin gatsby-plugin-netlify",
+      "name": "gatsby-plugin-netlify",
+      "version": "1.0.19",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "modifyWebpackConfig",
+        "onPostBuild"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/home/saraband/Desktop/DEV/my-website/node_modules/gatsby-plugin-netlify",
+      "packageJson": {
+        "name": "gatsby-plugin-netlify",
+        "description": "A Gatsby plugin which generates a _headers file for netlify",
+        "version": "1.0.19",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "http/2-server-push",
+          "netlify"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "babel-runtime",
+            "version": "^6.26.0"
+          },
+          {
+            "name": "fs-extra",
+            "version": "^4.0.2"
+          },
+          {
+            "name": "lodash",
+            "version": "^4.17.4"
+          },
+          {
+            "name": "webpack-assets-manifest",
+            "version": "^1.0.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "babel-cli",
+            "version": "^6.26.0"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.0.5"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": "^1.0.0"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "0a7297131c48cc6005bb77a98edfceda",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
     "Plugin default-site-plugin": {
       "resolve": "/home/saraband/Desktop/DEV/my-website",
       "id": "Plugin default-site-plugin",
       "name": "default-site-plugin",
-      "version": "db4bad0706a910670093aebf3cee7975",
+      "version": "8ae2c968fbc6b6de3b451cd8843b3007",
       "pluginOptions": {
         "plugins": []
       },
@@ -473,6 +546,10 @@
           {
             "name": "gatsby-link",
             "version": "^1.6.40"
+          },
+          {
+            "name": "gatsby-plugin-netlify",
+            "version": "^1.0.19"
           },
           {
             "name": "gatsby-plugin-purify-css",
@@ -516,7 +593,7 @@
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "11c56173de3c0d06000ace9a06d78c07",
+        "contentDigest": "26ac6bc24c7827a196ded9e979173e4b",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -527,13 +604,57 @@
       },
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2018-05-30T11:34:52.248Z",
+      "buildTime": "2018-05-30T11:57:16.343Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "60ffd899dfab17e56e2e8265c7115b6a",
+        "contentDigest": "1f372f37c0c253d6073180a523fa48b7",
         "type": "Site",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /es/": {
+      "layout": null,
+      "jsonName": "es.json",
+      "internalComponentName": "ComponentEs",
+      "path": "/es/",
+      "matchPath": "/es/index.html",
+      "component": "/home/saraband/Desktop/DEV/my-website/src/pages/es/index.js",
+      "componentChunkName": "component---src-pages-es-index-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin default-site-plugin",
+      "pluginCreatorId": "Plugin default-site-plugin",
+      "componentPath": "/home/saraband/Desktop/DEV/my-website/src/pages/es/index.js",
+      "id": "SitePage /es/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "b342493a91aa05893e675a77cd647a59",
+        "description": "Your site's \"gatsby-node.js\"",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /fr/": {
+      "layout": null,
+      "jsonName": "fr.json",
+      "internalComponentName": "ComponentFr",
+      "path": "/fr/",
+      "matchPath": "/fr/index.html",
+      "component": "/home/saraband/Desktop/DEV/my-website/src/pages/fr/index.js",
+      "componentChunkName": "component---src-pages-fr-index-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin default-site-plugin",
+      "pluginCreatorId": "Plugin default-site-plugin",
+      "componentPath": "/home/saraband/Desktop/DEV/my-website/src/pages/fr/index.js",
+      "id": "SitePage /fr/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "99034a51d157de6ad4071ca2a880952a",
+        "description": "Your site's \"gatsby-node.js\"",
         "owner": "internal-data-bridge"
       }
     },
@@ -554,7 +675,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "4cf0ac6ea8aac4179ec62db23aa16c0e",
+        "contentDigest": "1de0e6d88274bf8294141f8b32f8ac12",
         "description": "Your site's \"gatsby-node.js\"",
         "owner": "internal-data-bridge"
       }
@@ -562,14 +683,10 @@
   },
   "status": {
     "plugins": {},
-    "PLUGINS_HASH": "35b59dab0080fc28ef4796f001114aa6"
+    "PLUGINS_HASH": "eb5db38baf304b086f4dd7e7de3e03b9"
   },
   "componentDataDependencies": {
     "nodes": {},
-    "connections": {
-      "SitePage": [
-        "/dev-404-page/"
-      ]
-    }
+    "connections": {}
   }
 }

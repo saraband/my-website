@@ -1,3 +1,5 @@
-/fr    /index.html   200
-/es    /index.html   200
-/*    /index.html 200
+## Created with gatsby-plugin-netlify
+
+/es/index.html  /es/  200
+/fr/index.html  /fr/  200
+/index.html  /  200

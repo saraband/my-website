@@ -3,10 +3,24 @@ import { connect } from 'react-redux'
 import './index.scss'
 import PresentationComponent from './../components/PresentationComponent'
 import ProjectComponent from './../components/ProjectComponent'
+import {
+  setLang
+} from './../store/actions/index'
 
 class App extends React.Component {
   constructor(props) {
     super(props)
+  }
+
+  componentWillMount() {
+    const {
+      lang,
+      setLang
+    } = this.props
+
+    if(lang !== undefined
+    && (lang === 'fr' || lang === 'es'))
+      setLang(lang)
   }
 
   render() {
@@ -26,7 +40,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-  
+    setLang: (lang) => dispatch({type: 'SET_LANG', lang})
   }
 }
 
