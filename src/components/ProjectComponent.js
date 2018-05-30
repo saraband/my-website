@@ -2,12 +2,12 @@ import React from 'react'
 import { connect } from 'react-redux'
 import './ProjectComponent.scss'
 import InlineSvg from './InlineSvg'
-import leftArrow from './leftArrow.svg'
-import rightArrow from './rightArrow.svg'
+import LeftArrow from './leftArrow.svg'
+import RightArrow from './rightArrow.svg'
 import projectsData from './ProjectsData'
 import {
   setProject
-} from 'Actions/index'
+} from './../store/actions/index'
 
 class ProjectComponent extends React.Component {
   constructor(props) {
@@ -31,13 +31,11 @@ class ProjectComponent extends React.Component {
       <div id='project-container'>
         <div id='project-overlay'>
           <div id='project-controls'>
-            <InlineSvg
-              src={leftArrow}
+            <LeftArrow
               className='arrow-img'
               onClick={() => previousProject(id)}
               />
-            <InlineSvg
-              src={rightArrow}
+            <RightArrow
               className='arrow-img'
               onClick={() => nextProject(id)}
               />

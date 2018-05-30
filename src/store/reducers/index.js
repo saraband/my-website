@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
-import projectsData from 'Components/ProjectsData'
+import projectsData from './../../components/ProjectsData'
 import {
   SET_LANG,
   SET_PROJECT,
   SET_PROJECT_FADE,
   ProjectFadeTypes
-} from 'Actions/index'
+} from './../actions/index'
 
 const lang = (state = 'en', action) => {
   switch(action.type) {

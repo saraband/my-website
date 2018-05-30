@@ -3,17 +3,17 @@ import getTrFn from './Translation'
 import { connect } from 'react-redux'
 import './PresentationComponent.scss'
 import InlineSvg from './InlineSvg'
-import logo from './logo.svg'
-import reduxLogo from './reduxLogo.svg'
-import reactLogo from './reactLogo.svg'
-import htmlLogo from './htmlLogo.svg'
-import cssLogo from './cssLogo.svg'
-import nodeLogo from './nodeLogo.svg'
-import graph from './graph.svg'
+import Logo from './logo.svg'
+import ReduxLogo from './reduxLogo.svg'
+import ReactLogo from './reactLogo.svg'
+import HtmlLogo from './htmlLogo.svg'
+import CssLogo from './cssLogo.svg'
+import NodeLogo from './nodeLogo.svg'
+import Graph from './graph.svg'
 import ToolTip from './ToolTip'
 import {
   setLang
-} from 'Actions/index'
+} from './../store/actions/index'
 
 class PresentationComponent extends React.Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class PresentationComponent extends React.Component {
     return(
       <div id='presentation-container'>
         <div id='presentation-header'>
-          <InlineSvg src={logo} id='logo' className='fadeIn' />
+          <Logo id='logo' className='fadeIn' />
           <div id='presentation-lang-container'>
             <div className={'presentation-lang-item' +
               (lang === 'en' ? ' selectedLang' : '')}
@@ -51,22 +51,22 @@ class PresentationComponent extends React.Component {
           <div id='presentation-projects'>
             <div id='presentation-logos-container'>
               <ToolTip text='CSS3'>
-                <InlineSvg src={cssLogo} className='presentation-logo-item' />
+                <CssLogo className='presentation-logo-item' />
               </ToolTip>
               <ToolTip text='Redux'>
-                <InlineSvg src={reduxLogo} className='presentation-logo-item' />
+                <ReduxLogo className='presentation-logo-item' />
               </ToolTip>
               <ToolTip text='React'>
-                <InlineSvg src={reactLogo} className='presentation-logo-item' />
+                <ReactLogo className='presentation-logo-item' />
               </ToolTip>
               <ToolTip text='Node'>
-                <InlineSvg src={nodeLogo} className='presentation-logo-item' />
+                <NodeLogo className='presentation-logo-item' />
               </ToolTip>
               <ToolTip text='HTML5'>
-                <InlineSvg src={htmlLogo} className='presentation-logo-item' />
+                <HtmlLogo className='presentation-logo-item' />
               </ToolTip>
             </div>
-            <InlineSvg src={graph} id='graph' />
+            <Graph id='graph' />
             <button>Projects</button>
           </div>
         </div>

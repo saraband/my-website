@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import './App.scss'
-import PresentationComponent from './PresentationComponent'
-import ProjectComponent from './ProjectComponent'
+import './index.scss'
+import PresentationComponent from './../components/PresentationComponent'
+import ProjectComponent from './../components/ProjectComponent'
 
 class App extends React.Component {
   constructor(props) {
@@ -21,7 +21,6 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-
   }
 }
 

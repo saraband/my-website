@@ -1,4 +1,4 @@
-import { sleep } from 'Utils/index'
+//import { sleep } from './../../utils/index'
 
 export const SET_LANG = 'SET_LANG'
 export const SET_PROJECT = 'SET_PROJECT'
@@ -15,19 +15,26 @@ export const setProjectFade = (fadeType) => ({
 })
 
 export const setProject = (project) => {
-  return async (dispatch) => {
+  return /*async*/ (dispatch) => {
     dispatch(setProjectFade(ProjectFadeTypes.FADE_OUT))
-    await sleep(500)
-    dispatch({type: SET_PROJECT, project})
-    dispatch(setProjectFade(ProjectFadeTypes.FADE_IN))
+    //await sleep(500)
+    // await and gatsby dont marry well
+    new Promise(resolve, setTimeout(resolve, 500))
+    .then(() => {
+      dispatch({type: SET_PROJECT, project})
+      dispatch(setProjectFade(ProjectFadeTypes.FADE_IN))
+    })
   }
 }
 
 export const setLang = (lang) => {
   return (dispatch) => {
     if(lang === 'fr'
-    || lang === 'es')
-      window.history.pushState('test', 'yoo', `/${lang}`)
+    || lang === 'es') {
+      if(window !== undefined) {
+        window.history.pushState('test', 'yoo', `/${lang}`)
+      }
+    }
     
     dispatch({
       type: SET_LANG,
