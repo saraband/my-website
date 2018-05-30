@@ -4,33 +4,33 @@
       "component---src-pages-index-js-9f176f1dce129a2a1f52.js",
       "component---src-pages-index-js-9f176f1dce129a2a1f52.js.map"
     ],
-    "component---src-pages-fr-index-js": [
-      "component---src-pages-fr-index-js-7ff55d79ffb1186a864f.js",
-      "component---src-pages-fr-index-js-7ff55d79ffb1186a864f.js.map"
+    "component---src-pages-index-es-js": [
+      "component---src-pages-index-es-js-66a1d87e5f598be4ec5f.js",
+      "component---src-pages-index-es-js-66a1d87e5f598be4ec5f.js.map"
     ],
-    "path---fr": [
-      "path---fr-a0e39f21c11f6a62c5ab.js",
-      "path---fr-a0e39f21c11f6a62c5ab.js.map"
+    "component---src-pages-index-fr-js": [
+      "component---src-pages-index-fr-js-d0112dd378048824ce36.js",
+      "component---src-pages-index-fr-js-d0112dd378048824ce36.js.map"
+    ],
+    "path---index-fr": [
+      "path---index-fr-a0e39f21c11f6a62c5ab.js",
+      "path---index-fr-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---index": [
       "path---index-a0e39f21c11f6a62c5ab.js",
       "path---index-a0e39f21c11f6a62c5ab.js.map"
     ],
-    "path---es": [
-      "path---es-a0e39f21c11f6a62c5ab.js",
-      "path---es-a0e39f21c11f6a62c5ab.js.map"
-    ],
     "commons": [
-      "commons-6946c0fcda1fe037956e.js",
-      "commons-6946c0fcda1fe037956e.js.map"
+      "commons-7861eb44f8227a434976.js",
+      "commons-7861eb44f8227a434976.js.map"
     ],
-    "component---src-pages-es-index-js": [
-      "component---src-pages-es-index-js-43967b765002af7e20c7.js",
-      "component---src-pages-es-index-js-43967b765002af7e20c7.js.map"
+    "path---index-es": [
+      "path---index-es-a0e39f21c11f6a62c5ab.js",
+      "path---index-es-a0e39f21c11f6a62c5ab.js.map"
     ],
     "app": [
-      "app-3812d92c1e14aa180262.js",
-      "app-3812d92c1e14aa180262.js.map"
+      "app-e5df378ef19a7e770ab6.js",
+      "app-e5df378ef19a7e770ab6.js.map"
     ]
   }
 }

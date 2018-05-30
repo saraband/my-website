@@ -1,5 +1,5 @@
 ## Created with gatsby-plugin-netlify
 
-/es/index.html  /es/  200
-/fr/index.html  /fr/  200
+/index.html  /index.es/  200
+/index.html  /index.fr/  200
 /index.html  /  200

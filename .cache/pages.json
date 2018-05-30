@@ -1,24 +1,17 @@
 [
     {
-        "componentChunkName": "component---cache-dev-404-page-js",
+        "componentChunkName": "component---src-pages-index-es-js",
         "layout": null,
-        "jsonName": "dev-404-page.json",
-        "path": "/dev-404-page/",
+        "jsonName": "index-es.json",
+        "path": "/index.es/",
         "matchPath": "/index.html"
     },
     {
-        "componentChunkName": "component---src-pages-es-index-js",
+        "componentChunkName": "component---src-pages-index-fr-js",
         "layout": null,
-        "jsonName": "es.json",
-        "path": "/es/",
-        "matchPath": "/es/index.html"
-    },
-    {
-        "componentChunkName": "component---src-pages-fr-index-js",
-        "layout": null,
-        "jsonName": "fr.json",
-        "path": "/fr/",
-        "matchPath": "/fr/index.html"
+        "jsonName": "index-fr.json",
+        "path": "/index.fr/",
+        "matchPath": "/index.html"
     },
     {
         "componentChunkName": "component---src-pages-index-js",

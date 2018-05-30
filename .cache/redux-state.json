@@ -1,24 +1,13 @@
 {
   "nodes": {
     "SitePage /dev-404-page/": {
-      "layout": null,
-      "jsonName": "dev-404-page.json",
-      "internalComponentName": "ComponentDev404Page",
       "path": "/dev-404-page/",
-      "matchPath": "/index.html",
-      "component": "/home/saraband/Desktop/DEV/my-website/.cache/dev-404-page.js",
-      "componentChunkName": "component---cache-dev-404-page-js",
-      "context": {},
-      "pluginCreator___NODE": "Plugin default-site-plugin",
-      "pluginCreatorId": "Plugin default-site-plugin",
-      "componentPath": "/home/saraband/Desktop/DEV/my-website/.cache/dev-404-page.js",
       "id": "SitePage /dev-404-page/",
       "parent": "SOURCE",
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "4a16ac939e93be57be1263433404b4c4",
-        "description": "Your site's \"gatsby-node.js\"",
+        "contentDigest": "f91d29e10ba680b413138cf9ed86e655",
         "owner": "internal-data-bridge"
       }
     },
@@ -518,7 +507,7 @@
       "resolve": "/home/saraband/Desktop/DEV/my-website",
       "id": "Plugin default-site-plugin",
       "name": "default-site-plugin",
-      "version": "8ae2c968fbc6b6de3b451cd8843b3007",
+      "version": "6be8df68b8d7652c1bfd6370e8f889e1",
       "pluginOptions": {
         "plugins": []
       },
@@ -604,7 +593,7 @@
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "26ac6bc24c7827a196ded9e979173e4b",
+        "contentDigest": "357db98133baa999c1a08965ae2bb8f1",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -613,60 +602,58 @@
       "siteMetadata": {
         "title": "Yassine Hermellin"
       },
-      "port": "8000",
-      "host": "localhost",
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2018-05-30T12:02:31.479Z",
+      "buildTime": "2018-05-30T12:08:13.020Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "5bd0698b5b5e2d61d813a53e429061be",
+        "contentDigest": "117e23bbeeb4694e6817904af681addb",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
     },
-    "SitePage /es/": {
+    "SitePage /index.es/": {
       "layout": null,
-      "jsonName": "es.json",
-      "internalComponentName": "ComponentEs",
-      "path": "/es/",
-      "matchPath": "/es/index.html",
-      "component": "/home/saraband/Desktop/DEV/my-website/src/pages/es/index.js",
-      "componentChunkName": "component---src-pages-es-index-js",
+      "jsonName": "index-es.json",
+      "internalComponentName": "ComponentIndexEs",
+      "path": "/index.es/",
+      "matchPath": "/index.html",
+      "component": "/home/saraband/Desktop/DEV/my-website/src/pages/index.es.js",
+      "componentChunkName": "component---src-pages-index-es-js",
       "context": {},
       "pluginCreator___NODE": "Plugin default-site-plugin",
       "pluginCreatorId": "Plugin default-site-plugin",
-      "componentPath": "/home/saraband/Desktop/DEV/my-website/src/pages/es/index.js",
-      "id": "SitePage /es/",
+      "componentPath": "/home/saraband/Desktop/DEV/my-website/src/pages/index.es.js",
+      "id": "SitePage /index.es/",
       "parent": "SOURCE",
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "db3d2736dd7f0708587bd8e5b1cc0878",
+        "contentDigest": "0652dc017339b5df1b947a64f79b0d35",
         "description": "Your site's \"gatsby-node.js\"",
         "owner": "internal-data-bridge"
       }
     },
-    "SitePage /fr/": {
+    "SitePage /index.fr/": {
       "layout": null,
-      "jsonName": "fr.json",
-      "internalComponentName": "ComponentFr",
-      "path": "/fr/",
-      "matchPath": "/fr/index.html",
-      "component": "/home/saraband/Desktop/DEV/my-website/src/pages/fr/index.js",
-      "componentChunkName": "component---src-pages-fr-index-js",
+      "jsonName": "index-fr.json",
+      "internalComponentName": "ComponentIndexFr",
+      "path": "/index.fr/",
+      "matchPath": "/index.html",
+      "component": "/home/saraband/Desktop/DEV/my-website/src/pages/index.fr.js",
+      "componentChunkName": "component---src-pages-index-fr-js",
       "context": {},
       "pluginCreator___NODE": "Plugin default-site-plugin",
       "pluginCreatorId": "Plugin default-site-plugin",
-      "componentPath": "/home/saraband/Desktop/DEV/my-website/src/pages/fr/index.js",
-      "id": "SitePage /fr/",
+      "componentPath": "/home/saraband/Desktop/DEV/my-website/src/pages/index.fr.js",
+      "id": "SitePage /index.fr/",
       "parent": "SOURCE",
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "13d317ef087f5a9574b9f0795c9d6c03",
+        "contentDigest": "7927cdd7b907b3c10c9f22a527dd12b8",
         "description": "Your site's \"gatsby-node.js\"",
         "owner": "internal-data-bridge"
       }
@@ -688,7 +675,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "c395f4d1c2bf3201be4bc2bc0baa5b32",
+        "contentDigest": "15c44691d57ebebc118ec74e4ab9c0c2",
         "description": "Your site's \"gatsby-node.js\"",
         "owner": "internal-data-bridge"
       }
@@ -696,14 +683,10 @@
   },
   "status": {
     "plugins": {},
-    "PLUGINS_HASH": "eb5db38baf304b086f4dd7e7de3e03b9"
+    "PLUGINS_HASH": "2e5341a346246a3a6223538025e60715"
   },
   "componentDataDependencies": {
     "nodes": {},
-    "connections": {
-      "SitePage": [
-        "/dev-404-page/"
-      ]
-    }
+    "connections": {}
   }
 }
