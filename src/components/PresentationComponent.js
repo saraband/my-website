@@ -13,7 +13,7 @@ import Graph from './graph.svg'
 import ToolTip from './ToolTip'
 import {
   setLang
-} from './../store/actions/index'
+} from 'Actions/index'
 
 class PresentationComponent extends React.Component {
   constructor(props) {

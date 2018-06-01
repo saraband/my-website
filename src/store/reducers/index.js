@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux'
-import projectsData from './../../components/ProjectsData'
+import projectsData from 'Components/ProjectsData'
 import {
   SET_LANG,
   SET_PROJECT,
   SET_PROJECT_FADE,
   ProjectFadeTypes
-} from './../actions/index'
+} from 'Actions/index'
+import ImmoAppReducers from 'AppsReducers/immo-app/index'
 
 const lang = (state = 'en', action) => {
   switch(action.type) {
@@ -37,5 +38,6 @@ const currentProjectFade = (state = ProjectFadeTypes.FADE_IN, action) => {
 export default combineReducers({
   lang,
   currentProject,
-  currentProjectFade
+  currentProjectFade,
+  immoApp: ImmoAppReducers
 })

@@ -1,10 +1,11 @@
 import React from 'react'
+import ImmoApp from 'AppsComponents/immo-app/App'
 
 export default [
   {
     id: 0,
     title: 'Application 1',
-    component: <p>Application 1</p>
+    component:<ImmoApp />
   },
   {
     id: 1,

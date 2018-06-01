@@ -7,7 +7,7 @@ import RightArrow from './rightArrow.svg'
 import projectsData from './ProjectsData'
 import {
   setProject
-} from './../store/actions/index'
+} from 'Actions/index'
 
 class ProjectComponent extends React.Component {
   constructor(props) {
@@ -28,7 +28,7 @@ class ProjectComponent extends React.Component {
     } = this.props.currentProject
 
     return(
-      <div id='project-container'>
+      <div id='project-container'>{this.props.test}
         <div id='project-overlay'>
           <div id='project-controls'>
             <LeftArrow

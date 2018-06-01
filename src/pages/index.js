@@ -1,11 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import './index.scss'
-import PresentationComponent from './../components/PresentationComponent'
-import ProjectComponent from './../components/ProjectComponent'
+import PresentationComponent from 'Components/PresentationComponent'
+import ProjectComponent from 'Components/ProjectComponent'
 import {
   setLang
-} from './../store/actions/index'
+} from 'Actions/index'
 
 class App extends React.Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class App extends React.Component {
   render() {
     return (
       <div id='app-container'>
-        <PresentationComponent />
+        {/*<PresentationComponent />*/}
         <ProjectComponent />
       </div>
     )

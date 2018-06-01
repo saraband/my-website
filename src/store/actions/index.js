@@ -1,4 +1,4 @@
-//import { sleep } from './../../utils/index'
+import { sleep } from 'Utils/index'
 
 export const SET_LANG = 'SET_LANG'
 export const SET_PROJECT = 'SET_PROJECT'
@@ -17,10 +17,12 @@ export const setProjectFade = (fadeType) => ({
 export const setProject = (project) => {
   return /*async*/ (dispatch) => {
     dispatch(setProjectFade(ProjectFadeTypes.FADE_OUT))
+    
     //await sleep(500)
     // await and gatsby dont marry well
-    new Promise(resolve, setTimeout(resolve, 500))
+    sleep(500)
     .then(() => {
+      console.log('ok')
       dispatch({type: SET_PROJECT, project})
       dispatch(setProjectFade(ProjectFadeTypes.FADE_IN))
     })
