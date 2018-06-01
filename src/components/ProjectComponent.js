@@ -29,22 +29,19 @@ class ProjectComponent extends React.Component {
 
     return(
       <div id='project-container'>{this.props.test}
-        <div id='project-overlay'>
-          <div id='project-controls'>
-            <LeftArrow
-              className='arrow-img'
-              onClick={() => previousProject(id)}
-              />
-            <RightArrow
-              className='arrow-img'
-              onClick={() => nextProject(id)}
-              />
-          </div>
+        {/*<div id='project-overlay'>
+        </div>*/}
+        <div id='project-controls'>
+          <LeftArrow
+            className='arrow-img'
+            onClick={() => previousProject(id)}
+            />
+          <RightArrow
+            className='arrow-img'
+            onClick={() => nextProject(id)}
+            />
         </div>
-        <div id='project-left-panel' className={currentProjectFade} >
-          {title}
-        </div>
-        <div id='project-right-panel' className={currentProjectFade} >
+        <div id='project-panel' className={currentProjectFade} >
           {component}
         </div>
       </div>
