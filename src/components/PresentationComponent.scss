@@ -84,16 +84,15 @@
       height: 200px;
       position: relative;
       border-top: 3px dashed #e5424a;
-      border-bottom: 3px dashed #e5424a;
-      border-radius: 10px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
 
       #graph {
-        width: 500px;
-        margin-top: 20px;
+        height: 60%;
+        margin-top: 50px;
+        margin-bottom: 30px;
         stroke-dasharray: 2000;
         stroke-dashoffset: 2000;
         animation: trimPath 5s forwards ease-in-out;

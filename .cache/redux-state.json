@@ -1,13 +1,24 @@
 {
   "nodes": {
     "SitePage /dev-404-page/": {
+      "layout": null,
+      "jsonName": "dev-404-page.json",
+      "internalComponentName": "ComponentDev404Page",
       "path": "/dev-404-page/",
+      "matchPath": "/index.html",
+      "component": "/home/saraband/Desktop/DEV/my-website/.cache/dev-404-page.js",
+      "componentChunkName": "component---cache-dev-404-page-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin default-site-plugin",
+      "pluginCreatorId": "Plugin default-site-plugin",
+      "componentPath": "/home/saraband/Desktop/DEV/my-website/.cache/dev-404-page.js",
       "id": "SitePage /dev-404-page/",
       "parent": "SOURCE",
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "f91d29e10ba680b413138cf9ed86e655",
+        "contentDigest": "11b9384cd1a13a0c403b87f6c0225213",
+        "description": "Your site's \"gatsby-node.js\"",
         "owner": "internal-data-bridge"
       }
     },
@@ -603,14 +614,16 @@
       "siteMetadata": {
         "title": "Yassine Hermellin"
       },
+      "port": "8000",
+      "host": "localhost",
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2018-06-01T12:38:44.074Z",
+      "buildTime": "2018-06-02T11:54:36.674Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "7852764eb87fcb617b512825553da955",
+        "contentDigest": "a120b938c0673a12dd9aca69920de149",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -632,7 +645,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "7c62909b2aff653db2d02a911461dd43",
+        "contentDigest": "6357091e3f77e3e1c1c2565cb7bd60d3",
         "description": "Your site's \"gatsby-node.js\"",
         "owner": "internal-data-bridge"
       }
@@ -654,7 +667,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "a3b6adb79cf28af71ada64842d648408",
+        "contentDigest": "fd187a3d98c2593ed9fffd526b43a756",
         "description": "Your site's \"gatsby-node.js\"",
         "owner": "internal-data-bridge"
       }
@@ -676,7 +689,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "838a2c7e0d6e6be3af3b403944a09df6",
+        "contentDigest": "183384a4e8689b22d1aaa29823f87fd9",
         "description": "Your site's \"gatsby-node.js\"",
         "owner": "internal-data-bridge"
       }
