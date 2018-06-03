@@ -3,6 +3,7 @@
   flex-direction: column;
 
   input, textarea, button {
+    transition: 0.1s all linear;
     border: none;
     padding: 10px;
     font-size: 20px;
@@ -10,13 +11,17 @@
     color: white;
     resize: none;
 
-    &:focus .border {
+    &:focus + .border {
       width: 100%;
     }
   }
 
   button {
     cursor: pointer;
+
+    &:hover {
+      background-color: #ef6e72;
+    }
   }
 
   .border {

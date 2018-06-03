@@ -53,7 +53,7 @@ class ContactComponent extends React.Component {
             name='message'
             placeholder='Your message'
             />
-          <Button>Send</Button>
+          <Button style={{width: '200px', alignSelf: 'flex-end'}} >Send</Button>
         </form>
       </div>
     )

@@ -15,8 +15,8 @@ export const Textarea = ({value, onChange, name, ...props}) => (
   </div>
 )
 
-export const Button = ({children}) => (
-  <div className={s.container}>
+export const Button = ({children, ...props}) => (
+  <div className={s.container} {...props} >
     <button>{children}</button>
     <div className={s.border}></div>
   </div>

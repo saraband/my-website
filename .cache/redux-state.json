@@ -609,12 +609,12 @@
       },
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2018-06-03T15:33:03.017Z",
+      "buildTime": "2018-06-03T15:49:58.958Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "7407f9ca9299ac1e102d4a30464f07e6",
+        "contentDigest": "76de2903dfb8b428262948772ab9d218",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -636,7 +636,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "7866f0d665b820ef4110f31c983228a3",
+        "contentDigest": "760f3e3c5f60bb156a4984bac31dc672",
         "description": "Your site's \"gatsby-node.js\"",
         "owner": "internal-data-bridge"
       }
@@ -658,7 +658,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "ffa67c85d1d46b2e065612f81982cf4e",
+        "contentDigest": "18476b5d5cde81c8c492a6b103aff670",
         "description": "Your site's \"gatsby-node.js\"",
         "owner": "internal-data-bridge"
       }
@@ -680,7 +680,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "1d5cfefaf91f6997d629ab999d55c611",
+        "contentDigest": "67af4d026a903cbfddd92d395506a04e",
         "description": "Your site's \"gatsby-node.js\"",
         "owner": "internal-data-bridge"
       }
