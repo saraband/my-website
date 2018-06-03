@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  input, textarea, button {
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #a8282c;
+    color: white;
+    resize: none;
+
+    &:focus .border {
+      width: 100%;
+    }
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  .border {
+    transition: all 0.2s ease-in-out;
+    background-color: white;
+    width: 0%;
+    height: 3px;
+  }
+}

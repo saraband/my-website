@@ -1,17 +1,60 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import s from './ContactComponent.module.scss'
+import {
+  Input,
+  Textarea,
+  Button
+} from './Form'
 
 class ContactComponent extends React.Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      name: '',
+      email: '',
+      message: ''
+    }
+  }
+
+  handleChange = (event) => this.setState({[event.target.name]: event.target.value})
+
+  handleSubmit = (event) => {
+    event.preventDefault();
   }
 
   render() {
+    const {
+      name,
+      email,
+      message
+    } = this.state
+
     return(
       <div id={s.container}>
-        <h1>Contact</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris iaculis et est sit amet hendrerit. Pellentesque non mauris sit amet ex dignissim interdum. Donec porta risus dolor, at hendrerit felis tempor non. Duis at accumsan arcu. Maecenas eu suscipit augue. Praesent ut ipsum accumsan, consequat nisl et, dapibus lorem. Vestibulum scelerisque diam nec velit faucibus placerat. Nam nibh neque, mattis eget volutpat a, fermentum eget nisi. Phasellus commodo eros eu metus dignissim, in pulvinar elit dapibus. Nunc vel nisi orci. Nunc non eleifend leo. Cras justo sapien, imperdiet nec ligula eget, consequat tristique ipsum. Phasellus aliquet purus non neque gravida consectetur. Nullam quis felis eget elit dignissim consequat. </p>
+        <h1>Contact me</h1>
+        <form onSubmit={this.handleSubmit}>
+          <Input 
+            value={name}
+            onChange={this.handleChange}
+            name='name'
+            placeholder='Your name'
+            />
+          <Input 
+            value={email}
+            onChange={this.handleChange}
+            name='email'
+            placeholder='Your email'
+            />
+          <Textarea 
+            value={message}
+            onChange={this.handleChange}
+            name='message'
+            placeholder='Your message'
+            />
+          <Button>Send</Button>
+        </form>
       </div>
     )
   }

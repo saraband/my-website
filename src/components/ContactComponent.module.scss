@@ -9,9 +9,13 @@
   align-items: center;
   padding-top: 50px;
 
-  h1, p {
+  h1 {
     color: white;
     text-align: center;
     width: 80%;
+  }
+
+  form {
+    width: 60%;
   }
 }
