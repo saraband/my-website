@@ -3,9 +3,6 @@ import getTrFn from './Translation'
 import { connect } from 'react-redux'
 import s from './PresentationComponent.module.scss'
 import Graph from './graph.svg'
-import {
-  setLang
-} from 'Actions/index'
 
 class PresentationComponent extends React.Component {
   constructor(props) {
@@ -13,11 +10,7 @@ class PresentationComponent extends React.Component {
   }
 
   render() {
-    const {
-      tr,
-      setLang,
-      lang
-    } = this.props
+    const { tr } = this.props
 
     return(
       <div id={s.container}>
@@ -33,18 +26,8 @@ class PresentationComponent extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    tr: getTrFn(state.lang),
-    lang: state.lang
+    tr: getTrFn(state.lang)
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setLang: (lang) => dispatch(setLang(lang))
-  }
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps)
-  (PresentationComponent)
+export default connect(mapStateToProps)(PresentationComponent)

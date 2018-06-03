@@ -4,6 +4,8 @@ import './index.scss'
 import PresentationComponent from 'Components/PresentationComponent'
 import ProjectComponent from 'Components/ProjectComponent'
 import BannerComponent from 'Components/BannerComponent'
+import AboutComponent from 'Components/AboutComponent'
+import ContactComponent from 'Components/ContactComponent'
 import {
   setLang
 } from 'Actions/index'
@@ -29,7 +31,9 @@ class App extends React.Component {
       <div id='app-container'>
         <BannerComponent />
         <PresentationComponent />
+        <AboutComponent />
         <ProjectComponent />
+        <ContactComponent />
       </div>
     )
   }

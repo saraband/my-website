@@ -20,7 +20,7 @@ export const setProject = (project) => {
     
     //await sleep(500)
     // await and gatsby dont marry well
-    sleep(500)
+    sleep(150)
     .then(() => {
       console.log('ok')
       dispatch({type: SET_PROJECT, project})
