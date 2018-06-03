@@ -1,0 +1,40 @@
+@import 'colors';
+@import 'utils';
+
+.immo-app-select {
+  border: 3px solid $blue;
+  font-size: 15px;
+  font-family: Arial;
+  position: relative;
+  @include no-user-select();
+  cursor: pointer;
+  color: $blue;
+
+  .immo-app-dropdown-item {
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &:hover {
+      background-color: $blue;
+      color: white;
+    }
+  }
+
+  .immo-app-select-dropdown {
+    z-index: 100;
+    width: 100%;
+    top: 100%;;
+    left: -3px;
+    position: absolute;
+    border: 3px solid $blue;
+  }
+}
+
+.flex-row {
+  display:flex;
+  flex-direction: row;
+}

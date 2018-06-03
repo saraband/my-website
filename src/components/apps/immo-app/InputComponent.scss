@@ -1,0 +1,94 @@
+@import 'colors';
+
+#immo-app-input {
+  position: sticky;
+  top: 0;
+  float: right;
+  margin-right: 30px;
+  margin-top: 30px;
+  width: 300px;
+  background-color: white;
+  border: 3px solid $blue;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .immo-app-select {
+      width: 250px;
+      margin-bottom: 20px;
+    }
+
+    .immo-app-select:first-child {
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: $blue;
+      cursor: pointer;
+      padding: 10px;
+      font-size: 20px;
+      color: white;
+      border: none;
+      align-self: flex-end;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      border: 3px solid $blue;
+
+      &:hover {
+        background-color: white;
+        color: $blue;
+      }
+    }
+
+    input {
+      width: 230px;
+      border: 3px solid $blue;
+      font-size: 15px;
+      font-family: Arial;
+      padding: 8px;
+      border-radius: 0;
+      color: $blue;
+      margin-bottom: 20px;
+    }
+
+    ::placeholder {
+      color: #8f8f8f;
+    }
+
+    div.flex-row {
+      width: 250px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      input {
+        width: 80px;
+        flex-grow: 1;
+      }
+
+      p {
+        flex-grow: 0;
+        margin-bottom: 20px;
+      }
+    }
+
+    select {
+      border: 3px solid $blue;
+      font-size: 18px;
+      font-family: Arial;
+      padding: 8px;
+      border-radius: 0;
+    }
+  }
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
