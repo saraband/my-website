@@ -1,31 +1,29 @@
 import React from 'react'
 import getTrFn from './Translation'
 import { connect } from 'react-redux'
-import s from './PresentationComponent.module.scss'
-import Graph from './graph.svg'
-import {
-  setLang
-} from 'Actions/index'
+import s from './BannerComponent.module.scss'
+import Logo from './logo.svg'
+import MenuItem from './MenuItem'
 
-class PresentationComponent extends React.Component {
+class BannerComponent extends React.Component {
   constructor(props) {
     super(props)
   }
 
   render() {
-    const {
-      tr,
-      setLang,
-      lang
-    } = this.props
-
     return(
       <div id={s.container}>
-        <div id={s.title}>
-          <h1>{tr('presentation-title')}</h1>
-          <h2>{tr('presentation-subtitle')}</h2>
+        <div id={s.navMenu}>
+          <Logo id={s.logo} />
+          <MenuItem>Work</MenuItem>
+          <MenuItem>About</MenuItem>
+          <MenuItem>Contact</MenuItem>
         </div>
-        <Graph id={s.graph} />
+        <div id={s.langMenu}>
+          <MenuItem selected={true} >FR</MenuItem>
+          <MenuItem>EN</MenuItem>
+          <MenuItem>ES</MenuItem>
+        </div>
       </div>
     )
   }
@@ -47,4 +45,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps)
-  (PresentationComponent)
+  (BannerComponent)

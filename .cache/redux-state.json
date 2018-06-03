@@ -17,7 +17,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "11b9384cd1a13a0c403b87f6c0225213",
+        "contentDigest": "967debc7bffd989ce6fe19f00600d232",
         "description": "Your site's \"gatsby-node.js\"",
         "owner": "internal-data-bridge"
       }
@@ -564,6 +564,10 @@
             "version": "^1.0.19"
           },
           {
+            "name": "gatsby-plugin-postcss-sass",
+            "version": "^1.0.21"
+          },
+          {
             "name": "gatsby-plugin-purify-css",
             "version": "^2.2.1"
           },
@@ -618,12 +622,12 @@
       "host": "localhost",
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2018-06-02T11:54:36.674Z",
+      "buildTime": "2018-06-03T15:07:24.667Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "a120b938c0673a12dd9aca69920de149",
+        "contentDigest": "099279fc07b7d02a0535c55173e43335",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -645,7 +649,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "6357091e3f77e3e1c1c2565cb7bd60d3",
+        "contentDigest": "ae64663b074004820679639c417b5706",
         "description": "Your site's \"gatsby-node.js\"",
         "owner": "internal-data-bridge"
       }
@@ -667,7 +671,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "fd187a3d98c2593ed9fffd526b43a756",
+        "contentDigest": "7c7ed6e50e2cc31c115268c30f305ce9",
         "description": "Your site's \"gatsby-node.js\"",
         "owner": "internal-data-bridge"
       }
@@ -689,7 +693,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "183384a4e8689b22d1aaa29823f87fd9",
+        "contentDigest": "fae56a87c46d160baa1ad163abaa76b1",
         "description": "Your site's \"gatsby-node.js\"",
         "owner": "internal-data-bridge"
       }
@@ -697,7 +701,7 @@
   },
   "status": {
     "plugins": {},
-    "PLUGINS_HASH": "a370f292c0378c3fe633ba48aa8c3dd0"
+    "PLUGINS_HASH": "2e75c369155f71f2822494d2c86a5f86"
   },
   "componentDataDependencies": {
     "nodes": {},

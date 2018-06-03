@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import './index.scss'
 import PresentationComponent from 'Components/PresentationComponent'
 import ProjectComponent from 'Components/ProjectComponent'
+import BannerComponent from 'Components/BannerComponent'
 import {
   setLang
 } from 'Actions/index'
@@ -26,6 +27,7 @@ class App extends React.Component {
   render() {
     return (
       <div id='app-container'>
+        <BannerComponent />
         <PresentationComponent />
         <ProjectComponent />
       </div>
