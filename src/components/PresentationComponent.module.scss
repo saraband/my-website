@@ -13,7 +13,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10%;
+    margin-bottom: 50px;
 
     h1, h2 {
       text-align: center;
@@ -34,6 +34,7 @@
   }
 
   #graph {
-    width: 600px;
+    width: 40vw;
+    min-width: 300px;
   }
 }

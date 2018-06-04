@@ -2,7 +2,7 @@ import React from 'react'
 import getTrFn from './Translation'
 import { connect } from 'react-redux'
 import s from './PresentationComponent.module.scss'
-import Graph from './graph.svg'
+import Graph from './graph-3.svg'
 
 class PresentationComponent extends React.Component {
   constructor(props) {
