@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { requestList } from 'AppsActions/immo-app/index'
 import Image from './Image'
 import ListItem from './ListItem'
+import s from './ListComponent.module.scss'
 
 class ListComponent extends React.Component {
   constructor(props) {
@@ -33,7 +34,7 @@ class ListComponent extends React.Component {
     }
 
     return(
-      <div>
+      <div id={s.container}>
         {list.map(item => <ListItem key={item.id} {...item} />)}
       </div>
     )

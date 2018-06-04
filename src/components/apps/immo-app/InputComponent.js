@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { requestList } from 'AppsActions/immo-app/index'
-import './InputComponent.scss'
+import s from './InputComponent.module.scss'
 import ImmoSelect from './ImmoSelect'
 
 class InputComponent extends React.Component {
@@ -74,7 +74,7 @@ class InputComponent extends React.Component {
     const { isRetrievingData } = this.props
 
     return(
-      <div id='immo-app-input'>
+      <div id={s.container}>
         <form onSubmit={this.handleSubmit} >
           <ImmoSelect>
             <p value='all'>Achat</p>
