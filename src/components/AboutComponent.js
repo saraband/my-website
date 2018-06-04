@@ -3,7 +3,6 @@ import getTrFn from './Translation'
 import { connect } from 'react-redux'
 import s from './AboutComponent.module.scss'
 import Graph from './graph-white.svg'
-import './aosAnimations.scss'
 
 class AboutComponent extends React.Component {
   constructor(props) {
@@ -13,7 +12,7 @@ class AboutComponent extends React.Component {
   render() {
     return(
       <div id={s.container}>
-        <h1 data-aos='fade-up'>About<div className={s.border}></div></h1>
+        <h1 data-aos='fade-up'>About<div className={s.border} data-aos='fade-up'></div></h1>
         <p>
           <Graph id={s.graph} />
         </p>

@@ -19,6 +19,7 @@ class App extends React.Component {
   componentDidMount() {
     this.AOS = require('aos')
     this.AOS.init()
+    window.addEventListener('load', this.AOS.refresh)
   }
 
   componentDidUpdate() {
