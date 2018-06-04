@@ -39,26 +39,14 @@ class ProjectComponent extends React.Component {
 
     return(
       <div id={s.container}>
-        <h1 data-aos='fade-in'>Some of my works</h1>
-        <div id={s.projects}>{/*
-          <LeftArrow
-            className={s.arrow}
-            onClick={() => previousProject(id)}
-            />
-          <div id={s.window} className={currentProjectFade} >
-            {component}
-          </div>
-          <RightArrow 
-            className={s.arrow}
-            onClick={() => nextProject(id)}
-            />
-          */}
-          <Project src={test} />
-          <Project src={test} />
-          <Project src={test} />
-          <Project src={test} />
-          <Project src={test} />
-          <Project src={test} />
+        <h1>Some of my works</h1>
+        <div id={s.projects}>
+          <Project src={test}/>
+          <Project src={test}/>
+          <Project src={test}/>
+          <Project src={test}/>
+          <Project src={test}/>
+          <Project src={test}/>
         </div>
       </div>
     )
