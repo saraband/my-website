@@ -5,6 +5,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@jacobmischka/gatsby-plugin-react-svg": "^1.1.0",
+    "aos": "^2.3.0",
     "babel-plugin-transform-regenerator": "^6.26.0",
     "gatsby": "^1.9.247",
     "gatsby-link": "^1.6.40",

@@ -39,7 +39,7 @@ class ProjectComponent extends React.Component {
 
     return(
       <div id={s.container}>
-        <h1>Some of my works</h1>
+        <h1 data-aos='fade-in'>Some of my works</h1>
         <div id={s.projects}>{/*
           <LeftArrow
             className={s.arrow}

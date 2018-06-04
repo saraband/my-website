@@ -536,6 +536,10 @@
             "version": "^1.1.0"
           },
           {
+            "name": "aos",
+            "version": "^2.3.0"
+          },
+          {
             "name": "babel-plugin-transform-regenerator",
             "version": "^6.26.0"
           },
@@ -608,12 +612,12 @@
       },
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2018-06-04T08:50:23.832Z",
+      "buildTime": "2018-06-04T10:24:05.709Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "57fcddcbd8cd89bd180031b95b86e598",
+        "contentDigest": "f16fe7e71320b1e71eba185712b81207",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -634,7 +638,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "82c990a0825c8464b2084396b0ccb9ea",
+        "contentDigest": "56b8110f22f4184428ee8f6c855a2e13",
         "description": "Plugin component-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -655,7 +659,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "564d76f42d43b70b8296c6887b5775bc",
+        "contentDigest": "c88605debbcd6575514006e5229dfb85",
         "description": "Plugin component-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -676,7 +680,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "8e7e819b03d38d103b4681c43c9774a4",
+        "contentDigest": "ede6d194cf05fc7e613fbffb3be36c26",
         "description": "Plugin component-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -697,7 +701,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "f84f9df386a977fed8b91612798863d5",
+        "contentDigest": "025451c6211e0f83a683dcccc6e133d2",
         "description": "Plugin component-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -705,14 +709,10 @@
   },
   "status": {
     "plugins": {},
-    "PLUGINS_HASH": "4f3ff0d85856826c7152f0fde3a9b157"
+    "PLUGINS_HASH": "3b845fda775ea78efd781a6c0b530ac5"
   },
   "componentDataDependencies": {
     "nodes": {},
-    "connections": {
-      "SitePage": [
-        "/dev-404-page/"
-      ]
-    }
+    "connections": {}
   }
 }

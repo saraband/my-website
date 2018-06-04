@@ -9,10 +9,20 @@ import ContactComponent from 'Components/ContactComponent'
 import {
   setLang
 } from 'Actions/index'
+import '../../node_modules/aos/dist/aos.css'
 
 class App extends React.Component {
   constructor(props) {
     super(props)
+  }
+
+  componentDidMount() {
+    this.AOS = require('aos')
+    this.AOS.init()
+  }
+
+  componentDidUpdate() {
+    this.AOS.refresh()
   }
 
   componentWillMount() {

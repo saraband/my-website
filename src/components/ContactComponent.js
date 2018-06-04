@@ -54,6 +54,7 @@ class ContactComponent extends React.Component {
             placeholder='Your message'
             />
           <Button style={{width: '200px', alignSelf: 'flex-end'}} >Send</Button>
+        {/*} animation button qui se remplit depuis le milieu */}
         </form>
       </div>
     )

@@ -33,7 +33,7 @@ export default class ImmoSelect extends React.Component {
     if(!this.state.toggle)
       return
     
-    return this.elements.map(e => <DropdownItem {...e} onClick={() => this.handleSelect(e)} />)
+    return this.elements.map((e, i) => <DropdownItem {...e} onClick={() => this.handleSelect(e)} key={i} />)
   }
 
   render() {

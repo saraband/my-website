@@ -3,6 +3,10 @@
   "main.css.map": "build-html-styles.css.map",
   "main.js": "render-page.js",
   "main.js.map": "render-page.js.map",
+  "static/0.jpg": "static/0.8f8582de.jpg",
+  "static/1.jpg": "static/1.a0651d47.jpg",
+  "static/2.jpg": "static/2.cc2a03a0.jpg",
+  "static/3.jpg": "static/3.6a483f78.jpg",
   "static/reactIcon.png": "static/reactIcon.4af927e2.png",
   "static/test.png": "static/test.068b46a9.png"
 }

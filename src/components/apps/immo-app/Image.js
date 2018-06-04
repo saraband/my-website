@@ -18,7 +18,7 @@ export default class Image extends React.Component {
     } = this.props
 
     return (
-      <React.Fragment>
+      <div>
         <img
           src={loading}
           style={{visibility: (isLoading ? 'visible' : 'hidden'), width: '50px'}}
@@ -29,7 +29,7 @@ export default class Image extends React.Component {
           style={{visibility: (!isLoading ? 'visible' : 'hidden')}}
           onLoad={() => this.setState({isLoading: false})}
         />
-      </React.Fragment>
+      </div>
     )
   }
 }

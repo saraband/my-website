@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { timeSince } from 'Utils/index'
 import Image from './Image'
+import s from './ListItem.module.scss'
 import {
   requestPropertyData,
   SHOW_PROPERTY_PANEL
@@ -26,19 +27,22 @@ class ListItem extends React.Component {
   render() {
     const {
       id,
-      imgSrc,
-      owner,
+      pictureUrl,
       title,
+      description,
+      type,
+      actionType,
       price,
-      date,
       area,
-      description
+      numRooms,
+      place,
+      date
     } = this.props
 
     return(
-      <div onClick={this.handleClick} >
-        <div>
-          <Image src={imgSrc + '&id=' + id} alt={name} />
+      <div onClick={this.handleClick} className={s.container}>
+        <div className={s.imgContainer} >
+          <Image src={pictureUrl} alt={title} />
         </div>
         <div>
           <h3>{title}</h3>

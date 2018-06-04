@@ -1,0 +1,8 @@
+[data-aos=test] {
+  opacity: 0;
+  transition-property: opacity;
+}
+
+[data-aos=test].aos-animate {
+  opacity: 1;
+}
