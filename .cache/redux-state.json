@@ -507,12 +507,11 @@
       "resolve": "/home/saraband/Desktop/DEV/my-website",
       "id": "Plugin default-site-plugin",
       "name": "default-site-plugin",
-      "version": "f108a2da5d958ca5eaa03c65a0fbf8ea",
+      "version": "c2c1149bcecb4262dbe958175a2bf10b",
       "pluginOptions": {
         "plugins": []
       },
       "nodeAPIs": [
-        "onCreatePage",
         "modifyWebpackConfig"
       ],
       "browserAPIs": [
@@ -598,7 +597,7 @@
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "83e53944cbc9989b98eda1398ecd6098",
+        "contentDigest": "5eed62593314a83c82bdf6e080c2762e",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -609,13 +608,34 @@
       },
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2018-06-03T15:49:58.958Z",
+      "buildTime": "2018-06-04T08:50:23.832Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "76de2903dfb8b428262948772ab9d218",
+        "contentDigest": "57fcddcbd8cd89bd180031b95b86e598",
         "type": "Site",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /findimo/": {
+      "layout": null,
+      "jsonName": "findimo.json",
+      "internalComponentName": "ComponentFindimo",
+      "path": "/findimo/",
+      "component": "/home/saraband/Desktop/DEV/my-website/src/pages/findimo/index.js",
+      "componentChunkName": "component---src-pages-findimo-index-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin component-page-creator",
+      "pluginCreatorId": "Plugin component-page-creator",
+      "componentPath": "/home/saraband/Desktop/DEV/my-website/src/pages/findimo/index.js",
+      "id": "SitePage /findimo/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "82c990a0825c8464b2084396b0ccb9ea",
+        "description": "Plugin component-page-creator",
         "owner": "internal-data-bridge"
       }
     },
@@ -624,20 +644,19 @@
       "jsonName": "index-es.json",
       "internalComponentName": "ComponentIndexEs",
       "path": "/index.es/",
-      "matchPath": "/index.html",
       "component": "/home/saraband/Desktop/DEV/my-website/src/pages/index.es.js",
       "componentChunkName": "component---src-pages-index-es-js",
       "context": {},
-      "pluginCreator___NODE": "Plugin default-site-plugin",
-      "pluginCreatorId": "Plugin default-site-plugin",
+      "pluginCreator___NODE": "Plugin component-page-creator",
+      "pluginCreatorId": "Plugin component-page-creator",
       "componentPath": "/home/saraband/Desktop/DEV/my-website/src/pages/index.es.js",
       "id": "SitePage /index.es/",
       "parent": "SOURCE",
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "760f3e3c5f60bb156a4984bac31dc672",
-        "description": "Your site's \"gatsby-node.js\"",
+        "contentDigest": "564d76f42d43b70b8296c6887b5775bc",
+        "description": "Plugin component-page-creator",
         "owner": "internal-data-bridge"
       }
     },
@@ -646,20 +665,19 @@
       "jsonName": "index-fr.json",
       "internalComponentName": "ComponentIndexFr",
       "path": "/index.fr/",
-      "matchPath": "/index.html",
       "component": "/home/saraband/Desktop/DEV/my-website/src/pages/index.fr.js",
       "componentChunkName": "component---src-pages-index-fr-js",
       "context": {},
-      "pluginCreator___NODE": "Plugin default-site-plugin",
-      "pluginCreatorId": "Plugin default-site-plugin",
+      "pluginCreator___NODE": "Plugin component-page-creator",
+      "pluginCreatorId": "Plugin component-page-creator",
       "componentPath": "/home/saraband/Desktop/DEV/my-website/src/pages/index.fr.js",
       "id": "SitePage /index.fr/",
       "parent": "SOURCE",
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "18476b5d5cde81c8c492a6b103aff670",
-        "description": "Your site's \"gatsby-node.js\"",
+        "contentDigest": "8e7e819b03d38d103b4681c43c9774a4",
+        "description": "Plugin component-page-creator",
         "owner": "internal-data-bridge"
       }
     },
@@ -668,27 +686,26 @@
       "jsonName": "index.json",
       "internalComponentName": "ComponentIndex",
       "path": "/",
-      "matchPath": "/index.html",
       "component": "/home/saraband/Desktop/DEV/my-website/src/pages/index.js",
       "componentChunkName": "component---src-pages-index-js",
       "context": {},
-      "pluginCreator___NODE": "Plugin default-site-plugin",
-      "pluginCreatorId": "Plugin default-site-plugin",
+      "pluginCreator___NODE": "Plugin component-page-creator",
+      "pluginCreatorId": "Plugin component-page-creator",
       "componentPath": "/home/saraband/Desktop/DEV/my-website/src/pages/index.js",
       "id": "SitePage /",
       "parent": "SOURCE",
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "67af4d026a903cbfddd92d395506a04e",
-        "description": "Your site's \"gatsby-node.js\"",
+        "contentDigest": "f84f9df386a977fed8b91612798863d5",
+        "description": "Plugin component-page-creator",
         "owner": "internal-data-bridge"
       }
     }
   },
   "status": {
     "plugins": {},
-    "PLUGINS_HASH": "2e75c369155f71f2822494d2c86a5f86"
+    "PLUGINS_HASH": "4f3ff0d85856826c7152f0fde3a9b157"
   },
   "componentDataDependencies": {
     "nodes": {},

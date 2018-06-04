@@ -7,31 +7,104 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 100px;
 
-  #title {
-    flex-grow: 0;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 200px;
+  #connect {
+    position: relative;
+    border: 3px solid $red;
+    width: 50%;
+    height: 300px;
 
-    h1 {
-      font-family: Arial;
-      font-size: 50px;
-      color: $black;
+    #title {
+      height: 150px;
+      width: 100%;
+      position: absolute;
+      top: -75px;
+      flex-grow: 0;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 200px;
+
+      h1, h2 {
+        text-align: center;
+        background-color: white;
+        color: $black;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      h1 {
+        font-size: 50px;
+      }
     }
 
-    h2 {
-      font-family: Arial;
-      color: $black;
+    #projects {
+      position: absolute;
+      width: 100%;
+      bottom: -35px;
+      display: flex;
+      justify-content: center;
+
+      button {
+        height: 70px;
+        border: 3px solid $red;
+        background-color: white;
+        padding: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: 0.1s all ease-in-out;
+        color: $red;
+
+        &:hover {
+          background-color: $red;
+          color: white;
+        }
+
+        &:hover #arrowBox {
+          transform: rotate(90deg);
+        }
+
+        #arrowBox {
+          transition: 0.1s all ease-in-out;
+          position: relative;
+          width: 35px;
+          height: 35px;
+          display: inline-block;
+          vertical-align: middle;
+          //background-image: url('./arrow-white.svg');
+
+          .arrow {
+            position: absolute;
+            height: 35px;
+            top: 0;
+            left: 0;
+          }
+
+          #whiteArrow {
+            transition: 0.1s all ease-in-out;
+            opacity: 0;
+          }
+
+          #redArrow {
+            transition: 0.1s all ease-in-out;
+            opacity: 1;
+            z-index: 1500;
+
+            &:hover {
+              opacity: 0;
+            }
+          }
+        }
+      }
     }
   }
-
+  /*
   #graph {
     width: 600px;
     stroke-dasharray: 2000;
     stroke-dashoffset: 2000;
     animation: trimPath 5s forwards ease-in-out;
-  }
+  }*/
 }

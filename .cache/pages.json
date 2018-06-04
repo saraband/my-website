@@ -1,23 +1,26 @@
 [
     {
+        "componentChunkName": "component---src-pages-findimo-index-js",
+        "layout": null,
+        "jsonName": "findimo.json",
+        "path": "/findimo/"
+    },
+    {
         "componentChunkName": "component---src-pages-index-es-js",
         "layout": null,
         "jsonName": "index-es.json",
-        "path": "/index.es/",
-        "matchPath": "/index.html"
+        "path": "/index.es/"
     },
     {
         "componentChunkName": "component---src-pages-index-fr-js",
         "layout": null,
         "jsonName": "index-fr.json",
-        "path": "/index.fr/",
-        "matchPath": "/index.html"
+        "path": "/index.fr/"
     },
     {
         "componentChunkName": "component---src-pages-index-js",
         "layout": null,
         "jsonName": "index.json",
-        "path": "/",
-        "matchPath": "/index.html"
+        "path": "/"
     }
 ]

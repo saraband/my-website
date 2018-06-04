@@ -1,29 +1,33 @@
 {
   "assetsByChunkName": {
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-c410026589a72636fb40.js",
-      "component---src-pages-index-js-c410026589a72636fb40.js.map"
+      "component---src-pages-index-js-5d2ba3d2c8ad1be43ebc.js",
+      "component---src-pages-index-js-5d2ba3d2c8ad1be43ebc.js.map"
     ],
     "component---src-pages-index-es-js": [
-      "component---src-pages-index-es-js-dad20a93cbecbec88cb2.js",
-      "component---src-pages-index-es-js-dad20a93cbecbec88cb2.js.map"
+      "component---src-pages-index-es-js-7416717581f8888ba15e.js",
+      "component---src-pages-index-es-js-7416717581f8888ba15e.js.map"
     ],
     "component---src-pages-index-fr-js": [
-      "component---src-pages-index-fr-js-365df2b0c449c8456b6b.js",
-      "component---src-pages-index-fr-js-365df2b0c449c8456b6b.js.map"
+      "component---src-pages-index-fr-js-5e9397c3ce55f2d784e8.js",
+      "component---src-pages-index-fr-js-5e9397c3ce55f2d784e8.js.map"
     ],
     "path---index-fr": [
       "path---index-fr-a0e39f21c11f6a62c5ab.js",
       "path---index-fr-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "component---src-pages-findimo-index-js": [
+      "component---src-pages-findimo-index-js-229b79e610be4f084e77.js",
+      "component---src-pages-findimo-index-js-229b79e610be4f084e77.js.map"
     ],
     "path---index": [
       "path---index-a0e39f21c11f6a62c5ab.js",
       "path---index-a0e39f21c11f6a62c5ab.js.map"
     ],
     "commons": [
-      "commons-a689d2063cdf86db0b24.js",
+      "commons-48f7e045f5edf6df1e50.js",
       "build-js-styles.css",
-      "commons-a689d2063cdf86db0b24.js.map",
+      "commons-48f7e045f5edf6df1e50.js.map",
       "build-js-styles.css.map"
     ],
     "path---index-es": [
@@ -31,10 +35,14 @@
       "path---index-es-a0e39f21c11f6a62c5ab.js.map"
     ],
     "app": [
-      "app-7f6dd910aecffed3d32a.js",
+      "app-e15c669e554cf8e45145.js",
       "build-js-styles.css",
-      "app-7f6dd910aecffed3d32a.js.map",
+      "app-e15c669e554cf8e45145.js.map",
       "build-js-styles.css.map"
+    ],
+    "path---findimo": [
+      "path---findimo-a0e39f21c11f6a62c5ab.js",
+      "path---findimo-a0e39f21c11f6a62c5ab.js.map"
     ]
   }
 }

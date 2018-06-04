@@ -6,18 +6,23 @@
   X-Content-Type-Options: nosniff
 /static/*
   Cache-Control: max-age=31536000
+/findimo/
+  Link: </commons-48f7e045f5edf6df1e50.js>; rel=preload; as=script
+  Link: </app-e15c669e554cf8e45145.js>; rel=preload; as=script
+  Link: </path---findimo-a0e39f21c11f6a62c5ab.js>; rel=preload; as=script
+  Link: </component---src-pages-findimo-index-js-229b79e610be4f084e77.js>; rel=preload; as=script
 /index.es/
-  Link: </commons-a689d2063cdf86db0b24.js>; rel=preload; as=script
-  Link: </app-7f6dd910aecffed3d32a.js>; rel=preload; as=script
+  Link: </commons-48f7e045f5edf6df1e50.js>; rel=preload; as=script
+  Link: </app-e15c669e554cf8e45145.js>; rel=preload; as=script
   Link: </path---index-es-a0e39f21c11f6a62c5ab.js>; rel=preload; as=script
-  Link: </component---src-pages-index-es-js-dad20a93cbecbec88cb2.js>; rel=preload; as=script
+  Link: </component---src-pages-index-es-js-7416717581f8888ba15e.js>; rel=preload; as=script
 /index.fr/
-  Link: </commons-a689d2063cdf86db0b24.js>; rel=preload; as=script
-  Link: </app-7f6dd910aecffed3d32a.js>; rel=preload; as=script
+  Link: </commons-48f7e045f5edf6df1e50.js>; rel=preload; as=script
+  Link: </app-e15c669e554cf8e45145.js>; rel=preload; as=script
   Link: </path---index-fr-a0e39f21c11f6a62c5ab.js>; rel=preload; as=script
-  Link: </component---src-pages-index-fr-js-365df2b0c449c8456b6b.js>; rel=preload; as=script
+  Link: </component---src-pages-index-fr-js-5e9397c3ce55f2d784e8.js>; rel=preload; as=script
 /
-  Link: </commons-a689d2063cdf86db0b24.js>; rel=preload; as=script
-  Link: </app-7f6dd910aecffed3d32a.js>; rel=preload; as=script
+  Link: </commons-48f7e045f5edf6df1e50.js>; rel=preload; as=script
+  Link: </app-e15c669e554cf8e45145.js>; rel=preload; as=script
   Link: </path---index-a0e39f21c11f6a62c5ab.js>; rel=preload; as=script
-  Link: </component---src-pages-index-js-c410026589a72636fb40.js>; rel=preload; as=script
+  Link: </component---src-pages-index-js-5d2ba3d2c8ad1be43ebc.js>; rel=preload; as=script

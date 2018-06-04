@@ -4,9 +4,20 @@ import s from './ProjectComponent.module.scss'
 import projectsData from './ProjectsData'
 import LeftArrow from './left-arrow.svg'
 import RightArrow from './right-arrow.svg'
+import test from './test.png'
 import {
   setProject
 } from 'Actions/index'
+
+const Project = ({src}) => (
+  <div className={s.project}>
+    <div className={s.projectOverlay}>
+      <h3>Findimo</h3>
+      <h4>Design & Front-end development</h4>
+    </div>
+    <img src={src} />
+  </div>
+)
 
 class ProjectComponent extends React.Component {
   constructor(props) {
@@ -29,7 +40,7 @@ class ProjectComponent extends React.Component {
     return(
       <div id={s.container}>
         <h1>Some of my works</h1>
-        <div id={s.project}>
+        <div id={s.projects}>{/*
           <LeftArrow
             className={s.arrow}
             onClick={() => previousProject(id)}
@@ -41,6 +52,13 @@ class ProjectComponent extends React.Component {
             className={s.arrow}
             onClick={() => nextProject(id)}
             />
+          */}
+          <Project src={test} />
+          <Project src={test} />
+          <Project src={test} />
+          <Project src={test} />
+          <Project src={test} />
+          <Project src={test} />
         </div>
       </div>
     )
