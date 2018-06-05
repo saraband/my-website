@@ -6,6 +6,13 @@
   justify-content: space-between;
   height: 200px;
 
+  @media (max-width: 485px) {
+    flex-direction: column;
+    height: unset;
+    align-items: center;
+    margin-bottom: 70px;
+  }
+
   #navMenu {
     display: flex;
     align-items: center;
@@ -20,6 +27,10 @@
       margin-left: 50px;
       margin-right: 20px;
 
+      @media (max-width: 485px) {
+        display: none;
+      }
+
       &:hover {
         opacity: 0.7;
       }
@@ -30,6 +41,7 @@
     width: 200px;
     display: flex;
     align-items: center;
+    justify-content: center;
 
     a {
       font-size: 15px;

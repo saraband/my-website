@@ -9,6 +9,7 @@
   align-items: center;
   color: white;
   padding-bottom: 50px;
+  width: 100vw;
 
   h1 {
     text-align: center;
@@ -32,18 +33,30 @@
   #leftAndRight {
     display: flex;
 
+    @media (max-width: 485px) {
+      flex-direction: column;
+    }
+
     #left, #right {
       width: 50%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: flex-end;
+
+      @media (max-width: 485px) {
+        width: unset;
+      }
     }
 
     #left {
       text-align: right;
       padding-left: 50px;
       padding-right: 20px;
+
+      @media (max-width: 485px) {
+        text-align: center;
+      }
 
       h3 {
         font-size: 35px;
