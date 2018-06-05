@@ -4,12 +4,13 @@ import s from './ProjectComponent.module.scss'
 import projectsData from './ProjectsData'
 import LeftArrow from './left-arrow.svg'
 import RightArrow from './right-arrow.svg'
+import { getRandomInt } from 'Utils/index'
 import test from './test.png'
 import {
-  setProject,
-  showProject,
-  hideProject
+  setProject
 } from 'Actions/index'
+
+const getRandomFade = () => ['fade-up', 'fade-left', 'fade-right', 'fade-down'][getRandomInt(0, 3)]
 
 const Project = ({src, onClick}) => (
   <div className={s.project} onClick={onClick} >
@@ -30,10 +31,7 @@ class ProjectComponent extends React.Component {
     const {
       nextProject,
       previousProject,
-      currentProjectFade,
-      showProject,
-      hideProject,
-      isProjectOpen
+      currentProjectFade
     } = this.props
 
     const {
@@ -44,19 +42,12 @@ class ProjectComponent extends React.Component {
 
     return(
       <div id={s.container}>
-        <div id={s.projectContainer} className={isProjectOpen ? s.showProject : s.hideProject} >
-          <div id={s.projectLeft}>
-            <h4 onClick={hideProject}>Back to projects</h4>
-            <h3>Findimo</h3>
-            <h5>Création d'interface pour une agence immobilière fictive</h5>
-          </div>
-          <div id={s.projectRight}>
-
-          </div>
-        </div>
-        <h1>Some of my works</h1>
-        <div id={s.projects} className={isProjectOpen ? s.hideProjects : s.showProjects} >
-          <Project src={test} onClick={showProject} />
+        <h1 data-aos='fade-up'>
+          Some of my work
+          <div className={s.border} data-aos='fade-up'></div>
+        </h1>
+        <div id={s.projects} >
+          <Project src={test}/>
           <Project src={test}/>
           <Project src={test}/>
           <Project src={test}/>
@@ -72,15 +63,12 @@ class ProjectComponent extends React.Component {
 const mapStateToProps = (state) => {
   return {
     currentProject: state.currentProject,
-    currentProjectFade: state.currentProjectFade,
-    isProjectOpen: state.isProjectOpen
+    currentProjectFade: state.currentProjectFade
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    showProject: (id) => dispatch(showProject(id)),
-    hideProject: () => dispatch(hideProject())
   }
 }
 

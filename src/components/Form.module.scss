@@ -1,18 +1,26 @@
+@import 'colors';
+
 .container {
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 
   input, textarea, button {
     transition: 0.1s all linear;
     border: none;
     padding: 10px;
     font-size: 20px;
-    background-color: tomato;
+    background-color: firebrick;
     color: white;
     resize: none;
+    color: white;
 
     &:focus + .border {
       width: 100%;
+    }
+
+    &:focus {
+      background-color: tomato;
     }
   }
 
@@ -20,7 +28,7 @@
     cursor: pointer;
 
     &:hover {
-      background-color: bisque;
+      background-color: tomato;
     }
   }
 

@@ -35,7 +35,10 @@ class ContactComponent extends React.Component {
     return(
       <div id={s.container}
         style={{backgroundImage: `url(${leavesPattern})`}} >
-        <h1>Contact me</h1>
+        <h1 data-aos='fade-up'>
+          Contact
+          <div className={s.border} data-aos='fade-up'></div>
+        </h1>
         <form onSubmit={this.handleSubmit}>
           <Input 
             value={name}
