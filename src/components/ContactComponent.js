@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import s from './ContactComponent.module.scss'
-import leavesPattern from './leaves.png'
+import pattern from './pattern.jpg'
 import {
   Input,
   Textarea,
@@ -33,8 +33,7 @@ class ContactComponent extends React.Component {
     } = this.state
 
     return(
-      <div id={s.container}
-        style={{backgroundImage: `url(${leavesPattern})`}} >
+      <div id={s.container}>
         <h1 data-aos='fade-up'>
           Contact
           <div className={s.border} data-aos='fade-up'></div>

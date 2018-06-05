@@ -2,7 +2,7 @@ import React from 'react'
 import getTrFn from './Translation'
 import { connect } from 'react-redux'
 import s from './AboutComponent.module.scss'
-import leavesPattern from './leaves.png'
+import pattern from './pattern.jpg'
 import Github from './github.svg'
 import './aosAnimations.css'
 
@@ -39,8 +39,7 @@ class AboutComponent extends React.Component {
 
   render() {
     return(
-      <div id={s.container}
-        style={{backgroundImage: `url(${leavesPattern})`}} >
+      <div id={s.container} >
         <h1 data-aos='fade-up'>
           About
           <div className={s.border} data-aos='fade-up'></div>

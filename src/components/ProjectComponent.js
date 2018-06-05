@@ -10,10 +10,13 @@ import {
   setProject
 } from 'Actions/index'
 
-const getRandomFade = () => ['fade-up', 'fade-left', 'fade-right', 'fade-down'][getRandomInt(0, 3)]
-
-const Project = ({src, onClick}) => (
-  <div className={s.project} onClick={onClick} >
+const Project = ({src, onClick, i}) => (
+  <div className={s.project} onClick={onClick}
+    data-aos='flip-up'
+    data-aos-anchor-placement='top-bottom'
+    data-aos-duration={1000}
+    data-aos-delay={1000}
+    >
     <div className={s.projectOverlay}>
       <h3>Findimo</h3>
       <h4>Design & Front-end development</h4>
@@ -25,6 +28,15 @@ const Project = ({src, onClick}) => (
 class ProjectComponent extends React.Component {
   constructor(props) {
     super(props)
+
+    this.projects = [
+      {pictureUrl: test},
+      {pictureUrl: test},
+      {pictureUrl: test},
+      {pictureUrl: test},
+      {pictureUrl: test},
+      {pictureUrl: test}
+    ]
   }
 
   render() {
@@ -47,12 +59,7 @@ class ProjectComponent extends React.Component {
           <div className={s.border} data-aos='fade-up'></div>
         </h1>
         <div id={s.projects} >
-          <Project src={test}/>
-          <Project src={test}/>
-          <Project src={test}/>
-          <Project src={test}/>
-          <Project src={test}/>
-          <Project src={test}/>
+          {this.projects.map(({pictureUrl}, i) => <Project src={pictureUrl} key={i} i={i} />)}
         </div>
       </div>
     )
