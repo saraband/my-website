@@ -15,10 +15,10 @@ class PresentationComponent extends React.Component {
     return(
       <div id={s.container}>
         <div id={s.title}>
-          <h1>{tr('presentation-title')}</h1>
-          <h2>{tr('presentation-subtitle')}</h2>
+          <h1 data-aos='fade-left'>{tr('presentation-title')}</h1>
+          <h2 data-aos='fade-right'>{tr('presentation-subtitle')}</h2>
         </div>
-        <Graph id={s.graph} />
+        <Graph id={s.graph} data-aos='fade-up' data-aos-delay={300} />
       </div>
     )
   }

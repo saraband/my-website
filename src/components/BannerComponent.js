@@ -19,13 +19,13 @@ class BannerComponent extends React.Component {
 
     return(
       <div id={s.container}>
-        <div id={s.navMenu}>
-          <Logo id={s.logo} />
+        <div id={s.navMenu} data-aos='fade-in'>
+          <Logo id={s.logo}/>
           <MenuItem>Work</MenuItem>
           <MenuItem>About</MenuItem>
           <MenuItem>Contact</MenuItem>
         </div>
-        <div id={s.langMenu}>
+        <div id={s.langMenu} data-aos='fade-in'>
           <MenuItem selected={lang === 'en'}
             onClick={() => setLang('en')} >EN</MenuItem>
           <MenuItem selected={lang === 'fr'}

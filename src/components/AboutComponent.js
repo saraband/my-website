@@ -3,12 +3,16 @@ import getTrFn from './Translation'
 import { connect } from 'react-redux'
 import s from './AboutComponent.module.scss'
 import leavesPattern from './leaves.png'
+import Github from './github.svg'
+import './aosAnimations.css'
 
 const SkillComponent = ({children, value}) => (
-  <div className={s.skillContainer}>
+  <div className={s.skillContainer} data-aos='fade-up' >
     <p className={s.skillName}>{children}</p>
     <div className={s.skillBar} >
-      <div className={s.skillBarFill} style={{width: `${value}%`}}></div>
+      <div style={{width: `${value}%`, height: '100%'}}>
+        <div className={s.skillBarFill} data-aos='widthUp' data-aos-delay={200}></div>
+      </div>
       <p>{value}%</p>
     </div>
   </div>
@@ -17,35 +21,40 @@ const SkillComponent = ({children, value}) => (
 class AboutComponent extends React.Component {
   constructor(props) {
     super(props)
+
+    this.skills = [
+      {name: 'React', value: 85},
+      {name: 'Redux', value: 80},
+      {name: 'Node', value: 75},
+      {name: 'HTML5', value: 90},
+      {name: 'CSS3', value: 90},
+      {name: 'Webpack', value: 60},
+      {name: 'Photoshop', value: 85},
+      {name: 'Illustrator', value: 85},
+      {name: 'Premiere', value: 80},
+      {name: 'Indesign', value: 60},
+      {name: 'After Effects', value: 90}
+    ]
   }
 
   render() {
     return(
       <div id={s.container}
         style={{backgroundImage: `url(${leavesPattern})`}} >
-        <h1>
+        <h1 data-aos='fade-up'>
           About
           <div className={s.border} data-aos='fade-up'></div>
         </h1>
         <div id={s.leftAndRight}>
-          <div id={s.left}>
+          <div id={s.left} data-aos='fade-right'>
             <h3>Hi, my name is Yassine Hermellin</h3>
             <p>
               Since beginning my journey as a freelance designer nearly 8 years ago, I've done remote work for agencies, consulted for startups, and collaborated with talented people to create digital products for both business and consumer use.<br /><br /> I'm quietly confident, naturally curious, and perpetually improving my chops.
             </p>
+            <button><Github id={s.github} />Check me on Github</button>
           </div>
           <div id={s.right}>
-            <SkillComponent value={85} >React</SkillComponent>
-            <SkillComponent value={80} >Redux</SkillComponent>
-            <SkillComponent value={75} >Node</SkillComponent>
-            <SkillComponent value={90} >HTML5</SkillComponent>
-            <SkillComponent value={90} >CSS3</SkillComponent>
-            <SkillComponent value={60} >Webpack</SkillComponent>
-            <SkillComponent value={85} >Photoshop</SkillComponent>
-            <SkillComponent value={85} >Illustrator</SkillComponent>
-            <SkillComponent value={80} >Premiere</SkillComponent>
-            <SkillComponent value={60} >Indesign</SkillComponent>
-            <SkillComponent value={90} >After Effects</SkillComponent>
+            {this.skills.map((sk, i) => <SkillComponent value={sk.value} key={i} >{sk.name}</SkillComponent>)}
           </div>
         </div>
       </div>

@@ -54,6 +54,29 @@
         font-size: 20px;
         font-family: 'Open Sans Light';
       }
+
+      button {
+        border: 3px solid white;
+        border-radius: 15px;
+        padding: 20px;
+        font-size: 20px;
+        cursor: pointer;
+        background-color: transparent;
+        transition: all 0.1s linear;
+        color: white;
+        margin-top: 40px;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+          transform: scale(1.02);
+        }
+
+        #github {
+          width: 35px;
+          vertical-align: middle;
+          margin-right: 25px;
+        }
+      }
     }
 
     #right {

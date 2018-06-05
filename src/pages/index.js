@@ -9,7 +9,7 @@ import ContactComponent from 'Components/ContactComponent'
 import {
   setLang
 } from 'Actions/index'
-//import '../../node_modules/aos/dist/aos.css'
+import '../../node_modules/aos/dist/aos.css'
 
 class App extends React.Component {
   constructor(props) {
@@ -17,13 +17,13 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    /*this.AOS = require('aos')
+    this.AOS = require('aos')
     this.AOS.init()
-    window.addEventListener('load', this.AOS.refresh)*/
+    window.addEventListener('load', this.AOS.refresh)
   }
 
   componentDidUpdate() {
-    //this.AOS.refresh()
+    this.AOS.refresh()
   }
 
   componentWillMount() {

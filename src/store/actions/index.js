@@ -3,6 +3,8 @@ import { sleep } from 'Utils/index'
 export const SET_LANG = 'SET_LANG'
 export const SET_PROJECT = 'SET_PROJECT'
 export const SET_PROJECT_FADE = 'SET_PROJECT_FADE'
+export const SHOW_PROJECT = 'SHOW_PROJECT'
+export const HIDE_PROJECT = 'HIDE_PROJECT'
 
 export const ProjectFadeTypes = {
   FADE_IN: 'fadeIn',
@@ -26,6 +28,19 @@ export const setProject = (project) => {
       dispatch({type: SET_PROJECT, project})
       dispatch(setProjectFade(ProjectFadeTypes.FADE_IN))
     })
+  }
+}
+
+export const showProject = (id) => {
+  return {
+    type: SHOW_PROJECT,
+    id
+  }
+}
+
+export const hideProject = () => {
+  return {
+    type: HIDE_PROJECT
   }
 }
 
