@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import s from './ContactComponent.module.scss'
-import pattern from './pattern.jpg'
+import pattern from './pattern2.jpg'
 import {
   Input,
   Textarea,

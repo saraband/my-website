@@ -5,7 +5,7 @@ import projectsData from './ProjectsData'
 import LeftArrow from './left-arrow.svg'
 import RightArrow from './right-arrow.svg'
 import { getRandomInt } from 'Utils/index'
-import test from './test.png'
+import test from './thumbnail-immo-app.png'
 import {
   setProject
 } from 'Actions/index'

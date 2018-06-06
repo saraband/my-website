@@ -2,7 +2,7 @@ import React from 'react'
 import getTrFn from './Translation'
 import { connect } from 'react-redux'
 import s from './AboutComponent.module.scss'
-import pattern from './pattern.jpg'
+import pattern from './pattern2.jpg'
 import Github from './github.svg'
 import './aosAnimations.css'
 
@@ -39,7 +39,7 @@ class AboutComponent extends React.Component {
 
   render() {
     return(
-      <div id={s.container} >
+      <div id={s.container}>
         <h1 data-aos='fade-up'>
           About
           <div className={s.border} data-aos='fade-up'></div>
