@@ -1,15 +1,63 @@
+@import 'colors';
+
 .container {
-  width: 300px;
-  height: 350px;
-  background-color: tomato;
+  width: 400px;
+  height: 450px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 20px;
+  margin-right: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+  opacity: 0.8;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
 
   .imgContainer {
-    width: 300px;
-    height: 150px;
+    width: 400px;
+    height: 250px;
+    overflow: hidden;
 
     img {
       width: 100%;
       height: 100%;
+    }
+  }
+
+  .description {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      margin-bottom: 10px;
+      color: $black;
+    }
+
+    h5 {
+      margin-bottom: 20px;
+      display: flex;
+      color: $blue;
+      font-size: 25px;
+      justify-content: space-between;
+    }
+
+    p {
+      color: $black;
+      font-size: 15px;
+    }
+
+    p:last-child {
+      font-size: 13px;
+      color: $blue;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
     }
   }
 }

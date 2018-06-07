@@ -2,12 +2,13 @@
 @import 'utils';
 
 .immo-app-select {
-  border: 3px solid $blue;
+  border: 1px solid $blue;
   font-size: 15px;
   font-family: Arial;
   position: relative;
   @include no-user-select();
   cursor: pointer;
+  margin-bottom: 10px;
   color: $blue;
 
   .immo-app-dropdown-item {
@@ -28,9 +29,9 @@
     z-index: 100;
     width: 100%;
     top: 100%;;
-    left: -3px;
+    left: -1px;
     position: absolute;
-    border: 3px solid $blue;
+    border: 1px solid $blue;
   }
 }
 

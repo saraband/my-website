@@ -8,6 +8,8 @@ import {
   SHOW_PROPERTY_PANEL
 } from 'AppsActions/immo-app/index'
 
+const shortDescription = (str) => str.length < 100 ? str : `${str.substr(0, 97)}...`
+
 class ListItem extends React.Component {
   constructor(props) {
     super(props)
@@ -20,8 +22,8 @@ class ListItem extends React.Component {
       requestPropertyData
     } = this.props
 
-    requestPropertyData(id)
-    showPropertyPanel()
+    //requestPropertyData(id)
+    //showPropertyPanel()
   }
 
   render() {
@@ -44,10 +46,11 @@ class ListItem extends React.Component {
         <div className={s.imgContainer} >
           <Image src={pictureUrl} alt={title} />
         </div>
-        <div>
+        <div className={s.description}>
           <h3>{title}</h3>
-          <h5>{price} € for {area} m² <span>{timeSince(date*1000)}</span></h5>
-          <p>{description}</p>
+          <h5><span>{price} €</span><span>{area} m²</span></h5>
+          <p>{shortDescription(description)}</p>
+          <p><span>{place}</span><span>{timeSince(date*1000)}</span></p>
         </div>
       </div>
     )

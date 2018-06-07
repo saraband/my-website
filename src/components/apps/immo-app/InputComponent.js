@@ -15,7 +15,7 @@ class InputComponent extends React.Component {
       areaMin: '',
       numRoomsMin: '',
       type: 'all',
-      actionType: 'buy'
+      actionType: 'all'
     }
   }
 
@@ -26,6 +26,8 @@ class InputComponent extends React.Component {
     } = event.target
 
     switch(name) {
+      case 'type':
+      case 'actionType':
       case 'place':
         this.setState({name: value})
         return
@@ -51,8 +53,14 @@ class InputComponent extends React.Component {
     const {
       priceMin,
       priceMax,
-      type
+      place,
+      areaMin,
+      numRoomsMin,
+      type,
+      actionType
     } = this.state
+
+    return
 
     console.log({
       price: {to: priceTo, from: priceFrom},
@@ -68,7 +76,8 @@ class InputComponent extends React.Component {
       priceMax,
       areaMin,
       numRoomsMin,
-      type
+      type,
+      actionType
     } = this.state
 
     const { isRetrievingData } = this.props
@@ -76,11 +85,14 @@ class InputComponent extends React.Component {
     return(
       <div id={s.container}>
         <form onSubmit={this.handleSubmit} >
-          <ImmoSelect>
-            <p value='all'>Achat</p>
-            <p value='houses'>Location</p>
+          <ImmoSelect onChange={this.handleChange}
+            name='actionType' value={actionType}>
+            <p value='all'>Achat & location</p>
+            <p value='buy'>Achat</p>
+            <p value='rent'>Location</p>
           </ImmoSelect>
-          <ImmoSelect>
+          <ImmoSelect onChange={this.handleChange}
+            name='type' value={type}>
             <p value='all'>Tout types de bien</p>
             <p value='houses'>Maison</p>
             <p value='appartment'>Appartement</p>
@@ -89,7 +101,7 @@ class InputComponent extends React.Component {
           <br />
           <input type='text' placeholder='Place, city, ZIP code' />
           <br />
-          <div className='flex-row'>
+          <div className={s.flexRow}>
             <input type='text' placeholder='Price (Min)'
               name='priceMin' onChange={this.handleChange} 
               value={priceMin} />

@@ -4,7 +4,8 @@ import ListComponent from 'AppsComponents/immo-app/ListComponent'
 import InputComponent from 'AppsComponents/immo-app/InputComponent'
 import ShowPropertyComponent from 'AppsComponents/immo-app/ShowPropertyComponent'
 import BannerComponent from 'AppsComponents/immo-app/BannerComponent'
-import s from './index.scss' 
+import './index.scss'
+import s from './index.module.scss'
 
 class App extends React.Component {
   constructor(props) {
@@ -17,8 +18,14 @@ class App extends React.Component {
       <div id={s.container}>
         {isPropertyPanelOpen ? <ShowPropertyComponent /> : null}
         <BannerComponent />
-        <InputComponent />
-        <ListComponent />
+        <div id={s.body}>
+          <div id={s.left}>
+            <ListComponent />
+          </div>
+          <div id={s.right}>
+            <InputComponent />
+          </div>
+        </div>
       </div>
     )
   }

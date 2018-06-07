@@ -55,7 +55,6 @@
 
       &:hover img {
         transform: scale(1.1);
-        filter: grayscale(100%) blur(5px);
       }
 
       &:hover {
@@ -86,7 +85,7 @@
       }
 
       img {
-        transition: scale 0.1s linear;
+        transition: all 0.1s ease-in-out;
         height: 100%;
       }
     }

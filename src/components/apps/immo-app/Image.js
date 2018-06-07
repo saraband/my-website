@@ -1,5 +1,6 @@
 import React from 'react'
 import loading from './loading.png'
+import s from './Image.module.scss'
 
 export default class Image extends React.Component {
   constructor(props) {
@@ -18,10 +19,10 @@ export default class Image extends React.Component {
     } = this.props
 
     return (
-      <div>
+      <div id={s.container}>
         <img
           src={loading}
-          style={{visibility: (isLoading ? 'visible' : 'hidden'), width: '50px'}}
+          style={{visibility: (isLoading ? 'visible' : 'hidden')}}
           />
         <img
           src={src}

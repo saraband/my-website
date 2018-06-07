@@ -14,19 +14,31 @@ export default class ImmoSelect extends React.Component {
   constructor(props) {
     super(props);
 
+    this.elements = props.children.map((c, i) => ({value: c.props.value, text: c.props.children}))
+
     this.state = {
       toggle: false,
-      selected: 0
+      selected: props.value
     }
 
-    this.elements = props.children.map((c, i) => ({value: c.props.value, text: c.props.children, id: i}))
   }
 
   toggle = () => this.setState({toggle: !this.state.toggle})
 
   handleSelect = (element) => {
-    this.setState({selected: element.id})
+    const {
+      onChange,
+      name
+    } = this.props
+
+    this.setState({selected: element.value})
     this.toggle()
+    this.props.onChange({
+      target: {
+        name,
+        value: element.value
+      }
+    })
   }
 
   renderElements = () => {
@@ -40,11 +52,11 @@ export default class ImmoSelect extends React.Component {
     const {
       value,
       text
-    } = this.elements[this.state.selected]
+    } = this.elements.find(e => e.value === this.state.selected)
     const { toggle } = this.state
 
     return(
-      <div className='immo-app-select'>
+      <div className='immo-app-select' style={this.props.style}>
         <DropdownItem text={text} onClick={this.toggle} />
         {toggle ? (<div className='immo-app-select-dropdown'>
           {this.renderElements()}
