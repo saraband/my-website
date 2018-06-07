@@ -23,13 +23,13 @@ export const requestPropertyData = (id) => {
   return (dispatch) => {
     dispatch({type: PROPERTY_DATA_REQUEST})
 
-    setTimeout(() => {
-      dispatch({
-        type: PROPERTY_DATA_SUCCESS,
-        data: DB.find(p => p.id === id)
-      })
+    // This is where I would fetch data via an API call
+    // But here I don't need it
+    dispatch({
+      type: PROPERTY_DATA_SUCCESS,
+      data: DB.find(p => p.id === id)
+    })
 
-      dispatch({type: SHOW_PROPERTY_PANEL})
-    }, 300)
+    dispatch({type: SHOW_PROPERTY_PANEL})
   }
 }
