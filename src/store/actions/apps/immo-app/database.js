@@ -3,7 +3,8 @@ const loremIpsum = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sus
 module.exports = [
 	{
 		id: 0,
-		pictureUrl: require('./img/0.jpg'),
+		pictureUrl: require('./img/0_normal.jpg'),
+		pictureUrlSmall: require('./img/0_small.jpg'),
 		title: 'Sunny flat with view on the lake',
 		description: loremIpsum,
 		type: 'appartment',
@@ -16,7 +17,8 @@ module.exports = [
 	},
 	{
 		id: 1,
-		pictureUrl: require('./img/1.jpg'),
+		pictureUrl: require('./img/1_normal.jpg'),
+		pictureUrlSmall: require('./img/1_small.jpg'),
 		title: 'Spacious duplex near the Grand-Place',
 		description: loremIpsum,
 		type: 'duplex',
@@ -29,7 +31,8 @@ module.exports = [
 	},
 	{
 		id: 2,
-		pictureUrl: require('./img/2.jpg'),
+		pictureUrl: require('./img/2_normal.jpg'),
+		pictureUrlSmall: require('./img/2_small.jpg'),
 		title: 'Great appartment located in the heart of the city',
 		description: loremIpsum,
 		type: 'appartment',
@@ -42,7 +45,8 @@ module.exports = [
 	},
 	{
 		id: 3,
-		pictureUrl: require('./img/3.jpg'),
+		pictureUrl: require('./img/3_normal.jpg'),
+		pictureUrlSmall: require('./img/3_small.jpg'),
 		title: 'Traditionnal penthouse in the European neighborhood',
 		description: loremIpsum,
 		type: 'house',
@@ -55,7 +59,8 @@ module.exports = [
 	},
 	{
 		id: 4,
-		pictureUrl: require('./img/4.jpg'),
+		pictureUrl: require('./img/4_normal.jpg'),
+		pictureUrlSmall: require('./img/4_small.jpg'),
 		title: 'Great right next to the main street',
 		description: loremIpsum,
 		type: 'appartment',
@@ -68,7 +73,8 @@ module.exports = [
 	},
 	{
 		id: 5,
-		pictureUrl: require('./img/5.jpg'),
+		pictureUrl: require('./img/5_normal.jpg'),
+		pictureUrlSmall: require('./img/5_small.jpg'),
 		title: 'Mediterranean villa in front of the sea',
 		description: loremIpsum,
 		type: 'house',
@@ -81,7 +87,8 @@ module.exports = [
 	},
 	{
 		id: 6,
-		pictureUrl: require('./img/6.jpg'),
+		pictureUrl: require('./img/6_normal.jpg'),
+		pictureUrlSmall: require('./img/6_small.jpg'),
 		title: 'Cosy flat all equiped',
 		description: loremIpsum,
 		type: 'appartment',
@@ -94,7 +101,8 @@ module.exports = [
 	},
 	{
 		id: 7,
-		pictureUrl: require('./img/7.jpg'),
+		pictureUrl: require('./img/7_normal.jpg'),
+		pictureUrlSmall: require('./img/7_small.jpg'),
 		title: 'Spacious appartment recently renovated',
 		description: loremIpsum,
 		type: 'appartment',
@@ -107,7 +115,8 @@ module.exports = [
 	},
 	{
 		id: 8,
-		pictureUrl: require('./img/8.jpg'),
+		pictureUrl: require('./img/8_normal.jpg'),
+		pictureUrlSmall: require('./img/8_small.jpg'),
 		title: 'Luminous flat perfect for a young family',
 		description: loremIpsum,
 		type: 'appartment',

@@ -25,3 +25,11 @@ export const timeSince = (date) => {
 export const sleep = /*async*/ (ms) => {
   return new Promise((resolve, reject) => setTimeout(resolve, ms))
 }
+
+export const prettyPrice = (price) => {
+  if(price < 1000)
+    return price
+
+  const p = '' + price
+  return p.substr(0, p.length - 3) + ' ' + p.substr(p.length - 3)
+}

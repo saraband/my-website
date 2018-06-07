@@ -1,13 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import close from './close.png'
 import { HIDE_PROPERTY_PANEL } from 'AppsActions/immo-app/index'
 import Image from './Image'
 import s from './ShowPropertyComponent.module.scss'
+import { timeSince, prettyPrice } from 'Utils/index'
 
 class ShowPropertyComponent extends React.Component {
   constructor(props) {
     super(props)
+  }
+
+  cancelEvent = (event) => {
+    if(event.stopPropagation)
+      event.stopPropagation()
   }
 
   render() {
@@ -36,14 +41,28 @@ class ShowPropertyComponent extends React.Component {
     } = propertyData
 
     return(
-      <div id={s.container}>
-        <div id={s.box}>
-          <img src={close} id={s.close} onClick={hidePropertyPanel}/>
+      <div id={s.container} onClick={hidePropertyPanel}>
+        <div id={s.box} onClick={this.cancelEvent}>
           <div id={s.image}>
             <Image src={pictureUrl} />
           </div>
-          <div id='show-property-description'>
-            {title}
+          <div id={s.description}>
+            <h3>{title}</h3>
+            <h4>Located in {place}</h4>
+            <p>{description}</p>
+            <div id={s.characteristics} >
+              <ul>
+                <li><strong>Type</strong>: {type}</li>
+                <li><strong>Price</strong>: {prettyPrice(price)} € {actionType === 'rent' ? 'per month' : null}</li>
+                <li><strong>Surface</strong>: {area} m²</li>
+              </ul>
+              <ul>
+                <li><strong>Rooms</strong>: {numRooms}</li>
+                <li><strong>Surface</strong>: {area} m²</li>
+                <li><strong>Posted</strong>: {timeSince(date * 1000)}</li>
+              </ul>
+            </div>
+            <button>Get in contact with the vendor</button>
           </div>
         </div>
       </div>

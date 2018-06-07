@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { timeSince } from 'Utils/index'
+import { timeSince, prettyPrice } from 'Utils/index'
 import Image from './Image'
 import s from './ListItem.module.scss'
 import {
@@ -9,13 +9,6 @@ import {
 } from 'AppsActions/immo-app/index'
 
 const shortDescription = (str) => str.length < 100 ? str : `${str.substr(0, 97)}...`
-const prettyPrice = (price) => {
-  if(price < 1000)
-    return price
-
-  const p = '' + price
-  return p.substr(0, p.length - 3) + ' ' + p.substr(p.length - 3)
-}
 
 class ListItem extends React.Component {
   constructor(props) {
@@ -35,7 +28,7 @@ class ListItem extends React.Component {
   render() {
     const {
       id,
-      pictureUrl,
+      pictureUrlSmall,
       title,
       description,
       type,
@@ -50,7 +43,7 @@ class ListItem extends React.Component {
     return(
       <div onClick={this.handleClick} className={s.container}>
         <div className={s.imgContainer} >
-          <Image src={pictureUrl} alt={title} />
+          <Image src={pictureUrlSmall} alt={title} />
         </div>
         <div className={s.description}>
           <h3>{title}</h3>
