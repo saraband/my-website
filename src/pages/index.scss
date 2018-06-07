@@ -12,3 +12,14 @@ a {
   width: 100%;
   overflow-x: hidden;
 }
+
+button:focus,
+input:focus,
+button:active,
+input:active {
+  outline: 0;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}

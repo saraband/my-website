@@ -37,7 +37,7 @@ class ListComponent extends React.Component {
     return(
       <div id={s.container}>
         <div id={s.topContainer}>
-          <h3>47 results found in Barcelona.</h3>
+          <h3>{list.length} results found in Barcelona.</h3>
           <ImmoSelect value='no_sort' style={{width: '250px', marginBottom: 0, marginRight: '100px'}} >
             <p value='no_sort'>Don't sort</p>
             <p value='price'>Sort by Price</p>

@@ -15,7 +15,7 @@ export const requestList = (price, type) => {
 
     setTimeout(() => {
       dispatch({type: LIST_REQUEST_SUCCESS, list: DB})
-    }, 1000)
+    }, 300)
   }
 }
 
@@ -23,28 +23,13 @@ export const requestPropertyData = (id) => {
   return (dispatch) => {
     dispatch({type: PROPERTY_DATA_REQUEST})
 
-    fetch('/property', {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      method: 'post',
-      credentials: 'same-origin',
-      body: JSON.stringify({
-        id
-      })
-    })
-    .then(data => data.json(),
-      error => {
-        console.error(error)
-        dispatch({type: PROPERTY_DATA_FAILED})
-    })
-    .then(data => {
-      console.log(data)
+    setTimeout(() => {
       dispatch({
         type: PROPERTY_DATA_SUCCESS,
-        data
+        data: DB.find(p => p.id === id)
       })
-    })
+
+      dispatch({type: SHOW_PROPERTY_PANEL})
+    }, 300)
   }
 }

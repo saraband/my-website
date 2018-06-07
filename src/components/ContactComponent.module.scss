@@ -34,5 +34,17 @@
     display: flex;
     flex-direction: column;
     padding-bottom: 100px;
+
+    ::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    :-ms-input-placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    ::-ms-input-placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
   }
 }

@@ -3,7 +3,7 @@ import s from './Form.module.scss'
 
 export const Input = ({value, onChange, name, ...props}) => (
   <div className={s.container} data-aos='fade-right'>
-    <input type='text' value={value} onChange={onChange} name={name} {...props} />
+    <input type='text' value={value} autoComplete='off' onChange={onChange} name={name} {...props} />
     <div className={s.border}></div>
   </div>
 )

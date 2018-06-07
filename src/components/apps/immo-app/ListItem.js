@@ -9,6 +9,13 @@ import {
 } from 'AppsActions/immo-app/index'
 
 const shortDescription = (str) => str.length < 100 ? str : `${str.substr(0, 97)}...`
+const prettyPrice = (price) => {
+  if(price < 1000)
+    return price
+
+  const p = '' + price
+  return p.substr(0, p.length - 3) + ' ' + p.substr(p.length - 3)
+}
 
 class ListItem extends React.Component {
   constructor(props) {
@@ -22,8 +29,7 @@ class ListItem extends React.Component {
       requestPropertyData
     } = this.props
 
-    //requestPropertyData(id)
-    //showPropertyPanel()
+    requestPropertyData(id)
   }
 
   render() {
@@ -48,7 +54,7 @@ class ListItem extends React.Component {
         </div>
         <div className={s.description}>
           <h3>{title}</h3>
-          <h5><span>{price} €</span><span>{area} m²</span></h5>
+          <h5><span>{prettyPrice(price)} €</span><span>{area} m²</span></h5>
           <p>{shortDescription(description)}</p>
           <p><span>{place}</span><span>{timeSince(date*1000)}</span></p>
         </div>
@@ -57,7 +63,11 @@ class ListItem extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {}
+const mapStateToProps = (state) => {
+  return {
+    
+  }
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {

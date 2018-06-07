@@ -38,7 +38,7 @@ class ContactComponent extends React.Component {
           Contact
           <div className={s.border} data-aos='fade-up'></div>
         </h1>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} autoComplete='off' data-test='test'>
           <Input 
             value={name}
             onChange={this.handleChange}

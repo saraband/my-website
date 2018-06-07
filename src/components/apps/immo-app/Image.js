@@ -1,5 +1,5 @@
 import React from 'react'
-import loading from './loading.png'
+import Loading from './loading-2.svg'
 import s from './Image.module.scss'
 
 export default class Image extends React.Component {
@@ -20,10 +20,7 @@ export default class Image extends React.Component {
 
     return (
       <div id={s.container}>
-        <img
-          src={loading}
-          style={{visibility: (isLoading ? 'visible' : 'hidden')}}
-          />
+        <Loading id={s.loading} style={{visibility: (isLoading ? 'visible' : 'hidden')}} />
         <img
           src={src}
           alt={alt} 

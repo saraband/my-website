@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import close from './close.png'
 import { HIDE_PROPERTY_PANEL } from 'AppsActions/immo-app/index'
 import Image from './Image'
+import s from './ShowPropertyComponent.module.scss'
 
 class ShowPropertyComponent extends React.Component {
   constructor(props) {
@@ -17,31 +18,29 @@ class ShowPropertyComponent extends React.Component {
     } = this.props
 
     if(isRetrievingPropertyData) {
-      return(
-        <div>
-          <div>
-            <p>Retrieving data</p>
-          </div>
-        </div>
-      )
+      // Do something ?
     }
 
     const {
+      id,
+      pictureUrl,
       title,
-      owner,
-      date,
-      imgSrc,
+      description,
+      type,
+      actionType,
       price,
-      area
+      area,
+      numRooms,
+      place,
+      date,
     } = propertyData
 
     return(
-      <div id='show-property-container'>
-        <div id='show-property-box'>
-          <img src={close} id='close-property-img'
-            onClick={hidePropertyPanel} />
-          <div id='show-property-image'>
-            <Image src={imgSrc} />
+      <div id={s.container}>
+        <div id={s.box}>
+          <img src={close} id={s.close} onClick={hidePropertyPanel}/>
+          <div id={s.image}>
+            <Image src={pictureUrl} />
           </div>
           <div id='show-property-description'>
             {title}
