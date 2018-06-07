@@ -8,13 +8,66 @@ export const PROPERTY_DATA_SUCCESS = 'PROPERTY_DATA_SUCCESS'
 export const PROPERTY_DATA_FAILED = 'PROPERTY_DATA_FAILED'
 export const SHOW_PROPERTY_PANEL = 'SHOW_PROPERTY_PANEL'
 export const HIDE_PROPERTY_PANEL = 'HIDE_PROPERTY_PANEL'
+export const SET_LIST_FILTER = 'SET_LIST_FILTER'
 
-export const requestList = (price, type) => {
+export const requestList = (data) => {
   return (dispatch) => {
-    dispatch({type: LIST_REQUEST})
+    dispatch({
+      type: LIST_REQUEST,
+      place: data.place
+    })
+
+    console.log(data)
+
+    const list = DB.filter(p => {
+
+      // PLACE
+      if(data.place !== '') {
+        if(p.place.toLowerCase() !== data.place.toLowerCase())
+          return false
+      }
+
+      // PRICE MIN
+      if(data.priceMin !== '') {
+        if(p.price < parseInt(data.priceMin))
+          return false
+      }
+
+      // PRICE MAX
+      if(data.priceMax !== '') {
+        if(p.price > parseInt(data.priceMax))
+          return false
+      }
+
+      // AREA MIN
+      if(data.areaMin !== '') {
+        if(p.area < parseInt(data.areaMin))
+          return false
+      }
+
+      // NUM ROOMS MIN
+      if(data.numRoomsMin !== '') {
+        if(p.numRooms < parseInt(data.numRoomsMin))
+          return false
+      }
+
+      // TYPE
+      if(data.type !== 'all') {
+        if(p.type !== data.type)
+          return false
+      }
+
+      // ACTION TYPE
+      if(data.actionType !== 'all') {
+        if(p.actionType !== data.actionType)
+          return false
+      }
+
+      return true
+    })
 
     setTimeout(() => {
-      dispatch({type: LIST_REQUEST_SUCCESS, list: DB})
+      dispatch({type: LIST_REQUEST_SUCCESS, list})
     }, 300)
   }
 }

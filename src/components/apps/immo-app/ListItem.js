@@ -8,7 +8,7 @@ import {
   SHOW_PROPERTY_PANEL
 } from 'AppsActions/immo-app/index'
 
-const shortDescription = (str) => str.length < 100 ? str : `${str.substr(0, 97)}...`
+const shortDescription = (str) => str.length < 100 ? str : `${str.substr(0, 95)}...`
 
 class ListItem extends React.Component {
   constructor(props) {

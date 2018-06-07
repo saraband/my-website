@@ -13,32 +13,20 @@ class ListComponent extends React.Component {
 
   render() {
     const {
-      requestList,
       isRetrievingData,
-      list
+      list,
+      lastCitySearched,
+      listFilter,
+      setListFilter
     } = this.props
-
-    if(!list.length) {
-      return (
-        <div>
-          <p>No results yet, time to hit the form !</p>
-        </div>
-      )
-    }
-
-    if(isRetrievingData) {
-      return(
-        <div>
-          <p>Retrieving data from API...</p>
-        </div>
-      )
-    }
 
     return(
       <div id={s.container}>
-        <div id={s.topContainer}>
-          <h3>{list.length} results found in Barcelona.</h3>
-          <ImmoSelect value='no_sort' style={{width: '250px', marginBottom: 0, marginRight: '100px'}} >
+        <div id={s.topContainer} style={{visibility: isRetrievingData ? 'hidden' : 'visible'}}>
+          <h3>{list.length} result{list.length === 1 ? null : 's'} found
+            {lastCitySearched !== '' ? ` in ${lastCitySearched}` : null}.</h3>
+          <ImmoSelect value={listFilter} style={{width: '250px', marginBottom: 0, marginRight: '100px'}}
+            name='listFilter' onChange={(e) => setListFilter(e.target.value)}>
             <p value='no_sort'>Don't sort</p>
             <p value='price'>Sort by Price</p>
             <p value='price_desc'>Sort by Price (Desc)</p>
@@ -46,28 +34,46 @@ class ListComponent extends React.Component {
             <p value='area_desc'>Sort by area (Desc)</p>
           </ImmoSelect>
         </div>
-        <div id={s.list}>
+        <div id={s.list} style={{opacity: isRetrievingData ? 0.5 : 1}}>
           {list.map(item => <ListItem key={item.id} {...item} />)}
         </div>
       </div>
     )
   }
+}
 
-  componentDidMount() {
-    this.props.requestList({from: 0, to: 100000}, 'house')
+const getSortedList = (list, filter) => {
+  if(filter === 'no_sort')
+    return list
+
+  console.log(filter)
+
+  switch(filter) {
+    case 'price':
+      return list.sort((a, b) => a.price - b.price)
+    case 'price_desc':
+      return list.sort((a, b) => b.price - a.price)
+    case 'area':
+      return list.sort((a, b) => a.area - b.area)
+    case 'area_desc':
+      return list.sort((a, b) => b.area - a.area)
+    default:
+      return list
   }
 }
 
 const mapStateToProps = state => {
   return {
     isRetrievingData: state.immoApp.isRetrievingData,
-    list: state.immoApp.list
+    list: getSortedList(state.immoApp.list, state.immoApp.listFilter),
+    lastCitySearched: state.immoApp.lastCitySearched,
+    listFilter: state.immoApp.listFilter
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    requestList: (price, type) => dispatch(requestList(price, type))
+    setListFilter: (filter) => dispatch({type: 'SET_LIST_FILTER', filter})
   }
 }
 

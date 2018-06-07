@@ -26,12 +26,6 @@ class InputComponent extends React.Component {
     } = event.target
 
     switch(name) {
-      case 'type':
-      case 'actionType':
-      case 'place':
-        this.setState({name: value})
-        return
-
       case 'areaMin':
       case 'numRoomsMin':
       case 'priceMin':
@@ -39,12 +33,20 @@ class InputComponent extends React.Component {
         if(isNaN(value))
           return
 
+      case 'type':
+      case 'actionType':
+      case 'place':
+
         this.setState({[name]: value})
         return
 
       default:
         return
     }
+  }
+
+  componentWillMount() {
+    this.props.requestList({...this.state});
   }
 
   handleSubmit = (event) => {
@@ -60,14 +62,7 @@ class InputComponent extends React.Component {
       actionType
     } = this.state
 
-    return
-
-    console.log({
-      price: {to: priceTo, from: priceFrom},
-      type
-    })
-
-    this.props.requestList({to: parseInt(priceTo), from: parseInt(priceFrom)}, type);
+    this.props.requestList({...this.state});
   }
 
   render() {
@@ -99,7 +94,8 @@ class InputComponent extends React.Component {
           </ImmoSelect>
           <br />
           <br />
-          <input type='text' placeholder='Place, city, ZIP code' />
+          <input type='text' placeholder='Place, city, ZIP code'
+            name='place' onChange={this.handleChange} />
           <br />
           <div className={s.flexRow}>
             <input type='text' placeholder='Price (Min)'
@@ -132,7 +128,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    requestList: (price, type) => dispatch(requestList(price, type))
+    requestList: (data) => dispatch(requestList(data))
   }
 }
 

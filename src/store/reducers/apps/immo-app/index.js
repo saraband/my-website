@@ -7,7 +7,8 @@ import {
   PROPERTY_DATA_SUCCESS,
   PROPERTY_DATA_FAILED,
   SHOW_PROPERTY_PANEL,
-  HIDE_PROPERTY_PANEL
+  HIDE_PROPERTY_PANEL,
+  SET_LIST_FILTER
 } from 'AppsActions/immo-app/index'
 
 const isPropertyPanelOpen = (state = false, action) => {
@@ -63,10 +64,30 @@ const list = (state = [], action) => {
   }
 }
 
+const lastCitySearched = (state = 'all', action) => {
+  switch(action.type) {
+    case LIST_REQUEST:
+      return action.place
+    default:
+      return state
+  }
+}
+
+const listFilter = (state = 'no_sort', action) => {
+  switch(action.type) {
+    case SET_LIST_FILTER:
+      return action.filter
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
   isRetrievingData,
   list,
   isRetrievingPropertyData,
   currentPropertyData,
-  isPropertyPanelOpen
+  isPropertyPanelOpen,
+  lastCitySearched,
+  listFilter
 })
