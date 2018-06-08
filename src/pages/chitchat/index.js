@@ -5,7 +5,6 @@ import SearchRoomsListComponent from 'AppsComponents/chat-app/SearchRoomsListCom
 import RoomComponent from 'AppsComponents/chat-app/RoomComponent'
 import InputComponent from 'AppsComponents/chat-app/InputComponent'
 import s from './index.module.scss'
-import './index.scss'
 import {
   requestRoomsList,
   receiveRoomsList,
@@ -14,6 +13,7 @@ import {
 } from 'AppsActions/chat-app/index'
 import CreateRoomPanel from 'AppsComponents/chat-app/CreateRoomPanel'
 import CreateRoomButton from 'AppsComponents/chat-app/CreateRoomButton'
+import BannerComponent from 'AppsComponents/chat-app/BannerComponent'
 
 class App extends React.Component {
   constructor(props) {
@@ -41,7 +41,7 @@ class App extends React.Component {
     return(
       <div id={s.container}>
         {isCreateRoomPanelOpen ? <CreateRoomPanel /> : null}
-        <h1>Chat</h1>
+        <BannerComponent />
         <div id={s.body}>
           <div id={s.left}>
             <SearchRoomsListComponent />

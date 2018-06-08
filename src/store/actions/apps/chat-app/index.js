@@ -1,3 +1,5 @@
+import DB from './database.js'
+
 export const SET_ROOMS_LIST_FILTER = 'SET_ROOMS_LIST_FILTER'
 export const SHOW_CREATE_ROOM_PANEL = 'SHOW_CREATE_ROOM_PANEL'
 export const HIDE_CREATE_ROOM_PANEL = 'HIDE_CREATE_ROOM_PANEL'
@@ -48,7 +50,9 @@ export const requestRoomsList = (id) => {
   return (dispatch) => {
     dispatch({type: REQUEST_ROOMS_LIST_PENDING})
 
-    //socket.emit('REQUEST_ROOMS_LIST', id)
+    setTimeout(() => {
+      dispatch(receiveUsersList(list))
+    }, 500)
   }
 }
 
