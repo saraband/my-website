@@ -612,13 +612,34 @@
       },
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2018-06-07T18:04:25.658Z",
+      "buildTime": "2018-06-08T11:23:20.216Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "104ec833edfbf3d2c1d24b045da99482",
+        "contentDigest": "757369226385fc002556c80f22ed1b03",
         "type": "Site",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /chitchat/": {
+      "layout": null,
+      "jsonName": "chitchat.json",
+      "internalComponentName": "ComponentChitchat",
+      "path": "/chitchat/",
+      "component": "/home/saraband/Desktop/DEV/my-website/src/pages/chitchat/index.js",
+      "componentChunkName": "component---src-pages-chitchat-index-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin component-page-creator",
+      "pluginCreatorId": "Plugin component-page-creator",
+      "componentPath": "/home/saraband/Desktop/DEV/my-website/src/pages/chitchat/index.js",
+      "id": "SitePage /chitchat/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "258f6d5df1e479638c85154792b2bf89",
+        "description": "Plugin component-page-creator",
         "owner": "internal-data-bridge"
       }
     },
@@ -638,7 +659,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "afd81b1987cedcab72f6a68fdb3ab11a",
+        "contentDigest": "e638d4fc5ad0a63236d6e761d221445f",
         "description": "Plugin component-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -659,7 +680,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "504bccbbd160287729a530d6f748b16a",
+        "contentDigest": "3cc4ecf5c03c896eb8d45fed3a800c11",
         "description": "Plugin component-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -680,7 +701,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "2724c43ceb373f36eaf747277398b7c0",
+        "contentDigest": "3af18b874783c74d8b3618c5e7e15a43",
         "description": "Plugin component-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -701,7 +722,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "08214695fd5a118af3ccd72db9e2e25f",
+        "contentDigest": "ab7193509fbc445511eaaf1fb3e3d9b8",
         "description": "Plugin component-page-creator",
         "owner": "internal-data-bridge"
       }

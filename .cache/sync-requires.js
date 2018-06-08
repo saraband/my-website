@@ -7,6 +7,7 @@ exports.layouts = {
 }
 
 exports.components = {
+  "component---src-pages-chitchat-index-js": preferDefault(require("/home/saraband/Desktop/DEV/my-website/src/pages/chitchat/index.js")),
   "component---src-pages-findimo-index-js": preferDefault(require("/home/saraband/Desktop/DEV/my-website/src/pages/findimo/index.js")),
   "component---src-pages-index-es-js": preferDefault(require("/home/saraband/Desktop/DEV/my-website/src/pages/index.es.js")),
   "component---src-pages-index-fr-js": preferDefault(require("/home/saraband/Desktop/DEV/my-website/src/pages/index.fr.js")),
@@ -14,6 +15,7 @@ exports.components = {
 }
 
 exports.json = {
+  "chitchat.json": require("/home/saraband/Desktop/DEV/my-website/.cache/json/chitchat.json"),
   "findimo.json": require("/home/saraband/Desktop/DEV/my-website/.cache/json/findimo.json"),
   "index-es.json": require("/home/saraband/Desktop/DEV/my-website/.cache/json/index-es.json"),
   "index-fr.json": require("/home/saraband/Desktop/DEV/my-website/.cache/json/index-fr.json"),

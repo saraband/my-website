@@ -9,6 +9,7 @@ import {
   ProjectFadeTypes
 } from 'Actions/index'
 import ImmoAppReducers from 'AppsReducers/immo-app/index'
+import ChatAppReducers from 'AppsReducers/chat-app/index'
 
 const lang = (state = 'en', action) => {
   switch(action.type) {
@@ -53,5 +54,6 @@ export default combineReducers({
   currentProject,
   currentProjectFade,
   isProjectOpen,
-  immoApp: ImmoAppReducers
+  immoApp: ImmoAppReducers,
+  chatApp: ChatAppReducers
 })

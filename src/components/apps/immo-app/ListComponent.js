@@ -50,13 +50,13 @@ const getSortedList = (list, filter) => {
 
   switch(filter) {
     case 'price':
-      return list.sort((a, b) => a.price - b.price)
+      return [...list].sort((a, b) => a.price - b.price)
     case 'price_desc':
-      return list.sort((a, b) => b.price - a.price)
+      return [...list].sort((a, b) => b.price - a.price)
     case 'area':
-      return list.sort((a, b) => a.area - b.area)
+      return [...list].sort((a, b) => a.area - b.area)
     case 'area_desc':
-      return list.sort((a, b) => b.area - a.area)
+      return [...list].sort((a, b) => b.area - a.area)
     default:
       return list
   }

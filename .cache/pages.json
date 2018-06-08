@@ -1,5 +1,11 @@
 [
     {
+        "componentChunkName": "component---src-pages-chitchat-index-js",
+        "layout": null,
+        "jsonName": "chitchat.json",
+        "path": "/chitchat/"
+    },
+    {
         "componentChunkName": "component---src-pages-findimo-index-js",
         "layout": null,
         "jsonName": "findimo.json",
