@@ -1,8 +1,8 @@
 {
   "assetsByChunkName": {
     "component---src-pages-chitchat-index-js": [
-      "component---src-pages-chitchat-index-js-9b9603e49ac6e2fb5764.js",
-      "component---src-pages-chitchat-index-js-9b9603e49ac6e2fb5764.js.map"
+      "component---src-pages-chitchat-index-js-8606d5711f963f6513bd.js",
+      "component---src-pages-chitchat-index-js-8606d5711f963f6513bd.js.map"
     ],
     "component---src-pages-index-js": [
       "component---src-pages-index-js-3479cf7110c6af2fa8a8.js",
@@ -43,9 +43,9 @@
       "path---index-es-a0e39f21c11f6a62c5ab.js.map"
     ],
     "app": [
-      "app-1ff5d9727842db7977a1.js",
+      "app-cdb1ca8a3bbd073a62b4.js",
       "build-js-styles.css",
-      "app-1ff5d9727842db7977a1.js.map",
+      "app-cdb1ca8a3bbd073a62b4.js.map",
       "build-js-styles.css.map"
     ],
     "path---findimo": [

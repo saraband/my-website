@@ -16,15 +16,15 @@ const RoomsListItem = ({
   participants,
   seenBy
 }) => (
-            <div className='rooms-list-item fadeIn'
-            onClick={() => requestRoomData(r.id)} >
-            <img src={lastMessage.user.picture} />
-            <div>
-              <h4><strong>{title}</strong></h4>
-              <p>{lastMessage.content}</p>
-              <p className='small-date'>{timeSince(lastMessage.date)}</p>
-            </div>
-          </div>
+  <div className='rooms-list-item fadeIn'
+    onClick={() => requestRoomData(r.id)} >
+    <img src={lastMessage.user.picture} />
+    <div>
+      <h4><strong>{title}</strong></h4>
+      <p>{lastMessage.content}</p>
+      <p className='small-date'>{timeSince(lastMessage.date)}</p>
+    </div>
+  </div>
 )
 
 class RoomsListComponent extends React.PureComponent {
