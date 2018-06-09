@@ -64,7 +64,7 @@ class CreateRoomPanel extends React.Component {
     const { participants } = this.state
     const { usersList } = this.props
 
-    return usersList.filter(u => !participants.includes(u)).map(u => <strong onClick={() => this.addParticipant(u)} >{u.username}, </strong>)
+    return usersList.filter(u => !participants.includes(u)).map(u => <strong onClick={() => this.addParticipant(u)} >{u.name}, </strong>)
   }
 
   render() {
@@ -80,14 +80,14 @@ class CreateRoomPanel extends React.Component {
     } = this.state
 
     return(
-      <div id='create-room-panel-container'>
-        <div id='create-room-panel'>
+      <div id={s.container}>
+        <div id={s.panel}>
           <img src={close} onClick={hideCreateRoomPanel} />
           <form onSubmit={this.handleSubmit} >
             <input type='text' placeholder='Title' 
               name='title' value={title}
               onChange={this.handleChange} /><br />
-            <p>Participants: {participants.map(p => p.username + ', ')}</p>
+            <p>Participants: {participants.map(p => p.name + ', ')}</p>
             <input type='text' placeholder='Message'
               name='message' value={message}
               onChange={this.handleChange} /><br />

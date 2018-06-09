@@ -1,39 +1,20 @@
-let counter = 0
-
 export default {
-  rooms: [
+  rooms: [],
+  users: [
     {
-      id: counter++,
-      title: `Birthday party`,
-      messages: [
-        {
-          id: counter++,
-          date: Date.now(),
-          content: `Hey guys what's up, how is it going ?`,
-          user: {
-            username: 'Jon',
-            picture: require('./img/jon.jpg')
-          }
-        },
-        {
-          id: counter++,
-          date: Date.now() - 1000,
-          content: `Hey guys what's up, how is it going ?`,
-          user: {
-            username: 'Jon',
-            picture: require('./img/sara.jpg')
-          }
-        },
-        {
-          id: counter++,
-          date: Date.now() - 2000,
-          content: `Hey guys what's up, how is it going ?`,
-          user: {
-            username: 'Jon',
-            picture: require('./img/sara.jpg')
-          }
-        }
-      ]
+      id: 0,
+      name: 'Sara',
+      picture: require('./img/sara.jpg')
+    },
+    {
+      id: 1,
+      name: 'Jon',
+      picture: require('./img/jon.jpg')
+    },
+    {
+      id: 2,
+      name: 'Sofia',
+      picture: require('./img/sofia.jpg')
     }
   ]
 }

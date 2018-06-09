@@ -1,4 +1,4 @@
-#create-room-panel-container {
+#container {
   position: fixed;
   z-index: 100;
   width: 100vw;
@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
 
-  #create-room-panel {
+  #panel {
     width: 600px;
     height: 400px;
     background-color: white;

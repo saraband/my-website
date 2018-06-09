@@ -22,7 +22,7 @@ const isCreateRoomPanelOpen = (state = false, action) => {
 }
 
 const currentUserInitialState = {
-  id: '5b0a6d18ab1ebd1740587622',
+  id: 0,
   username: 'Sara'
 }
 

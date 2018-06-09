@@ -24,6 +24,8 @@ export const CREATE_ROOM_PENDING = 'CREATE_ROOM_PENDING'
 export const CREATE_ROOM_SUCCESS = 'CREATE_ROOM_SUCCESS'
 export const CREATE_ROOM_FAILED = 'CREATE_ROOM_FAILED'
 
+let counter = 0
+
 export const setRoomsListFilter = (filter) => {
   return {
     type: SET_ROOMS_LIST_FILTER,
@@ -35,6 +37,7 @@ export const requestUsersList = (id) => {
   return (dispatch) => {
     dispatch({type: REQUEST_USERS_LIST_PENDING})
 
+    dispatch(receiveUsersList(DB.users.filter(u => u.id === 0 ? false : true)))
     //socket.emit('REQUEST_USERS_LIST', id)
   }
 }
@@ -50,8 +53,10 @@ export const requestRoomsList = (id) => {
   return (dispatch) => {
     dispatch({type: REQUEST_ROOMS_LIST_PENDING})
 
+    const list = DB.rooms
+
     setTimeout(() => {
-      dispatch(receiveUsersList(list))
+      dispatch(receiveRoomsList(list))
     }, 500)
   }
 }
@@ -115,6 +120,23 @@ export const createRoom = (user, title, message, participants) => {
   return (dispatch) => {
     dispatch({type: CREATE_ROOM_PENDING})
 
+    const newMessage = {
+      id: counter++,
+      content: message,
+      user,
+      date: Date.now()
+    }
+
+    DB.rooms.push({
+      id: counter++,
+      title,
+      lastMessage: newMessage,
+      messages: [newMessage],
+      participants,
+      seenBy: [user]
+    })
+
+    dispatch(receiveRoomsList(DB.rooms))
     /*socket.emit('CREATE_ROOM', JSON.stringify({
       user,
       title,
