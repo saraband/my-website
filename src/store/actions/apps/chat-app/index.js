@@ -24,7 +24,7 @@ export const CREATE_ROOM_PENDING = 'CREATE_ROOM_PENDING'
 export const CREATE_ROOM_SUCCESS = 'CREATE_ROOM_SUCCESS'
 export const CREATE_ROOM_FAILED = 'CREATE_ROOM_FAILED'
 
-let counter = 0
+let counter = 2
 
 export const setRoomsListFilter = (filter) => {
   return {
@@ -72,34 +72,30 @@ export const requestRoomData = (id) => {
   return (dispatch) => {
     dispatch({type: REQUEST_ROOM_DATA_PENDING})
 
-    /*fetch('/roomData', {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      method: 'post',
-      credentials: 'same-origin',
-      body: JSON.stringify({
-        id
-      })
+    dispatch({
+      type: REQUEST_ROOM_DATA_SUCCESS,
+      roomData: DB.rooms.find(r =>  r.id === id)
     })
-    .then(data => data.json(),
-      error => {
-        console.error(error)
-        dispatch({type: REQUEST_ROOM_DATA_FAILED})
-    })
-    .then(roomData => {
-      dispatch({
-        type: REQUEST_ROOM_DATA_SUCCESS,
-        roomData
-      })
-    })*/
   }
 }
 
 export const sendMessage = (user, roomId, message) => {
   return (dispatch) => {
     dispatch({type: SEND_MESSAGE_PENDING})
+
+    let room = DB.rooms.find(r => r.id === roomId)
+
+    const newMessage = {
+      id: counter++,
+      content: message,
+      user,
+      date: Date.now()
+    }
+
+    room.messages.push(newMessage)
+    room.lastMessage = newMessage
+
+    dispatch(receiveMessage(newMessage, roomId))
 
     /*socket.emit('SEND_MESSAGE', JSON.stringify({
       user,
@@ -109,10 +105,11 @@ export const sendMessage = (user, roomId, message) => {
   }
 }
 
-export const receiveMessage = (message) => {
+export const receiveMessage = (message, roomId) => {
   return {
     type: SEND_MESSAGE_SUCCESS,
-    message
+    message,
+    roomId
   }
 }
 
@@ -137,6 +134,7 @@ export const createRoom = (user, title, message, participants) => {
     })
 
     dispatch(receiveRoomsList(DB.rooms))
+    dispatch(requestRoomData(counter - 1))
     /*socket.emit('CREATE_ROOM', JSON.stringify({
       user,
       title,

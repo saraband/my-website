@@ -64,7 +64,8 @@ class CreateRoomPanel extends React.Component {
     const { participants } = this.state
     const { usersList } = this.props
 
-    return usersList.filter(u => !participants.includes(u)).map(u => <strong onClick={() => this.addParticipant(u)} >{u.name}, </strong>)
+    return usersList.filter(u => !participants.includes(u))
+      .map((u, i) => <strong key={i} onClick={() => this.addParticipant(u)} >{u.name}, </strong>)
   }
 
   render() {

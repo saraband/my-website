@@ -42,7 +42,7 @@ class InputComponent extends React.PureComponent {
     || !message.length)
       return
 
-    sendMessage(currentUser, currentRoom._id, message)
+    sendMessage(currentUser, currentRoom.id, message)
     this.setState({message: ''})
   }
 
@@ -52,11 +52,13 @@ class InputComponent extends React.PureComponent {
 
   render() {
     const { message } = this.state
+    const { currentRoom } = this.props
 
     return(
       <div id='input-container'>
         <form>
           <textarea type='text' value={message}
+            disabled={currentRoom.id === undefined}
             name='message'
             ref={this.inputRef}
             onChange={this.handleChange}

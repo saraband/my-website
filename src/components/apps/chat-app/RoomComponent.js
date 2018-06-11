@@ -19,9 +19,9 @@ class RoomComponent extends React.PureComponent {
       return <p>No current room</p>
 
     return(
-      <div id='room-container'>
-        <p><Seen className='test' /></p>
-        {messages.map(m => <p>{m.user.username} said: {m.content}</p>)}
+      <div id={s.container}>
+        <p><Seen id={s.seen} /></p>
+        {messages.map((m, i)=> <p key={i}>{m.user.name} said: {m.content}</p>)}
       </div>
     )
   }

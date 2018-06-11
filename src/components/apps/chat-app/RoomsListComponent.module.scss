@@ -1,11 +1,11 @@
 @import 'colors';
 @import 'utils';
 
-#rooms-list-container {
+#container {
   flex-grow: 1;
   background-color: #f3f3f3;
 
-  .rooms-list-item {
+  .item {
     background-color: $light_blue;
     display: flex;
     flex-direction: row;

@@ -14,10 +14,11 @@ const RoomsListItem = ({
   lastMessage,
   messages,
   participants,
-  seenBy
+  seenBy,
+  requestRoomData
 }) => (
-  <div className='rooms-list-item fadeIn'
-    onClick={() => requestRoomData(r.id)} >
+  <div className={s.item}
+    onClick={() => requestRoomData(id)} >
     <img src={lastMessage.user.picture} />
     <div>
       <h4><strong>{title}</strong></h4>
@@ -60,8 +61,8 @@ class RoomsListComponent extends React.PureComponent {
     }
     
     return(
-      <div id='rooms-list-container'>
-        {roomsList.map((r, i) => <RoomsListItem {...r} />)}
+      <div id={s.container}>
+        {roomsList.map((r, i) => <RoomsListItem requestRoomData={requestRoomData} {...r} key={i} />)}
       </div>
     )
   }

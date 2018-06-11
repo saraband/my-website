@@ -23,7 +23,8 @@ const isCreateRoomPanelOpen = (state = false, action) => {
 
 const currentUserInitialState = {
   id: 0,
-  username: 'Sara'
+  name: 'Sara',
+  picture: require('AppsActions/chat-app/img/sara.jpg')
 }
 
 // I've put currentUser in the state as I might implement a login feature later on
@@ -86,6 +87,10 @@ const currentRoom = (state = {}, action) => {
       // In case no current room is selected
       // No need to update anything
       if(state.messages === undefined)
+        return state
+
+      // If the current room is not concerned by the message
+      if(action.roomId !== state.id)
         return state
 
       // Update messages in current room
