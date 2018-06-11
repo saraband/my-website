@@ -24,7 +24,7 @@ export const CREATE_ROOM_PENDING = 'CREATE_ROOM_PENDING'
 export const CREATE_ROOM_SUCCESS = 'CREATE_ROOM_SUCCESS'
 export const CREATE_ROOM_FAILED = 'CREATE_ROOM_FAILED'
 
-let counter = 2
+let counter = 20
 
 export const setRoomsListFilter = (filter) => {
   return {
