@@ -9,7 +9,7 @@ export default class SearchRoomsListComponent extends React.PureComponent {
 
   render() {
     return(
-      <div id='search-rooms-container'>
+      <div id={s.container}>
         <input type='text' placeholder='Search conversations..' />
       </div>
     )

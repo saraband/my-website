@@ -55,16 +55,14 @@ class InputComponent extends React.PureComponent {
     const { currentRoom } = this.props
 
     return(
-      <div id='input-container'>
-        <form>
-          <textarea type='text' value={message}
-            disabled={currentRoom.id === undefined}
-            name='message'
-            ref={this.inputRef}
-            onChange={this.handleChange}
-            onKeyPress={this.handleKeyPress}
-            placeholder='Type your message here' />
-        </form>
+      <div id={s.container}>
+        <textarea type='text' value={message}
+          disabled={currentRoom.id === undefined}
+          name='message'
+          ref={this.inputRef}
+          onChange={this.handleChange}
+          onKeyPress={this.handleKeyPress}
+          placeholder='Type your message here' />
       </div> 
     )
   }

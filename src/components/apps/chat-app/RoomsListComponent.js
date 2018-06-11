@@ -23,7 +23,7 @@ const RoomsListItem = ({
     <div>
       <h4><strong>{title}</strong></h4>
       <p>{lastMessage.content}</p>
-      <p className='small-date'>{timeSince(lastMessage.date)}</p>
+      <p className={s.smallDate}>{timeSince(lastMessage.date)}</p>
     </div>
   </div>
 )

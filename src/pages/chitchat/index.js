@@ -44,9 +44,9 @@ class App extends React.Component {
         <BannerComponent />
         <div id={s.body}>
           <div id={s.left}>
-            <SearchRoomsListComponent />
-            <RoomsListComponent />
             <CreateRoomButton />
+            <RoomsListComponent />
+            <SearchRoomsListComponent />
           </div>
           <div id={s.right}>
             <div id={s.conversation}>

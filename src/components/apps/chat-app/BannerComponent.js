@@ -1,5 +1,6 @@
 import React from 'react'
 import s from './BannerComponent.module.scss'
+import Logo from './logo.svg'
 
 export default class BannerComponent extends React.Component {
   constructor(props) {
@@ -9,7 +10,7 @@ export default class BannerComponent extends React.Component {
   render() {
     return(
       <div id={s.container}>
-        <h1>Chit chat</h1>
+        <Logo id={s.logo} />
         <p>2 Unread messages</p>
       </div>
     )
