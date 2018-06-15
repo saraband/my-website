@@ -3,20 +3,24 @@ import { connect } from 'react-redux'
 import { requestList } from 'AppsActions/immo-app/index'
 import s from './InputComponent.module.scss'
 import ImmoSelect from './ImmoSelect'
+import AutoCompletePlace from './AutoCompletePlace'
+
+const formInitialState = {
+  priceMin: '',
+  priceMax: '',
+  place: '',
+  areaMin: '',
+  areaMax: '',
+  numRoomsMin: '',
+  type: 'all',
+  actionType: 'all'
+}
 
 class InputComponent extends React.Component {
   constructor(props) {
     super(props)
 
-    this.state = {
-      priceMin: '',
-      priceMax: '',
-      place: '',
-      areaMin: '',
-      numRoomsMin: '',
-      type: 'all',
-      actionType: 'all'
-    }
+    this.state = {...formInitialState}
   }
 
   handleChange = (event) => {
@@ -49,6 +53,14 @@ class InputComponent extends React.Component {
     this.props.requestList({...this.state});
   }
 
+  handleSelectPlace = (place) => {
+    this.setState({place: place})
+  }
+
+  reinitializeForm = () => {
+    this.setState({...formInitialState})
+  }
+
   handleSubmit = (event) => {
     event.preventDefault()
 
@@ -72,7 +84,9 @@ class InputComponent extends React.Component {
       areaMin,
       numRoomsMin,
       type,
-      actionType
+      actionType,
+      place,
+      isPlaceInputFocus
     } = this.state
 
     const { isRetrievingData } = this.props
@@ -89,13 +103,20 @@ class InputComponent extends React.Component {
           <ImmoSelect onChange={this.handleChange}
             name='type' value={type}>
             <p value='all'>Tout types de bien</p>
-            <p value='houses'>Maison</p>
+            <p value='house'>Maison</p>
             <p value='appartment'>Appartement</p>
           </ImmoSelect>
           <br />
           <br />
-          <input type='text' placeholder='Place, city, ZIP code'
-            name='place' onChange={this.handleChange} />
+          <div id={s.placeInput}>
+            <input type='text' placeholder='Place, city, ZIP code'
+              name='place' onChange={this.handleChange}
+              value={place}
+              autoComplete='off'
+              onFocus={() => setTimeout(() => this.setState({isPlaceInputFocus: true}), 100)}
+              onBlur={() => setTimeout(() => this.setState({isPlaceInputFocus: false}), 100)} />
+            {isPlaceInputFocus ? <AutoCompletePlace filter={place} onSelect={this.handleSelectPlace}/> : null}
+          </div>
           <br />
           <div className={s.flexRow}>
             <input type='text' placeholder='Price (Min)'
@@ -113,7 +134,10 @@ class InputComponent extends React.Component {
           <input type='text' placeholder='Number of room (Min)'
             name='numRoomsMin' onChange={this.handleChange} 
             value={numRoomsMin} />
-          <button disabled={isRetrievingData} >Search</button>
+          <div id={s.searchButton}>
+            <a onClick={this.reinitializeForm}>Reinitialize form</a>
+            <button disabled={isRetrievingData} >Search</button>
+          </div>
         </form>
       </div>
     )

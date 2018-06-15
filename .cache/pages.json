@@ -6,6 +6,12 @@
         "path": "/chitchat/"
     },
     {
+        "componentChunkName": "component---src-pages-deliver-index-js",
+        "layout": null,
+        "jsonName": "deliver.json",
+        "path": "/deliver/"
+    },
+    {
         "componentChunkName": "component---src-pages-findimo-index-js",
         "layout": null,
         "jsonName": "findimo.json",

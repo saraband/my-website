@@ -612,12 +612,12 @@
       },
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2018-06-11T15:32:17.257Z",
+      "buildTime": "2018-06-15T09:43:34.902Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "460bddcd124754b28cbc16e5d29cc6a8",
+        "contentDigest": "559c47d53b00a3cf2819437a4507bc91",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -638,7 +638,28 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "6d604a4edea5fd02c0197cb2ac5a6708",
+        "contentDigest": "14c2ebe164636c0c18d86d58765ab89d",
+        "description": "Plugin component-page-creator",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /deliver/": {
+      "layout": null,
+      "jsonName": "deliver.json",
+      "internalComponentName": "ComponentDeliver",
+      "path": "/deliver/",
+      "component": "/home/saraband/Desktop/DEV/my-website/src/pages/deliver/index.js",
+      "componentChunkName": "component---src-pages-deliver-index-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin component-page-creator",
+      "pluginCreatorId": "Plugin component-page-creator",
+      "componentPath": "/home/saraband/Desktop/DEV/my-website/src/pages/deliver/index.js",
+      "id": "SitePage /deliver/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "c7e3406128ae262354e4cdb06192feb0",
         "description": "Plugin component-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -659,7 +680,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "1ae82b343c66b81f234bfd778c97e6a8",
+        "contentDigest": "54a2ed848b8c07803db0b33fe695be3c",
         "description": "Plugin component-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -680,7 +701,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "7e6699645df097c037fc268ff33fd88b",
+        "contentDigest": "0d8584a7e752d3c7ebe609aeb365e46c",
         "description": "Plugin component-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -701,7 +722,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "47fdf7f99b77e8c0992d7eaa4f70ad74",
+        "contentDigest": "e1d5a5f5b092108f5ecdb849b8bda4fc",
         "description": "Plugin component-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -722,7 +743,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "6fccd15f370ed40ddebdc31b4ff1cc95",
+        "contentDigest": "f9ba5aa97a37749fd8b9a4011ddef7bd",
         "description": "Plugin component-page-creator",
         "owner": "internal-data-bridge"
       }

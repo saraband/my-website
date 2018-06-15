@@ -1,0 +1,23 @@
+@import 'colors';
+@import 'utils';
+
+#container {
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  z-index: 42;
+  border: 1px solid $blue;
+  padding: 10px;
+  animation: fadeIn forwards ease-in-out 0.1s;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
+  p {
+    padding: 5px;
+    color: $blue;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

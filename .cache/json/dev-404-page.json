@@ -1,1 +1,1 @@
-{"data":{"allSitePage":{"totalCount":5,"edges":[{"node":{"path":"/chitchat/"}},{"node":{"path":"/findimo/"}},{"node":{"path":"/index.es/"}},{"node":{"path":"/index.fr/"}},{"node":{"path":"/"}}]}},"pathContext":{}}
+{"data":{"allSitePage":{"totalCount":6,"edges":[{"node":{"path":"/chitchat/"}},{"node":{"path":"/deliver/"}},{"node":{"path":"/findimo/"}},{"node":{"path":"/index.es/"}},{"node":{"path":"/index.fr/"}},{"node":{"path":"/"}}]}},"pathContext":{}}

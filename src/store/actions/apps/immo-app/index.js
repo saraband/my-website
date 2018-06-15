@@ -14,7 +14,7 @@ export const requestList = (data) => {
   return (dispatch) => {
     dispatch({
       type: LIST_REQUEST,
-      place: data.place
+      data
     })
 
     console.log(data)

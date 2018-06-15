@@ -24,6 +24,7 @@ export default class ImmoSelect extends React.Component {
   }
 
   toggle = () => this.setState({toggle: !this.state.toggle})
+  hide = () => this.setState({toggle: false})
 
   handleSelect = (element) => {
     const {
@@ -56,7 +57,8 @@ export default class ImmoSelect extends React.Component {
     const { toggle } = this.state
 
     return(
-      <div className='immo-app-select' style={this.props.style}>
+      <div tabIndex='0' className='immo-app-select' style={this.props.style}
+        onBlur={this.hide}>
         <DropdownItem text={text} onClick={this.toggle} />
         {toggle ? (<div className='immo-app-select-dropdown'>
           {this.renderElements()}

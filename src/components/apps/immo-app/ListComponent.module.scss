@@ -8,11 +8,26 @@
     justify-content: space-between;
     align-items: center;
 
-    h3 {
-      font-size: 20px;
-      margin-left: 100px;
-      color: $black;
-      font-family: 'Open Sans Light', Arial;
+    #searchTags {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .tag {
+        background-color: $blue;
+        border-radius: 2px;
+        padding: 5px;
+        font-size: 15px;
+        color: white;
+        margin-left: 15px;
+      }
+
+      h3 {
+        font-size: 20px;
+        margin-left: 100px;
+        color: $black;
+        font-family: 'Open Sans Light', Arial;
+      }
     }
   }
 

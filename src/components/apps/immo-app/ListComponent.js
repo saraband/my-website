@@ -11,11 +11,31 @@ class ListComponent extends React.Component {
     super(props)
   }
 
+  renderTags = (data) => {
+    if(data.type === undefined) {
+      console.log('undefined')
+      return null
+    }
+
+    let tags = []
+
+    if(data.place !== '') tags.push(data.place)
+    if(data.numRoomsMin !== '') tags.push(`${data.numRoomsMin} rooms min.`)
+    if(data.priceMin !== '') tags.push(`${data.priceMin} € min.`)
+    if(data.priceMax !== '') tags.push(`${data.priceMax} € max.`)
+    if(data.areaMin !== '') tags.push(`${data.areaMin} m² min.`)
+    if(data.areaMax !== '') tags.push(`${data.areaMax} m² max.`)
+    if(data.type !== 'all') tags.push(data.type.slice(0, 1).toUpperCase() + data.type.slice(1))
+    if(data.actionType !== 'all') tags.push(data.actionType.slice(0, 1).toUpperCase() + data.actionType.slice(1))
+      
+    return tags.map((t, i) => <p key={i} className={s.tag}>{t}</p>)
+  }
+
   render() {
     const {
       isRetrievingData,
       list,
-      lastCitySearched,
+      lastSearchData,
       listFilter,
       setListFilter
     } = this.props
@@ -23,8 +43,10 @@ class ListComponent extends React.Component {
     return(
       <div id={s.container}>
         <div id={s.topContainer} style={{visibility: isRetrievingData ? 'hidden' : 'visible'}}>
-          <h3>{list.length} result{list.length === 1 ? null : 's'} found
-            {lastCitySearched !== '' ? ` in ${lastCitySearched}` : null}.</h3>
+          <div id={s.searchTags}>
+            <h3>{list.length} result{list.length === 1 ? null : 's'} found</h3>
+            {this.renderTags(lastSearchData)}
+          </div>
           <ImmoSelect value={listFilter} style={{width: '250px', marginBottom: 0, marginRight: '100px'}}
             name='listFilter' onChange={(e) => setListFilter(e.target.value)}>
             <p value='no_sort'>Don't sort</p>
@@ -66,7 +88,7 @@ const mapStateToProps = state => {
   return {
     isRetrievingData: state.immoApp.isRetrievingData,
     list: getSortedList(state.immoApp.list, state.immoApp.listFilter),
-    lastCitySearched: state.immoApp.lastCitySearched,
+    lastSearchData: state.immoApp.lastSearchData,
     listFilter: state.immoApp.listFilter
   }
 }

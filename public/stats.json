@@ -8,6 +8,10 @@
       "component---src-pages-index-js-3479cf7110c6af2fa8a8.js",
       "component---src-pages-index-js-3479cf7110c6af2fa8a8.js.map"
     ],
+    "component---src-pages-deliver-index-js": [
+      "component---src-pages-deliver-index-js-913ac3bfae83cfe3c215.js",
+      "component---src-pages-deliver-index-js-913ac3bfae83cfe3c215.js.map"
+    ],
     "component---src-pages-index-es-js": [
       "component---src-pages-index-es-js-170e7bf871791a3aa198.js",
       "component---src-pages-index-es-js-170e7bf871791a3aa198.js.map"
@@ -21,8 +25,8 @@
       "path---index-fr-a0e39f21c11f6a62c5ab.js.map"
     ],
     "component---src-pages-findimo-index-js": [
-      "component---src-pages-findimo-index-js-de3ae2716efc29eb5261.js",
-      "component---src-pages-findimo-index-js-de3ae2716efc29eb5261.js.map"
+      "component---src-pages-findimo-index-js-21ee84ed6789865be915.js",
+      "component---src-pages-findimo-index-js-21ee84ed6789865be915.js.map"
     ],
     "path---index": [
       "path---index-a0e39f21c11f6a62c5ab.js",
@@ -43,14 +47,18 @@
       "path---index-es-a0e39f21c11f6a62c5ab.js.map"
     ],
     "app": [
-      "app-404bb6bcc7bcc7f2dce0.js",
+      "app-7e297d093fe8fdb5b453.js",
       "build-js-styles.css",
-      "app-404bb6bcc7bcc7f2dce0.js.map",
+      "app-7e297d093fe8fdb5b453.js.map",
       "build-js-styles.css.map"
     ],
     "path---findimo": [
       "path---findimo-a0e39f21c11f6a62c5ab.js",
       "path---findimo-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---deliver": [
+      "path---deliver-a0e39f21c11f6a62c5ab.js",
+      "path---deliver-a0e39f21c11f6a62c5ab.js.map"
     ]
   }
 }

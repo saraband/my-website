@@ -64,10 +64,10 @@ const list = (state = [], action) => {
   }
 }
 
-const lastCitySearched = (state = 'all', action) => {
+const lastSearchData = (state = {}, action) => {
   switch(action.type) {
     case LIST_REQUEST:
-      return action.place
+      return action.data
     default:
       return state
   }
@@ -88,6 +88,6 @@ export default combineReducers({
   isRetrievingPropertyData,
   currentPropertyData,
   isPropertyPanelOpen,
-  lastCitySearched,
+  lastSearchData,
   listFilter
 })
