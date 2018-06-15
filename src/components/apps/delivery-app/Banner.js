@@ -9,7 +9,7 @@ export default class Banner extends React.Component {
   render() {
     return(
       <div id={s.container}>
-        Banner
+        <h1>DELIVERY APP</h1>
       </div>
     )
   }

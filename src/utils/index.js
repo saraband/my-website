@@ -2,6 +2,10 @@ export const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
+export const getRandomArrayElement = (array) => {
+  return array[getRandomInt(0, array.length - 1)]
+}
+
 const intervals = [
   {label: 'year',     seconds: 31536000},
   {label: 'month',    seconds: 2592000},

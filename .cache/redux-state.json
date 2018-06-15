@@ -1,23 +1,13 @@
 {
   "nodes": {
     "SitePage /dev-404-page/": {
-      "layout": null,
-      "jsonName": "dev-404-page.json",
-      "internalComponentName": "ComponentDev404Page",
       "path": "/dev-404-page/",
-      "component": "/home/saraband/Desktop/DEV/my-website/.cache/dev-404-page.js",
-      "componentChunkName": "component---cache-dev-404-page-js",
-      "context": {},
-      "pluginCreator___NODE": "Plugin dev-404-page",
-      "pluginCreatorId": "Plugin dev-404-page",
-      "componentPath": "/home/saraband/Desktop/DEV/my-website/.cache/dev-404-page.js",
       "id": "SitePage /dev-404-page/",
       "parent": "SOURCE",
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "0541ee4a1c5746846acf07cbb341dab9",
-        "description": "Plugin dev-404-page",
+        "contentDigest": "f91d29e10ba680b413138cf9ed86e655",
         "owner": "internal-data-bridge"
       }
     },
@@ -620,16 +610,14 @@
       "siteMetadata": {
         "title": "Yassine Hermellin"
       },
-      "port": "8000",
-      "host": "localhost",
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2018-06-15T09:45:39.576Z",
+      "buildTime": "2018-06-15T10:59:15.138Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "85b4e26534999306eb455f01fa5ebcd7",
+        "contentDigest": "f2fb04b367803b114caf26cbda54246b",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -650,7 +638,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "568150de0a49eed16e4e3b49555e7514",
+        "contentDigest": "a48a19ce08ac56310e78e211dd7acea2",
         "description": "Plugin component-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -671,7 +659,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "8fef7a2b36a770ff1f2be14fb273feac",
+        "contentDigest": "7af7206d0d1fecdb6c7a8dd732241d94",
         "description": "Plugin component-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -692,7 +680,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "f4882bbc31a553b54b306ef9772387c3",
+        "contentDigest": "60230f79aa98d355440bd4eaab85425d",
         "description": "Plugin component-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -713,7 +701,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "c70cdf537d6eb73b8aa3bc1c6e7a701e",
+        "contentDigest": "462b10cd6a7a25d460f04d2e05f760ce",
         "description": "Plugin component-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -734,7 +722,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "0775d215f71a8165eeeba97232458d3e",
+        "contentDigest": "7ac66710e8c1b7a5e8c0de9dedf43a7c",
         "description": "Plugin component-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -755,7 +743,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "bf57033c87c3db78ccba3cfb1e4ee3b1",
+        "contentDigest": "9761e592cdcad03bf889257cb7d9b247",
         "description": "Plugin component-page-creator",
         "owner": "internal-data-bridge"
       }

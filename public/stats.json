@@ -9,8 +9,8 @@
       "component---src-pages-index-js-3479cf7110c6af2fa8a8.js.map"
     ],
     "component---src-pages-deliver-index-js": [
-      "component---src-pages-deliver-index-js-913ac3bfae83cfe3c215.js",
-      "component---src-pages-deliver-index-js-913ac3bfae83cfe3c215.js.map"
+      "component---src-pages-deliver-index-js-f35cc9d31d2f3b5e7127.js",
+      "component---src-pages-deliver-index-js-f35cc9d31d2f3b5e7127.js.map"
     ],
     "component---src-pages-index-es-js": [
       "component---src-pages-index-es-js-170e7bf871791a3aa198.js",
@@ -33,9 +33,9 @@
       "path---index-a0e39f21c11f6a62c5ab.js.map"
     ],
     "commons": [
-      "commons-1e2f13e4398259228241.js",
+      "commons-d787913c96f1e056ce87.js",
       "build-js-styles.css",
-      "commons-1e2f13e4398259228241.js.map",
+      "commons-d787913c96f1e056ce87.js.map",
       "build-js-styles.css.map"
     ],
     "path---chitchat": [
@@ -47,9 +47,9 @@
       "path---index-es-a0e39f21c11f6a62c5ab.js.map"
     ],
     "app": [
-      "app-7e297d093fe8fdb5b453.js",
+      "app-4141472cbbac077bf917.js",
       "build-js-styles.css",
-      "app-7e297d093fe8fdb5b453.js.map",
+      "app-4141472cbbac077bf917.js.map",
       "build-js-styles.css.map"
     ],
     "path---findimo": [

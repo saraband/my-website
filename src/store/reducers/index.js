@@ -4,6 +4,7 @@ import {
 } from 'Actions/index'
 import ImmoAppReducers from 'AppsReducers/immo-app/index'
 import ChatAppReducers from 'AppsReducers/chat-app/index'
+import DeliveryAppReducers from 'AppsReducers/delivery-app/index'
 
 const lang = (state = 'en', action) => {
   switch(action.type) {
@@ -17,5 +18,6 @@ const lang = (state = 'en', action) => {
 export default combineReducers({
   lang,
   immoApp: ImmoAppReducers,
-  chatApp: ChatAppReducers
+  chatApp: ChatAppReducers,
+  deliveryApp: DeliveryAppReducers
 })
