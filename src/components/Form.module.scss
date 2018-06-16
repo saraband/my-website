@@ -1,0 +1,41 @@
+@import 'colors';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  input, textarea, button {
+    transition: 0.1s all linear;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    background-color: firebrick;
+    color: white;
+    resize: none;
+    color: white;
+
+    &:focus + .border {
+      width: 100%;
+    }
+
+    &:focus {
+      background-color: tomato;
+    }
+  }
+
+  button {
+    cursor: pointer;
+
+    &:hover {
+      background-color: tomato;
+    }
+  }
+
+  .border {
+    transition: all 0.2s ease-in-out;
+    background-color: bisque;
+    width: 0%;
+    height: 3px;
+  }
+}

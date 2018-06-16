@@ -1,0 +1,65 @@
+@import 'utils';
+@import 'colors';
+
+$width_item: 350px;
+$height_item: 400px;
+
+#list-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-right: 250px;
+
+  .list-item {
+    border: 1px solid $light;
+    box-shadow: 0px 0px 5px $light;
+    width: $width_item;
+    height: $height_item;
+    margin: 15px;
+    display: block;
+    cursor: pointer;
+
+    .list-item-image {
+      width: $width_item;
+      height: 200px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        position: absolute;
+      }
+
+      img:first-child {
+        animation: 1s rotation infinite linear;
+      }
+    }
+
+    .list-item-description {
+      color: $dark;
+      padding: 10px;
+
+      h3 {
+        margin-bottom: 10px;
+      }
+
+      .list-item-date {
+        float: right;
+      }
+    }
+  }
+}
+
+.placeHolder {
+  background: $light;
+  background: linear-gradient(to right, $light 0px, #D1D1BD 50px, $light 200px);
+  animation: 1s shimmer linear infinite;
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s forwards linear;
+}

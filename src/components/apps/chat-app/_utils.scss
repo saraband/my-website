@@ -1,0 +1,33 @@
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  } to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes shimmer {
+    from {
+        background-position: -200px 0;
+    } to {
+        background-position: 800px 0;
+    }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    margin-left: -200px;
+  } to {
+    opacity: 1;
+    margin-left: 0;
+  }
+}
