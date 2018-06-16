@@ -46,7 +46,6 @@ class InputComponent extends React.Component {
       case 'type':
       case 'actionType':
       case 'place':
-
         this.setState({[name]: value})
         return
 
@@ -105,9 +104,9 @@ class InputComponent extends React.Component {
             name='actionType'
             value={actionType}
             >
-            <p value='all'>Achat & location</p>
-            <p value='buy'>Achat</p>
-            <p value='rent'>Location</p>
+            <p value='all'>Rent & buy</p>
+            <p value='buy'>Buy</p>
+            <p value='rent'>Rent</p>
           </ImmoSelect>
           <ImmoSelect
             onChange={this.handleChange}
@@ -115,14 +114,14 @@ class InputComponent extends React.Component {
             value={type}
             renderIcon={() => <HouseSvg style={{width: '20px', paddingRight: '10px'}}/>}
             >
-            <p value='all'>Tout types de bien</p>
-            <p value='house'>Maison</p>
-            <p value='appartment'>Appartement</p>
+            <p value='all'>All type of goods</p>
+            <p value='house'>Houses</p>
+            <p value='appartment'>Appartments</p>
           </ImmoSelect>
           <br />
           <br />
           <div id={s.placeInput}>
-            <input type='text' placeholder='Place, city, ZIP code'
+            <input type='text' placeholder='Location, city'
               name='place' onChange={this.handleChange}
               value={place}
               autoComplete='off'

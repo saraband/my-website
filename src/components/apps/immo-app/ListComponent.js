@@ -6,6 +6,8 @@ import ListItem from './ListItem'
 import ImmoSelect from './ImmoSelect'
 import s from './ListComponent.module.scss'
 import SortSvg from './sort.svg'
+import PropertyItemPlaceHolder from './PropertyItemPlaceHolder'
+import LoadingSvg from './loading.svg'
 
 class ListComponent extends React.Component {
   constructor(props) {
@@ -41,6 +43,20 @@ class ListComponent extends React.Component {
       setListFilter
     } = this.props
 
+    /*if(isRetrievingData) {
+      return(
+        <div id={s.container}>
+          <div id={s.list}>
+            <PropertyItemPlaceHolder />
+            <PropertyItemPlaceHolder />
+            <PropertyItemPlaceHolder />
+            <PropertyItemPlaceHolder />
+            <PropertyItemPlaceHolder />
+          </div>
+        </div>
+      )
+    }*/
+
     return(
       <div id={s.container}>
         <div id={s.topContainer} style={{visibility: isRetrievingData ? 'hidden' : 'visible'}}>
@@ -62,6 +78,7 @@ class ListComponent extends React.Component {
           </ImmoSelect>
         </div>
         <div id={s.list} style={{opacity: isRetrievingData ? 0.5 : 1}}>
+          <LoadingSvg id={s.loadingList} style={{display: isRetrievingData ? 'block' : 'none'}}/>
           {list.map(item => <ListItem key={item.id} {...item} />)}
         </div>
       </div>

@@ -1,4 +1,5 @@
 @import 'colors';
+@import 'utils';
 
 #container {
 
@@ -36,5 +37,13 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: 50px;
+
+    #loadingList {
+      position: absolute;
+      z-index: 60;
+      width: 70px;
+      animation: rotation infinite linear 1s;
+      margin-top: 50px;
+    }
   }
 }

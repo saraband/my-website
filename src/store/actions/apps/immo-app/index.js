@@ -17,8 +17,6 @@ export const requestList = (data) => {
       data
     })
 
-    console.log(data)
-
     const list = DB.filter(p => {
 
       // PLACE
@@ -68,7 +66,7 @@ export const requestList = (data) => {
 
     setTimeout(() => {
       dispatch({type: LIST_REQUEST_SUCCESS, list})
-    }, 300)
+    }, 500)
   }
 }
 
