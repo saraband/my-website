@@ -121,7 +121,7 @@ class InputComponent extends React.Component {
           <br />
           <br />
           <div id={s.placeInput}>
-            <input type='text' placeholder='Location, city'
+            <input type='search' placeholder='Location, city'
               name='place' onChange={this.handleChange}
               value={place}
               autoComplete='off'

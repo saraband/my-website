@@ -34,13 +34,13 @@ const isRetrievingData = (state = false, action) => {
   }
 }
 
-const isRetrievingPropertyData = (state = false, action) => {
+const isRetrievingPropertyData = (state = -1, action) => {
   switch(action.type) {
     case PROPERTY_DATA_REQUEST:
-      return true
+      return action.id
     case PROPERTY_DATA_SUCCESS:
     case PROPERTY_DATA_FAILED:
-      return false
+      return -1
     default:
       return state;
   }

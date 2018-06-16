@@ -77,8 +77,8 @@ class ListComponent extends React.Component {
             <p value='area_desc'>Sort by area (Desc)</p>
           </ImmoSelect>
         </div>
-        <div id={s.list} style={{opacity: isRetrievingData ? 0.5 : 1}}>
-          <LoadingSvg id={s.loadingList} style={{display: isRetrievingData ? 'block' : 'none'}}/>
+        <div id={s.list}>
+          {isRetrievingData ? <div id={s.listLoadingOverlay}><LoadingSvg id={s.loadingSvg} /></div> : null}
           {list.map(item => <ListItem key={item.id} {...item} />)}
         </div>
       </div>
