@@ -1,7 +1,7 @@
 @import 'colors';
 @import 'utils';
 
-.immo-app-select {
+.container {
   border: 1px solid $blue;
   font-size: 15px;
   font-family: Arial;
@@ -11,22 +11,21 @@
   margin-bottom: 10px;
   margin-top: 10px;
   color: $blue;
+  border-radius: 2px;
 
-  .immo-app-dropdown-item {
+  .dropdownItem {
     background-color: white;
     padding: 10px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
 
     &:hover {
-      background-color: $blue;
-      color: white;
+      background-color: #f1f1f1;
     }
   }
 
-  .immo-app-select-dropdown {
+  .dropdown {
     z-index: 100;
     width: 100%;
     top: 100%;;

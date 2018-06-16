@@ -7,6 +7,7 @@ import {
   requestPropertyData,
   SHOW_PROPERTY_PANEL
 } from 'AppsActions/immo-app/index'
+import LocationSvg from './location.svg'
 
 const shortDescription = (str) => str.length < 100 ? str : `${str.substr(0, 95)}...`
 
@@ -49,7 +50,7 @@ class ListItem extends React.Component {
           <h3>{title}</h3>
           <h5><span>{prettyPrice(price)} €</span><span>{area} m²</span></h5>
           <p>{shortDescription(description)}</p>
-          <p><span>{place}</span><span>{timeSince(date*1000)}</span></p>
+          <p><span className={s.vAlign}><LocationSvg className={s.locationSvg} />{place}</span><span>{timeSince(date*1000)}</span></p>
         </div>
       </div>
     )

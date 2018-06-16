@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import s from './BodyComponent.module.scss'
 import { requestRestaurantsList } from 'AppsActions/delivery-app/index'
 import RestaurantItem from './RestaurantItem'
+import RestaurantComponent from './RestaurantComponent'
 
 class BodyComponent extends React.Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class BodyComponent extends React.Component {
     if(isShowingRestaurantData) {
       return(
         <div id={s.container}>
-          {restaurantData.name}
+          <RestaurantComponent />
         </div>
       )
     }

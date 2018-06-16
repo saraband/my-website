@@ -5,6 +5,7 @@ import Image from './Image'
 import ListItem from './ListItem'
 import ImmoSelect from './ImmoSelect'
 import s from './ListComponent.module.scss'
+import SortSvg from './sort.svg'
 
 class ListComponent extends React.Component {
   constructor(props) {
@@ -47,8 +48,12 @@ class ListComponent extends React.Component {
             <h3>{list.length} result{list.length === 1 ? null : 's'} found</h3>
             {this.renderTags(lastSearchData)}
           </div>
-          <ImmoSelect value={listFilter} style={{width: '250px', marginBottom: 0, marginRight: '100px'}}
-            name='listFilter' onChange={(e) => setListFilter(e.target.value)}>
+          <ImmoSelect
+            value={listFilter}
+            style={{width: '250px', marginBottom: 0, marginRight: '100px'}}
+            name='listFilter' onChange={(e) => setListFilter(e.target.value)}
+            renderIcon={() => <SortSvg style={{width: '20px', paddingRight: '15px'}}/>}
+            >
             <p value='no_sort'>Don't sort</p>
             <p value='price'>Sort by Price</p>
             <p value='price_desc'>Sort by Price (Desc)</p>

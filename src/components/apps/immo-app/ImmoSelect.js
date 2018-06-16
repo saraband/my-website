@@ -1,12 +1,12 @@
 import React from 'react'
-import './ImmoSelect.scss'
+import s from './ImmoSelect.module.scss'
 import DropdownSvg from './arrow-down.svg'
 import { connect } from 'react-redux'
 
-const DropdownItem = ({text, onClick}) => (
-  <p className='immo-app-dropdown-item' onClick={onClick} >
+const DropdownItem = ({text, onClick, renderIcon}) => (
+  <p className={s.dropdownItem} onClick={onClick} >
+    {renderIcon !== undefined ? renderIcon() : null}
     {text}
-    <DropdownSvg style={{width: '20px'}} />
   </p>
 )
 
@@ -55,12 +55,13 @@ export default class ImmoSelect extends React.Component {
       text
     } = this.elements.find(e => e.value === this.state.selected)
     const { toggle } = this.state
+    const { renderIcon } = this.props
 
     return(
-      <div tabIndex='0' className='immo-app-select' style={this.props.style}
-        onBlur={this.hide}>
-        <DropdownItem text={text} onClick={this.toggle} />
-        {toggle ? (<div className='immo-app-select-dropdown'>
+      <div tabIndex='0' className={s.container} style={this.props.style}
+        onBlur={this.hide} >
+        <DropdownItem text={text} onClick={this.toggle} renderIcon={renderIcon} />
+        {toggle ? (<div className={s.dropdown}>
           {this.renderElements()}
         </div>) : null}
       </div>

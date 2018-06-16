@@ -34,6 +34,17 @@
     display: flex;
     flex-direction: column;
 
+    .vAlign {
+      display: flex;
+      align-items: center;
+    }
+
+    .locationSvg {
+      height: 15px;
+      padding-right: 6px;
+      opacity: 0.8;
+    }
+
     h3 {
       margin-bottom: 10px;
       color: $black;

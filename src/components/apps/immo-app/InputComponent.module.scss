@@ -19,14 +19,25 @@
     #placeInput {
       position: relative;
       width: 100%;
+      display: flex;
+
+      input {
+        flex-grow: 1;
+      }
     }
 
     input {
       border: 1px solid $blue;
+      color: $blue;
       font-size: 15px;
       padding: 10px;
       margin-top: 10px;
       margin-bottom: 10px;
+      background-position: 10px 8px;
+      background-size: auto 20px;
+      background-repeat: no-repeat;
+      border-radius: 2px;
+      padding-left: 40px;
     }
 
     #searchButton {
@@ -45,17 +56,29 @@
       }
 
       button {
-        width: 100px;
         border: 1px solid $blue;
         padding: 10px;
         font-size: 20px;
         background-color: white;
         margin-top: 10px;
         color: $blue;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 2px;
+
+        #searchSvg {
+          height: 18px;
+        }
+
+        p {
+          margin-left: 15px;
+        }
+
 
         &:hover {
-          background-color: $blue;
-          color: white;
+          background-color: #f1f1f1;
         }
 
         &:hover[disabled] {
@@ -81,7 +104,7 @@
     }
 
     input {
-      width: 100px;
+      width: 80px;
     }
   }
 }

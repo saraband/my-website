@@ -4,6 +4,12 @@ import { requestList } from 'AppsActions/immo-app/index'
 import s from './InputComponent.module.scss'
 import ImmoSelect from './ImmoSelect'
 import AutoCompletePlace from './AutoCompletePlace'
+import SearchSvg from './search.svg'
+import AreaPng from './area.png'
+import LocationPng from './location.png'
+import BedPng from './bed.png'
+import EuroPng from './euro.png'
+import HouseSvg from './house.svg'
 
 const formInitialState = {
   priceMin: '',
@@ -94,14 +100,21 @@ class InputComponent extends React.Component {
     return(
       <div id={s.container}>
         <form onSubmit={this.handleSubmit} >
-          <ImmoSelect onChange={this.handleChange}
-            name='actionType' value={actionType}>
+          <ImmoSelect
+            onChange={this.handleChange}
+            name='actionType'
+            value={actionType}
+            >
             <p value='all'>Achat & location</p>
             <p value='buy'>Achat</p>
             <p value='rent'>Location</p>
           </ImmoSelect>
-          <ImmoSelect onChange={this.handleChange}
-            name='type' value={type}>
+          <ImmoSelect
+            onChange={this.handleChange}
+            name='type'
+            value={type}
+            renderIcon={() => <HouseSvg style={{width: '20px', paddingRight: '10px'}}/>}
+            >
             <p value='all'>Tout types de bien</p>
             <p value='house'>Maison</p>
             <p value='appartment'>Appartement</p>
@@ -114,29 +127,39 @@ class InputComponent extends React.Component {
               value={place}
               autoComplete='off'
               onFocus={() => setTimeout(() => this.setState({isPlaceInputFocus: true}), 100)}
-              onBlur={() => setTimeout(() => this.setState({isPlaceInputFocus: false}), 100)} />
+              onBlur={() => setTimeout(() => this.setState({isPlaceInputFocus: false}), 100)}
+              style={{backgroundImage: `url(${LocationPng})`}}
+              />
             {isPlaceInputFocus ? <AutoCompletePlace filter={place} onSelect={this.handleSelectPlace}/> : null}
           </div>
           <br />
           <div className={s.flexRow}>
             <input type='text' placeholder='Price (Min)'
               name='priceMin' onChange={this.handleChange} 
-              value={priceMin} />
+              value={priceMin}
+              style={{backgroundImage: `url(${EuroPng})`}}
+              />
             <p>&nbsp;&nbsp;à&nbsp;&nbsp;</p>
             <input type='text' placeholder='Price (Max)'
               name='priceMax' onChange={this.handleChange} 
-              value={priceMax} />
+              value={priceMax}
+              style={{backgroundImage: `url(${EuroPng})`}}
+              />
           </div>
-          <input type='text' placeholder='Area (Min)'
+          <input type='text' placeholder='Area (Min. in m²)'
             name='areaMin' onChange={this.handleChange} 
-            value={areaMin} />
+            value={areaMin}
+            style={{backgroundImage: `url(${AreaPng})`}}
+            />
             <br />
           <input type='text' placeholder='Number of room (Min)'
             name='numRoomsMin' onChange={this.handleChange} 
-            value={numRoomsMin} />
+            value={numRoomsMin}
+            style={{backgroundImage: `url(${BedPng})`}}
+            />
           <div id={s.searchButton}>
             <a onClick={this.reinitializeForm}>Reinitialize form</a>
-            <button disabled={isRetrievingData} >Search</button>
+            <button disabled={isRetrievingData} ><SearchSvg id={s.searchSvg} /><p>Search</p></button>
           </div>
         </form>
       </div>

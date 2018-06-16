@@ -1,6 +1,6 @@
 import React from 'react'
 import s from './BannerComponent.module.scss'
-import Logo from './logo.svg'
+import Logo from './logo-new.svg'
 
 export default () => (
   <div id={s.container}>
