@@ -13,7 +13,7 @@ module.exports = [
 		area: 80,
 		numRooms: 2,
 		place: 'Barcelona',
-		date: Date.now()
+		date: 1529160982
 	},
 	{
 		id: 1,
@@ -27,7 +27,7 @@ module.exports = [
 		area: 140,
 		numRooms: 4,
 		place: 'Bruxelles',
-		date: Date.now()
+		date: 1529150982
 	},
 	{
 		id: 2,
@@ -55,7 +55,7 @@ module.exports = [
 		area: 79,
 		numRooms: 3,
 		place: 'Bruxelles',
-		date: Date.now()
+		date: 1529100982
 	},
 	{
 		id: 4,
@@ -69,7 +69,7 @@ module.exports = [
 		area: 70,
 		numRooms: 2,
 		place: 'Bruxelles',
-		date: Date.now()
+		date: 1528060982
 	},
 	{
 		id: 5,
@@ -83,7 +83,7 @@ module.exports = [
 		area: 102,
 		numRooms: 4,
 		place: 'Barcelona',
-		date: Date.now()
+		date: 1516317131
 	},
 	{
 		id: 6,
@@ -97,7 +97,7 @@ module.exports = [
 		area: 92,
 		numRooms: 3,
 		place: 'Bruxelles',
-		date: Date.now()
+		date: 1509720385
 	},
 	{
 		id: 7,
@@ -111,7 +111,7 @@ module.exports = [
 		area: 85,
 		numRooms: 2,
 		place: 'Bruxelles',
-		date: Date.now()
+		date: 1443171851
 	},
 	{
 		id: 8,
@@ -125,7 +125,7 @@ module.exports = [
 		area: 65,
 		numRooms: 2,
 		place: 'Barcelona',
-		date: Date.now()
+		date: 1458271784
 	},
 	{
 		id: 9,
@@ -139,7 +139,7 @@ module.exports = [
 		area: 86,
 		numRooms: 3,
 		place: 'Bruxelles',
-		date: Date.now()
+		date: 1499081124
 	},
 	{
 		id: 10,
@@ -153,7 +153,7 @@ module.exports = [
 		area: 178,
 		numRooms: 5,
 		place: 'Lilles',
-		date: Date.now()
+		date: 1458448264
 	},
 	{
 		id: 11,
@@ -167,7 +167,7 @@ module.exports = [
 		area: 99,
 		numRooms: 3,
 		place: 'Barcelona',
-		date: Date.now()
+		date: 1505264625
 	},
 	{
 		id: 12,
@@ -181,7 +181,7 @@ module.exports = [
 		area: 83,
 		numRooms: 3,
 		place: 'Lilles',
-		date: Date.now()
+		date: 1457954580
 	},
 	{
 		id: 13,
@@ -195,7 +195,7 @@ module.exports = [
 		area: 220,
 		numRooms: 4,
 		place: 'Helsinki',
-		date: Date.now()
+		date: 1453491284
 	},
 	{
 		id: 14,
@@ -209,7 +209,7 @@ module.exports = [
 		area: 90,
 		numRooms: 4,
 		place: 'Lilles',
-		date: Date.now()
+		date: 1507649692
 	},
 	{
 		id: 15,
@@ -223,7 +223,7 @@ module.exports = [
 		area: 170,
 		numRooms: 4,
 		place: 'Bruxelles',
-		date: Date.now()
+		date: 1502773311
 	},
 	{
 		id: 16,
@@ -237,7 +237,7 @@ module.exports = [
 		area: 130,
 		numRooms: 2,
 		place: 'Barcelona',
-		date: Date.now()
+		date: 1502657235
 	},
 	{
 		id: 17,
@@ -251,7 +251,7 @@ module.exports = [
 		area: 62,
 		numRooms: 1,
 		place: 'Barcelona',
-		date: Date.now()
+		date: 1449492604
 	},
 	{
 		id: 18,
@@ -265,7 +265,7 @@ module.exports = [
 		area: 71,
 		numRooms: 2,
 		place: 'Barcelona',
-		date: Date.now()
+		date: 1470880574
 	},
 	{
 		id: 19,
@@ -279,6 +279,6 @@ module.exports = [
 		area: 68,
 		numRooms: 2,
 		place: 'Barcelona',
-		date: Date.now()
+		date: 1504514435
 	}
 ]

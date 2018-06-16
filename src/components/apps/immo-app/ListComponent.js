@@ -4,21 +4,21 @@ import { requestList } from 'AppsActions/immo-app/index'
 import Image from './Image'
 import ListItem from './ListItem'
 import ImmoSelect from './ImmoSelect'
-import s from './ListComponent.module.scss'
 import SortSvg from './sort.svg'
-import PropertyItemPlaceHolder from './PropertyItemPlaceHolder'
 import LoadingSvg from './loading.svg'
+import s from './ListComponent.module.scss'
+
+import { getRandomInt } from 'Utils/index'
 
 class ListComponent extends React.Component {
   constructor(props) {
     super(props)
   }
 
+  // Renders tags elements from the last searched data
   renderTags = (data) => {
-    if(data.type === undefined) {
-      console.log('undefined')
+    if(data.type === undefined)
       return null
-    }
 
     let tags = []
 
@@ -42,21 +42,8 @@ class ListComponent extends React.Component {
       listFilter,
       setListFilter
     } = this.props
-
-    /*if(isRetrievingData) {
-      return(
-        <div id={s.container}>
-          <div id={s.list}>
-            <PropertyItemPlaceHolder />
-            <PropertyItemPlaceHolder />
-            <PropertyItemPlaceHolder />
-            <PropertyItemPlaceHolder />
-            <PropertyItemPlaceHolder />
-          </div>
-        </div>
-      )
-    }*/
-
+    console.log(Date.now())
+    setTimeout(() => console.log(Date.now()), 1000)
     return(
       <div id={s.container}>
         <div id={s.topContainer} style={{visibility: isRetrievingData ? 'hidden' : 'visible'}}>
@@ -70,7 +57,7 @@ class ListComponent extends React.Component {
             name='listFilter' onChange={(e) => setListFilter(e.target.value)}
             renderIcon={() => <SortSvg style={{width: '20px', paddingRight: '15px'}}/>}
             >
-            <p value='no_sort'>Don't sort</p>
+            <p value='date'>Sort by date</p>
             <p value='price'>Sort by Price</p>
             <p value='price_desc'>Sort by Price (Desc)</p>
             <p value='area'>Sort by area</p>
@@ -86,13 +73,11 @@ class ListComponent extends React.Component {
   }
 }
 
+// Returns a sorted copy of the list of properties
 const getSortedList = (list, filter) => {
-  if(filter === 'no_sort')
-    return list
-
-  console.log(filter)
-
   switch(filter) {
+    case 'date':
+      return [...list].sort((a, b) => b.date - a.date)
     case 'price':
       return [...list].sort((a, b) => a.price - b.price)
     case 'price_desc':

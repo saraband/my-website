@@ -3,16 +3,31 @@ import { connect } from 'react-redux';
 import { HIDE_PROPERTY_PANEL } from 'AppsActions/immo-app/index'
 import Image from './Image'
 import s from './ShowPropertyComponent.module.scss'
-import { timeSince, prettyPrice } from 'Utils/index'
+import {
+  timeSince,
+  prettyPrice
+} from 'Utils/index'
 
 class ShowPropertyComponent extends React.Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      isSending: false,
+      isMessageSent: false
+    }
   }
 
   cancelEvent = (event) => {
     if(event.stopPropagation)
       event.stopPropagation()
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault()
+
+    this.setState({isSending: true})
+    setTimeout(() => this.setState({isMessageSent: true}), 500)
   }
 
   render() {
@@ -25,6 +40,11 @@ class ShowPropertyComponent extends React.Component {
     if(isRetrievingPropertyData) {
       // Do something ?
     }
+
+    const {
+      isSending,
+      isMessageSent
+    } = this.state
 
     const {
       id,
@@ -50,19 +70,32 @@ class ShowPropertyComponent extends React.Component {
             <h3>{title}</h3>
             <h4>Located in {place}</h4>
             <p>{description}</p>
-            <div id={s.characteristics} >
-              <ul>
-                <li><strong>Type</strong>: {type}</li>
-                <li><strong>Price</strong>: {prettyPrice(price)} € {actionType === 'rent' ? 'per month' : null}</li>
-                <li><strong>Surface</strong>: {area} m²</li>
-              </ul>
-              <ul>
-                <li><strong>Rooms</strong>: {numRooms}</li>
-                <li><strong>Surface</strong>: {area} m²</li>
-                <li><strong>Posted</strong>: {timeSince(date * 1000)}</li>
-              </ul>
+            <div id={s.bottomBox}>
+              <div id={s.left}>
+                <form
+                  onSubmit={this.handleSubmit}
+                  disabled={isMessageSent || isSending}
+                  >
+                  <input type='text' placeholder='Your email' />
+                  <input type='text' placeholder='Your phone' />
+                  <input type='text' placeholder='Your name' />
+                  <textarea placeholder='Your message' />
+                  <button>{isMessageSent ? 'Sent' : (isSending ? 'Sending' : 'Contact the vendor')}</button>
+                </form>
+              </div>
+              <div id={s.right}>
+                <div id={s.characteristics} >
+                  <ul>
+                    <li><strong>Type</strong>: {type}</li>
+                    <li><strong>Price</strong>: {prettyPrice(price)} € {actionType === 'rent' ? 'per month' : null}</li>
+                    <li><strong>Surface</strong>: {area} m²</li>
+                    <li><strong>Rooms</strong>: {numRooms}</li>
+                    <li><strong>Surface</strong>: {area} m²</li>
+                    <li><strong>Posted</strong>: {timeSince(date * 1000)}</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <button>Get in contact with the vendor</button>
           </div>
         </div>
       </div>

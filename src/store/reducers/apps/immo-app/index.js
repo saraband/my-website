@@ -73,7 +73,7 @@ const lastSearchData = (state = {}, action) => {
   }
 }
 
-const listFilter = (state = 'no_sort', action) => {
+const listFilter = (state = 'date', action) => {
   switch(action.type) {
     case SET_LIST_FILTER:
       return action.filter

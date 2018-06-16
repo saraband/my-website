@@ -4,6 +4,7 @@ import ListComponent from 'AppsComponents/immo-app/ListComponent'
 import InputComponent from 'AppsComponents/immo-app/InputComponent'
 import ShowPropertyComponent from 'AppsComponents/immo-app/ShowPropertyComponent'
 import BannerComponent from 'AppsComponents/immo-app/BannerComponent'
+import Footer from 'AppsComponents/immo-app/Footer'
 import './index.scss'
 import s from './index.module.scss'
 
@@ -26,6 +27,7 @@ class App extends React.Component {
             <InputComponent />
           </div>
         </div>
+        <Footer />
       </div>
     )
   }

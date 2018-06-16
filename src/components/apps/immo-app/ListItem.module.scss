@@ -20,6 +20,19 @@
     opacity: 1;
   }
 
+  .newBanner {
+    background-color: tomato;
+    color: white;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    z-index: 500;
+  }
+
   .overlay {
     position: absolute;
     background-color: rgba(255, 255, 255, 0.7);

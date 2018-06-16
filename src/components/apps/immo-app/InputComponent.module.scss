@@ -56,17 +56,18 @@
       }
 
       button {
-        border: 1px solid $blue;
         padding: 10px;
+        border: none;
         font-size: 20px;
-        background-color: white;
+        background-color: tomato;
         margin-top: 10px;
-        color: $blue;
+        color: white;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         border-radius: 2px;
+        transition: all 0.1s linear;
 
         #searchSvg {
           height: 18px;
@@ -78,12 +79,7 @@
 
 
         &:hover {
-          background-color: #f1f1f1;
-        }
-
-        &:hover[disabled] {
-          background-color: white;
-          color: $blue;
+          opacity: 0.8;
         }
 
         &:disabled {

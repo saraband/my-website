@@ -50,6 +50,7 @@ class ListItem extends React.Component {
           (id === isRetrievingPropertyData ? <div className={s.overlay}><LoadingSvg className={s.loading} /></div>
             : null)
           : null}
+        {Date.now() / 1000 - date < 864000 ? <p className={s.newBanner}>New !</p> : null}
         <div className={s.imgContainer} >
           <Image src={pictureUrlSmall} alt={title} />
         </div>
