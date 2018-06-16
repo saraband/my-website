@@ -7,6 +7,7 @@ import ImmoSelect from './ImmoSelect'
 import SortSvg from './sort.svg'
 import LoadingSvg from './loading.svg'
 import s from './ListComponent.module.scss'
+import LoadingIcon from './LoadingIcon'
 
 import { getRandomInt } from 'Utils/index'
 
@@ -42,8 +43,7 @@ class ListComponent extends React.Component {
       listFilter,
       setListFilter
     } = this.props
-    console.log(Date.now())
-    setTimeout(() => console.log(Date.now()), 1000)
+
     return(
       <div id={s.container}>
         <div id={s.topContainer} style={{visibility: isRetrievingData ? 'hidden' : 'visible'}}>
@@ -65,7 +65,7 @@ class ListComponent extends React.Component {
           </ImmoSelect>
         </div>
         <div id={s.list}>
-          {isRetrievingData ? <div id={s.listLoadingOverlay}><LoadingSvg id={s.loadingSvg} /></div> : null}
+          {isRetrievingData ? <div id={s.listLoadingOverlay}><LoadingIcon id={s.loadingIcon} /></div> : null}
           {list.map(item => <ListItem key={item.id} {...item} />)}
         </div>
       </div>

@@ -10,6 +10,7 @@ import {
 import LocationSvg from './location.svg'
 import DateSvg from './date.svg'
 import LoadingSvg from './loading.svg'
+import LoadingIcon from './LoadingIcon'
 
 const shortDescription = (str) => str.length < 100 ? str : `${str.substr(0, 95)}...`
 
@@ -47,7 +48,7 @@ class ListItem extends React.Component {
     return(
       <div onClick={this.handleClick} className={s.container}>
         {isRetrievingPropertyData !== -1 ?
-          (id === isRetrievingPropertyData ? <div className={s.overlay}><LoadingSvg className={s.loading} /></div>
+          (id === isRetrievingPropertyData ? <div className={s.overlay}><LoadingIcon /></div>
             : null)
           : null}
         {Date.now() / 1000 - date < 864000 ? <p className={s.newBanner}>New !</p> : null}

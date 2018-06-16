@@ -10,6 +10,7 @@ import LocationPng from './location.png'
 import BedPng from './bed.png'
 import EuroPng from './euro.png'
 import HouseSvg from './house.svg'
+import TagSvg from './tag.svg'
 
 const formInitialState = {
   priceMin: '',
@@ -103,6 +104,7 @@ class InputComponent extends React.Component {
             onChange={this.handleChange}
             name='actionType'
             value={actionType}
+            renderIcon={() => <TagSvg style={{width: '20px', paddingRight: '10px'}}/>}
             >
             <p value='all'>Rent & buy</p>
             <p value='buy'>Buy</p>
