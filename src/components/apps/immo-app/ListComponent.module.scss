@@ -52,10 +52,11 @@
       align-items: flex-start;
 
       #loadingIcon {
+        position: sticky;
+        top: 300px;
         z-index: 50000;
         width: 70px;
         height: 70px;
-        margin-top: 100px;
       }
     }
   }

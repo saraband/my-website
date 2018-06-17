@@ -49,6 +49,12 @@ export default class ImmoSelect extends React.Component {
     return this.elements.map((e, i) => <DropdownItem {...e} onClick={() => this.handleSelect(e)} key={i} />)
   }
 
+  componentDidUpdate(prevProps) {
+    const newValue = this.props.value
+    if(prevProps.value !== newValue)
+      this.setState({selected: newValue})
+  }
+
   render() {
     const {
       value,

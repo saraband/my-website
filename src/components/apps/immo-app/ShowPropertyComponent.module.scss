@@ -18,6 +18,7 @@
     flex-direction: column;
 
     #image {
+      flex-grow: 0;
       width: 100%;
       height: 350px;
       overflow: hidden;
@@ -36,28 +37,34 @@
       display: flex;
       flex-direction: row;
 
-      #left, #right {
-        width: 50%;
+      #left {
+        min-width: 50%;
       }
 
-      #left {
+      #right {
+        width: 100%;
+
         form {
+          width: 100%;
           padding-right: 10px;
           display: flex;
           flex-direction: column;
-          align-items: flex-end;
-
-          &[disabled] {
-            opacity: 0.6;
-          }
+          align-items: flex-start;
 
           input, textarea {
             border: 1px solid $blue;
             padding: 8px;
             font-size: 14px;
             border-radius: 2px;
-            margin: 5px;
+            margin: 3px;
             resize: none;
+            color: $blue;
+          }
+
+          input[disabled],
+          textarea[disabled] {
+            opacity: 0.7;
+            background-color: #e3e3e3;
           }
 
           input {
@@ -65,11 +72,11 @@
           }
 
           textarea {
-            width: 80%;
+            width: 90%;
           }
 
           button {
-            margin: 5px;
+            margin: 3px;
             border-radius: 2px;
             color: white;
             background-color: tomato;
@@ -77,8 +84,12 @@
             border: none;
             font-size: 14px;
 
-            &:hover {
+            &:hover:enabled {
               opacity: 0.8;
+            }
+
+            &[disabled] {
+              opacity: 0.7;
             }
           }
         }
@@ -86,9 +97,16 @@
     }
 
     #description {
+      flex-grow: 0;
+      overflow-y: scroll;
       padding: 15px;
       color: $black;
       font-family: Arial;
+
+      .svgIcon {
+        height: 15px;
+        margin-right: 10px;
+      }
 
       h3 {
         font-size: 20px;
@@ -109,14 +127,19 @@
 
       #characteristics {
         padding-left: 15px;
+        border-left: 1px solid #e3e3e3;
         display: flex;
         font-size: 15px;
         color: $blue;
         font-family: 'Open Sans Light', Verdana;
 
         ul {
-          width: 50%;
           list-style-type: none;
+
+          li {
+            margin-bottom: 10px;
+            font-size: 14px;
+          }
         }
       }
     }

@@ -59,6 +59,7 @@
 
   .description {
     padding: 20px;
+    height: 200px;
     display: flex;
     flex-direction: column;
 
@@ -92,10 +93,12 @@
     }
 
     p:last-child {
+      flex-grow: 1;
       font-size: 13px;
       color: $blue;
       display: flex;
       justify-content: space-between;
+      align-items: flex-end;
       margin-top: 20px;
     }
   }
