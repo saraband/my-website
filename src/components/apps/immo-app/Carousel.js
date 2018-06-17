@@ -1,5 +1,7 @@
 import React from 'react'
 import s from './Carousel.module.scss'
+import ArrowRight from './arrow-right.svg'
+import ArrowLeft from './arrow-left.svg'
 
 export default class Carousel extends React.Component {
   constructor(props) {
@@ -50,8 +52,8 @@ export default class Carousel extends React.Component {
     return(
       <div id={s.container}>
         <div id={s.controls}>
-          <div className={s.arrow} onClick={this.previousSlide} ></div>
-          <div className={s.arrow} onClick={this.nextSlide} ></div>
+          <div className={s.arrow} onClick={this.previousSlide} ><ArrowLeft className={s.arrowSvg} /></div>
+          <div className={s.arrow} onClick={this.nextSlide} ><ArrowRight className={s.arrowSvg} /></div>
         </div>
         <div id={s.slidesInfo}>
           <div id={s.balls}>

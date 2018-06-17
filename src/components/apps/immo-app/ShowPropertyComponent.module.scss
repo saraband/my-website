@@ -83,6 +83,9 @@
             padding: 8px;
             border: none;
             font-size: 14px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
 
             &:hover:enabled {
               opacity: 0.8;

@@ -10,6 +10,8 @@ import EuroSvg from './euro.svg'
 import AreaSvg from './area.svg'
 import BedSvg from './bed.svg'
 import DateSvg from './date.svg'
+import SendSvg from './send.svg'
+import LoadingIcon from './LoadingIcon'
 import {
   timeSince,
   prettyPrice
@@ -72,9 +74,9 @@ class ShowPropertyComponent extends React.Component {
         <div id={s.box} onClick={this.cancelEvent}>
           <div id={s.image}>
             <Carousel>
-              <img src={pictureUrl} />
-              <img src={pictureUrl} />
-              <img src={pictureUrl} />
+              <Image src={pictureUrl} />
+              <Image src={pictureUrl} />
+              <Image src={pictureUrl} />
             </Carousel>
           </div>
           <div id={s.description}>
@@ -99,7 +101,10 @@ class ShowPropertyComponent extends React.Component {
                   <input type='text' placeholder='Your phone' disabled={isMessageSent || isSending}/>
                   <input type='text' placeholder='Your name' disabled={isMessageSent || isSending}/>
                   <textarea placeholder='Your message' disabled={isMessageSent || isSending}/>
-                  <button disabled={isMessageSent || isSending}>{isMessageSent ? 'Message sent !' : (isSending ? 'Sending message..' : 'Contact the vendor')}</button>
+                  <button disabled={isMessageSent || isSending}>
+                    {!isSending ? <SendSvg className={s.svgIcon} /> : null}
+                    {isMessageSent ? 'Message sent !' : (isSending ? 'Sending message..' : 'Contact the vendor')}
+                  </button>
                 </form>
               </div>
             </div>

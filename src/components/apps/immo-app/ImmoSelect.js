@@ -3,10 +3,11 @@ import s from './ImmoSelect.module.scss'
 import DropdownSvg from './arrow-down.svg'
 import { connect } from 'react-redux'
 
-const DropdownItem = ({text, onClick, renderIcon}) => (
+const DropdownItem = ({text, onClick, renderIcon, renderDropDown}) => (
   <p className={s.dropdownItem} onClick={onClick} >
     {renderIcon !== undefined ? renderIcon() : null}
-    {text}
+    <span className={s.dropdownText}>{text}</span>
+    {renderDropDown ? <DropdownSvg className={s.dropdownSvg} /> : null}
   </p>
 )
 
@@ -66,7 +67,7 @@ export default class ImmoSelect extends React.Component {
     return(
       <div tabIndex='0' className={s.container} style={this.props.style}
         onBlur={this.hide} >
-        <DropdownItem text={text} onClick={this.toggle} renderIcon={renderIcon} />
+        <DropdownItem text={text} onClick={this.toggle} renderIcon={renderIcon} renderDropDown={true} />
         {toggle ? (<div className={s.dropdown}>
           {this.renderElements()}
         </div>) : null}
