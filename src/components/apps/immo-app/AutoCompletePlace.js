@@ -8,7 +8,8 @@ export default class AutoCompletePlace extends React.Component {
     this.list = [
       'Barcelona',
       'Bruxelles',
-      'Lilles'
+      'Lilles',
+      'Helsinki'
     ]
   }
 

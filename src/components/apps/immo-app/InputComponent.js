@@ -120,10 +120,10 @@ class InputComponent extends React.Component {
             <p value='house'>Houses</p>
             <p value='appartment'>Appartments</p>
           </ImmoSelect>
-          <br />
-          <br />
           <div id={s.placeInput}>
-            <input type='search' placeholder='Location, city'
+            <input
+              type='search'
+              placeholder='Location, city'
               name='place' onChange={this.handleChange}
               value={place}
               autoComplete='off'
@@ -133,30 +133,41 @@ class InputComponent extends React.Component {
               />
             {isPlaceInputFocus ? <AutoCompletePlace filter={place} onSelect={this.handleSelectPlace}/> : null}
           </div>
-          <br />
           <div className={s.flexRow}>
-            <input type='text' placeholder='Price (Min)'
+            <input
+              type='text'
+              placeholder='Price (Min)'
               name='priceMin' onChange={this.handleChange} 
               value={priceMin}
               style={{backgroundImage: `url(${EuroPng})`}}
+              autoComplete='off'
               />
             <p>&nbsp;&nbsp;à&nbsp;&nbsp;</p>
-            <input type='text' placeholder='Price (Max)'
+            <input
+              type='text'
+              placeholder='Price (Max)'
               name='priceMax' onChange={this.handleChange} 
               value={priceMax}
               style={{backgroundImage: `url(${EuroPng})`}}
+              autoComplete='off'
               />
           </div>
-          <input type='text' placeholder='Area (Min. in m²)'
-            name='areaMin' onChange={this.handleChange} 
+          <input
+            type='text'
+            placeholder='Area (Min. in m²)'
+            name='areaMin'
+            onChange={this.handleChange} 
             value={areaMin}
             style={{backgroundImage: `url(${AreaPng})`}}
+            autoComplete='off'
             />
-            <br />
-          <input type='text' placeholder='Number of room (Min)'
+          <input
+            type='text'
+            placeholder='Number of room (Min)'
             name='numRoomsMin' onChange={this.handleChange} 
             value={numRoomsMin}
             style={{backgroundImage: `url(${BedPng})`}}
+            autoComplete='off'
             />
           <div id={s.searchButton}>
             <a onClick={this.reinitializeForm}>Reinitialize form</a>

@@ -1,3 +1,5 @@
+import { getRandomInt } from 'Utils/index'
+
 const loremIpsum = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vestibulum lorem venenatis ligula euismod, id mollis metus molestie. Duis fermentum sem ac est cursus volutpat. '
 
 module.exports = [
@@ -13,7 +15,7 @@ module.exports = [
 		area: 80,
 		numRooms: 2,
 		place: 'Barcelona',
-		date: 1529160982
+		date: Date.now() / 1000 - getRandomInt(6400, 86400)
 	},
 	{
 		id: 1,
@@ -27,7 +29,7 @@ module.exports = [
 		area: 140,
 		numRooms: 4,
 		place: 'Bruxelles',
-		date: 1529150982
+		date: Date.now() / 1000 - getRandomInt(6400, 86400)
 	},
 	{
 		id: 2,
@@ -41,7 +43,7 @@ module.exports = [
 		area: 76,
 		numRooms: 2,
 		place: 'Barcelona',
-		date: Date.now()
+		date: Date.now() / 1000 - getRandomInt(6400, 86400)
 	},
 	{
 		id: 3,
@@ -55,7 +57,7 @@ module.exports = [
 		area: 79,
 		numRooms: 3,
 		place: 'Bruxelles',
-		date: 1529100982
+		date: Date.now() / 1000
 	},
 	{
 		id: 4,
@@ -69,7 +71,7 @@ module.exports = [
 		area: 70,
 		numRooms: 2,
 		place: 'Bruxelles',
-		date: 1528060982
+		date: Date.now() / 1000 - getRandomInt(6400, 86400)
 	},
 	{
 		id: 5,

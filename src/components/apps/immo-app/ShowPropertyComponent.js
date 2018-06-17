@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { HIDE_PROPERTY_PANEL } from 'AppsActions/immo-app/index'
 import Image from './Image'
 import s from './ShowPropertyComponent.module.scss'
+import Carousel from './Carousel'
 import {
   timeSince,
   prettyPrice
@@ -64,7 +65,11 @@ class ShowPropertyComponent extends React.Component {
       <div id={s.container} onClick={hidePropertyPanel}>
         <div id={s.box} onClick={this.cancelEvent}>
           <div id={s.image}>
-            <Image src={pictureUrl} />
+            <Carousel>
+              <img src={pictureUrl} />
+              <img src={pictureUrl} />
+              <img src={pictureUrl} />
+            </Carousel>
           </div>
           <div id={s.description}>
             <h3>{title}</h3>

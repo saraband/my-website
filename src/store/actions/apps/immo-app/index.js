@@ -66,7 +66,7 @@ export const requestList = (data) => {
 
     setTimeout(() => {
       dispatch({type: LIST_REQUEST_SUCCESS, list})
-    }, 500)
+    }, 800)
   }
 }
 
@@ -82,6 +82,6 @@ export const requestPropertyData = (id) => {
         data: DB.find(p => p.id === id)
       })
       dispatch({type: SHOW_PROPERTY_PANEL})
-    }, 500)
+    }, 800)
   }
 }
