@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { HIDE_RESTAURANT_DATA } from 'AppsActions/delivery-app/index'
+import { CHANGE_PAGE } from 'AppsActions/delivery-app/index'
 
 class RestaurantComponent extends React.Component {
   constructor(props) {
@@ -32,22 +32,22 @@ class RestaurantComponent extends React.Component {
 
   render() {
     const {
-      hideRestaurantData,
-      restaurantData: {
-        name,
-        priceRange,
-        description,
-        rating,
-        menus,
-        pictureUrl
-      }} = this.props
+      name,
+      priceRange,
+      description,
+      rating,
+      menus,
+      pictureUrl
+    } = this.props.restaurantData
+
+    const { backToResults } = this.props
 
     return(
       <div>
         <h3>{name}</h3>
         <h3>{description}</h3>
         {this.renderMenus()}
-        <a onClick={hideRestaurantData}>Back</a>
+        <a onClick={backToResults}>Back</a>
       </div>
     )
   }
@@ -61,7 +61,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    hideRestaurantData: () => dispatch({type: HIDE_RESTAURANT_DATA})
+    backToResults: () => dispatch({type: CHANGE_PAGE, page: 'restaurants_list_page'})
   }
 }
 

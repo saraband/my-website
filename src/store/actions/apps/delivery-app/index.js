@@ -6,8 +6,8 @@ export const REQUEST_RESTAURANTS_LIST_SUCCESS = 'REQUEST_RESTAURANTS_LIST_SUCCES
 export const REQUEST_RESTAURANT_DATA_PENDING = 'REQUEST_RESTAURANT_DATA_PENDING'
 export const REQUEST_RESTAURANT_DATA_FAILED = 'REQUEST_RESTAURANT_DATA_FAILED'
 export const REQUEST_RESTAURANT_DATA_SUCCESS = 'REQUEST_RESTAURANT_DATA_SUCCESS'
-export const SHOW_RESTAURANT_DATA = 'SHOW_RESTAURANT_DATA'
-export const HIDE_RESTAURANT_DATA = 'HIDE_RESTAURANT_DATA'
+export const CHANGE_PAGE = 'CHANGE_PAGE'
+export const HIDE_CURRENT_PAGE = 'HIDE_CURRENT_PAGE'
 
 export const requestRestaurantsList = () => {
   return (dispatch) => {
@@ -24,7 +24,13 @@ export const showRestaurantData = (data) => {
   return (dispatch) => {
     dispatch({type: REQUEST_RESTAURANT_DATA_PENDING})
     // timeout
-    dispatch({type: REQUEST_RESTAURANT_DATA_SUCCESS, data})
-    dispatch({type: SHOW_RESTAURANT_DATA})
+    setTimeout(() => {
+      dispatch({type: REQUEST_RESTAURANT_DATA_SUCCESS, data})
+      dispatch({type: HIDE_CURRENT_PAGE})
+
+      setTimeout(() => { 
+        dispatch({type: CHANGE_PAGE, page: 'restaurant_data_page'})
+      }, 200)
+    }, 200)
   }
 }

@@ -3,7 +3,9 @@ import {
   REQUEST_RESTAURANTS_LIST_SUCCESS,
   REQUEST_RESTAURANT_DATA_SUCCESS,
   SHOW_RESTAURANT_DATA,
-  HIDE_RESTAURANT_DATA
+  HIDE_RESTAURANT_DATA,
+  CHANGE_PAGE,
+  HIDE_CURRENT_PAGE
 } from 'AppsActions/delivery-app/index'
 
 const basket = (state = {test: 'yo'}, action) => {
@@ -28,12 +30,21 @@ const restaurantData = (state = {}, action) => {
   }
 }
 
-const isShowingRestaurantData = (state = false, action) => {
+const currentPage = (state = 'restaurants_list_page', action) => {
   switch(action.type) {
-    case SHOW_RESTAURANT_DATA:
-      return true
-    case HIDE_RESTAURANT_DATA:
+    case CHANGE_PAGE:
+      return action.page
+    default:
+      return state
+  }
+}
+
+const hideCurrentPage = (state = false, action) => {
+  switch(action.type) {
+    case CHANGE_PAGE:
       return false
+    case HIDE_CURRENT_PAGE:
+      return true
     default:
       return state
   }
@@ -42,6 +53,7 @@ const isShowingRestaurantData = (state = false, action) => {
 export default combineReducers({
   basket,
   restaurantsList,
-  isShowingRestaurantData,
-  restaurantData
+  restaurantData,
+  currentPage,
+  hideCurrentPage
 })

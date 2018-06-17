@@ -18,6 +18,14 @@
   }
 }
 
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  } to {
+    opacity: 0;
+  }
+}
+
 @mixin no-user-select() {
   -webkit-user-select: none;     
   -moz-user-select: none;

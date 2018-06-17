@@ -1,8 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import s from './BodyComponent.module.scss'
-import { requestRestaurantsList } from 'AppsActions/delivery-app/index'
-import RestaurantItem from './RestaurantItem'
+import RestaurantList from './RestaurantList'
 import RestaurantComponent from './RestaurantComponent'
 
 class BodyComponent extends React.Component {
@@ -10,44 +9,29 @@ class BodyComponent extends React.Component {
     super(props)
   }
 
-  componentWillMount() {
-    this.props.requestRestaurantsList()
-  }
-
   render() {
-    const {
-      restaurantsList,
-      isShowingRestaurantData,
-      restaurantData
-    } = this.props
+    const { currentPage } = this.props
 
-    if(isShowingRestaurantData) {
-      return(
-        <div id={s.container}>
-          <RestaurantComponent />
-        </div>
-      )
+    switch(currentPage) {
+      case 'restaurants_list_page':
+        return <RestaurantList />
+      case 'restaurant_data_page':
+        return <RestaurantComponent />
+      default:
+        return <p>Error</p>
     }
-
-    return(
-      <div id={s.container}>
-        {restaurantsList.map((r, i) => <RestaurantItem key={i} {...r} />)}
-      </div>
-    )
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    restaurantsList: state.deliveryApp.restaurantsList,
-    isShowingRestaurantData: state.deliveryApp.isShowingRestaurantData,
-    restaurantData: state.deliveryApp.restaurantData
+    currentPage: state.deliveryApp.currentPage
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    requestRestaurantsList: () => dispatch(requestRestaurantsList())
+
   }
 }
 

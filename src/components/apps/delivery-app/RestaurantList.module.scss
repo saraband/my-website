@@ -1,0 +1,14 @@
+@import 'utils';
+
+#container {
+  width: 100%;
+  background-color: coral;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #f3f3f3;
+}
+
+.fadeOut {
+  animation: fadeOut 0.2s linear forwards;
+}
