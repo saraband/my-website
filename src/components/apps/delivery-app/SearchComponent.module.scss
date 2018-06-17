@@ -1,15 +1,26 @@
+@import 'colors';
+
 #container {
   width: 100%;
   background-color: tomato;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: $grey;
 
   form {
-    width: 500px;
-    background-color: coral;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+
+    input {
+      font-size: 15px;
+      color: #8f8f8f;
+      background-color: white;
+      border: none;
+      border-bottom: 3px solid $green;
+      padding: 5px;
+      margin: 10px;
+    }
   }
 }

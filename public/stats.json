@@ -1,16 +1,20 @@
 {
   "assetsByChunkName": {
+    "path---delicius": [
+      "path---delicius-a0e39f21c11f6a62c5ab.js",
+      "path---delicius-a0e39f21c11f6a62c5ab.js.map"
+    ],
     "component---src-pages-chitchat-index-js": [
       "component---src-pages-chitchat-index-js-abb1be629c97ede49594.js",
       "component---src-pages-chitchat-index-js-abb1be629c97ede49594.js.map"
     ],
+    "component---src-pages-delicius-index-js": [
+      "component---src-pages-delicius-index-js-2c7566f934c31d51f3b3.js",
+      "component---src-pages-delicius-index-js-2c7566f934c31d51f3b3.js.map"
+    ],
     "component---src-pages-index-js": [
       "component---src-pages-index-js-3479cf7110c6af2fa8a8.js",
       "component---src-pages-index-js-3479cf7110c6af2fa8a8.js.map"
-    ],
-    "component---src-pages-deliver-index-js": [
-      "component---src-pages-deliver-index-js-f02c283c8b5db93270a3.js",
-      "component---src-pages-deliver-index-js-f02c283c8b5db93270a3.js.map"
     ],
     "component---src-pages-index-es-js": [
       "component---src-pages-index-es-js-170e7bf871791a3aa198.js",
@@ -25,8 +29,8 @@
       "path---index-fr-a0e39f21c11f6a62c5ab.js.map"
     ],
     "component---src-pages-findimo-index-js": [
-      "component---src-pages-findimo-index-js-ae8c709c489ca02f93c4.js",
-      "component---src-pages-findimo-index-js-ae8c709c489ca02f93c4.js.map"
+      "component---src-pages-findimo-index-js-888d90495330a8acd1ae.js",
+      "component---src-pages-findimo-index-js-888d90495330a8acd1ae.js.map"
     ],
     "path---index": [
       "path---index-a0e39f21c11f6a62c5ab.js",
@@ -47,18 +51,14 @@
       "path---index-es-a0e39f21c11f6a62c5ab.js.map"
     ],
     "app": [
-      "app-ca68262d580de55ad345.js",
+      "app-576df66e148a9ef060b0.js",
       "build-js-styles.css",
-      "app-ca68262d580de55ad345.js.map",
+      "app-576df66e148a9ef060b0.js.map",
       "build-js-styles.css.map"
     ],
     "path---findimo": [
       "path---findimo-a0e39f21c11f6a62c5ab.js",
       "path---findimo-a0e39f21c11f6a62c5ab.js.map"
-    ],
-    "path---deliver": [
-      "path---deliver-a0e39f21c11f6a62c5ab.js",
-      "path---deliver-a0e39f21c11f6a62c5ab.js.map"
     ]
   }
 }

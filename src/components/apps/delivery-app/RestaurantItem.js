@@ -3,6 +3,12 @@ import { connect } from 'react-redux'
 import s from './RestaurantItem.module.scss'
 import { showRestaurantData } from 'AppsActions/delivery-app/index'
 
+// Funny test
+const getRatingColors = (rating) => {
+  const c = rating / 100
+  return `rgb(${Math.floor((1 - c) * 255)}, ${Math.floor(c * 255)}, 125)`
+}
+
 class RestaurantItem extends React.Component {
   constructor(props) {
     super(props)
@@ -20,9 +26,10 @@ class RestaurantItem extends React.Component {
 
     return (
       <div id={s.container} onClick={() => showRestaurantData(this.props)}>
-        <img src={pictureUrl} />
-        '{name}'<br />
-        rating: {rating}%<br />
+        <div id={s.imgContainer}>
+          <img src={pictureUrl} />
+        </div>
+        <h3><span style={{color: getRatingColors(rating)}} >{rating}%</span> - {name}</h3>
       </div>
     )
   }

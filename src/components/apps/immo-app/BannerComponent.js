@@ -11,7 +11,7 @@ export default () => (
         <input type='password' placeholder='Password' />
         <button>Login</button>
       </form>
-      <p>Not registered ? <a>Sign in</a>.</p>
+      <p>Not registered ? <a>Sign up</a>.</p>
     </div>
   </div>
 )

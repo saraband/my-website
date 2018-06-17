@@ -46,7 +46,7 @@ class ListComponent extends React.Component {
 
     return(
       <div id={s.container}>
-        <div id={s.topContainer} style={{visibility: isRetrievingData ? 'hidden' : 'visible'}}>
+        <div id={s.topContainer} style={{visibility: isRetrievingData || list.length === 0 ? 'hidden' : 'visible'}}>
           <div id={s.searchTags}>
             <h3>{list.length} result{list.length === 1 ? null : 's'} found</h3>
             {this.renderTags(lastSearchData)}
