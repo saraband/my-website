@@ -7,11 +7,6 @@ class BasketComponent extends React.Component {
     super(props)
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log('ok')
-    return true
-  }
-
   render() {
     const {
       items,
@@ -25,7 +20,7 @@ class BasketComponent extends React.Component {
         </ul>
 
         <h3>Total: {total}$</h3>
-        <button>Pay now</button>
+        <button disabled={!items.length}>Pay now</button>
       </div>
     )
   }

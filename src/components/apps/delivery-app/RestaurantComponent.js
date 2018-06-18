@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import s from './RestaurantComponent.module.scss'
 import {
   CHANGE_PAGE,
-  addToBasket
+  addToBasket,
+  removeFromBasket
 } from 'AppsActions/delivery-app/index'
 import BasketComponent from './BasketComponent'
 
@@ -17,7 +18,11 @@ class RestaurantComponent extends React.Component {
       id,
       menus
     } = this.props.restaurantData
-    const { addToBasket } = this.props
+
+    const {
+      addToBasket,
+      removeFromBasket
+    } = this.props
 
     return menus.map((menu, i) => {
       return (
@@ -34,7 +39,8 @@ class RestaurantComponent extends React.Component {
                   <p>{item.ingredients.map(k => `${k}, `)}</p>
                 </div>
                 <div className={s.itemOperations}>
-                  <a>-</a><a onClick={() => addToBasket(id, item)}>+</a>
+                  <a onClick={() => removeFromBasket(id, item.id)}>-</a>
+                  <a onClick={() => addToBasket(id, item)}>+</a>
                 </div>
               </div>
             ))}
@@ -84,7 +90,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     backToResults: () => dispatch({type: CHANGE_PAGE, page: 'restaurants_list_page'}),
-    addToBasket: (basketId, itemData) => dispatch(addToBasket(basketId, itemData))
+    addToBasket: (basketId, itemData) => dispatch(addToBasket(basketId, itemData)),
+    removeFromBasket: (basketId, itemId) => dispatch(removeFromBasket(basketId, itemId)),
   }
 }
 

@@ -9,6 +9,7 @@ export const REQUEST_RESTAURANT_DATA_SUCCESS = 'REQUEST_RESTAURANT_DATA_SUCCESS'
 export const CHANGE_PAGE = 'CHANGE_PAGE'
 export const HIDE_CURRENT_PAGE = 'HIDE_CURRENT_PAGE'
 export const ADD_TO_BASKET = 'ADD_TO_BASKET'
+export const REMOVE_FROM_BASKET = 'REMOVE_FROM_BASKET'
 
 export const requestRestaurantsList = () => {
   return (dispatch) => {
@@ -41,5 +42,13 @@ export const addToBasket = (basketId, itemData) => {
     type: ADD_TO_BASKET,
     basketId,
     itemData
+  }
+}
+
+export const removeFromBasket = (basketId, itemId) => {
+  return {
+    type: REMOVE_FROM_BASKET,
+    basketId,
+    itemId
   }
 }

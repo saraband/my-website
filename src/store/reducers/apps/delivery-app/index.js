@@ -6,7 +6,8 @@ import {
   HIDE_RESTAURANT_DATA,
   CHANGE_PAGE,
   HIDE_CURRENT_PAGE,
-  ADD_TO_BASKET
+  ADD_TO_BASKET,
+  REMOVE_FROM_BASKET
 } from 'AppsActions/delivery-app/index'
 
 const baskets = (state = [], action) => {
@@ -40,6 +41,40 @@ const baskets = (state = [], action) => {
       }
 
       return newState
+
+
+
+    case REMOVE_FROM_BASKET:
+      // Get index of current basket
+      const basket = state.find(b => b.id === action.basketId)
+
+      // Current basket is empty
+      if(basket === undefined) {
+        return state
+      }
+
+      // Get index of item to remove in current basket
+      const itemIndex = basket.items.findIndex(i => i.id === action.itemId)
+
+      // Current item doesn't exist in basket
+      if(basket.items[itemIndex] === undefined)
+        return state
+
+      // Create a copy of the basket and retrieve quantity of item to be removed
+      let newBaskets = [...state]
+      let newBasket = newBaskets.find(b => b.id === action.basketId)
+      const quantity = newBasket.items[itemIndex].quantity
+
+      // Decrease quantity of the item or erase it if there's only one left
+      if(quantity <= 1)
+        newBasket.items.splice(itemIndex, 1)
+      else
+        newBasket.items[itemIndex].quantity -= 1
+
+      return newBaskets
+
+
+
     default:
       return state
   }

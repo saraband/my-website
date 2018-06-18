@@ -21,8 +21,6 @@ class RestaurantList extends React.Component {
       hideCurrentPage
     } = this.props
 
-    console.log(hideCurrentPage ? 'true' : 'false')
-
     return(
       <div id={s.container} className={hideCurrentPage ? s.fadeOut : null}>
         <SearchComponent />
