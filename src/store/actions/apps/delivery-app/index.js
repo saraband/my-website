@@ -8,6 +8,7 @@ export const REQUEST_RESTAURANT_DATA_FAILED = 'REQUEST_RESTAURANT_DATA_FAILED'
 export const REQUEST_RESTAURANT_DATA_SUCCESS = 'REQUEST_RESTAURANT_DATA_SUCCESS'
 export const CHANGE_PAGE = 'CHANGE_PAGE'
 export const HIDE_CURRENT_PAGE = 'HIDE_CURRENT_PAGE'
+export const ADD_TO_BASKET = 'ADD_TO_BASKET'
 
 export const requestRestaurantsList = () => {
   return (dispatch) => {
@@ -30,7 +31,15 @@ export const showRestaurantData = (data) => {
 
       setTimeout(() => { 
         dispatch({type: CHANGE_PAGE, page: 'restaurant_data_page'})
-      }, 200)
-    }, 200)
+      }, 0)
+    }, 0)
+  }
+}
+
+export const addToBasket = (basketData, itemData) => {
+  return {
+    type: ADD_TO_BASKET,
+    basketData,
+    itemData
   }
 }

@@ -39,6 +39,7 @@ const priceRanges = [
   'Expensive'
 ]
 
+let counter = 0
 const loremIpsum = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut placerat massa convallis rhoncus fringilla. Morbi ornare odio lectus, in placerat nisi efficitur non.'
 
 const generateIngredients = (num) => {
@@ -56,6 +57,7 @@ const generateItems = (num) => {
 
   for(let i = 0; i < num; ++i) {
     items.push({
+      id: counter++,
       name: getRandomArrayElement(randomRestaurantNames),
       price: getRandomInt(5, 25),
       ingredients: generateIngredients(getRandomInt(2, 5))
@@ -71,6 +73,7 @@ const generateMenus = (num) => {
 
   for(let i = 0; i < num; ++i) {
     menus.push({
+      id: counter++,
       name: getRandomArrayElement(randomRestaurantNames),
       items: generateItems(getRandomInt(2, 10))
     })
@@ -84,6 +87,7 @@ const generateRestaurants = (num) => {
 
   for(let i = 0; i < num; ++i) {
     restaurants.push({
+      id: counter++,
       name: getRandomArrayElement(randomRestaurantNames),
       priceRange: getRandomArrayElement(priceRanges),
       description: loremIpsum,

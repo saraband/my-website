@@ -5,11 +5,39 @@ import {
   SHOW_RESTAURANT_DATA,
   HIDE_RESTAURANT_DATA,
   CHANGE_PAGE,
-  HIDE_CURRENT_PAGE
+  HIDE_CURRENT_PAGE,
+  ADD_TO_BASKET
 } from 'AppsActions/delivery-app/index'
 
-const basket = (state = {test: 'yo'}, action) => {
-  return state
+const baskets = (state = [], action) => {
+  switch(action.type) {
+    case ADD_TO_BASKET:
+      let newState = [...state]
+      let i = newState.findIndex(b => b.id === action.basketData.id)
+
+      if(i === -1) {
+        console.log('new basket')
+        i = newState.push({...action.basketData, items: []}) - 1
+        console.log(i)
+      }
+
+      let indexItem = newState[i].items.find(i => i.id === action.itemData.id)
+
+      if(indexItem === -1 || indexItem === undefined) {
+        newState[i].items.push({...action.itemData, quantity: 1})
+        console.log(newState)
+      } else {
+        const it = newState[i][indexItem]
+        newState[i].items[indexItem] = {
+          ...it,
+          quantity: 1
+        }
+      }
+
+      return newState
+    default:
+      return state
+  }
 }
 
 const restaurantsList = (state = [], action) => {
@@ -51,7 +79,7 @@ const hideCurrentPage = (state = false, action) => {
 }
 
 export default combineReducers({
-  basket,
+  baskets,
   restaurantsList,
   restaurantData,
   currentPage,

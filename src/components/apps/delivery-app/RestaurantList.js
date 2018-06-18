@@ -4,6 +4,7 @@ import s from './RestaurantList.module.scss'
 import { requestRestaurantsList } from 'AppsActions/delivery-app/index'
 import RestaurantItem from './RestaurantItem'
 import RestaurantComponent from './RestaurantComponent'
+import SearchComponent from 'AppsComponents/delivery-app/SearchComponent'
 
 class RestaurantList extends React.Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class RestaurantList extends React.Component {
 
     return(
       <div id={s.container} className={hideCurrentPage ? s.fadeOut : null}>
+        <SearchComponent />
         {restaurantsList.map((r, i) => <RestaurantItem key={i} {...r} />)}
       </div>
     )

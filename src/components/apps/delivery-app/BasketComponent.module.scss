@@ -1,5 +1,23 @@
 #container {
-  width: 100%;
-  background-color: bisque;
   width: 300px;
+  padding: 10px;
+  border: 1px solid #e3e3e3;
+  position: sticky;
+  right: 20px;
+  top: 20px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  min-height: 300px;
+
+  ul {
+    flex-grow: 1;
+    li {
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 }

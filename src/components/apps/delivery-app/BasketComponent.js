@@ -8,11 +8,19 @@ class BasketComponent extends React.Component {
   }
 
   render() {
-    const { test } = this.props.basket
+    const items = this.props.basket === undefined ? [] : this.props.basket.items
 
     return(
       <div id={s.container}>
-        BasketComponent {test}
+        <ul>
+          {items !== undefined ?
+            items.map(item => <li><span>{item.name}</span><span>{item.price}$</span></li>)
+            : null
+          }
+        </ul>
+
+        <h3>Total: 0.00$</h3>
+        <button>Pay now</button>
       </div>
     )
   }
@@ -20,7 +28,7 @@ class BasketComponent extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    basket: state.deliveryApp.basket
+    basket: state.deliveryApp.baskets.find(b => b.id === state.deliveryApp.restaurantData.id)
   }
 }
 

@@ -1,6 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { CHANGE_PAGE } from 'AppsActions/delivery-app/index'
+import s from './RestaurantComponent.module.scss'
+import {
+  CHANGE_PAGE,
+  addToBasket
+} from 'AppsActions/delivery-app/index'
+import BasketComponent from './BasketComponent'
 
 class RestaurantComponent extends React.Component {
   constructor(props) {
@@ -8,20 +13,29 @@ class RestaurantComponent extends React.Component {
   }
 
   renderMenus = () => {
-    const { menus } = this.props.restaurantData
+    const {
+      id,
+      menus
+    } = this.props.restaurantData
+    const { addToBasket } = this.props
 
     return menus.map(menu => {
       return (
-        <div>
+        <div className={s.menu} >
           <h2>{menu.name}</h2>
           <div style={{
             display: 'flex',
             flexWrap: 'wrap'
           }} >
             {menu.items.map(item => (
-              <div style={{backgroundColor: 'bisque'}}>
-                <p>{item.name} : {item.price}</p>
-                <p>{item.ingredients.map(i => `${i}, `)}</p>
+              <div className={s.item}>
+                <div className={s.itemDesc}>
+                  <p><strong>{item.name}</strong> : {item.price}$</p>
+                  <p>{item.ingredients.map(i => `${i}, `)}</p>
+                </div>
+                <div className={s.itemOperations}>
+                  <a>-</a><a onClick={() => addToBasket(this.props.restaurantData, item)}>+</a>
+                </div>
               </div>
             ))}
           </div>
@@ -43,11 +57,19 @@ class RestaurantComponent extends React.Component {
     const { backToResults } = this.props
 
     return(
-      <div>
-        <h3>{name}</h3>
-        <h3>{description}</h3>
-        {this.renderMenus()}
-        <a onClick={backToResults}>Back</a>
+      <div id={s.container}>
+        <div id={s.body}>
+          <h4><a onClick={backToResults}>{`<<`} Back to results</a></h4>
+          <br />
+          <div id={s.imgContainer}>
+            <img src={pictureUrl} />
+          </div>
+          <h1>{name}</h1>
+          <p>{description}</p>
+          <br /><br /><br />
+          {this.renderMenus()}
+        </div>
+        <BasketComponent />
       </div>
     )
   }
@@ -61,7 +83,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    backToResults: () => dispatch({type: CHANGE_PAGE, page: 'restaurants_list_page'})
+    backToResults: () => dispatch({type: CHANGE_PAGE, page: 'restaurants_list_page'}),
+    addToBasket: (basketData, itemData) => dispatch(addToBasket(basketData, itemData))
   }
 }
 

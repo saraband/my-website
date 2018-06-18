@@ -2,6 +2,7 @@ import React from 'react'
 import getTrFn from './Translation'
 import { connect } from 'react-redux'
 import s from './PresentationComponent.module.scss'
+import BannerComponent from 'Components/BannerComponent'
 import Graph from './graph-3.svg'
 
 class PresentationComponent extends React.Component {
@@ -14,6 +15,7 @@ class PresentationComponent extends React.Component {
 
     return(
       <div id={s.container}>
+        <BannerComponent />
         <div id={s.title}>
           <h1 data-aos='fade-left'>{tr('presentation-title')}</h1>
           <h2 data-aos='fade-right'>{tr('presentation-subtitle')}</h2>
