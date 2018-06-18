@@ -49,25 +49,6 @@ export const receiveUsersList = (usersList) => {
   }
 }
 
-export const requestRoomsList = (id) => {
-  return (dispatch) => {
-    dispatch({type: REQUEST_ROOMS_LIST_PENDING})
-
-    const list = DB.rooms
-
-    setTimeout(() => {
-      dispatch(receiveRoomsList(list))
-    }, 500)
-  }
-}
-
-export const receiveRoomsList = (roomsList) => {
-  return {
-    type: REQUEST_ROOMS_LIST_SUCCESS,
-    roomsList
-  }
-}
-
 export const requestRoomData = (id) => {
   return (dispatch) => {
     dispatch({type: REQUEST_ROOM_DATA_PENDING})
@@ -76,6 +57,28 @@ export const requestRoomData = (id) => {
       type: REQUEST_ROOM_DATA_SUCCESS,
       roomData: DB.rooms.find(r =>  r.id === id)
     })
+  }
+}
+
+export const requestRoomsList = (id) => {
+  return (dispatch) => {
+    dispatch({type: REQUEST_ROOMS_LIST_PENDING})
+
+    const list = DB.rooms
+
+    setTimeout(() => {
+      dispatch(receiveRoomsList(list))
+
+      if(list.length > 0)
+        dispatch(requestRoomData(list[0].id))
+    }, 500)
+  }
+}
+
+export const receiveRoomsList = (roomsList) => {
+  return {
+    type: REQUEST_ROOMS_LIST_SUCCESS,
+    roomsList
   }
 }
 
@@ -96,12 +99,6 @@ export const sendMessage = (user, roomId, message) => {
     room.lastMessage = newMessage
 
     dispatch(receiveMessage(newMessage, roomId))
-
-    /*socket.emit('SEND_MESSAGE', JSON.stringify({
-      user,
-      roomId,
-      message
-    }))*/
   }
 }
 
@@ -124,22 +121,22 @@ export const createRoom = (user, title, message, participants) => {
       date: Date.now()
     }
 
+    const participantsIncludingUser = [...participants]
+    participantsIncludingUser.push({...user})
+
     DB.rooms.push({
       id: counter++,
       title,
       lastMessage: newMessage,
       messages: [newMessage],
-      participants,
-      seenBy: [user]
+      participants: participantsIncludingUser,
+      notSeenBy: participantsIncludingUser.map(p => ({
+        userId: p.id,
+        numMsgNotRead: p.id === user.id ? 0 : 1
+      }))
     })
 
     dispatch(receiveRoomsList(DB.rooms))
     dispatch(requestRoomData(counter - 1))
-    /*socket.emit('CREATE_ROOM', JSON.stringify({
-      user,
-      title,
-      message,
-      participants
-    }))*/
   }
 }

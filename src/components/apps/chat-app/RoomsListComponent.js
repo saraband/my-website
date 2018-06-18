@@ -1,20 +1,23 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import s from './RoomsListComponent.module.scss'
+import { timeSince } from 'Utils/index'
+import Loading from './loading_white.svg'
 import {
   requestRoomData,
   requestRoomsList
 } from 'AppsActions/chat-app/index'
-import { timeSince } from 'Utils/index'
-import Loading from './loading_white.svg'
+
+const getNumMsgNotRead = (id, notSeenBy) => notSeenBy.find(n => n.userId === id).numMsgNotRead
 
 const RoomsListItem = ({
   id,
+  currentUser,
   title,
   lastMessage,
   messages,
   participants,
-  seenBy,
+  notSeenBy,
   requestRoomData
 }) => (
   <div className={s.item}
@@ -23,6 +26,7 @@ const RoomsListItem = ({
     <div>
       <h4><strong>{title}</strong></h4>
       <p>{lastMessage.content}</p>
+      <p>Msg not read : {getNumMsgNotRead(currentUser.id, notSeenBy)}</p>
       <p className={s.smallDate}>{timeSince(lastMessage.date)}</p>
     </div>
   </div>
@@ -41,7 +45,8 @@ class RoomsListComponent extends React.PureComponent {
     const {
       roomsList,
       requestRoomData,
-      isRequestingRoomsList
+      isRequestingRoomsList,
+      currentUser
     } = this.props
 
     if(isRequestingRoomsList) {
@@ -62,7 +67,7 @@ class RoomsListComponent extends React.PureComponent {
     
     return(
       <div id={s.container}>
-        {roomsList.map((r, i) => <RoomsListItem requestRoomData={requestRoomData} {...r} key={i} />)}
+        {roomsList.map((r, i) => <RoomsListItem requestRoomData={requestRoomData} currentUser={currentUser} {...r} key={i} />)}
       </div>
     )
   }
@@ -70,6 +75,7 @@ class RoomsListComponent extends React.PureComponent {
 
 const mapStateToProps = (state) => {
   return {
+    currentUser: state.chatApp.currentUser,
     roomsList: state.chatApp.roomsList,
     isRequestingRoomsList: state.chatApp.isRequestingRoomsList
   }

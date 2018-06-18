@@ -6,8 +6,8 @@ import {
 import s from './CreateRoomButton.module.scss'
 
 const CreateRoomButton = ({showCreateRoomPanel}) => (
-  <div id={s.container}>
-    <p onClick={showCreateRoomPanel} >Create room</p>
+  <div id={s.container} onClick={(showCreateRoomPanel)}>
+    <p>Create room</p>
   </div>
 )
 

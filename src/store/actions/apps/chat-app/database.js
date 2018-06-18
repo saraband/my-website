@@ -18,8 +18,11 @@ export default {
       title: 'Bonjour',
       lastMessage,
       messages: [lastMessage],
-      participants: [user],
-      seenBy: [0]
+      participants: [user, 1],
+      notSeenBy: [{
+        userId: 0,
+        numMsgNotRead: 3
+      }]
     }
   ],
   users: [

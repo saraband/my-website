@@ -43,7 +43,7 @@ const roomsList = (state = [], action) => {
       return state.map(room => {
 
         // If the message received belongs in the room, update its lastMessage property
-        if(room._id === action.message.roomId)
+        if(room.id === action.message.roomId)
           return {
             ...room,
             lastMessage: action.message
@@ -83,7 +83,6 @@ const currentRoom = (state = {}, action) => {
     case REQUEST_ROOM_DATA_SUCCESS:
       return {...action.roomData}
     case SEND_MESSAGE_SUCCESS:
-
       // In case no current room is selected
       // No need to update anything
       if(state.messages === undefined)
@@ -94,6 +93,7 @@ const currentRoom = (state = {}, action) => {
         return state
 
       // Update messages in current room
+
       let nextState = {
         ...state,
         messages: [
