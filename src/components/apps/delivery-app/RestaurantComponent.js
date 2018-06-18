@@ -19,22 +19,22 @@ class RestaurantComponent extends React.Component {
     } = this.props.restaurantData
     const { addToBasket } = this.props
 
-    return menus.map(menu => {
+    return menus.map((menu, i) => {
       return (
-        <div className={s.menu} >
+        <div className={s.menu} key={i}>
           <h2>{menu.name}</h2>
           <div style={{
             display: 'flex',
             flexWrap: 'wrap'
           }} >
-            {menu.items.map(item => (
-              <div className={s.item}>
+            {menu.items.map((item, j) => (
+              <div className={s.item} key={j}>
                 <div className={s.itemDesc}>
                   <p><strong>{item.name}</strong> : {item.price}$</p>
-                  <p>{item.ingredients.map(i => `${i}, `)}</p>
+                  <p>{item.ingredients.map(k => `${k}, `)}</p>
                 </div>
                 <div className={s.itemOperations}>
-                  <a>-</a><a onClick={() => addToBasket(this.props.restaurantData, item)}>+</a>
+                  <a>-</a><a onClick={() => addToBasket(id, item)}>+</a>
                 </div>
               </div>
             ))}
@@ -84,7 +84,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     backToResults: () => dispatch({type: CHANGE_PAGE, page: 'restaurants_list_page'}),
-    addToBasket: (basketData, itemData) => dispatch(addToBasket(basketData, itemData))
+    addToBasket: (basketId, itemData) => dispatch(addToBasket(basketId, itemData))
   }
 }
 

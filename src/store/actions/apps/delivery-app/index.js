@@ -36,10 +36,10 @@ export const showRestaurantData = (data) => {
   }
 }
 
-export const addToBasket = (basketData, itemData) => {
+export const addToBasket = (basketId, itemData) => {
   return {
     type: ADD_TO_BASKET,
-    basketData,
+    basketId,
     itemData
   }
 }

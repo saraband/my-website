@@ -7,28 +7,55 @@ class BasketComponent extends React.Component {
     super(props)
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('ok')
+    return true
+  }
+
   render() {
-    const items = this.props.basket === undefined ? [] : this.props.basket.items
+    const {
+      items,
+      total
+    } = this.props
 
     return(
       <div id={s.container}>
         <ul>
-          {items !== undefined ?
-            items.map(item => <li><span>{item.name}</span><span>{item.price}$</span></li>)
-            : null
-          }
+          {items.map((item, i) => <li key={i}><span>{item.name}</span><span>x {item.quantity}</span></li>)}
         </ul>
 
-        <h3>Total: 0.00$</h3>
+        <h3>Total: {total}$</h3>
         <button>Pay now</button>
       </div>
     )
   }
 }
 
+const getCurrentBasketItems = (baskets, basketId) => {
+  const basket = baskets.find(b => b.id === basketId)
+
+  if(basket === undefined
+  || basket.items === undefined)
+    return []
+
+  return [...basket.items]
+}
+
+const getTotalItems = (baskets, basketId) => {
+  const items = getCurrentBasketItems(baskets, basketId)
+
+  let total = 0
+
+  for(let it of items)
+    total += (it.quantity * it.price)
+
+  return total
+}
+
 const mapStateToProps = (state) => {
   return {
-    basket: state.deliveryApp.baskets.find(b => b.id === state.deliveryApp.restaurantData.id)
+    items: getCurrentBasketItems(state.deliveryApp.baskets, state.deliveryApp.restaurantData.id),
+    total: getTotalItems(state.deliveryApp.baskets, state.deliveryApp.restaurantData.id)
   }
 }
 
