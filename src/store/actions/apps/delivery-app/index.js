@@ -10,6 +10,7 @@ export const CHANGE_PAGE = 'CHANGE_PAGE'
 export const HIDE_CURRENT_PAGE = 'HIDE_CURRENT_PAGE'
 export const ADD_TO_BASKET = 'ADD_TO_BASKET'
 export const REMOVE_FROM_BASKET = 'REMOVE_FROM_BASKET'
+export const CHANGE_SEARCH_DATA = 'CHANGE_SEARCH_DATA'
 
 export const requestRestaurantsList = () => {
   return (dispatch) => {
@@ -50,5 +51,13 @@ export const removeFromBasket = (basketId, itemId) => {
     type: REMOVE_FROM_BASKET,
     basketId,
     itemId
+  }
+}
+
+export const changeSearchData = (key, value) => {
+  return {
+    type: CHANGE_SEARCH_DATA,
+    key,
+    value
   }
 }

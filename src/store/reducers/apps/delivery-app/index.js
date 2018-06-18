@@ -7,7 +7,8 @@ import {
   CHANGE_PAGE,
   HIDE_CURRENT_PAGE,
   ADD_TO_BASKET,
-  REMOVE_FROM_BASKET
+  REMOVE_FROM_BASKET,
+  CHANGE_SEARCH_DATA
 } from 'AppsActions/delivery-app/index'
 
 const baskets = (state = [], action) => {
@@ -80,6 +81,23 @@ const baskets = (state = [], action) => {
   }
 }
 
+const initialSearchData = {
+  search: '',
+  location: ''
+}
+
+const searchData = (state = initialSearchData, action) => {
+  switch(action.type) {
+    case CHANGE_SEARCH_DATA:
+      return {
+        ...state,
+        [action.key]: action.value
+      }
+    default:
+      return state
+  }
+}
+
 const restaurantsList = (state = [], action) => {
   switch(action.type) {
     case REQUEST_RESTAURANTS_LIST_SUCCESS:
@@ -123,5 +141,6 @@ export default combineReducers({
   restaurantsList,
   restaurantData,
   currentPage,
-  hideCurrentPage
+  hideCurrentPage,
+  searchData
 })
