@@ -8,10 +8,45 @@ import {
 } from 'AppsActions/delivery-app/index'
 import Image from './Image'
 import BasketComponent from './BasketComponent'
+import RatingSvg from './rating.svg'
+import InfoSvg from './info.svg'
+import CheckoutComponent from './CheckoutComponent'
 
 class RestaurantComponent extends React.Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      recentlyAdded: {},
+      hideRecentlyAdded: false,
+    }
+  }
+
+  handleRemoveFromBasket = (itemId) => {
+    const {
+      removeFromBasket,
+      restaurantData: {
+        id
+      }
+    } = this.props
+
+    removeFromBasket(id, itemId)
+  }
+
+  handleAddToBasket = (item) => {
+    const {
+      addToBasket,
+      restaurantData: {
+        id
+      }
+    } = this.props
+
+    addToBasket(id, item)
+
+    // Timeout popup recentlyAdded
+    clearTimeout(this.timeoutRecentlyAdded)
+    this.setState({recentlyAdded: {...item}, hideRecentlyAdded: false})
+    this.timeoutRecentlyAdded = setTimeout(() => this.setState({hideRecentlyAdded: true}), 2000)
   }
 
   renderMenus = () => {
@@ -19,11 +54,6 @@ class RestaurantComponent extends React.Component {
       id,
       menus
     } = this.props.restaurantData
-
-    const {
-      addToBasket,
-      removeFromBasket
-    } = this.props
 
     return menus.map((menu, i) => {
       return (
@@ -36,12 +66,12 @@ class RestaurantComponent extends React.Component {
             {menu.items.map((item, j) => (
               <div className={s.item} key={j}>
                 <div className={s.itemDesc}>
-                  <p><strong>{item.name}</strong> : {item.price}$</p>
-                  <p>{item.ingredients.map(k => `${k}, `)}</p>
+                  <h3><strong>{item.name}</strong> : {item.price}$</h3>
+                  <h5>{item.ingredients.map(k => `${k}, `)}</h5>
                 </div>
                 <div className={s.itemOperations}>
-                  <a onClick={() => removeFromBasket(id, item.id)}>-</a>
-                  <a onClick={() => addToBasket(id, item)}>+</a>
+                  <a onClick={() => this.handleRemoveFromBasket(item.id)}>-</a>
+                  <a onClick={() => this.handleAddToBasket(item)}>+</a>
                 </div>
               </div>
             ))}
@@ -54,6 +84,7 @@ class RestaurantComponent extends React.Component {
   render() {
     const {
       name,
+      tags,
       priceRange,
       description,
       rating,
@@ -62,9 +93,24 @@ class RestaurantComponent extends React.Component {
     } = this.props.restaurantData
 
     const { backToResults } = this.props
+    const {
+      recentlyAdded,
+      hideRecentlyAdded,
+      isCheckingOut
+    } = this.state
 
     return(
       <div id={s.container}>
+        {isCheckingOut ? <CheckoutComponent /> : null}
+        {/* RECENTLY ADDED */}
+        <div id={s.recentlyAdded} className={hideRecentlyAdded ?
+          s.hideRecentlyAdded
+          : (recentlyAdded.name !== undefined ?
+              s.showRecentlyAdded
+              : null)}>
+          <InfoSvg id={s.infoSvg}/>
+          You added 1x &nbsp;<strong>{recentlyAdded.name}</strong>&nbsp;to your basket.
+        </div>
         <div id={s.body}>
           <h4><a onClick={backToResults}>{`<<`} Back to results</a></h4>
           <br />
@@ -72,8 +118,8 @@ class RestaurantComponent extends React.Component {
             <Image src={pictureUrl} />
           </div>
           <h1>{name}</h1>
+          <h3><span id={s.rating}><RatingSvg id={s.ratingSvg}/>{rating}%</span><span id={s.tags}>{tags}</span></h3>
           <p>{description}</p>
-          <br /><br /><br />
           {this.renderMenus()}
         </div>
         <BasketComponent />

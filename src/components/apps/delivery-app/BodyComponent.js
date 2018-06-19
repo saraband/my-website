@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import s from './BodyComponent.module.scss'
 import RestaurantList from './RestaurantList'
 import RestaurantComponent from './RestaurantComponent'
+import CheckoutComponent from './CheckoutComponent'
 
 class BodyComponent extends React.Component {
   constructor(props) {
@@ -17,6 +18,8 @@ class BodyComponent extends React.Component {
         return <RestaurantList />
       case 'restaurant_data_page':
         return <RestaurantComponent />
+      case 'checkout_page':
+        return <CheckoutComponent />
       default:
         return <p>Error</p>
     }

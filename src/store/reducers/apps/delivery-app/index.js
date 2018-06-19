@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux'
 import {
+  REQUEST_RESTAURANTS_LIST_PENDING,
   REQUEST_RESTAURANTS_LIST_SUCCESS,
   REQUEST_RESTAURANT_DATA_SUCCESS,
   SHOW_RESTAURANT_DATA,
@@ -91,6 +92,7 @@ const initialSearchData = {
 const searchData = (state = initialSearchData, action) => {
   switch(action.type) {
     case CHANGE_SEARCH_DATA:
+    console.log(action.key+'=>'+action.value)
       return {
         ...state,
         [action.key]: action.value
@@ -158,6 +160,17 @@ const tags = (state = ['Healthy', 'Burger'], action) => {
   }
 }
 
+const isRetrievingRestaurantsList = (state = false, action) => {
+  switch(action.type) {
+    case REQUEST_RESTAURANTS_LIST_PENDING:
+      return true
+    case REQUEST_RESTAURANTS_LIST_SUCCESS:
+      return false
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
   baskets,
   restaurantsList,
@@ -165,5 +178,6 @@ export default combineReducers({
   currentPage,
   hideCurrentPage,
   searchData,
-  tags
+  tags,
+  isRetrievingRestaurantsList
 })

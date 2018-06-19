@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import s from './RestaurantItem.module.scss'
 import { showRestaurantData } from 'AppsActions/delivery-app/index'
+import RatingSvg from './rating.svg'
 
 // Funny test
 const getRatingColors = (rating) => {
@@ -21,7 +22,8 @@ class RestaurantItem extends React.Component {
       description,
       rating,
       pictureUrlSmall,
-      showRestaurantData
+      showRestaurantData,
+      tags
     } = this.props
 
     return (
@@ -29,7 +31,13 @@ class RestaurantItem extends React.Component {
         <div id={s.imgContainer}>
           <img src={pictureUrlSmall} />
         </div>
-        <h3><span style={{color: getRatingColors(rating)}} >{rating}%</span> - {name}</h3>
+        <div className={s.description}>
+          <h3>
+            <span className={s.rating}><RatingSvg className={s.ratingSvg} /> {rating}%</span>
+            <span>{name}</span>
+          </h3>
+          <h5>{tags}</h5>
+        </div>
       </div>
     )
   }

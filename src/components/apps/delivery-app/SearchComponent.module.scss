@@ -15,8 +15,20 @@
     padding: 10px;
     .tag {
       margin: 10px;
+      padding: 10px;
       background-color: $orange;
       color: white;
+      border-radius: 2px;
+      transition: all 0.1s linear;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      strong {
+        cursor: pointer;
+        margin-left: 20px;
+      }
     }
   }
 

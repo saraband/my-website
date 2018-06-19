@@ -1,6 +1,35 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import s from './BasketComponent.module.scss'
+import {
+  CHANGE_PAGE,
+  addToBasket,
+  removeFromBasket
+} from 'AppsActions/delivery-app/index'
+import CartSvg from './cart.svg'
+
+const FoodItem = ({
+  item,
+  addToBasket,
+  removeFromBasket,
+  basketId
+}) => (
+  <li>
+    <span className={s.itemQuantity}>
+      <span 
+        className={s.itemOperation}
+        onClick={() => removeFromBasket(basketId, item.id)}
+        >-</span>
+      <span>{item.quantity}</span>
+      <span 
+        className={s.itemOperation}
+        onClick={() => addToBasket(basketId, item)}
+        >+</span>
+    </span>
+    <span className={s.itemName}>{item.name}</span>
+    <span className={s.itemPrice}>{item.price} €</span>
+  </li>
+)
 
 class BasketComponent extends React.Component {
   constructor(props) {
@@ -10,17 +39,35 @@ class BasketComponent extends React.Component {
   render() {
     const {
       items,
-      total
+      total,
+      checkout,
+      addToBasket,
+      removeFromBasket,
+      basketId
     } = this.props
 
     return(
       <div id={s.container}>
-        <ul>
-          {items.map((item, i) => <li key={i}><span>{item.name}</span><span>x {item.quantity}</span></li>)}
-        </ul>
-
-        <h3>Total: {total}$</h3>
-        <button disabled={!items.length}>Pay now</button>
+        <div id={s.list}>
+          {items.length ? (
+            <ul>
+              {items.map((item, i) => (
+                // Not clean but I ain't got time
+                <FoodItem
+                  addToBasket={addToBasket}
+                  removeFromBasket={removeFromBasket}
+                  basketId={basketId}
+                  key={i}
+                  item={item}
+                  />
+              ))}
+            </ul>
+          ) : (
+            <p>Your basket is empty.</p>
+          )}
+        </div>
+        {items.length ? <h3><span>Total:</span><span>{total} €</span></h3> : null}
+        <button disabled={!items.length} onClick={checkout}><CartSvg id={s.cartSvg} />Checkout</button>
       </div>
     )
   }
@@ -49,9 +96,18 @@ const getTotalItems = (baskets, basketId) => {
 
 const mapStateToProps = (state) => {
   return {
+    basketId: state.deliveryApp.restaurantData.id,
     items: getCurrentBasketItems(state.deliveryApp.baskets, state.deliveryApp.restaurantData.id),
     total: getTotalItems(state.deliveryApp.baskets, state.deliveryApp.restaurantData.id)
   }
 }
 
-export default connect(mapStateToProps)(BasketComponent)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    checkout: () => dispatch({type: CHANGE_PAGE, page: 'checkout_page'}),
+    addToBasket: (basketId, itemData) => dispatch(addToBasket(basketId, itemData)),
+    removeFromBasket: (basketId, itemId) => dispatch(removeFromBasket(basketId, itemId)),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(BasketComponent)

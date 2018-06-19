@@ -4,7 +4,8 @@ import s from './SearchComponent.module.scss'
 import DeliSelect from './DeliSelect'
 import {
   changeSearchData,
-  toggleTag
+  toggleTag,
+  requestRestaurantsList
 } from 'AppsActions/delivery-app/index'
 
 class SearchComponent extends React.Component {
@@ -14,33 +15,73 @@ class SearchComponent extends React.Component {
 
   requestListTest = () => console.log('Requesting data...')
 
-  handleChange = (e) => {
-    changeSearchData(e.target.name, e.target.value)
+  requestListFromProps = () => {
+    const {
+      searchData,
+      rawTags,
+      requestRestaurantsList
+    } = this.props
+
+    requestRestaurantsList({
+      search: searchData.search,
+      location: searchData.location,
+      tags: rawTags
+    })
+  }
+
+  componentWillMount() {
+    this.requestListFromProps()
+  }
+
+  handleChange = (e, timeout = 1000) => {
+    this.props.changeSearchData(e.target.name, e.target.value)
 
     clearTimeout(this.timeout)
-    this.timeout = setTimeout(this.requestListTest, 1000)
-    console.log('changed data')
+    this.timeout = setTimeout(this.requestListFromProps, timeout)
+  }
+
+  handleToggleTag = (tag) => {
+    this.props.toggleTag(tag)
+    
+  }
+
+  componentDidUpdate(prevProps) {
+    if(this.props.rawTags !== prevProps.rawTags) {
+      this.requestListFromProps()
+    }
   }
 
   renderTags = () => {
     const {
       searchData,
       tags,
+      rawTags,
       toggleTag,
-      changeSearchData
+      changeSearchData,
+      numResults
     } = this.props
 
     return(
       <div id={s.tags}>
+        <h4>{numResults} found{rawTags}</h4>
         {searchData.search.length > 0 ?
-          <p className={s.tag}>{searchData.search}<strong onClick={() => changeSearchData('search', '')}>X</strong></p>
+          <p className={s.tag}>
+            Search: "{searchData.search}"
+            <strong onClick={() => this.handleChange({target: {name: 'search', value: ''}}, 0)}>X</strong>
+          </p>
           : null}
         {searchData.location.length > 0 ?
-          <p className={s.tag}>{searchData.location}<strong onClick={() => changeSearchData('location', '')}>X</strong></p>
+          <p className={s.tag}>
+            Location: "{searchData.location}"
+            <strong onClick={() => this.handleChange({target: {name: 'location', value: ''}}, 0)}>X</strong>
+          </p>
           : null}
-        {tags.map(t => t.selected ? 
-          <p className={s.tag}>{t.value}<strong onClick={() => toggleTag(t.value)}>X</strong></p>
-          : null)}
+        {tags.map((t, i) => t.selected ?
+          <p className={s.tag} key={i}>
+            {t.value}
+            <strong onClick={() => this.handleToggleTag(t.value)}>X</strong>
+          </p>
+          : null)}          
       </div>
     )
   }
@@ -71,11 +112,12 @@ class SearchComponent extends React.Component {
             type='search'
             placeholder='Place, City, ZIP code'
             value={location}
+            name='location'
             onChange={this.handleChange}
             />
           <DeliSelect
             value='Tags'
-            onChange={toggleTag}
+            onChange={this.handleToggleTag}
             tags={tags}
             />
         </form>
@@ -108,14 +150,17 @@ const getSimpleTagList = (tags, selectedTags) => tags.map(t => ({
 const mapStateToProps = (state) => {
   return {
     searchData: state.deliveryApp.searchData,
-    tags: getSimpleTagList(getTagsPossibleFromList(state.deliveryApp.restaurantsList), state.deliveryApp.tags)
+    tags: getSimpleTagList(getTagsPossibleFromList(state.deliveryApp.restaurantsList), state.deliveryApp.tags),
+    numResults: state.deliveryApp.restaurantsList.length,
+    rawTags: state.deliveryApp.tags
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     changeSearchData: (key, value) => dispatch(changeSearchData(key, value)),
-    toggleTag: (tag) => dispatch(toggleTag(tag))
+    toggleTag: (tag) => dispatch(toggleTag(tag)),
+    requestRestaurantsList: (searchData, tags) => dispatch(requestRestaurantsList(searchData, tags))
   }
 }
 

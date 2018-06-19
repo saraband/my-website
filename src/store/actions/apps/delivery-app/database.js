@@ -121,5 +121,5 @@ export default new Array(20).fill({}).map((el, i) => ({
   description: loremIpsum,
   rating: getRandomInt(70, 100),
   menus: generateMenus(getRandomInt(3, 4)),
-  tags: getRandomTags(3),
+  tags: getRandomTags(1),
 }))
