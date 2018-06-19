@@ -11,16 +11,18 @@ export const HIDE_CURRENT_PAGE = 'HIDE_CURRENT_PAGE'
 export const ADD_TO_BASKET = 'ADD_TO_BASKET'
 export const REMOVE_FROM_BASKET = 'REMOVE_FROM_BASKET'
 export const CHANGE_SEARCH_DATA = 'CHANGE_SEARCH_DATA'
+export const TOGGLE_TAG = 'TOGGLE_TAG'
 
 export const requestRestaurantsList = () => {
   return (dispatch) => {
     dispatch({type: REQUEST_RESTAURANTS_LIST_PENDING})
 
     const list = DB
-    console.log(DB[0])
-    //timeout
 
-    dispatch({type: REQUEST_RESTAURANTS_LIST_SUCCESS, list})
+    //timeout
+    setTimeout(() => {
+      dispatch({type: REQUEST_RESTAURANTS_LIST_SUCCESS, list})
+    }, 0)
   }
 }
 
@@ -60,5 +62,12 @@ export const changeSearchData = (key, value) => {
     type: CHANGE_SEARCH_DATA,
     key,
     value
+  }
+}
+
+export const toggleTag = (tag) => {
+  return {
+    type: TOGGLE_TAG,
+    tag
   }
 }

@@ -4,9 +4,21 @@
   width: 100%;
   background-color: tomato;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: $grey;
+
+  #tags {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    .tag {
+      margin: 10px;
+      background-color: $orange;
+      color: white;
+    }
+  }
 
   form {
     display: flex;

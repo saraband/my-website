@@ -26,6 +26,25 @@ const randomIngredients = [
   'Potatoes'
 ]
 
+const randomTags = [
+  'Chinese',
+  'Pizza',
+  'Burger',
+  'Japanese',
+  'Hangover',
+  'Healthy'
+]
+
+const getRandomTags = (num) => {
+  let tags = []
+
+  for(let i = 0; i < num; ++i) {
+    tags.push(getRandomArrayElement(randomTags))
+  }
+
+  return tags
+}
+
 const priceRanges = [
   'Cheap',
   'Moderate',
@@ -102,4 +121,5 @@ export default new Array(20).fill({}).map((el, i) => ({
   description: loremIpsum,
   rating: getRandomInt(70, 100),
   menus: generateMenus(getRandomInt(3, 4)),
+  tags: getRandomTags(3),
 }))

@@ -8,7 +8,8 @@ import {
   HIDE_CURRENT_PAGE,
   ADD_TO_BASKET,
   REMOVE_FROM_BASKET,
-  CHANGE_SEARCH_DATA
+  CHANGE_SEARCH_DATA,
+  TOGGLE_TAG
 } from 'AppsActions/delivery-app/index'
 
 const baskets = (state = [], action) => {
@@ -83,7 +84,8 @@ const baskets = (state = [], action) => {
 
 const initialSearchData = {
   search: '',
-  location: ''
+  location: '',
+  tags: []
 }
 
 const searchData = (state = initialSearchData, action) => {
@@ -136,11 +138,32 @@ const hideCurrentPage = (state = false, action) => {
   }
 }
 
+const tags = (state = ['Healthy', 'Burger'], action) => {
+  switch(action.type) {
+    case TOGGLE_TAG:
+      const index = state.findIndex(t => t === action.tag)
+      if(index === -1) {
+        let newState = [...state]
+        newState.push(action.tag)
+        return newState
+      }
+
+      // Array.splice doesnt work as intended wtf ?
+      return [
+        ...state.slice(0, index),
+        ...state.slice(index + 1)
+      ]
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
   baskets,
   restaurantsList,
   restaurantData,
   currentPage,
   hideCurrentPage,
-  searchData
+  searchData,
+  tags
 })
