@@ -1,12 +1,5 @@
 import { getRandomArrayElement, getRandomInt } from 'Utils/index'
 
-const randomImg = [
-  require('./img/0.jpg'),
-  require('./img/1.jpg'),
-  require('./img/2.jpg'),
-  require('./img/3.jpg'),
-]
-
 const randomRestaurantNames = [
   'The Friendly Clam',
   'The Champagne Ranch',
@@ -75,7 +68,7 @@ const generateMenus = (num) => {
     menus.push({
       id: counter++,
       name: getRandomArrayElement(randomRestaurantNames),
-      items: generateItems(getRandomInt(2, 10))
+      items: generateItems(getRandomInt(5, 10))
     })
   }
 
@@ -100,6 +93,13 @@ const generateRestaurants = (num) => {
   return restaurants
 }
 
-export default {
-  restaurants: generateRestaurants(20)
-}
+export default new Array(20).fill({}).map((el, i) => ({
+  id: counter++,
+  pictureUrl: require(`./img/${i}_normal.jpg`),
+  pictureUrlSmall: require(`./img/${i}_small.jpg`),
+  name: getRandomArrayElement(randomRestaurantNames),
+  priceRange: getRandomArrayElement(priceRanges),
+  description: loremIpsum,
+  rating: getRandomInt(70, 100),
+  menus: generateMenus(getRandomInt(3, 4)),
+}))

@@ -16,7 +16,8 @@ export const requestRestaurantsList = () => {
   return (dispatch) => {
     dispatch({type: REQUEST_RESTAURANTS_LIST_PENDING})
 
-    const list = DB.restaurants
+    const list = DB
+    console.log(DB[0])
     //timeout
 
     dispatch({type: REQUEST_RESTAURANTS_LIST_SUCCESS, list})

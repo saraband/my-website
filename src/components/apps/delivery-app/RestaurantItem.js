@@ -20,14 +20,14 @@ class RestaurantItem extends React.Component {
       priceRange,
       description,
       rating,
-      pictureUrl,
+      pictureUrlSmall,
       showRestaurantData
     } = this.props
 
     return (
       <div id={s.container} onClick={() => showRestaurantData(this.props)}>
         <div id={s.imgContainer}>
-          <img src={pictureUrl} />
+          <img src={pictureUrlSmall} />
         </div>
         <h3><span style={{color: getRatingColors(rating)}} >{rating}%</span> - {name}</h3>
       </div>

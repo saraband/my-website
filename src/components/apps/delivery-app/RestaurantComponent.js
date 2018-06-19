@@ -6,6 +6,7 @@ import {
   addToBasket,
   removeFromBasket
 } from 'AppsActions/delivery-app/index'
+import Image from './Image'
 import BasketComponent from './BasketComponent'
 
 class RestaurantComponent extends React.Component {
@@ -68,7 +69,7 @@ class RestaurantComponent extends React.Component {
           <h4><a onClick={backToResults}>{`<<`} Back to results</a></h4>
           <br />
           <div id={s.imgContainer}>
-            <img src={pictureUrl} />
+            <Image src={pictureUrl} />
           </div>
           <h1>{name}</h1>
           <p>{description}</p>
