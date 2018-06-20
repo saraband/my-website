@@ -20,7 +20,7 @@ const FoodItem = ({
         className={s.itemOperation}
         onClick={() => removeFromBasket(basketId, item.id)}
         >-</span>
-      <span>{item.quantity}</span>
+      <span className={s.quantity}>{item.quantity}</span>
       <span 
         className={s.itemOperation}
         onClick={() => addToBasket(basketId, item)}

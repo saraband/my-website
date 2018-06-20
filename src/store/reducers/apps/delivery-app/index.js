@@ -2,6 +2,7 @@ import { combineReducers } from 'redux'
 import {
   REQUEST_RESTAURANTS_LIST_PENDING,
   REQUEST_RESTAURANTS_LIST_SUCCESS,
+  REQUEST_RESTAURANT_DATA_PENDING,
   REQUEST_RESTAURANT_DATA_SUCCESS,
   SHOW_RESTAURANT_DATA,
   HIDE_RESTAURANT_DATA,
@@ -171,6 +172,17 @@ const isRetrievingRestaurantsList = (state = false, action) => {
   }
 }
 
+const retrievingRestaurantDataId = (state = -1, action) => {
+  switch(action.type) {
+    case REQUEST_RESTAURANT_DATA_PENDING:
+      return action.id
+    case REQUEST_RESTAURANT_DATA_SUCCESS:
+      return -1
+    default:
+      return state
+  }
+}
+
 const tagsPossibles = (state = [], action) => {
   switch(action.type) {
     case REQUEST_RESTAURANTS_LIST_SUCCESS:
@@ -189,5 +201,6 @@ export default combineReducers({
   searchData,
   tags,
   isRetrievingRestaurantsList,
+  retrievingRestaurantDataId,
   tagsPossibles
 })

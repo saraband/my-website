@@ -21,6 +21,8 @@ class CheckoutComponent extends React.Component {
       event.stopPropagation()
   }
 
+  goToStep = (step) => this.setState({checkoutStep: step})
+
   renderStep = () => {
     switch(this.state.checkoutStep) {
       case 'info':
@@ -64,6 +66,7 @@ class CheckoutComponent extends React.Component {
 
   render() {
     const { backToRestaurant } = this.props
+    const step = this.state.checkoutStep
     const {
       name
     } = this.props.restaurantData
@@ -71,8 +74,35 @@ class CheckoutComponent extends React.Component {
     return(
       <div id={s.container} onClick={backToRestaurant}>
         <div id={s.box} onClick={this.cancelEvent}>
-          <h2 onClick={backToRestaurant}>Back to restaurant {name}</h2>
-          {this.renderStep()}
+          <div id={s.left}>
+            <h3>Check out</h3>
+            <div id={s.steps}>
+              <ul>
+                <li
+                  className={step === 'info' ? s.selected : null}
+                  onClick={() => this.goToStep('info')}
+                  >
+                    General informations
+                  </li>
+                <li
+                  className={step === 'card_info' ? s.selected: null}
+                  onClick={() => this.goToStep('card_info')}
+                  >
+                    Payment informations
+                  </li>
+                <li
+                  className={step === 'recap' ? s.selected : null}
+                  onClick={() => this.goToStep('recap')}
+                  >
+                    Recapitulatif
+                  </li>
+              </ul>
+            </div>
+            {this.renderStep()}
+          </div>
+          <div id={s.right}>
+            Recapitulatif
+          </div>
         </div>
       </div>
     )

@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import s from './RestaurantItem.module.scss'
 import { showRestaurantData } from 'AppsActions/delivery-app/index'
 import RatingSvg from './rating.svg'
+import LoadingSvg from './loading.svg'
 import Image from './Image'
 
 // Funny test
@@ -18,12 +19,14 @@ class RestaurantItem extends React.Component {
 
   render() {
     const {
+      id,
       name,
       priceRange,
       description,
       rating,
       pictureUrlSmall,
       showRestaurantData,
+      retrievingRestaurantDataId,
       tags,
       i
     } = this.props
@@ -32,9 +35,12 @@ class RestaurantItem extends React.Component {
       <div
         className={s.container}
         onClick={() => showRestaurantData(this.props)}
-        style={{
-          animationDelay: 0.05 * i + 's'
-        }} >
+        >
+        {retrievingRestaurantDataId === id ?
+          <div className={s.overlay}>
+            <LoadingSvg className={s.loadingSvg} />
+          </div>
+          : null}
         <div className={s.imgContainer}>
           <Image src={pictureUrlSmall} />
         </div>
@@ -52,7 +58,7 @@ class RestaurantItem extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-
+    retrievingRestaurantDataId: state.deliveryApp.retrievingRestaurantDataId
   }
 }
 

@@ -38,13 +38,13 @@ export const requestRestaurantsList = ({search, location, tags}) => {
     //timeout
     setTimeout(() => {
       dispatch({type: REQUEST_RESTAURANTS_LIST_SUCCESS, list, tagsPossibles})
-    }, 300)
+    }, 800)
   }
 }
 
 export const showRestaurantData = (data) => {
   return (dispatch) => {
-    dispatch({type: REQUEST_RESTAURANT_DATA_PENDING})
+    dispatch({type: REQUEST_RESTAURANT_DATA_PENDING, id: data.id})
     // timeout
     setTimeout(() => {
       dispatch({type: REQUEST_RESTAURANT_DATA_SUCCESS, data})
@@ -53,7 +53,7 @@ export const showRestaurantData = (data) => {
       setTimeout(() => { 
         dispatch({type: CHANGE_PAGE, page: 'restaurant_data_page'})
       }, 0)
-    }, 0)
+    }, 800)
   }
 }
 

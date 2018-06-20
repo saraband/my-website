@@ -82,6 +82,126 @@ const generateMenus = (num) => {
   return menus
 }
 
+const menus = [
+  {
+    /*
+    **  STARTERS
+    */
+    id: counter++,
+    name: 'Starters',
+    items: [
+      {
+        id: counter++,
+        name: 'Green salad',
+        price: 4.5,
+        ingredients: ['Lettuce', 'Vinegar', 'Tomato', 'Olive oil']
+      },
+      {
+        id: counter++,
+        name: 'Caesar salad',
+        price: 5.5,
+        ingredients: ['Lettuce', 'Vinegar', 'Tomato', 'Olive oil', 'Parmesan cheese', 'Garlic']
+      },
+      {
+        id: counter++,
+        name: 'Cheese balls',
+        price: 3,
+        ingredients: ['Mozzarella', 'Flour']
+      },
+      {
+        id: counter++,
+        name: 'Stir fried chilli chicken',
+        price: 6,
+        ingredients: ['Chicken', 'Rice', 'Chili', 'Tomato']
+      },
+      {
+        id: counter++,
+        name: 'Plain rice',
+        price: 2.5,
+        ingredients: ['Rice']
+      }
+    ]
+  },
+  {
+    /*
+    **  MAIN COURSES
+    */
+    id: counter++,
+    name: 'Main courses',
+    items: [
+      {
+        id: counter++,
+        name: 'Ratatouille',
+        price: 9.5,
+        ingredients: ['Eggplant', 'Zucchini', 'Tomato', 'Onions']
+      },
+      {
+        id: counter++,
+        name: 'Salmon makis',
+        price: 8,
+        ingredients: ['Salmon', 'Rice', 'Algae']
+      },
+      {
+        id: counter++,
+        name: 'Pizza Margherita',
+        price: 7.5,
+        ingredients: ['Tomato', 'Basil', 'Mozzarella']
+      },
+      {
+        id: counter++,
+        name: 'Pasta Bolognesa',
+        price: 11,
+        ingredients: ['Beef', 'Pasta', 'Tomato sauce', 'Olive oil', 'Basil', 'Onions']
+      },
+      {
+        id: counter++,
+        name: 'Pasta Carbonara',
+        price: 12.5,
+        ingredients: ['Pork', 'Eg yolk', 'Cream', 'Onions', 'Parmesan cheese']
+      }
+    ]
+  },
+  {
+    /*
+    **  DRINKS
+    */
+    id: counter++,
+    name: 'Drinks & desserts',
+    items: [
+      {
+        id: counter++,
+        name: 'Soda',
+        price: 2,
+        ingredients: []
+      },
+      {
+        id: counter++,
+        name: 'Plain water',
+        price: 1,
+        ingredients: []
+      },
+      {
+        id: counter++,
+        name: 'Sparkling water',
+        price: 1.5,
+        ingredients: []
+      },
+      {
+        id: counter++,
+        name: 'Cheese cake',
+        price: 3.5,
+        ingredients: ['Cheese', 'Cream']
+      },
+      {
+        id: counter++,
+        name: 'Tiramisu',
+        price: 5.5,
+        ingredients: ['Chocolate', 'Coffee', 'Vanilla']
+      }
+    ]
+  }
+]
+
 const PriceRanges = {
   CHEAP: 'Cheap',
   MODERATE: 'Moderate',
@@ -113,7 +233,7 @@ let DB = {
     pictureUrlSmall: require(`./img/${i}_small.jpg`),
     description: loremIpsum,
     rating: getRandomInt(70, 100),
-    menus: generateMenus(getRandomInt(3, 4)),
+    menus,
     tags: []
   }))
 }

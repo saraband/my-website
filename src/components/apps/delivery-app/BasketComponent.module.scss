@@ -85,6 +85,12 @@
       .itemQuantity {
         color: $black;
         font-size: 14px;
+
+        .quantity {
+          background-color: $orange;
+          color: white;
+          padding: 3px;
+        }
       }
 
       .itemOperation {
