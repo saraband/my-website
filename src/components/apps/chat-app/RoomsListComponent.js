@@ -8,7 +8,7 @@ import {
   requestRoomsList
 } from 'AppsActions/chat-app/index'
 
-const getNumMsgNotRead = (id, notSeenBy) => notSeenBy.find(n => n.userId === id).numMsgNotRead
+const getNumMsgNotRead = (id, seenBy) => seenBy.find(n => n.user.id === id).numMsgNotRead
 
 const RoomsListItem = ({
   id,
@@ -17,16 +17,17 @@ const RoomsListItem = ({
   lastMessage,
   messages,
   participants,
-  notSeenBy,
-  requestRoomData
+  seenBy,
+  requestRoomData,
+  selected
 }) => (
-  <div className={s.item}
-    onClick={() => requestRoomData(id)} >
-    <img src={lastMessage.user.picture} />
+  <div className={s.item + ' ' + (selected ? s.itemSelected : null)}
+    onClick={() => requestRoomData(id, currentUser.id)} >
+    <img src={lastMessage.user.thumbnail} />
     <div>
       <h4><strong>{title}</strong></h4>
       <p>{lastMessage.content}</p>
-      <p>Msg not read : {getNumMsgNotRead(currentUser.id, notSeenBy)}</p>
+      <p>Msg not read : {getNumMsgNotRead(currentUser.id, seenBy)}</p>
       <p className={s.smallDate}>{timeSince(lastMessage.date)}</p>
     </div>
   </div>
@@ -46,7 +47,8 @@ class RoomsListComponent extends React.PureComponent {
       roomsList,
       requestRoomData,
       isRequestingRoomsList,
-      currentUser
+      currentUser,
+      currentRoomId
     } = this.props
 
     if(isRequestingRoomsList) {
@@ -67,7 +69,15 @@ class RoomsListComponent extends React.PureComponent {
     
     return(
       <div id={s.container}>
-        {roomsList.map((r, i) => <RoomsListItem requestRoomData={requestRoomData} currentUser={currentUser} {...r} key={i} />)}
+        {roomsList.map((r, i) => (
+          <RoomsListItem 
+            {...r}
+            selected={currentRoomId === r.id}
+            requestRoomData={requestRoomData}
+            currentUser={currentUser}
+            key={i}
+            />
+        ))}
       </div>
     )
   }
@@ -76,6 +86,7 @@ class RoomsListComponent extends React.PureComponent {
 const mapStateToProps = (state) => {
   return {
     currentUser: state.chatApp.currentUser,
+    currentRoomId: state.chatApp.currentRoom.id,
     roomsList: state.chatApp.roomsList,
     isRequestingRoomsList: state.chatApp.isRequestingRoomsList
   }
@@ -83,7 +94,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    requestRoomData: (id) => dispatch(requestRoomData(id)),
+    requestRoomData: (id, userId) => dispatch(requestRoomData(id, userId)),
     requestRoomsList: (id) => dispatch(requestRoomsList(id)),
   }
 }

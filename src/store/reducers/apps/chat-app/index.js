@@ -24,6 +24,7 @@ const isCreateRoomPanelOpen = (state = false, action) => {
 const currentUserInitialState = {
   id: 0,
   name: 'Sara',
+  thumbnail: require('AppsActions/chat-app/img/sara_small.jpg'),
   picture: require('AppsActions/chat-app/img/sara.jpg')
 }
 

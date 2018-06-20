@@ -1,4 +1,6 @@
-import DB from './database.js'
+import DB, {
+  dbCreateRoom
+} from './database.js'
 
 export const SET_ROOMS_LIST_FILTER = 'SET_ROOMS_LIST_FILTER'
 export const SHOW_CREATE_ROOM_PANEL = 'SHOW_CREATE_ROOM_PANEL'
@@ -49,13 +51,20 @@ export const receiveUsersList = (usersList) => {
   }
 }
 
-export const requestRoomData = (id) => {
+export const requestRoomData = (id, userId) => {
   return (dispatch) => {
     dispatch({type: REQUEST_ROOM_DATA_PENDING})
 
+    let room = DB.rooms.find(r =>  r.id === id)
+
+    // User has seen room so we update the seen by of the room
+    room.seenBy.map(s => {
+      return s.user.id === userId ? {...s, numMsgNotRead: 0}: s
+    })
+
     dispatch({
       type: REQUEST_ROOM_DATA_SUCCESS,
-      roomData: DB.rooms.find(r =>  r.id === id)
+      roomData: room
     })
   }
 }
@@ -69,8 +78,8 @@ export const requestRoomsList = (id) => {
     setTimeout(() => {
       dispatch(receiveRoomsList(list))
 
-      if(list.length > 0)
-        dispatch(requestRoomData(list[0].id))
+      //if(list.length > 0)
+      //  dispatch(requestRoomData(list[0].id))
     }, 500)
   }
 }
@@ -114,27 +123,7 @@ export const createRoom = (user, title, message, participants) => {
   return (dispatch) => {
     dispatch({type: CREATE_ROOM_PENDING})
 
-    const newMessage = {
-      id: counter++,
-      content: message,
-      user,
-      date: Date.now()
-    }
-
-    const participantsIncludingUser = [...participants]
-    participantsIncludingUser.push({...user})
-
-    DB.rooms.push({
-      id: counter++,
-      title,
-      lastMessage: newMessage,
-      messages: [newMessage],
-      participants: participantsIncludingUser,
-      notSeenBy: participantsIncludingUser.map(p => ({
-        userId: p.id,
-        numMsgNotRead: p.id === user.id ? 0 : 1
-      }))
-    })
+    dbCreateRoom(user, message, title, [...participants, user])
 
     dispatch(receiveRoomsList(DB.rooms))
     dispatch(requestRoomData(counter - 1))

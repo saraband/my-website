@@ -32,9 +32,9 @@ const getNumMsgNotRead = (list, user) => {
   for(let r of list) {
     let unread = false
 
-    for(let p of r.notSeenBy) {
-      if(p.userId === user.id
-      && p.numMsgNotRead) {
+    for(let s of r.seenBy) {
+      if(s.user.id === user.id
+      && s.numMsgNotRead) {
         unread = 1
       }
     }

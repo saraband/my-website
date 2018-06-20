@@ -6,6 +6,10 @@
   background-color: white;
   border-right: 3px solid #d5d5d5;
 
+  .itemSelected {
+    opacity: 0.5;
+  }
+
   .item {
     background-color: $blue;
     display: flex;
