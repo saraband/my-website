@@ -11,6 +11,7 @@ import BasketComponent from './BasketComponent'
 import RatingSvg from './rating.svg'
 import InfoSvg from './info.svg'
 import CheckoutComponent from './CheckoutComponent'
+import TagSvg from './tag.svg'
 
 class RestaurantComponent extends React.Component {
   constructor(props) {
@@ -18,10 +19,11 @@ class RestaurantComponent extends React.Component {
 
     this.state = {
       recentlyAdded: {},
-      hideRecentlyAdded: false,
+      hideRecentlyAdded: false
     }
   }
 
+  // for recently added popup
   handleRemoveFromBasket = (itemId) => {
     const {
       removeFromBasket,
@@ -33,6 +35,7 @@ class RestaurantComponent extends React.Component {
     removeFromBasket(id, itemId)
   }
 
+  // for recently added popup
   handleAddToBasket = (item) => {
     const {
       addToBasket,
@@ -67,7 +70,7 @@ class RestaurantComponent extends React.Component {
               <div className={s.item} key={j}>
                 <div className={s.itemDesc}>
                   <h3><strong>{item.name}</strong> : {item.price}$</h3>
-                  <h5>{item.ingredients.map(k => `${k}, `)}</h5>
+                  <h5>{item.ingredients.join(', ')}</h5>
                 </div>
                 <div className={s.itemOperations}>
                   <a onClick={() => this.handleRemoveFromBasket(item.id)}>-</a>
@@ -92,11 +95,14 @@ class RestaurantComponent extends React.Component {
       pictureUrl
     } = this.props.restaurantData
 
-    const { backToResults } = this.props
+    const {
+      backToResults,
+      isCheckingOut
+    } = this.props
+
     const {
       recentlyAdded,
-      hideRecentlyAdded,
-      isCheckingOut
+      hideRecentlyAdded
     } = this.state
 
     return(
@@ -118,7 +124,10 @@ class RestaurantComponent extends React.Component {
             <Image src={pictureUrl} />
           </div>
           <h1>{name}</h1>
-          <h3><span id={s.rating}><RatingSvg id={s.ratingSvg}/>{rating}%</span><span id={s.tags}>{tags}</span></h3>
+          <h3>
+            <span id={s.rating}><RatingSvg id={s.ratingSvg}/>{rating}%</span>
+            {tags.map((t, i) => <span key={i} className={s.tag}><TagSvg className={s.tagSvg} />{t}</span>)}
+          </h3>
           <p>{description}</p>
           {this.renderMenus()}
         </div>
@@ -130,7 +139,8 @@ class RestaurantComponent extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    restaurantData: state.deliveryApp.restaurantData
+    restaurantData: state.deliveryApp.restaurantData,
+    isCheckingOut: state.deliveryApp.currentPage === 'checkout_page'
   }
 }
 

@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import s from './RestaurantItem.module.scss'
 import { showRestaurantData } from 'AppsActions/delivery-app/index'
 import RatingSvg from './rating.svg'
+import Image from './Image'
 
 // Funny test
 const getRatingColors = (rating) => {
@@ -29,7 +30,7 @@ class RestaurantItem extends React.Component {
     return (
       <div id={s.container} onClick={() => showRestaurantData(this.props)}>
         <div id={s.imgContainer}>
-          <img src={pictureUrlSmall} />
+          <Image src={pictureUrlSmall} />
         </div>
         <div className={s.description}>
           <h3>

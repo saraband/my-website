@@ -140,7 +140,7 @@ const hideCurrentPage = (state = false, action) => {
   }
 }
 
-const tags = (state = ['Healthy', 'Burger'], action) => {
+const tags = (state = [], action) => {
   switch(action.type) {
     case TOGGLE_TAG:
       const index = state.findIndex(t => t === action.tag)
@@ -171,6 +171,15 @@ const isRetrievingRestaurantsList = (state = false, action) => {
   }
 }
 
+const tagsPossibles = (state = [], action) => {
+  switch(action.type) {
+    case REQUEST_RESTAURANTS_LIST_SUCCESS:
+      return action.tagsPossibles
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
   baskets,
   restaurantsList,
@@ -179,5 +188,6 @@ export default combineReducers({
   hideCurrentPage,
   searchData,
   tags,
-  isRetrievingRestaurantsList
+  isRetrievingRestaurantsList,
+  tagsPossibles
 })

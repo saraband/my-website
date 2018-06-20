@@ -17,26 +17,27 @@ export const requestRestaurantsList = ({search, location, tags}) => {
   return (dispatch) => {
     dispatch({type: REQUEST_RESTAURANTS_LIST_PENDING})
 
-    const list = DB/*.filter(restaurant => {
-      if(tags.length > 1) {
-        let hasTag = false
+    const tagsPossibles = DB.tagsPossibles
+    const list = DB.restaurants.filter(restaurant => {
+      if(tags.length > 0) {
         for(let t of tags) {
           for(let rt of restaurant.tags) {
-            if(t == rt) 
-              hasTag = true
+            if(t === rt) {
+              return true
+            }
           }
         }
 
-        return hasTag
+        return false
       }
 
       // No condition is false
       return true
-    })*/
+    })
 
     //timeout
     setTimeout(() => {
-      dispatch({type: REQUEST_RESTAURANTS_LIST_SUCCESS, list})
+      dispatch({type: REQUEST_RESTAURANTS_LIST_SUCCESS, list, tagsPossibles})
     }, 300)
   }
 }

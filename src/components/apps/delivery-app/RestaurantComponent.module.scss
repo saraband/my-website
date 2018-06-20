@@ -79,14 +79,22 @@
       justify-content: flex-start;
       align-items: center;
 
-      #tags {
-        color: $dark_grey;
-        margin-left: 20px;
+      .tag {
+        margin-left: 10px;
         background-color: $orange;
         padding: 5px;
         font-size: 15px;
         color: white;
         border-radius: 2px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .tagSvg {
+          height: 15px;
+          margin-right: 10px;
+        }
       }
 
       #rating {
@@ -95,6 +103,7 @@
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
+        margin-right: 20px;
 
         #ratingSvg {
           height: 20px;

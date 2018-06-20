@@ -36,7 +36,7 @@ export default class DeliSelect extends React.Component {
     if(!toggle)
       return
     
-    return tags.map((t, i) => <DropdownItem text={t.value + '--'+(t.selected?'XX':null)} onClick={() => onChange(t.value)} key={i} />)
+    return tags.map((t, i) => <DropdownItem text={t.value + '--'+(t.selected?'XX':null)+'-------('+t.number+')'} onClick={() => onChange(t.value)} key={i} />)
   }
 
   render() {

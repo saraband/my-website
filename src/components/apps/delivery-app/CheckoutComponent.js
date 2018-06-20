@@ -16,11 +16,16 @@ class CheckoutComponent extends React.Component {
     }
   }
 
+  cancelEvent = (event) => {
+    if(event.stopPropagation)
+      event.stopPropagation()
+  }
+
   renderStep = () => {
     switch(this.state.checkoutStep) {
       case 'info':
         return(
-          <form onSubmit={e => e.preventDefault}>
+          <form onSubmit={e => e.preventDefault()}>
             <input type='text' placeholder='Name' />
             <input type='text' placeholder='Surname' />
             <input type='text' placeholder='Telephone' />
@@ -30,7 +35,7 @@ class CheckoutComponent extends React.Component {
 
       case 'card_info':
         return(
-          <form onSubmit={e => e.preventDefault}>
+          <form onSubmit={e => e.preventDefault()}>
             <input type='text' placeholder='CREDIT CARD NUMBER' />
             <input type='text' placeholder='CVC' />
             <input type='text' placeholder='EXPIRATION DATE' />
@@ -64,9 +69,11 @@ class CheckoutComponent extends React.Component {
     } = this.props.restaurantData
 
     return(
-      <div id={s.container}>
-        <h2 onClick={backToRestaurant}>Back to restaurant {name}</h2>
-        {this.renderStep()}
+      <div id={s.container} onClick={backToRestaurant}>
+        <div id={s.box} onClick={this.cancelEvent}>
+          <h2 onClick={backToRestaurant}>Back to restaurant {name}</h2>
+          {this.renderStep()}
+        </div>
       </div>
     )
   }
@@ -80,7 +87,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    backToRestaurant: () => dispatch({type: CHANGE_PAGE, page: 'restaurant_data_page'})
+    backToRestaurant: () => dispatch({type: CHANGE_PAGE, page: 'restaurant_data_page'}),
+    backToHome: () => dispatch({type: CHANGE_PAGE, page: 'restaurants_list_page'})
   }
 }
 

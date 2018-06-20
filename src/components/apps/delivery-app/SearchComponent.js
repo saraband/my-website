@@ -127,30 +127,16 @@ class SearchComponent extends React.Component {
   }
 }
 
-const getTagsPossibleFromList = (list) => {
-  let tags = []
-
-  for(let r of list) {
-    for(let t of r.tags) {
-      if(tags.length === 0
-      || tags.find(e => e === t) === undefined) {
-        tags.push(t)
-      }
-    }
-  }
-
-  return tags
-}
-
 const getSimpleTagList = (tags, selectedTags) => tags.map(t => ({
-  value: t,
-  selected: selectedTags.find(st => st === t) !== undefined
+  value: t.value,
+  number: t.number,
+  selected: selectedTags.find(st => st === t.value) !== undefined
 }))
 
 const mapStateToProps = (state) => {
   return {
     searchData: state.deliveryApp.searchData,
-    tags: getSimpleTagList(getTagsPossibleFromList(state.deliveryApp.restaurantsList), state.deliveryApp.tags),
+    tags: getSimpleTagList(state.deliveryApp.tagsPossibles, state.deliveryApp.tags),
     numResults: state.deliveryApp.restaurantsList.length,
     rawTags: state.deliveryApp.tags
   }
