@@ -55,8 +55,7 @@ export default class DeliSelect extends React.Component {
           opacity: 0,
           animation: `${s.fadeRight} 0.15s linear forwards`,
           animationDelay: `${0.03 * i}s`
-        }}
-        />
+        }} />
     ))
   }
 

@@ -11,14 +11,20 @@ export const HIDE_CURRENT_PAGE = 'HIDE_CURRENT_PAGE'
 export const ADD_TO_BASKET = 'ADD_TO_BASKET'
 export const REMOVE_FROM_BASKET = 'REMOVE_FROM_BASKET'
 export const CHANGE_SEARCH_DATA = 'CHANGE_SEARCH_DATA'
+export const CHANGE_RESTAURANTS_SORT_FILTER = 'CHANGE_RESTAURANTS_SORT_FILTER'
 export const TOGGLE_TAG = 'TOGGLE_TAG'
 
 export const requestRestaurantsList = ({search, location, tags}) => {
   return (dispatch) => {
     dispatch({type: REQUEST_RESTAURANTS_LIST_PENDING})
 
+    // Retrieve tags possibles
     const tagsPossibles = DB.tagsPossibles
+
+    // Filters restaurants
     const list = DB.restaurants.filter(restaurant => {
+
+      // Test tags
       if(tags.length > 0) {
         for(let t of tags) {
           let hasTag = false
@@ -32,6 +38,10 @@ export const requestRestaurantsList = ({search, location, tags}) => {
             return false
         }
       }
+
+      // Test search and location
+      if(!restaurant.name.toLowerCase().includes(search))
+        return false
 
       // No condition is false
       return true
@@ -87,5 +97,12 @@ export const toggleTag = (tag) => {
   return {
     type: TOGGLE_TAG,
     tag
+  }
+}
+
+export const changeRestaurantsSortFilter = (filter) => {
+  return {
+    type: CHANGE_RESTAURANTS_SORT_FILTER,
+    filter
   }
 }

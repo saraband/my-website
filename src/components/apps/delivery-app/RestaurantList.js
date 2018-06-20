@@ -22,20 +22,33 @@ class RestaurantList extends React.Component {
     return(
       <div id={s.container} className={hideCurrentPage ? s.fadeOut : null}>
         <SearchComponent />
-        {isRetrievingRestaurantsList ? (
-          <div id={s.loadingOverlay}>
-            <LoadingSvg id={s.loadingSvg} />
-          </div>
-        ) : null}
-        {restaurantsList.map((r, i) => <RestaurantItem key={i} i={i} {...r} />)}
+        <div id={s.list}>
+          {isRetrievingRestaurantsList ? (
+            <div id={s.loadingOverlay}>
+              <LoadingSvg id={s.loadingSvg} />
+            </div>
+          ) : null}
+          {restaurantsList.map((r, i) => <RestaurantItem key={i} i={i} {...r} />)}
+        </div>
       </div>
     )
   }
 }
 
+const getSortedList = (list, filter) => {
+  switch(filter) {
+    case 'sort_rating':
+      return [...list].sort((a, b) => a.rating < b.rating)
+    case 'sort_price':
+      return [...list].sort((a, b) => a.price < b.price)
+    default:
+      return list
+  }
+}
+
 const mapStateToProps = (state) => {
   return {
-    restaurantsList: state.deliveryApp.restaurantsList,
+    restaurantsList: getSortedList(state.deliveryApp.restaurantsList, state.deliveryApp.restaurantsSortFilter),
     hideCurrentPage: state.deliveryApp.hideCurrentPage,
     isRetrievingRestaurantsList: state.deliveryApp.isRetrievingRestaurantsList
   }

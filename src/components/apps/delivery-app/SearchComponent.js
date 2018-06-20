@@ -2,10 +2,12 @@ import React from 'react'
 import { connect } from 'react-redux'
 import s from './SearchComponent.module.scss'
 import DeliSelect from './DeliSelect'
+import ImmoSelect from './ImmoSelect'
 import {
   changeSearchData,
   toggleTag,
-  requestRestaurantsList
+  requestRestaurantsList,
+  changeRestaurantsSortFilter
 } from 'AppsActions/delivery-app/index'
 import LocationPng from './location.png'
 import SearchPng from './search.png'
@@ -15,6 +17,11 @@ import TagSvg from './tag-orange.svg'
 class SearchComponent extends React.Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      sort: 'sort_rating',
+      shouldReloadList: false
+    }
   }
 
   requestListTest = () => console.log('Requesting data...')
@@ -38,14 +45,18 @@ class SearchComponent extends React.Component {
   }
 
   handleChange = (e, timeout = 1000) => {
-    this.props.changeSearchData(e.target.name, e.target.value)
+    const { changeSearchData } = this.props
+
+    changeSearchData(e.target.name, e.target.value)
 
     clearTimeout(this.timeout)
     this.timeout = setTimeout(this.requestListFromProps, timeout)
   }
 
   handleToggleTag = (tag, timeout = 1000) => {
-    this.props.toggleTag(tag)
+    const { toggleTag } = this.props
+
+    toggleTag(tag)
 
     clearTimeout(this.timeout)
     this.timeout = setTimeout(this.requestListFromProps, timeout)
@@ -65,8 +76,11 @@ class SearchComponent extends React.Component {
       rawTags,
       toggleTag,
       changeSearchData,
-      numResults
+      numResults,
+      sortFilter,
+      setSortFilter
     } = this.props
+    const { sort } = this.state
 
     return(
       <div id={s.tags}>
@@ -91,7 +105,10 @@ class SearchComponent extends React.Component {
             </p>
             : null)}
         </div>
-        <h4>Sort by price</h4>
+        <ImmoSelect value={sortFilter} onChange={e => setSortFilter(e.target.value)}>
+          <p value='sort_rating'>Sort by rating</p>
+          <p value='sort_price'>Sort by price</p>
+        </ImmoSelect>
       </div>
     )
   }
@@ -105,7 +122,8 @@ class SearchComponent extends React.Component {
     const {
       changeSearchData,
       tags,
-      toggleTag
+      toggleTag,
+      isRetrievingRestaurantsList,
     } = this.props
 
     return(
@@ -135,7 +153,12 @@ class SearchComponent extends React.Component {
             tags={tags}
             renderIcon={() => <TagSvg id={s.tagSvg} />}
             />
-            <button onClick={this.requestListFromProps}><SearchWhiteSvg id={s.searchSvg} />Search</button>
+            <button
+              disabled={isRetrievingRestaurantsList}
+              onClick={this.requestListFromProps}>
+                <SearchWhiteSvg id={s.searchSvg} />
+                Search
+            </button>
         </form>
         {this.renderTags()}
       </div>
@@ -154,7 +177,9 @@ const mapStateToProps = (state) => {
     searchData: state.deliveryApp.searchData,
     tags: getSimpleTagList(state.deliveryApp.tagsPossibles, state.deliveryApp.tags),
     numResults: state.deliveryApp.restaurantsList.length,
-    rawTags: state.deliveryApp.tags
+    rawTags: state.deliveryApp.tags,
+    isRetrievingRestaurantsList: state.deliveryApp.isRetrievingRestaurantsList,
+    sortFilter: state.deliveryApp.restaurantsSortFilter
   }
 }
 
@@ -162,7 +187,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     changeSearchData: (key, value) => dispatch(changeSearchData(key, value)),
     toggleTag: (tag) => dispatch(toggleTag(tag)),
-    requestRestaurantsList: (searchData, tags) => dispatch(requestRestaurantsList(searchData, tags))
+    requestRestaurantsList: (searchData, tags) => dispatch(requestRestaurantsList(searchData, tags)),
+    setSortFilter: (filter) => dispatch(changeRestaurantsSortFilter(filter))
   }
 }
 

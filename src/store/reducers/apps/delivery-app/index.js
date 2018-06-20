@@ -11,6 +11,7 @@ import {
   ADD_TO_BASKET,
   REMOVE_FROM_BASKET,
   CHANGE_SEARCH_DATA,
+  CHANGE_RESTAURANTS_SORT_FILTER,
   TOGGLE_TAG
 } from 'AppsActions/delivery-app/index'
 
@@ -192,6 +193,15 @@ const tagsPossibles = (state = [], action) => {
   }
 }
 
+const restaurantsSortFilter = (state = 'sort_rating', action) => {
+  switch(action.type) {
+    case CHANGE_RESTAURANTS_SORT_FILTER:
+      return action.filter
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
   baskets,
   restaurantsList,
@@ -202,5 +212,6 @@ export default combineReducers({
   tags,
   isRetrievingRestaurantsList,
   retrievingRestaurantDataId,
-  tagsPossibles
+  tagsPossibles,
+  restaurantsSortFilter
 })
