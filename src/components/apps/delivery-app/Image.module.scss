@@ -1,4 +1,5 @@
 @import 'utils';
+@import 'colors';
 
 #container {
   position: relative;
@@ -7,8 +8,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: white;
 
   img {
     position: absolute;
+  }
+
+  #loading {
+    width: 30px;
+    height: 30px;
+    z-index: 4200;
+    animation: rotation 1s linear infinite;
   }
 }

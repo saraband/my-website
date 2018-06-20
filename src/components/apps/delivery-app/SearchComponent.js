@@ -7,6 +7,9 @@ import {
   toggleTag,
   requestRestaurantsList
 } from 'AppsActions/delivery-app/index'
+import LocationPng from './location.png'
+import SearchPng from './search.png'
+import TagSvg from './tag-orange.svg'
 
 class SearchComponent extends React.Component {
   constructor(props) {
@@ -63,7 +66,7 @@ class SearchComponent extends React.Component {
 
     return(
       <div id={s.tags}>
-        <h4>{numResults} found{rawTags}</h4>
+        <h4>{numResults} restaurant{numResults !== 1 ? 's' : null} found</h4>
         {searchData.search.length > 0 ?
           <p className={s.tag}>
             Search: "{searchData.search}"
@@ -107,18 +110,23 @@ class SearchComponent extends React.Component {
             value={search}
             name='search'
             onChange={this.handleChange}
-            />
+            style={{
+              backgroundImage: `url(${SearchPng})`
+            }} />
           <input
             type='search'
             placeholder='Place, City, ZIP code'
             value={location}
             name='location'
             onChange={this.handleChange}
-            />
+            style={{
+              backgroundImage: `url(${LocationPng})`
+            }} />
           <DeliSelect
             value='Tags'
             onChange={this.handleToggleTag}
             tags={tags}
+            renderIcon={() => <TagSvg id={s.tagSvg} />}
             />
         </form>
         {this.renderTags()}

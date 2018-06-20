@@ -59,7 +59,7 @@ const generateItems = (num) => {
     items.push({
       id: counter++,
       name: getRandomArrayElement(randomFoodNames),
-      price: getRandomInt(5, 25),
+      price: getRandomInt(5, 25) + (getRandomInt(0, 4) === 4 ? 0.5 : 0),
       ingredients: generateIngredients(getRandomInt(2, 5))
     })
   }

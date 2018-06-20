@@ -24,12 +24,18 @@ class RestaurantItem extends React.Component {
       rating,
       pictureUrlSmall,
       showRestaurantData,
-      tags
+      tags,
+      i
     } = this.props
 
     return (
-      <div id={s.container} onClick={() => showRestaurantData(this.props)}>
-        <div id={s.imgContainer}>
+      <div
+        className={s.container}
+        onClick={() => showRestaurantData(this.props)}
+        style={{
+          animationDelay: 0.05 * i + 's'
+        }} >
+        <div className={s.imgContainer}>
           <Image src={pictureUrlSmall} />
         </div>
         <div className={s.description}>
@@ -37,7 +43,7 @@ class RestaurantItem extends React.Component {
             <span className={s.rating}><RatingSvg className={s.ratingSvg} /> {rating}%</span>
             <span>{name}</span>
           </h3>
-          <h5>{tags}</h5>
+          <h5>{tags.join(' - ')}</h5>
         </div>
       </div>
     )

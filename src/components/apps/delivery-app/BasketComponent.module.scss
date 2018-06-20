@@ -2,12 +2,12 @@
 @import 'utils';
 
 #container {
+  position: sticky;
+  top: 30px;
   width: 350px;
   padding: 10px;
   border: 1px solid #e3e3e3;
-  position: sticky;
   margin: 30px;
-  margin-top: 50px;
   display: flex;
   flex-direction: column;
   background-color: white;

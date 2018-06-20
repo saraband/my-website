@@ -5,7 +5,7 @@ import { requestRestaurantsList } from 'AppsActions/delivery-app/index'
 import RestaurantItem from './RestaurantItem'
 import RestaurantComponent from './RestaurantComponent'
 import SearchComponent from 'AppsComponents/delivery-app/SearchComponent'
-import LoadingIcon from './LoadingIcon'
+import LoadingSvg from './loading.svg'
 
 class RestaurantList extends React.Component {
   constructor(props) {
@@ -24,10 +24,10 @@ class RestaurantList extends React.Component {
         <SearchComponent />
         {isRetrievingRestaurantsList ? (
           <div id={s.loadingOverlay}>
-            <LoadingIcon style={{marginTop: '100px'}}/>
+            <LoadingSvg id={s.loadingSvg} />
           </div>
         ) : null}
-        {restaurantsList.map((r, i) => <RestaurantItem key={i} {...r} />)}
+        {restaurantsList.map((r, i) => <RestaurantItem key={i} i={i} {...r} />)}
       </div>
     )
   }

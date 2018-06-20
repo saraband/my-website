@@ -6,10 +6,18 @@ import {
   toggleTag
 } from 'AppsActions/delivery-app/index'
 
-const DropdownItem = ({text, onClick, renderIcon, renderDropDown}) => (
-  <p className={s.dropdownItem} onClick={onClick} >
+const DropdownItem = ({
+  value,
+  selected,
+  number,
+  onClick,
+  renderIcon,
+  renderDropDown
+}) => (
+  <p className={s.dropdownItem + ' ' + (selected ? s.dropdownSelected : null)} onClick={onClick} >
     {renderIcon !== undefined ? renderIcon() : null}
-    <span className={s.dropdownText}>{text}</span>
+    <span className={s.dropdownText}>{value}</span>
+    {number !== undefined ? <span className={s.dropdownNumber}>({number})</span> : null}
     {renderDropDown ? <DropdownSvg className={s.dropdownSvg} /> : null}
   </p>
 )
@@ -36,7 +44,7 @@ export default class DeliSelect extends React.Component {
     if(!toggle)
       return
     
-    return tags.map((t, i) => <DropdownItem text={t.value + '--'+(t.selected?'XX':null)+'-------('+t.number+')'} onClick={() => onChange(t.value)} key={i} />)
+    return tags.map((t, i) => <DropdownItem {...t} onClick={() => onChange(t.value)} key={i} />)
   }
 
   render() {
@@ -49,7 +57,7 @@ export default class DeliSelect extends React.Component {
     return(
       <div tabIndex='0' className={s.container} style={this.props.style}
         onBlur={this.hide} >
-        <DropdownItem text={value} onClick={this.toggle} renderIcon={renderIcon} renderDropDown={false} />
+        <DropdownItem value={value} onClick={this.toggle} renderIcon={renderIcon} renderDropDown={true} />
         {toggle ? (<div className={s.dropdown}>
           {this.renderElements()}
         </div>) : null}

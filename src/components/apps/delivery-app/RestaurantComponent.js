@@ -12,6 +12,15 @@ import RatingSvg from './rating.svg'
 import InfoSvg from './info.svg'
 import CheckoutComponent from './CheckoutComponent'
 import TagSvg from './tag.svg'
+import ArrowLeft from './arrow-left.svg'
+
+const getPriceRangeSymbol = (pr) => {
+  if(pr === 'Cheap') return '€'
+  if(pr === 'Moderate') return '€€'
+  if(pr === 'Expensive') return '€€€'
+
+  return 'Error price range'
+}
 
 class RestaurantComponent extends React.Component {
   constructor(props) {
@@ -69,7 +78,7 @@ class RestaurantComponent extends React.Component {
             {menu.items.map((item, j) => (
               <div className={s.item} key={j}>
                 <div className={s.itemDesc}>
-                  <h3><strong>{item.name}</strong> : {item.price}$</h3>
+                  <h3><strong>{item.name}</strong> : {item.price} €</h3>
                   <h5>{item.ingredients.join(', ')}</h5>
                 </div>
                 <div className={s.itemOperations}>
@@ -118,7 +127,7 @@ class RestaurantComponent extends React.Component {
           You added 1x &nbsp;<strong>{recentlyAdded.name}</strong>&nbsp;to your basket.
         </div>
         <div id={s.body}>
-          <h4><a onClick={backToResults}>{`<<`} Back to results</a></h4>
+          <h4><a onClick={backToResults}><ArrowLeft id={s.arrowLeft} />Back to results</a></h4>
           <br />
           <div id={s.imgContainer}>
             <Image src={pictureUrl} />
@@ -127,11 +136,14 @@ class RestaurantComponent extends React.Component {
           <h3>
             <span id={s.rating}><RatingSvg id={s.ratingSvg}/>{rating}%</span>
             {tags.map((t, i) => <span key={i} className={s.tag}><TagSvg className={s.tagSvg} />{t}</span>)}
+            <span id={s.priceRange}>{getPriceRangeSymbol(priceRange)}</span>
           </h3>
           <p>{description}</p>
           {this.renderMenus()}
         </div>
-        <BasketComponent />
+        <div id={s.right}>
+          <BasketComponent />
+        </div>
       </div>
     )
   }

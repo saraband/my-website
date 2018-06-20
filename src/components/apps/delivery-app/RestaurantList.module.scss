@@ -5,7 +5,7 @@
   background-color: coral;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   background-color: #f3f3f3;
   position: relative;
 
@@ -15,6 +15,13 @@
     background-color: rgba(255, 255, 255, 0.5);
     display: flex;
     justify-content: center;
+
+    #loadingSvg {
+      margin-top: 150px;
+      width: 50px;
+      height: 50px;
+      animation: rotation 1s infinite linear;
+    }
   }
 }
 

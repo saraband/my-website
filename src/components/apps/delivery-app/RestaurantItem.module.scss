@@ -1,6 +1,7 @@
 @import 'colors';
+@import 'utils';
 
-#container {
+.container {
   width: 300px;
   height: 300px;
   margin: 20px;
@@ -12,7 +13,7 @@
   border: 1px solid #e3e3e3;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease-in-out;
-  opacity: 0.9;
+  opacity: 0.8;
 
   &:hover {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -23,7 +24,7 @@
     transform: scale(1.1);
   }
 
-  #imgContainer {
+  .imgContainer {
     flex-grow: 0;
     width: 100%;
     height: 250px;
@@ -44,7 +45,7 @@
 
     h3 {
       color: $black;
-      font-size: 15px;
+      font-size: 18px;
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -69,7 +70,7 @@
     }
 
     h5 {
-      color: grey;
+      color: $dark_grey;
     }
   }
 }
