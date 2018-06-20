@@ -1,25 +1,57 @@
 @import 'colors';
 @import 'utils';
 
+@keyframes fadeRight {
+  from {
+    margin-left: -50px;
+    opacity: 0;
+  } to {
+    margin-left: 0px;
+    opacity: 1;
+  }
+}
+
 .container {
+  border: 3px solid transparent;
   border-bottom: 3px solid $orange;
-  width: 300px;
+  width: 200px;
   font-size: 18px;
   font-family: Arial;
   position: relative;
   @include no-user-select();
   cursor: pointer;
   margin-bottom: 10px;
-  margin-top: 10px;
-  color: $black;
+  margin-top: 8px;
+  color: #e68a00;
   border-radius: 2px;
+
+  .triangleUp {
+    position: absolute;
+    transform: rotate(180deg);
+    height: 20px;
+    bottom: -30px;
+    left: 125px;
+    z-index: 52;
+  }
+
+  &:active,
+  &:focus {
+    outline: 0;
+    border: 3px solid #6fdc94;
+  }
+
+  &:active > .dropdownItem {
+    background-color: $grey;
+  }
 
   .dropdownItem {
     background-color: white;
-    padding: 6px;
+    font-size: 18px;
+    padding: 7px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    position: relative;
 
     .dropdownText {
       flex-grow: 1;
@@ -41,15 +73,18 @@
   }
 
   .dropdown {
-    z-index: 100;
+    z-index: 42;
     width: 100%;
     max-height: 350px;
     overflow-y: auto;
     top: 100%;
     left: -1px;
+    margin-top: 30px;
     position: absolute;
-    border: 1px solid $orange;
+    border-bottom: 3px solid $orange;
     background-color: white;
+    border-radius: 2px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   }
 }
 

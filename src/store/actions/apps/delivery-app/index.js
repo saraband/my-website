@@ -21,14 +21,16 @@ export const requestRestaurantsList = ({search, location, tags}) => {
     const list = DB.restaurants.filter(restaurant => {
       if(tags.length > 0) {
         for(let t of tags) {
+          let hasTag = false
           for(let rt of restaurant.tags) {
             if(t === rt) {
-              return true
+              hasTag = true
             }
           }
-        }
 
-        return false
+          if(!hasTag)
+            return false
+        }
       }
 
       // No condition is false

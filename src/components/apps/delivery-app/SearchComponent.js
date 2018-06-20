@@ -9,6 +9,7 @@ import {
 } from 'AppsActions/delivery-app/index'
 import LocationPng from './location.png'
 import SearchPng from './search.png'
+import SearchWhiteSvg from './search-white.svg'
 import TagSvg from './tag-orange.svg'
 
 class SearchComponent extends React.Component {
@@ -43,16 +44,19 @@ class SearchComponent extends React.Component {
     this.timeout = setTimeout(this.requestListFromProps, timeout)
   }
 
-  handleToggleTag = (tag) => {
+  handleToggleTag = (tag, timeout = 1000) => {
     this.props.toggleTag(tag)
-    
+
+    clearTimeout(this.timeout)
+    this.timeout = setTimeout(this.requestListFromProps, timeout)
   }
 
-  componentDidUpdate(prevProps) {
+  // When tags change, directly request list
+  /*componentDidUpdate(prevProps) {
     if(this.props.rawTags !== prevProps.rawTags) {
       this.requestListFromProps()
     }
-  }
+  }*/
 
   renderTags = () => {
     const {
@@ -67,24 +71,27 @@ class SearchComponent extends React.Component {
     return(
       <div id={s.tags}>
         <h4>{numResults} restaurant{numResults !== 1 ? 's' : null} found</h4>
-        {searchData.search.length > 0 ?
-          <p className={s.tag}>
-            Search: "{searchData.search}"
-            <strong onClick={() => this.handleChange({target: {name: 'search', value: ''}}, 0)}>X</strong>
-          </p>
-          : null}
-        {searchData.location.length > 0 ?
-          <p className={s.tag}>
-            Location: "{searchData.location}"
-            <strong onClick={() => this.handleChange({target: {name: 'location', value: ''}}, 0)}>X</strong>
-          </p>
-          : null}
-        {tags.map((t, i) => t.selected ?
-          <p className={s.tag} key={i}>
-            {t.value}
-            <strong onClick={() => this.handleToggleTag(t.value)}>X</strong>
-          </p>
-          : null)}          
+        <div id={s.tagsList}>
+          {searchData.search.length > 0 ?
+            <p className={s.tag}>
+              <span>Search: "{searchData.search}"</span>
+              <strong onClick={() => this.handleChange({target: {name: 'search', value: ''}}, 0)}>X</strong>
+            </p>
+            : null}
+          {searchData.location.length > 0 ?
+            <p className={s.tag}>
+              <span>Location: "{searchData.location}"</span>
+              <strong onClick={() => this.handleChange({target: {name: 'location', value: ''}}, 0)}>X</strong>
+            </p>
+            : null}
+          {tags.map((t, i) => t.selected ?
+            <p className={s.tag} key={i}>
+              <span>{t.value}</span>
+              <strong onClick={() => this.handleToggleTag(t.value)}>X</strong>
+            </p>
+            : null)}
+        </div>
+        <h4>Sort by price</h4>
       </div>
     )
   }
@@ -128,6 +135,7 @@ class SearchComponent extends React.Component {
             tags={tags}
             renderIcon={() => <TagSvg id={s.tagSvg} />}
             />
+            <button onClick={this.requestListFromProps}><SearchWhiteSvg id={s.searchSvg} />Search</button>
         </form>
         {this.renderTags()}
       </div>
