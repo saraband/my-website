@@ -1,19 +1,33 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import s from './index.module.scss'
 import Banner from 'AppsComponents/delivery-app/Banner'
-import BodyComponent from 'AppsComponents/delivery-app/BodyComponent'
+import RestaurantsList from 'AppsComponents/delivery-app/RestaurantsList'
+import RestaurantComponent from 'AppsComponents/delivery-app/RestaurantComponent'
 
-export default class App extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props)
   }
 
   render() {
+    const { page } = this.props
+
     return(
       <div id={s.container}>
         <Banner />
-        <BodyComponent />
+        {page === 'restaurants_list_page' ?
+          <RestaurantsList /> :
+          <RestaurantComponent />}
       </div>
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    page: state.deliveryApp.currentPage
+  }
+}
+
+export default connect(mapStateToProps)(App)
