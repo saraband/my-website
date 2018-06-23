@@ -20,7 +20,10 @@ export default class Image extends React.Component {
 
     return (
       <div id={s.container}>
-        <LoadingSvg id={s.loading} style={{visibility: (isLoading ? 'visible' : 'hidden')}} />
+        <LoadingSvg
+          id={s.loading}
+          style={{visibility: (isLoading ? 'visible' : 'hidden')}}
+          />
         <img
           src={src}
           alt={alt} 

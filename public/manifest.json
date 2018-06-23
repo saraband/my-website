@@ -1,12 +1,8 @@
 {
-  "main.css": "build-html-styles.css",
-  "main.css.map": "build-html-styles.css.map",
-  "main.js": "render-page.js",
-  "main.js.map": "render-page.js.map",
-  "static/0.jpg": "static/0.f6fc8365.jpg",
+  "main.css": "styles.css",
+  "main.js": "bundle-for-css.js",
   "static/0_normal.jpg": "static/0_normal.4e2356d7.jpg",
   "static/0_small.jpg": "static/0_small.84b1591a.jpg",
-  "static/1.jpg": "static/1.a1406365.jpg",
   "static/10_normal.jpg": "static/10_normal.f5db0262.jpg",
   "static/10_small.jpg": "static/10_small.a978d7c2.jpg",
   "static/11_normal.jpg": "static/11_normal.de33585c.jpg",
@@ -29,10 +25,8 @@
   "static/19_small.jpg": "static/19_small.f266f773.jpg",
   "static/1_normal.jpg": "static/1_normal.fc057bd0.jpg",
   "static/1_small.jpg": "static/1_small.10090eea.jpg",
-  "static/2.jpg": "static/2.9517c61c.jpg",
   "static/2_normal.jpg": "static/2_normal.42d4f3cf.jpg",
   "static/2_small.jpg": "static/2_small.65b42452.jpg",
-  "static/3.jpg": "static/3.71b39428.jpg",
   "static/3_normal.jpg": "static/3_normal.2f43660b.jpg",
   "static/3_small.jpg": "static/3_small.67ca5f7b.jpg",
   "static/4_normal.jpg": "static/4_normal.16289cfe.jpg",
@@ -47,7 +41,6 @@
   "static/8_small.jpg": "static/8_small.99b3536d.jpg",
   "static/9_normal.jpg": "static/9_normal.fb89b7f9.jpg",
   "static/9_small.jpg": "static/9_small.82fc6b6b.jpg",
-  "static/bed.png": "static/bed.3c67bd01.png",
   "static/findimo-0.png": "static/findimo-0.a1a8fd95.png",
   "static/jon.jpg": "static/jon.2c3c458a.jpg",
   "static/leaves-pattern.png": "static/leaves-pattern.ca7697a7.png",
@@ -56,6 +49,5 @@
   "static/sofia.jpg": "static/sofia.dee79a2e.jpg",
   "static/sofia_small.jpg": "static/sofia_small.90d208b3.jpg",
   "static/thumbnail-delicius.png": "static/thumbnail-delicius.faa76e3f.png",
-  "static/thumbnail-findimo.png": "static/thumbnail-findimo.35b682fe.png",
-  "static/thumbnail-immo-app.png": "static/thumbnail-immo-app.a6d1be4a.png"
+  "static/thumbnail-findimo.png": "static/thumbnail-findimo.35b682fe.png"
 }

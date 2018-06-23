@@ -5,6 +5,8 @@ import Banner from 'AppsComponents/delivery-app/Banner'
 import RestaurantsList from 'AppsComponents/delivery-app/RestaurantsList'
 import RestaurantComponent from 'AppsComponents/delivery-app/RestaurantComponent'
 
+console.log(__dirname)
+
 class App extends React.Component {
   constructor(props) {
     super(props)
