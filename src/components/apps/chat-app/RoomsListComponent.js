@@ -20,18 +20,28 @@ const RoomsListItem = ({
   seenBy,
   requestRoomData,
   selected
-}) => (
-  <div className={s.item + ' ' + (selected ? s.itemSelected : null)}
-    onClick={() => requestRoomData(id, currentUser.id)} >
-    <img src={lastMessage.user.thumbnail} />
-    <div>
-      <h4><strong>{title}</strong></h4>
-      <p>{lastMessage.content}</p>
-      <p>Msg not read : {getNumMsgNotRead(currentUser.id, seenBy)}</p>
-      <p className={s.smallDate}>{timeSince(lastMessage.date)}</p>
+}) => {
+  const numMsgNotRead = getNumMsgNotRead(currentUser.id, seenBy)
+
+  return(
+    <div className={s.item + ' ' + (selected ? s.itemSelected : null) 
+      + ' ' + (numMsgNotRead > 0 ? s.unread : s.read)}
+      onClick={() => requestRoomData(id, currentUser.id)} >
+      <div className={s.imgThumbnail}>
+        <img src={lastMessage.user.thumbnail} />
+      </div>
+      <div className={s.msgContent}>
+        <h4><strong>{title}</strong></h4>
+        <p><strong>{lastMessage.user.name}</strong>: {lastMessage.content}</p>
+        <p className={s.smallDate}>{timeSince(lastMessage.date)}</p>
+      </div>
+      {numMsgNotRead > 0 && <div className={s.numMsgNotRead}>
+        <p>{numMsgNotRead}</p>
+      </div>
+      }
     </div>
-  </div>
-)
+  )
+}
 
 class RoomsListComponent extends React.PureComponent {
   constructor(props) {
@@ -87,7 +97,7 @@ const mapStateToProps = (state) => {
   return {
     currentUser: state.chatApp.currentUser,
     currentRoomId: state.chatApp.currentRoom.id,
-    roomsList: state.chatApp.roomsList,
+    roomsList: [...state.chatApp.roomsList].sort((a, b) => a.lastMessage.date < b.lastMessage.date),
     isRequestingRoomsList: state.chatApp.isRequestingRoomsList
   }
 }

@@ -58,7 +58,7 @@ export const requestRoomData = (id, userId) => {
     let room = DB.rooms.find(r =>  r.id === id)
 
     // User has seen room so we update the seen by of the room
-    room.seenBy.map(s => {
+    room.seenBy = room.seenBy.map(s => {
       return s.user.id === userId ? {...s, numMsgNotRead: 0}: s
     })
 
@@ -126,6 +126,6 @@ export const createRoom = (user, title, message, participants) => {
     dbCreateRoom(user, message, title, [...participants, user])
 
     dispatch(receiveRoomsList(DB.rooms))
-    dispatch(requestRoomData(counter - 1))
+    dispatch(requestRoomData(DB.rooms[DB.rooms.length - 1].id))
   }
 }

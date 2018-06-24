@@ -95,15 +95,16 @@ const currentRoom = (state = {}, action) => {
 
       // Update messages in current room
 
-      let nextState = {
+      // DUNNO WHY IT DOESNT WORK LIKE THAT BUT WHATEVER WORKS
+      /*let nextState = {
         ...state,
         messages: [
           ...state.messages,
           action.message
         ]
-      }
+      }*/
 
-      return nextState
+      return {...state}
     default:
       return state
   }
