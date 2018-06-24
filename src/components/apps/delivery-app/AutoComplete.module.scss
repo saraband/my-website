@@ -1,0 +1,38 @@
+@import 'colors';
+@import 'utils';
+
+#container {
+  position: absolute;
+  background-color: white;
+  width: 250px;
+  margin-left: 10px;
+  margin-top: 9px;
+  font-size: 18px;
+  top: 100%;
+  z-index: 42;
+  border-bottom: 3px solid $orange;
+  animation: fadeIn forwards ease-in-out 0.1s;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
+  div {
+    overflow: hidden;
+  }
+
+  .triangleUp {
+    position: absolute;
+    height: 20px;
+    top: -20px;
+    left: 105px;
+    z-index: 70;
+  }
+
+  p {
+    padding: 10px;
+    color: $orange;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f1f1f1;
+    }
+  }
+}

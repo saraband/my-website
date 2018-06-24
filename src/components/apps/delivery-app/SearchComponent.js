@@ -13,6 +13,8 @@ import LocationPng from './location.png'
 import SearchPng from './search.png'
 import SearchWhiteSvg from './search-white.svg'
 import TagSvg from './tag-orange.svg'
+import CloseSvg from './close.svg'
+import AutoComplete from './AutoComplete'
 
 class SearchComponent extends React.Component {
   constructor(props) {
@@ -20,7 +22,8 @@ class SearchComponent extends React.Component {
 
     this.state = {
       sort: 'sort_rating',
-      shouldReloadList: false
+      shouldReloadList: false,
+      showLocationAC: false,
     }
   }
 
@@ -89,19 +92,19 @@ class SearchComponent extends React.Component {
           {searchData.search.length > 0 ?
             <p className={s.tag}>
               <span>Search: "{searchData.search}"</span>
-              <strong onClick={() => this.handleChange({target: {name: 'search', value: ''}}, 0)}>X</strong>
+              <CloseSvg className={s.closeSvg} onClick={() => this.handleChange({target: {name: 'search', value: ''}}, 0)} />
             </p>
             : null}
           {searchData.location.length > 0 ?
             <p className={s.tag}>
               <span>Location: "{searchData.location}"</span>
-              <strong onClick={() => this.handleChange({target: {name: 'location', value: ''}}, 0)}>X</strong>
+              <CloseSvg className={s.closeSvg} onClick={() => this.handleChange({target: {name: 'location', value: ''}}, 0)} />
             </p>
             : null}
           {tags.map((t, i) => t.selected ?
             <p className={s.tag} key={i}>
               <span>{t.value}</span>
-              <strong onClick={() => this.handleToggleTag(t.value)}>X</strong>
+              <CloseSvg className={s.closeSvg} onClick={() => this.handleToggleTag(t.value)} />
             </p>
             : null)}
         </div>
@@ -126,6 +129,21 @@ class SearchComponent extends React.Component {
       isRetrievingRestaurantsList,
     } = this.props
 
+    const {
+      showLocationAC,
+      showSearchAC
+    } = this.state
+
+    const cities = [
+      'Barcelona',
+      'Madrid',
+      'Bilbao',
+      'Cadiz',
+      'Tanger',
+      'Malaga',
+      'Burgos'
+    ]
+
     return(
       <div id={s.container}>
         <form onSubmit={e => e.preventDefault()}>
@@ -138,15 +156,24 @@ class SearchComponent extends React.Component {
             style={{
               backgroundImage: `url(${SearchPng})`
             }} />
-          <input
-            type='search'
-            placeholder='Place, City, ZIP code'
-            value={location}
-            name='location'
-            onChange={this.handleChange}
-            style={{
-              backgroundImage: `url(${LocationPng})`
-            }} />
+          <div className={s.inputBox}>
+            <input
+              type='search'
+              placeholder='Place, City, ZIP code'
+              value={location}
+              name='location'
+              onChange={this.handleChange}
+              onFocus={() => this.setState({showLocationAC: true})}
+              onBlur={() => setTimeout(() => this.setState({showLocationAC: false}), 100)}
+              style={{
+                backgroundImage: `url(${LocationPng})`
+              }} />
+            {showLocationAC && <AutoComplete
+              list={cities}
+              filter={location}
+              onSelect={(loc) => this.handleChange({target: {name: 'location', value: loc}})}
+              /> }
+          </div>
           <DeliSelect
             value='Tags'
             onChange={this.handleToggleTag}
@@ -179,7 +206,7 @@ const mapStateToProps = (state) => {
     numResults: state.deliveryApp.restaurantsList.length,
     rawTags: state.deliveryApp.tags,
     isRetrievingRestaurantsList: state.deliveryApp.isRetrievingRestaurantsList,
-    sortFilter: state.deliveryApp.restaurantsSortFilter
+    sortFilter: state.deliveryApp.restaurantsSortFilter,
   }
 }
 

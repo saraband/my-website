@@ -48,6 +48,7 @@ class RestaurantItem extends React.Component {
           <h3>
             <span className={s.rating}><RatingSvg className={s.ratingSvg} /> {rating}%</span>
             <span>{name}</span>
+            <span className={s.priceRange}>{priceRange}</span>
           </h3>
           <h5>{tags.join(' - ')}</h5>
         </div>

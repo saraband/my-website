@@ -40,7 +40,7 @@ const getSortedList = (list, filter) => {
     case 'sort_rating':
       return [...list].sort((a, b) => a.rating < b.rating)
     case 'sort_price':
-      return [...list].sort((a, b) => a.price < b.price)
+      return [...list].sort((a, b) => a.priceRange.length > b.priceRange.length)
     default:
       return list
   }

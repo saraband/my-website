@@ -203,9 +203,9 @@ const menus = [
 ]
 
 const PriceRanges = {
-  CHEAP: 'Cheap',
-  MODERATE: 'Moderate',
-  EXPENSIVE: 'Expensive'
+  CHEAP: '€',
+  MODERATE: '€€',
+  EXPENSIVE: '€€€'
 }
 
 const t = {
@@ -234,7 +234,7 @@ let DB = {
     description: loremIpsum,
     rating: getRandomInt(70, 100),
     menus,
-    tags: []
+    tags: [],
   }))
 }
 
