@@ -64,6 +64,7 @@ export const showRestaurantData = (data) => {
 
       setTimeout(() => { 
         dispatch({type: CHANGE_PAGE, page: 'restaurant_data_page'})
+        window.scroll(0, 0)
       }, 0)
     }, 800)
   }

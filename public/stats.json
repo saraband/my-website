@@ -5,12 +5,17 @@
       "path---delicius-a0e39f21c11f6a62c5ab.js.map"
     ],
     "component---src-pages-chitchat-index-js": [
-      "component---src-pages-chitchat-index-js-fb52b43773b65447bf9d.js",
-      "component---src-pages-chitchat-index-js-fb52b43773b65447bf9d.js.map"
+      "component---src-pages-chitchat-index-js-3b4417992883653151b4.js",
+      "component---src-pages-chitchat-index-js-3b4417992883653151b4.js.map"
     ],
     "component---src-pages-delicius-index-js": [
+<<<<<<< HEAD
       "component---src-pages-delicius-index-js-fd8cf9be0b2e79c0fceb.js",
       "component---src-pages-delicius-index-js-fd8cf9be0b2e79c0fceb.js.map"
+=======
+      "component---src-pages-delicius-index-js-d8a997c958c990362597.js",
+      "component---src-pages-delicius-index-js-d8a997c958c990362597.js.map"
+>>>>>>> tmp
     ],
     "component---src-pages-index-js": [
       "component---src-pages-index-js-f603690f1e34cf2af367.js",
@@ -51,9 +56,9 @@
       "path---index-es-a0e39f21c11f6a62c5ab.js.map"
     ],
     "app": [
-      "app-49832ff03602507c84e5.js",
+      "app-e05ff0d2238e283b589d.js",
       "build-js-styles.css",
-      "app-49832ff03602507c84e5.js.map",
+      "app-e05ff0d2238e283b589d.js.map",
       "build-js-styles.css.map"
     ],
     "path---findimo": [

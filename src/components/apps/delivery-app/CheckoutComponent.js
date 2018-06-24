@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import s from './CheckoutComponent.module.scss'
 import { CHANGE_PAGE } from 'AppsActions/delivery-app/index'
+import BasketComponent from './BasketComponent'
 
 class CheckoutComponent extends React.Component {
   constructor(props) {
@@ -38,26 +39,11 @@ class CheckoutComponent extends React.Component {
       case 'card_info':
         return(
           <form onSubmit={e => e.preventDefault()}>
-            <input type='text' placeholder='CREDIT CARD NUMBER' />
+            <input type='text' placeholder='Credit card number' />
             <input type='text' placeholder='CVC' />
-            <input type='text' placeholder='EXPIRATION DATE' />
-            <button onClick={() => this.setState({checkoutStep: 'recap'})}>Recapitulatif</button>
-          </form>
-        )
-
-      case 'recap':
-        return(
-          <p>
-            Recapitulatif !
+            <input type='text' placeholder='Expiration date' />
             <button onClick={() => this.setState({checkoutStep: 'finished'})}>Proceed to payment</button>
-          </p>
-        )
-      case 'finished':
-        return(
-          <p>
-            PAYMENT DONE
-            <button onClick={this.props.backToHome}>HOME</button>
-          </p>
+          </form>
         )
       default:
         return <h1>Error</h1>
@@ -70,6 +56,18 @@ class CheckoutComponent extends React.Component {
     const {
       name
     } = this.props.restaurantData
+
+    if(step === 'finished')
+      return(
+        <div id={s.container} onClick={backToRestaurant}>
+          <div id={s.box} onClick={this.cancelEvent} className={s.boxFinished}>
+            <form onSubmit={e => e.preventDefault()}>
+              <p>Payment finished !</p>
+              <button>Home</button>
+            </form>
+          </div>
+        </div>
+      )
 
     return(
       <div id={s.container} onClick={backToRestaurant}>
@@ -90,18 +88,12 @@ class CheckoutComponent extends React.Component {
                   >
                     Payment informations
                   </li>
-                <li
-                  className={step === 'recap' ? s.selected : null}
-                  onClick={() => this.goToStep('recap')}
-                  >
-                    Recapitulatif
-                  </li>
               </ul>
             </div>
             {this.renderStep()}
           </div>
           <div id={s.right}>
-            Recapitulatif
+            <BasketComponent showControls={false} width='250px' />
           </div>
         </div>
       </div>
@@ -118,7 +110,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     backToRestaurant: () => dispatch({type: CHANGE_PAGE, page: 'restaurant_data_page'}),
-    backToHome: () => dispatch({type: CHANGE_PAGE, page: 'restaurants_list_page'})
+    backToHome: () => {
+      window.scroll(0, 0)
+      dispatch({type: CHANGE_PAGE, page: 'restaurants_list_page'})
+    }
   }
 }
 

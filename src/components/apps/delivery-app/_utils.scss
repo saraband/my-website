@@ -40,3 +40,13 @@
     background-position: 300px 0;
   }
 }
+
+@keyframes fadeRight {
+  from {
+    margin-left: -50px;
+    opacity: 0;
+  } to {
+    margin-left: 0px;
+    opacity: 1;
+  }
+}

@@ -12,19 +12,20 @@ const FoodItem = ({
   item,
   addToBasket,
   removeFromBasket,
-  basketId
+  basketId,
+  showControls
 }) => (
   <li>
     <span className={s.itemQuantity}>
-      <span 
+      {showControls && <span 
         className={s.itemOperation}
         onClick={() => removeFromBasket(basketId, item.id)}
-        >-</span>
+        >-</span>}
       <span className={s.quantity}>{item.quantity}</span>
-      <span 
+      {showControls && <span 
         className={s.itemOperation}
         onClick={() => addToBasket(basketId, item)}
-        >+</span>
+        >+</span>}
     </span>
     <span className={s.itemName}>{item.name}</span>
     <span className={s.itemPrice}>{item.price} €</span>
@@ -43,17 +44,20 @@ class BasketComponent extends React.Component {
       checkout,
       addToBasket,
       removeFromBasket,
-      basketId
+      basketId,
+      showControls,
+      width
     } = this.props
 
     return(
-      <div id={s.container}>
+      <div id={s.container} style={{width}}>
         <div id={s.list}>
           {items.length ? (
             <ul>
               {items.map((item, i) => (
                 // Not clean but I ain't got time
                 <FoodItem
+                  showControls={showControls}
                   addToBasket={addToBasket}
                   removeFromBasket={removeFromBasket}
                   basketId={basketId}
@@ -67,7 +71,7 @@ class BasketComponent extends React.Component {
           )}
         </div>
         {items.length ? <h3><span>Total:</span><span>{total} €</span></h3> : null}
-        <button disabled={!items.length} onClick={checkout}><CartSvg id={s.cartSvg} />Checkout</button>
+        {showControls && <button disabled={!items.length} onClick={checkout}><CartSvg id={s.cartSvg} />Checkout</button>}
       </div>
     )
   }

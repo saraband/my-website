@@ -8,6 +8,10 @@ class RoomComponent extends React.PureComponent {
     super(props)
   }
 
+  renderMessages = (messages) => messages.map((m, i) => {
+    return <p key={i}>{m.user.name} said: {m.content}</p>
+  })
+
   render() {
     const {
       title,
@@ -21,10 +25,20 @@ class RoomComponent extends React.PureComponent {
     return(
       <div id={s.container}>
         <p><Seen id={s.seen} /></p>
-        {messages.map((m, i)=> <p key={i}>{m.user.name} said: {m.content}</p>)}
+        {this.renderMessages(messages)}
       </div>
     )
   }
+}
+
+const getMessagesInBlocks = (messages) => {
+  let messagesInBlocks = [
+    {
+      user: messages[0].user,
+      messages: []
+    }
+  ]
+  let currentUser = messages[0]
 }
 
 const mapStateToProps = (state) => {

@@ -14,14 +14,6 @@ import CheckoutComponent from './CheckoutComponent'
 import TagSvg from './tag.svg'
 import ArrowLeft from './arrow-left.svg'
 
-const getPriceRangeSymbol = (pr) => {
-  if(pr === 'Cheap') return '€'
-  if(pr === 'Moderate') return '€€'
-  if(pr === 'Expensive') return '€€€'
-
-  return 'Error price range'
-}
-
 class RestaurantComponent extends React.Component {
   constructor(props) {
     super(props)
@@ -136,13 +128,13 @@ class RestaurantComponent extends React.Component {
           <h3>
             <span id={s.rating}><RatingSvg id={s.ratingSvg}/>{rating}%</span>
             {tags.map((t, i) => <span key={i} className={s.tag}><TagSvg className={s.tagSvg} />{t}</span>)}
-            <span id={s.priceRange}>{getPriceRangeSymbol(priceRange)}</span>
+            <span id={s.priceRange}>{priceRange}</span>
           </h3>
           <p>{description}</p>
           {this.renderMenus()}
         </div>
         <div id={s.right}>
-          <BasketComponent />
+          <BasketComponent showControls={true}/>
         </div>
       </div>
     )
@@ -158,7 +150,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    backToResults: () => dispatch({type: CHANGE_PAGE, page: 'restaurants_list_page'}),
+    backToResults: () => {
+      window.scroll(0, 0)
+      dispatch({type: CHANGE_PAGE, page: 'restaurants_list_page'})
+    },
     addToBasket: (basketId, itemData) => dispatch(addToBasket(basketId, itemData)),
     removeFromBasket: (basketId, itemId) => dispatch(removeFromBasket(basketId, itemId)),
   }
