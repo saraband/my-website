@@ -1,6 +1,8 @@
 {
-  "main.css": "styles.css",
-  "main.js": "bundle-for-css.js",
+  "main.css": "build-html-styles.css",
+  "main.css.map": "build-html-styles.css.map",
+  "main.js": "render-page.js",
+  "main.js.map": "render-page.js.map",
   "static/0_normal.jpg": "static/0_normal.4e2356d7.jpg",
   "static/0_small.jpg": "static/0_small.84b1591a.jpg",
   "static/10_normal.jpg": "static/10_normal.f5db0262.jpg",
