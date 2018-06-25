@@ -2,16 +2,13 @@ import React from 'react'
 import { connect } from 'react-redux'
 import getTrFn from './Translation'
 import s from './ProjectComponent.module.scss'
-import findimoThumbnail from './thumbnail-findimo.png'
-import deliciusThumbnail from './thumbnail-delicius.png'
 import Image from './Image'
-import test from './img/findimo-0.png'
 import Carousel from './Carousel'
 import ListSvg from './sort.svg'
 import Mouse from './mouse.svg'
 import pattern from './pattern2.jpg'
 
-const ProjectItem = ({src, onClick, pictureUrl, tr}) => {
+const ProjectItem = ({src, onClick, thumbnail, tr}) => {
   return(
     <div
       className={s.project}
@@ -23,7 +20,7 @@ const ProjectItem = ({src, onClick, pictureUrl, tr}) => {
         <h4>Design & Front-end development</h4>
         <a>{tr('projects-view-project-button')}</a>
       </div>
-      <img src={pictureUrl} />
+      <img src={thumbnail} />
     </div>
   )
 }
@@ -33,23 +30,19 @@ class ProjectComponent extends React.Component {
     super(props)
 
     this.projects = [
-      {id: 0, pictureUrl: findimoThumbnail, url: '/findimo/'},
-      {id: 0, pictureUrl: deliciusThumbnail, url: '/delicius/'},
-      {id: 0, pictureUrl: findimoThumbnail, url: '/findimo/'},
-      {id: 0, pictureUrl: findimoThumbnail, url: '/findimo/'},
-      {id: 0, pictureUrl: findimoThumbnail, url: '/findimo/'},
-      {id: 0, pictureUrl: findimoThumbnail, url: '/findimo/'}
+      {id: 'findimo', title: 'Findimo', thumbnail: require('./thumbnail-findimo.png'), images: [require('./img/findimo-1.jpg'), require('./img/findimo-2.jpg')]},
+      {id: 'delicius', title: 'Delicius', thumbnail: require('./thumbnail-delicius.png'), images: [require('./img/delicius-1.jpg'), require('./img/delicius-2.jpg'), require('./img/delicius-3.jpg')]},
     ]
 
     this.state = {
-      currentProject: 0,
+      currentProject: {},
       isShowingProject: false
     }
   }
 
   handleViewProject = (project) => {
     this.setState({
-      currentProject: project.id,
+      currentProject: project,
       isShowingProject: true
     })
   }
@@ -62,9 +55,9 @@ class ProjectComponent extends React.Component {
     } = this.state
 
     const {
+      id,
       title,
-      subtitle,
-      description
+      images
     } = currentProject
 
     if(isShowingProject) {
@@ -73,8 +66,8 @@ class ProjectComponent extends React.Component {
           <div id={s.project}>
             <div id={s.description} data-aos='fade-right'>
               <a onClick={() => this.setState({isShowingProject: false})}><ListSvg id={s.listSvg} />Back to projects</a>
-              <h3>Findimo</h3>
-              <h4>Design, Front-End Development</h4>
+              <h3>{title}</h3>
+              <h4>{tr(id)['subtitle']}</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam euismod sem lacus, nec vehicula magna vulputate at. Nulla facilisi. Donec dapibus ante lacus, at rutrum mi venenatis ut.</p>
               <p><strong>Technologies utilisées</strong>: React, Redux, Javascript, HTML, CSS3.</p>
               <a href='/findimo/' target='_blank' style={{backgroundImage: `url(${pattern})`}}>Visit website<Mouse id={s.mouse} /></a>
@@ -82,9 +75,7 @@ class ProjectComponent extends React.Component {
             <div id={s.right}>
               <div id={s.carousel}  data-aos='flip-up'>
                 <Carousel autoPlay={true}>
-                  <Image src={test}/>
-                  <Image src={test} />
-                  <Image src={test} />
+                  {images.map(imgSrc => <Image src={imgSrc}/>)}
                 </Carousel>
               </div>
             </div>

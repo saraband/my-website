@@ -4,10 +4,8 @@ export default {
     'projects-view-project-button': 'View project',
     'projects-back-to-projects': 'Back to projects',
 
-    'projects': {
-      'findimo': {
-        'subtitle': 'Design & front-end development'
-      }
+    'findimo': {
+      'subtitle': 'Design & front-end development'
     }
   },
   fr: {
@@ -15,10 +13,8 @@ export default {
     'projects-view-project-button': 'Voir projet',
     'projects-back-to-projects': 'Retour aux projets',
 
-    'projects': {
-      'findimo': {
-        'subtitle': 'Design & développement front-end'
-      }
+    'findimo': {
+      'subtitle': 'Design & développement front-end'
     }
   },
   es: {
@@ -26,10 +22,8 @@ export default {
     'projects-view-project-button': 'Ver proyecto',
     'projects-back-to-projects': 'Volver a proyectos',
 
-    'projects': {
-      'findimo': {
-        'subtitle': 'Diseño y desarrollo front-end'
-      }
+    'findimo': {
+      'subtitle': 'Diseño y desarrollo front-end'
     }
   }
 }
