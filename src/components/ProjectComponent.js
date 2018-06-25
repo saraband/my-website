@@ -9,6 +9,7 @@ import test from './img/findimo-0.png'
 import Carousel from './Carousel'
 import ListSvg from './sort.svg'
 import Mouse from './mouse.svg'
+import pattern from './pattern2.jpg'
 
 const ProjectItem = ({src, onClick, pictureUrl, tr}) => {
   return(
@@ -76,7 +77,7 @@ class ProjectComponent extends React.Component {
               <h4>Design, Front-End Development</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam euismod sem lacus, nec vehicula magna vulputate at. Nulla facilisi. Donec dapibus ante lacus, at rutrum mi venenatis ut.</p>
               <p><strong>Technologies utilisées</strong>: React, Redux, Javascript, HTML, CSS3.</p>
-              <a href='/findimo/' target='_blank'>Visit website<Mouse id={s.mouse} /></a>
+              <a href='/findimo/' target='_blank' style={{backgroundImage: `url(${pattern})`}}>Visit website<Mouse id={s.mouse} /></a>
             </div>
             <div id={s.right}>
               <div id={s.carousel}  data-aos='flip-up'>

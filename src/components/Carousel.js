@@ -13,8 +13,8 @@ export default class Carousel extends React.Component {
 
     this.slides = props.children
 
-    if(props.autoPlay)
-      this.interval = setInterval(this.nextSlide, 3000)
+    /*if(props.autoPlay)
+      this.interval = setInterval(this.nextSlide, 3000)*/
   }
 
   nextSlide = () => {
@@ -62,15 +62,15 @@ export default class Carousel extends React.Component {
           <div className={s.arrow} onClick={this.previousSlide} ><ArrowLeft className={s.arrowSvg} /></div>
           <div className={s.arrow} onClick={this.nextSlide} ><ArrowRight className={s.arrowSvg} /></div>
         </div>
-        <div style={{width: '100%', height: '100%',overflow: 'hidden'}}>
+        <div id={s.overflowHidden}>
           <div id={s.slides}
             style={{
               width: (100 * slides.length) + '%',
               marginLeft: currentSlide * (-100) + '%'
             }} >
             {slides.map((c, i) => <div className={s.slide} key={i} >{c}</div>)}
-          </div>
-        </div>        
+          </div>  
+        </div>    
         <div id={s.slidesInfo}>
           <div id={s.balls}>
             {this.renderBalls()}

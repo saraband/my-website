@@ -43,7 +43,7 @@ class AboutComponent extends React.Component {
     const { tr } = this.props
 
     return(
-      <div id={s.container}>
+      <div id={s.container} style={{backgroundImage: `url(${pattern})`}}>
         <h1 data-aos='fade-up'>
           {tr('about-title')}
           <div className={s.border} data-aos='fade-up'></div>
