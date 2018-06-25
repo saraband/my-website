@@ -1,30 +1,33 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import getTrFn from './Translation'
 import s from './ProjectComponent.module.scss'
 import findimoThumbnail from './thumbnail-findimo.png'
 import deliciusThumbnail from './thumbnail-delicius.png'
 import Image from './Image'
-import test from './test.png'
+import test from './img/findimo-0.png'
 import Carousel from './Carousel'
 import ListSvg from './sort.svg'
 import Mouse from './mouse.svg'
 
-const ProjectItem = ({src, onClick, pictureUrl}) => (
-  <div
-    className={s.project}
-    onClick={onClick}
-    data-aos='flip-up'
-    >
-    <div className={s.projectOverlay}>
-      <h3>Findimo</h3>
-      <h4>Design & Front-end development</h4>
-      <a>See project</a>
+const ProjectItem = ({src, onClick, pictureUrl, tr}) => {
+  return(
+    <div
+      className={s.project}
+      onClick={onClick}
+      data-aos='flip-up'
+      >
+      <div className={s.projectOverlay}>
+        <h3>Findimo</h3>
+        <h4>Design & Front-end development</h4>
+        <a>{tr('projects-view-project-button')}</a>
+      </div>
+      <img src={pictureUrl} />
     </div>
-    <img src={pictureUrl} />
-  </div>
-)
+  )
+}
 
-export default class ProjectComponent extends React.Component {
+class ProjectComponent extends React.Component {
   constructor(props) {
     super(props)
 
@@ -51,6 +54,7 @@ export default class ProjectComponent extends React.Component {
   }
 
   render() {
+    const { tr } = this.props
     const {
       currentProject,
       isShowingProject
@@ -77,9 +81,9 @@ export default class ProjectComponent extends React.Component {
             <div id={s.right}>
               <div id={s.carousel}  data-aos='flip-up'>
                 <Carousel autoPlay={true}>
-                  <img src={test} className={s.imageScroll} />
-                  <img src={test} className={s.imageScroll} />
-                  <img src={test} className={s.imageScroll} />
+                  <Image src={test}/>
+                  <Image src={test} />
+                  <Image src={test} />
                 </Carousel>
               </div>
             </div>
@@ -91,7 +95,7 @@ export default class ProjectComponent extends React.Component {
     return(
       <div id={s.container}>
         <h1 data-aos='fade-up'>
-          Some of my work
+          {tr('projects-title')}
           <div className={s.border} data-aos='fade-up'></div>
         </h1>
         <div id={s.projects} >
@@ -100,6 +104,7 @@ export default class ProjectComponent extends React.Component {
               {...p}
               onClick={() => this.handleViewProject(p)}
               key={i}
+              tr={tr}
               />
           ))}
         </div>
@@ -107,3 +112,11 @@ export default class ProjectComponent extends React.Component {
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    tr: getTrFn(state.lang)
+  }
+}
+
+export default connect(mapStateToProps)(ProjectComponent)

@@ -1,21 +1,25 @@
-import presentationEN from './presentation.tr.en'
-import presentationFR from './presentation.tr.fr'
-import presentationES from './presentation.tr.es'
-import aboutEN from './about.tr.en'
-import aboutFR from './about.tr.fr'
-import aboutES from './about.tr.es'
+import presentation from './presentation.tr'
+import about from './about.tr'
+import contact from './contact.tr'
+import projects from './projects.tr'
 
 export default {
   en: {
-    ...presentationEN,
-    ...aboutEN,
+    ...presentation.en,
+    ...about.en,
+    ...contact.en,
+    ...projects.en,
   },
   fr: {
-    ...presentationFR,
-    ...aboutFR,
+    ...presentation.fr,
+    ...about.fr,
+    ...contact.fr,
+    ...projects.fr,
   },
   es: {
-    ...presentationES,
-    ...aboutES,
+    ...presentation.es,
+    ...about.es,
+    ...contact.es,
+    ...projects.es,
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import getTrFn from './Translation'
 import s from './ContactComponent.module.scss'
 import pattern from './pattern2.jpg'
 import {
@@ -26,6 +27,7 @@ class ContactComponent extends React.Component {
   }
 
   render() {
+    const { tr } = this.props
     const {
       name,
       email,
@@ -35,7 +37,7 @@ class ContactComponent extends React.Component {
     return(
       <div id={s.container}>
         <h1 data-aos='fade-up'>
-          Contact
+          {tr('contact-title')}
           <div className={s.border} data-aos='fade-up'></div>
         </h1>
         <form onSubmit={this.handleSubmit} autoComplete='off' data-test='test'>
@@ -43,21 +45,21 @@ class ContactComponent extends React.Component {
             value={name}
             onChange={this.handleChange}
             name='name'
-            placeholder='Your name'
+            placeholder={tr('contact-name-placeholder')}
             />
           <Input 
             value={email}
             onChange={this.handleChange}
             name='email'
-            placeholder='Your email'
+            placeholder={tr('contact-email-placeholder')}
             />
           <Textarea 
             value={message}
             onChange={this.handleChange}
             name='message'
-            placeholder='Your message'
+            placeholder={tr('contact-message-placeholder')}
             />
-          <Button style={{width: '200px', alignSelf: 'flex-end'}} >Send</Button>
+          <Button style={{width: '200px', alignSelf: 'flex-end'}} >{tr('contact-button')}</Button>
         {/*} animation button qui se remplit depuis le milieu */}
         </form>
       </div>
@@ -68,7 +70,7 @@ class ContactComponent extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-
+    tr: getTrFn(state.lang)
   }
 }
 

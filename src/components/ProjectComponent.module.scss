@@ -107,7 +107,7 @@
         color: $black;
         margin-bottom: 10px;
         padding-left: 100px;
-        padding-right: 150px;
+        padding-right: 100px;
       }
 
       h4 {
@@ -115,14 +115,14 @@
         color: $red;
         margin-bottom: 30px;
         padding-left: 100px;
-        padding-right: 150px;
+        padding-right: 100px;
       }
 
       p {
         font-size: 18px;
         color: #9f9f9f;
         padding-left: 100px;
-        padding-right: 150px;
+        padding-right: 100px;
         margin-bottom: 30px;
       }
     }
@@ -136,8 +136,12 @@
 
       #carousel {
         width: 90%;
+        height: 100%;
         margin-right: 100px;
         margin-top: -20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         .imageScroll {
           max-width: 100%;

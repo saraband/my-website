@@ -27,6 +27,10 @@ export default class Carousel extends React.Component {
     })
   }
 
+  componentWillUnmount() {
+    clearInterval(this.interval)
+  }
+
   previousSlide = () => {
     const ns = this.slides.length
 
@@ -53,23 +57,23 @@ export default class Carousel extends React.Component {
     const { currentSlide } = this.state
 
     return(
-      <div id={s.container}>
+      <div id={s.container} >
         <div id={s.controls}>
           <div className={s.arrow} onClick={this.previousSlide} ><ArrowLeft className={s.arrowSvg} /></div>
           <div className={s.arrow} onClick={this.nextSlide} ><ArrowRight className={s.arrowSvg} /></div>
         </div>
-        <div id={s.slidesInfo}>
-          <div id={s.balls}>
-            {this.renderBalls()}
-          </div>
-        </div>
-        <div style={{width: '100%', overflow: 'hidden', boxShadow: '0 0 15px rgba(0, 0, 0, 0.1)'}}>
+        <div style={{width: '100%', height: '100%',overflow: 'hidden'}}>
           <div id={s.slides}
             style={{
               width: (100 * slides.length) + '%',
               marginLeft: currentSlide * (-100) + '%'
             }} >
             {slides.map((c, i) => <div className={s.slide} key={i} >{c}</div>)}
+          </div>
+        </div>        
+        <div id={s.slidesInfo}>
+          <div id={s.balls}>
+            {this.renderBalls()}
           </div>
         </div>
       </div>
