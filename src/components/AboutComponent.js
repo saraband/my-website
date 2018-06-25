@@ -40,15 +40,17 @@ class AboutComponent extends React.Component {
   }
 
   render() {
+    const { tr } = this.props
+
     return(
       <div id={s.container}>
         <h1 data-aos='fade-up'>
-          About
+          {tr('about-title')}
           <div className={s.border} data-aos='fade-up'></div>
         </h1>
         <div id={s.leftAndRight}>
           <div id={s.left} data-aos='fade-right'>
-            <h3>Hi, my name is Yassine Hermellin</h3>
+            <h3>{tr('about-subtitle')}</h3>
             <p>
               Since beginning my journey as a freelance designer nearly 8 years ago, I've done remote work for agencies, consulted for startups, and collaborated with talented people to create digital products for both business and consumer use.<br /><br /> I'm quietly confident, naturally curious, and perpetually improving my chops.
             </p>

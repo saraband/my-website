@@ -14,16 +14,17 @@ class BannerComponent extends React.Component {
   render() {
     const {
       lang,
-      setLang
+      setLang,
+      tr
     } = this.props
 
     return(
       <div id={s.container}>
         <div id={s.navMenu} data-aos='fade-in'>
           <Logo id={s.logo}/>
-          <MenuItem>Work</MenuItem>
-          <MenuItem>About</MenuItem>
-          <MenuItem>Contact</MenuItem>
+          <MenuItem>{tr('presentation-work-link')}</MenuItem>
+          <MenuItem>{tr('presentation-about-link')}</MenuItem>
+          <MenuItem>{tr('presentation-contact-link')}</MenuItem>
         </div>
         <div id={s.langMenu} data-aos='fade-in'>
           <MenuItem selected={lang === 'en'}
