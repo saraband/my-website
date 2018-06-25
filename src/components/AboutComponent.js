@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import s from './AboutComponent.module.scss'
 import pattern from './pattern2.jpg'
 import Github from './github.svg'
+import LinkedIn from './linkedin.svg'
+import DownloadCV from './download.svg'
 import './aosAnimations.css'
 
 const SkillComponent = ({children, value}) => (
@@ -50,7 +52,11 @@ class AboutComponent extends React.Component {
             <p>
               Since beginning my journey as a freelance designer nearly 8 years ago, I've done remote work for agencies, consulted for startups, and collaborated with talented people to create digital products for both business and consumer use.<br /><br /> I'm quietly confident, naturally curious, and perpetually improving my chops.
             </p>
-            <button><Github id={s.github} />Check me on Github</button>
+            <div id={s.buttons}>
+              <a href='https://github.com/saraband' target='_blank'><Github className={s.buttonSvg} /><span>Github</span></a>
+              <a href='https://www.linkedin.com/in/yassine-hermellin/' target='_blank'><LinkedIn className={s.buttonSvg} />LinkedIn</a>
+              <a href='github' target='_blank'><DownloadCV className={s.buttonSvg} />Download CV</a>
+            </div>
           </div>
           <div id={s.right}>
             {this.skills.map((sk, i) => <SkillComponent value={sk.value} key={i} >{sk.name}</SkillComponent>)}

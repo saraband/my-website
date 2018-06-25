@@ -18,6 +18,29 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
+    .formFinished {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid $green;
+      position: relative;
+      border-radius: 5px;
+      padding: 20px;
+
+      p {
+        margin-bottom: 50px;
+        margin-top: 20px;
+        font-size: 20px;
+        color: $green;
+      }
+
+      button {
+        position: absolute;
+        bottom: -20px;
+      }
+    }
   }
 
   #box {
@@ -31,6 +54,10 @@
     display: flex;
     flex-direction: row;
 
+    #transactionDone {
+      height: 70px;
+    }
+
     input {
       background-color: white;
       border: none;
@@ -39,7 +66,6 @@
       font-size: 18px;
       border-radius: 2px;
       color: #e68a00;
-      margin-bottom: 10px;
       margin-top: 10px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
@@ -53,10 +79,15 @@
       border: none;
       cursor: pointer;
       transition: all 0.1s ease-in-out;
-      margin-top: 50px;
+      margin-top: 10px;
 
       &:hover {
         opacity: 0.8;
+      }
+
+      &[disabled] {
+        background-color: $dark_grey;
+        opacity: 0.5;
       }
     }
 
@@ -77,6 +108,11 @@
         border-radius: 0 5px 5px 0;
       }
 
+      #infoSvg, #cardSvg {
+        height: 18px;
+        margin-right: 10px;
+      }
+
       #steps {
         border: 2px solid $green;
         border-radius: 5px;
@@ -93,6 +129,13 @@
             list-style: none;
             padding: 5px;
             color: $dark_grey;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            &:hover {
+              text-decoration: underline;
+            }
           }
 
           .selected {

@@ -9,6 +9,7 @@ import {
 } from 'AppsActions/chat-app/index'
 
 const getNumMsgNotRead = (id, seenBy) => seenBy.find(n => n.user.id === id).numMsgNotRead
+const getShortLastMessage = (message) => message.length > 40 ? message.slice(0, 37) + '...' : message
 
 const RoomsListItem = ({
   id,
@@ -32,7 +33,7 @@ const RoomsListItem = ({
       </div>
       <div className={s.msgContent}>
         <h4><strong>{title}</strong></h4>
-        <p><strong>{lastMessage.user.name}</strong>: {lastMessage.content}</p>
+        <p><strong>{lastMessage.user.name}</strong>: {getShortLastMessage(lastMessage.content)}</p>
         <p className={s.smallDate}>{timeSince(lastMessage.date)}</p>
       </div>
       {numMsgNotRead > 0 && <div className={s.numMsgNotRead}>

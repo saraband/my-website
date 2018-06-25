@@ -17,7 +17,15 @@ class BannerComponent extends React.Component {
     return(
       <div id={s.container}>
         <Logo id={s.logo} />
-        <p>{numMsgNotRead} Unread messages</p>
+        <div id={s.profile}>
+          <div id={s.left}>
+            <h4>{currentUser.name}</h4>
+            <h5>{numMsgNotRead} Unread messages</h5>
+          </div>
+          <div id={s.right}>
+            <img src={currentUser.thumbnail} id={s.thumbnail}/>
+          </div>
+        </div>
       </div>
     )
   }

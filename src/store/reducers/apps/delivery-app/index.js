@@ -12,7 +12,8 @@ import {
   REMOVE_FROM_BASKET,
   CHANGE_SEARCH_DATA,
   CHANGE_RESTAURANTS_SORT_FILTER,
-  TOGGLE_TAG
+  TOGGLE_TAG,
+  CLEAR_BASKET
 } from 'AppsActions/delivery-app/index'
 
 const baskets = (state = [], action) => {
@@ -78,7 +79,12 @@ const baskets = (state = [], action) => {
 
       return newBaskets
 
+    case CLEAR_BASKET:
+      newBaskets = [...state]
+      newBasket = newBaskets.find(b => b.id === action.basketId)
+      newBasket.items = []
 
+      return newBaskets
 
     default:
       return state

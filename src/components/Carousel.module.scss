@@ -1,0 +1,94 @@
+@import 'utils';
+@import 'colors';
+
+#container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  #slides {
+    margin-left: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    transition: all 0.5s ease-in-out;
+
+    .slide {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  #controls {
+    @include no-user-select();
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 4200;
+
+    .arrow {
+      opacity: 0.6;
+      width: 100px;
+      /*background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));*/
+      z-index: 42000;
+      margin-left: -70px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.1s ease-in-out;
+
+      &:last-child {
+        justify-content: flex-end;
+      }
+
+      .arrowSvg {
+        height: 35px;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &:last-child {
+        margin-right: -70px;
+        // background: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+      }
+    }
+  }
+
+  #slidesInfo {
+    position: absolute;
+    bottom: -70px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    #balls {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 15px;
+      z-index: 5000;
+
+      .ball {
+        width: 15px;
+        height: 15px;
+        background-color: $red;
+        opacity: 0.4;
+        border-radius: 15px;
+        margin: 10px;
+      }
+
+      .currentBall {
+        opacity: 1;
+      }
+    }
+  }
+}

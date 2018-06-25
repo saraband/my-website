@@ -11,7 +11,8 @@ class InputComponent extends React.PureComponent {
 
     //this.inputRef = React.createRef()
     this.state = {
-      message: ''
+      message: '',
+      isSending: false
     }
   }
 
@@ -42,8 +43,11 @@ class InputComponent extends React.PureComponent {
     || !message.length)
       return
 
-    sendMessage(currentUser, currentRoom.id, message)
-    this.setState({message: ''})
+    this.setState({isSending: true})
+    setTimeout(() => {
+      sendMessage(currentUser, currentRoom.id, message)
+      this.setState({message: '', isSending: false})
+    }, 200)
   }
 
   componentDidMount() {
@@ -51,13 +55,13 @@ class InputComponent extends React.PureComponent {
   }
 
   render() {
-    const { message } = this.state
+    const { message, isSending } = this.state
     const { currentRoom } = this.props
 
     return(
       <div id={s.container}>
         <textarea type='text' value={message}
-          disabled={currentRoom.id === undefined}
+          disabled={currentRoom.id === undefined || isSending}
           name='message'
           ref={this.inputRef}
           onChange={this.handleChange}

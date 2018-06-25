@@ -4,7 +4,10 @@ import s from './ProjectComponent.module.scss'
 import findimoThumbnail from './thumbnail-findimo.png'
 import deliciusThumbnail from './thumbnail-delicius.png'
 import Image from './Image'
-import test from './img/findimo-0.png'
+import test from './test.png'
+import Carousel from './Carousel'
+import ListSvg from './sort.svg'
+import Mouse from './mouse.svg'
 
 const ProjectItem = ({src, onClick, pictureUrl}) => (
   <div
@@ -53,16 +56,33 @@ export default class ProjectComponent extends React.Component {
       isShowingProject
     } = this.state
 
+    const {
+      title,
+      subtitle,
+      description
+    } = currentProject
+
     if(isShowingProject) {
       return(
         <div id={s.container}>
-          <h1>
-            Project
-            <div className={s.border}></div>
-          </h1>
           <div id={s.project}>
-            <div id={s.description}></div>
-            <div id={s.imagesScroll}><Image src={test} className={s.imageScroll} /></div>
+            <div id={s.description} data-aos='fade-right'>
+              <a onClick={() => this.setState({isShowingProject: false})}><ListSvg id={s.listSvg} />Back to projects</a>
+              <h3>Findimo</h3>
+              <h4>Design, Front-End Development</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam euismod sem lacus, nec vehicula magna vulputate at. Nulla facilisi. Donec dapibus ante lacus, at rutrum mi venenatis ut.</p>
+              <p><strong>Technologies utilisées</strong>: React, Redux, Javascript, HTML, CSS3.</p>
+              <a href='/findimo/' target='_blank'>Visit website<Mouse id={s.mouse} /></a>
+            </div>
+            <div id={s.right}>
+              <div id={s.carousel}  data-aos='flip-up'>
+                <Carousel autoPlay={true}>
+                  <img src={test} className={s.imageScroll} />
+                  <img src={test} className={s.imageScroll} />
+                  <img src={test} className={s.imageScroll} />
+                </Carousel>
+              </div>
+            </div>
           </div>
         </div>
       )

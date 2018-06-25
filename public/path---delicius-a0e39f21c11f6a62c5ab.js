@@ -1,2 +1,2 @@
-webpackJsonp([6952765510232],{513:function(t,n){t.exports={pathContext:{}}}});
+webpackJsonp([6952765510232],{521:function(t,n){t.exports={pathContext:{}}}});
 //# sourceMappingURL=path---delicius-a0e39f21c11f6a62c5ab.js.map

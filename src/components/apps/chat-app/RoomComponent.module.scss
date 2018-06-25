@@ -1,6 +1,90 @@
+@import 'colors';
+
 #container {
-  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
   #seen {
     width: 20px;
+    margin-right: 10px;
+  }
+
+  #seenBy {
+    font-size: 14px;
+    color: #9f9f9f;
+    display: flex;
+    align-items: center;
+    margin-left: 70px;
+  }
+
+  #roomMessages {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .blockMessage {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-bottom: 30px;
+
+    .topBlockMessage {
+      display: flex;
+      flex-direction: row;
+      align-items: end;
+    }
+
+    .botBlockMessage {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .usernameBlockMessage {
+      padding: 10px;
+      padding-left: 70px;
+      color: $grey;
+    }
+
+    .timeBlockMessage {
+      padding: 10px;
+      padding-right: 0;
+      font-size: 13px;
+      color: #9f9f9f;
+    }
+
+    .userPicCol {
+      flex-grow: 0;
+      width: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+      }
+    }
+
+    .blockMessages {
+      flex-grow: 1;
+      background-color: $blue;
+      border-radius: 2px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      color: white;
+      font-size: 18px;
+      align-self: center;
+
+      p {
+        padding: 3px;
+        max-width: 400px;
+        word-wrap: break-word;
+      }
+    }
   }
 }

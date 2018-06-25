@@ -66,9 +66,16 @@ export const addMessage = (user, message) => {
   }))
 }
 
-dbCreateRoom(jon, 'Salut les aminches')
-addMessage(jon, 'Petite soirée demain soir ?')
-addMessage(sofia, 'Pas trop chaude, on peut pas plutot se dire samedi ?')
-addMessage(jon, 'Allez quoi, juste quelques bières')
+dbCreateRoom(sara, 'Can we meet up saturday instead of friday ?')
+
+dbCreateRoom(jon, 'Happy birthday Sara !')
+addMessage(sara, 'Hey thanks :)')
+addMessage(sofia, 'HAPPY B-DAY CHAMP')
+
+dbCreateRoom(jon, 'When do you want to meet up next saturday ?')
+addMessage(jon, 'We can go to my place it\'s quite near the centre, just let me know if that\'s cool for you')
+addMessage(jon, 'I\'ll prep the documents')
+addMessage(sofia, 'Works for me !')
+addMessage(jon, 'Great :)')
 
 export default DB
