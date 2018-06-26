@@ -123,14 +123,14 @@ class ContactComponent extends React.Component {
             />
           <Input 
             error={errors.email}
-            value={email}
+            value={phone}
             onChange={this.handleChange}
             name='phone'
             placeholder={tr('contact-phone-placeholder')}
             />
           <Input
             error={errors.phone}
-            value={phone}
+            value={email}
             onChange={this.handleChange}
             name='email'
             placeholder={tr('contact-email-placeholder')}
