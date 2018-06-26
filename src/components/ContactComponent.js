@@ -58,10 +58,10 @@ class ContactComponent extends React.Component {
 
     // Create urlencoded body
     const data = {
-      name,
-      email,
-      phone,
-      message
+      name: this.state.name,
+      email: this.state.email,
+      phone: this.state.phone,
+      message: this.state.message
     }
 
     const params = Object.keys(data)
