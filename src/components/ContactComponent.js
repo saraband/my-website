@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import getTrFn from './Translation'
 import s from './ContactComponent.module.scss'
 import pattern from './pattern2.jpg'
+import InfoSvg from './info.svg'
 import {
   Input,
   Textarea,
@@ -21,12 +22,7 @@ class ContactComponent extends React.Component {
       sent: false,
       isSending: false,
 
-      errors: {
-        name: false,
-        email: false,
-        phone: '',
-        message: false
-      }
+      errors: {}
     }
   }
 
@@ -50,10 +46,8 @@ class ContactComponent extends React.Component {
 
     this.setState({errors})
 
-    if(Object.keys(errors).length > 0) {
-      console.log(errors)
+    if(Object.keys(errors).length > 0)
       return
-    }
 
 
     // Create urlencoded body
@@ -81,7 +75,6 @@ class ContactComponent extends React.Component {
     })
     .then(() => {
       this.setState({sent: true})
-      console.log(params.join('&'))
     })
 
     // Send form
@@ -100,6 +93,8 @@ class ContactComponent extends React.Component {
       errors
     } = this.state
 
+    console.log(errors)
+
     return(
       <div id={s.container} style={{backgroundImage: `url(${pattern})`}}>
       <div id='contact'></div>
@@ -109,7 +104,7 @@ class ContactComponent extends React.Component {
         </h1>
 
         {/* NETLIFY */}
-        <div dangerouslySetInnerHTML={{__html: `
+        <div style={{display: 'none'}} dangerouslySetInnerHTML={{__html: `
           <form name='contact' netlify netlify-honeypot='bot-field' hidden>
             <input type='text' name='name' />
             <input type='text' name='email' />
@@ -117,7 +112,6 @@ class ContactComponent extends React.Component {
             <textarea name="message"></textarea>
           </form>
         `}}></div>
-
 
         <form
           disabled={sent}
@@ -132,14 +126,14 @@ class ContactComponent extends React.Component {
             placeholder={tr('contact-name-placeholder')}
             />
           <Input 
-            error={errors.email}
+            error={errors.phone}
             value={phone}
             onChange={this.handleChange}
             name='phone'
             placeholder={tr('contact-phone-placeholder')}
             />
           <Input
-            error={errors.phone}
+            error={errors.email}
             value={email}
             onChange={this.handleChange}
             name='email'
@@ -152,7 +146,10 @@ class ContactComponent extends React.Component {
             name='message'
             placeholder={tr('contact-message-placeholder')}
             />
-          <Button style={{width: '200px', alignSelf: 'flex-end'}} >{sent ? tr('contact-button-sent') : tr('contact-button')}</Button>
+          <div id={s.botForm}>
+            <p>{Object.keys(errors).length > 0 && <span><InfoSvg id={s.infoSvg}/>{tr('contact-error-fields')}</span>}</p>
+            <Button style={{width: '200px', margin: '0', alignSelf: 'end'}} >{sent ? tr('contact-button-sent') : tr('contact-button')}</Button>
+          </div>
         {/*} animation button qui se remplit depuis le milieu */}
         </form>
       </div>

@@ -13,7 +13,8 @@ const ProjectItem = ({
   onClick,
   thumbnail,
   title,
-  tr
+  tr,
+  id
 }) => {
   return(
     <div
@@ -23,7 +24,7 @@ const ProjectItem = ({
       >
       <div className={s.projectOverlay}>
         <h3>{title}</h3>
-        <h4>Design & Front-end development</h4>
+        <h4>{tr(id)['subtitle']}</h4>
         <a>{tr('projects-view-project-button')}</a>
       </div>
       <img src={thumbnail} />
@@ -74,23 +75,6 @@ class ProjectComponent extends React.Component {
         ]
       },
       {
-        id: 'chitchat',
-        title: 'Chit Chat',
-        visit: '/chit-chat/',
-        thumbnail: require('./chitchat-thumbnail.jpg'),
-        technologies: [
-          'React',
-          'Redux',
-          'Javascript',
-          'HTML',
-          'CSS3',
-          'Adobe Suite'
-        ],
-        images: [
-          require('./img/wip.jpg')
-        ]
-      },
-      {
         id: 'goldize',
         title: 'Goldize',
         thumbnail: require('./goldize-thumbnail.jpg'),
@@ -135,7 +119,24 @@ class ProjectComponent extends React.Component {
           require('./img/thesource-1.jpg'),
           require('./img/thesource-2.jpg')
         ]
-      }
+      },
+      {
+        id: 'chitchat',
+        title: 'Chit Chat',
+        visit: '/chit-chat/',
+        thumbnail: require('./chitchat-thumbnail.jpg'),
+        technologies: [
+          'React',
+          'Redux',
+          'Javascript',
+          'HTML',
+          'CSS3',
+          'Adobe Suite'
+        ],
+        images: [
+          require('./img/wip.jpg')
+        ]
+      },
     ]
 
     this.state = {

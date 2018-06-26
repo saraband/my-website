@@ -7,6 +7,7 @@ export default {
     'contact-message-placeholder': 'Your message',
     'contact-button': 'Send',
     'contact-button-sent': 'Sent !',
+    'contact-error-fields': 'Please fill all fields.'
   },
   fr: {
     'contact-title': 'Contact',
@@ -16,6 +17,7 @@ export default {
     'contact-message-placeholder': 'Votre message',
     'contact-button': 'Envoyer',
     'contact-button-sent': 'Envoyé !',
+    'contact-error-fields': 'Veuillez remplir tous les champs.'
   },
   es: {
     'contact-title': 'Contacto',
@@ -25,5 +27,6 @@ export default {
     'contact-message-placeholder': 'Su mensaje',
     'contact-button': 'Enviar',
     'contact-button-sent': 'Enviado !',
+    'contact-error-fields': 'Por favor rellenar todos los campos.',
   }
 }

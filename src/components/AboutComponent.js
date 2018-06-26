@@ -52,9 +52,10 @@ class AboutComponent extends React.Component {
         <div id={s.leftAndRight}>
           <div id={s.left} data-aos='fade-right'>
             <h3>{tr('about-subtitle')}</h3>
-            <p>
-              Since beginning my journey as a freelance designer nearly 8 years ago, I've done remote work for agencies, consulted for startups, and collaborated with talented people to create digital products for both business and consumer use.<br /><br /> I'm quietly confident, naturally curious, and perpetually improving my chops.
-            </p>
+            <p>{tr('about-text-1')}</p>
+            <p>{tr('about-text-2')}</p>
+            <p>{tr('about-text-3')}</p>
+            <p style={{marginTop: '30px'}}><strong>{tr('about-text-4')}</strong></p>
             <div id={s.buttons}>
               <a href='https://github.com/saraband' target='_blank'><Github className={s.buttonSvg} /><span>Github</span></a>
               <a href='https://www.linkedin.com/in/yassine-hermellin/' target='_blank'><LinkedIn className={s.buttonSvg} />LinkedIn</a>
