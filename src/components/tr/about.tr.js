@@ -6,7 +6,7 @@ export default {
       in everything revolving around web development.',
     'about-text-2': 'I learned a lot on the internet, I know how to be autonomous \
       and to adapt quickly to the projects I work in.',
-    'about-text-3': 'Je m\'intéresse aussi au motion design et à la réalisation cinématographique.',
+    'about-text-3': 'I\'m also interested in motion design and cinematographic production.',
     'about-text-4': 'I\'m polyvalent, curious and autonomous.'
   },
   fr: {

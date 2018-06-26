@@ -85,7 +85,7 @@ class ProjectComponent extends React.Component {
         ],
         video: () => (
           <iframe id='videoframe' src='https://player.vimeo.com/video/107622034?title=0&byline=0&portrait=0' 
-            frameBorder='0' 
+            frameBorder='0'
             allowFullScreen>
           </iframe>
         ),
@@ -187,18 +187,15 @@ class ProjectComponent extends React.Component {
                 </a>
               }
             </div>
-            <div id={s.right}>
-              {video ? (
-                <div id={s.video}>
-                  {video()}
-                </div>
-              ) : (
-                <div id={s.carousel}  data-aos='flip-up'>
+          {/* style => bug carousel */}
+            <div id={s.right} style={{height: (video ? '100%' : null)}} >
+              {video && video()}
+              {!video && <div id={s.carousel}  data-aos='flip-up'>
                   <Carousel autoPlay={true}>
                     {images.map((imgSrc, i) => <Image key={i} src={imgSrc}/>)}
                   </Carousel>
                 </div>
-              )}
+              }
             </div>
           </div>
         </div>
