@@ -40,6 +40,15 @@ class ProjectComponent extends React.Component {
         id: 'findimo',
         title: 'Findimo',
         thumbnail: require('./thumbnail-findimo.png'),
+        visit: '/findimo/',
+        technologies: [
+          'React',
+          'Redux',
+          'Javascript',
+          'HTML',
+          'CSS3',
+          'Adobe Suite'
+        ],
         images: [
           require('./img/findimo-1.jpg'),
           require('./img/findimo-2.jpg')
@@ -48,7 +57,16 @@ class ProjectComponent extends React.Component {
       {
         id: 'delicius',
         title: 'Delicius',
+        visit: '/delicius/',
         thumbnail: require('./thumbnail-delicius.png'),
+        technologies: [
+          'React',
+          'Redux',
+          'Javascript',
+          'HTML',
+          'CSS3',
+          'Adobe Suite'
+        ],
         images: [
           require('./img/delicius-1.jpg'),
           require('./img/delicius-2.jpg'),
@@ -58,41 +76,64 @@ class ProjectComponent extends React.Component {
       {
         id: 'chitchat',
         title: 'Chit Chat',
-        thumbnail: require('./thumbnail-delicius.png'),
+        visit: '/chit-chat/',
+        thumbnail: require('./chitchat-thumbnail.jpg'),
+        technologies: [
+          'React',
+          'Redux',
+          'Javascript',
+          'HTML',
+          'CSS3',
+          'Adobe Suite'
+        ],
         images: [
-          require('./img/delicius-1.jpg'),
-          require('./img/delicius-2.jpg'),
-          require('./img/delicius-3.jpg')
+          require('./img/wip.jpg')
         ]
       },
       {
         id: 'goldize',
-        title: 'The Source',
-        thumbnail: require('./thumbnail-delicius.png'),
-        images: [
-          require('./img/delicius-1.jpg'),
-          require('./img/delicius-2.jpg'),
-          require('./img/delicius-3.jpg')
-        ]
+        title: 'Goldize',
+        thumbnail: require('./goldize-thumbnail.jpg'),
+        technologies: [
+          'After Effects',
+          'Illustrator',
+          'Photoshop'
+        ],
+        video: () => (
+          <iframe id='videoframe' src='https://player.vimeo.com/video/107622034?title=0&byline=0&portrait=0' 
+            frameBorder='0' 
+            allowFullScreen>
+          </iframe>
+        ),
       },
       {
-        id: 'jeuxdugolfe',
+        id: 'jdg',
         title: 'Jeux du Golfe',
-        thumbnail: require('./thumbnail-delicius.png'),
+        thumbnail: require('./jdg-thumbnail.jpg'),
+        technologies: [
+          'Illustrator',
+          'Photoshop',
+          'Indesign'
+        ],
         images: [
-          require('./img/delicius-1.jpg'),
-          require('./img/delicius-2.jpg'),
-          require('./img/delicius-3.jpg')
+          require('./img/jdg-0.jpg'),
+          require('./img/jdg-1.jpg'),
+          require('./img/jdg-2.jpg')
         ]
       },
       {
         id: 'thesource',
         title: 'The Source',
-        thumbnail: require('./thumbnail-delicius.png'),
+        thumbnail: require('./thesource-thumbnail.jpg'),
+        technologies: [
+          'Illustrator',
+          'Photoshop',
+          'Indesign'
+        ],
         images: [
-          require('./img/delicius-1.jpg'),
-          require('./img/delicius-2.jpg'),
-          require('./img/delicius-3.jpg')
+          require('./img/thesource-0.jpg'),
+          require('./img/thesource-1.jpg'),
+          require('./img/thesource-2.jpg')
         ]
       }
     ]
@@ -120,7 +161,10 @@ class ProjectComponent extends React.Component {
     const {
       id,
       title,
-      images
+      images,
+      video,
+      visit,
+      technologies
     } = currentProject
 
     if(isShowingProject) {
@@ -128,19 +172,32 @@ class ProjectComponent extends React.Component {
         <div id={s.container}>
           <div id={s.project}>
             <div id={s.description} data-aos='fade-right'>
-              <a onClick={() => this.setState({isShowingProject: false})}><ListSvg id={s.listSvg} />Back to projects</a>
+              <a onClick={() => this.setState({isShowingProject: false})}><ListSvg id={s.listSvg} />{tr('projects-back-to-projects')}</a>
               <h3>{title}</h3>
               <h4>{tr(id)['subtitle']}</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam euismod sem lacus, nec vehicula magna vulputate at. Nulla facilisi. Donec dapibus ante lacus, at rutrum mi venenatis ut.</p>
-              <p><strong>Technologies utilisées</strong>: React, Redux, Javascript, HTML, CSS3.</p>
-              <a href='/findimo/' target='_blank' style={{backgroundImage: `url(${pattern})`}}>Visit website<Mouse id={s.mouse} /></a>
+              <p>{tr(id)['description']}</p>
+              <p><strong>{tr('projects-technologies-used')}</strong>:&nbsp;{technologies.join(', ')}.</p>
+              {visit && 
+                <a href={visit}
+                  target='_blank'
+                  style={{backgroundImage: `url(${pattern})`}}>
+                    {tr('projects-visit-website')}
+                    <Mouse id={s.mouse} />
+                </a>
+              }
             </div>
             <div id={s.right}>
-              <div id={s.carousel}  data-aos='flip-up'>
-                <Carousel autoPlay={true}>
-                  {images.map(imgSrc => <Image src={imgSrc}/>)}
-                </Carousel>
-              </div>
+              {video ? (
+                <div id={s.video}>
+                  {video()}
+                </div>
+              ) : (
+                <div id={s.carousel}  data-aos='flip-up'>
+                  <Carousel autoPlay={true}>
+                    {images.map((imgSrc, i) => <Image key={i} src={imgSrc}/>)}
+                  </Carousel>
+                </div>
+              )}
             </div>
           </div>
         </div>

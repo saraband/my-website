@@ -19,6 +19,7 @@ class ContactComponent extends React.Component {
       phone: '',
       message: '',
       sent: false,
+      isSending: false,
 
       errors: {
         name: false,
@@ -54,6 +55,34 @@ class ContactComponent extends React.Component {
       return
     }
 
+
+    // Create urlencoded body
+    const data = {
+      name,
+      email,
+      phone,
+      message
+    }
+
+    const params = Object.keys(data)
+    .map(key => `${key}=${encodeURIComponent(data[key])}`)
+    params.unshift('form-name=contact');
+
+    this.setState({isSending: true})
+
+    fetch('/', {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+        method: 'post',
+        credentials: 'same-origin',
+        body: params.join('&')
+    })
+    .then(() => {
+      this.setState({sent: true})
+    })
+
     // Send form
     this.setState({sent: true})
   }
@@ -66,6 +95,7 @@ class ContactComponent extends React.Component {
       phone,
       message,
       sent,
+      isSending,
       errors
     } = this.state
 
@@ -76,7 +106,14 @@ class ContactComponent extends React.Component {
           {tr('contact-title')}
           <div className={s.border} data-aos='fade-up'></div>
         </h1>
-        <form onSubmit={this.handleSubmit} autoComplete='off' data-test='test'>
+        <form
+          disabled={sent}
+          onSubmit={this.handleSubmit}
+          autoComplete='off'
+          data-test='test'
+          netlify
+          name='contact'
+          netlify-honeypot="bot-field">
           <Input 
             error={errors.name}
             value={name}
