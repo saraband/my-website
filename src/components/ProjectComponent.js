@@ -8,7 +8,13 @@ import ListSvg from './sort.svg'
 import Mouse from './mouse.svg'
 import pattern from './pattern2.jpg'
 
-const ProjectItem = ({src, onClick, thumbnail, tr}) => {
+const ProjectItem = ({
+  src,
+  onClick,
+  thumbnail,
+  title,
+  tr
+}) => {
   return(
     <div
       className={s.project}
@@ -16,7 +22,7 @@ const ProjectItem = ({src, onClick, thumbnail, tr}) => {
       data-aos='flip-up'
       >
       <div className={s.projectOverlay}>
-        <h3>Findimo</h3>
+        <h3>{title}</h3>
         <h4>Design & Front-end development</h4>
         <a>{tr('projects-view-project-button')}</a>
       </div>
@@ -30,8 +36,65 @@ class ProjectComponent extends React.Component {
     super(props)
 
     this.projects = [
-      {id: 'findimo', title: 'Findimo', thumbnail: require('./thumbnail-findimo.png'), images: [require('./img/findimo-1.jpg'), require('./img/findimo-2.jpg')]},
-      {id: 'delicius', title: 'Delicius', thumbnail: require('./thumbnail-delicius.png'), images: [require('./img/delicius-1.jpg'), require('./img/delicius-2.jpg'), require('./img/delicius-3.jpg')]},
+      {
+        id: 'findimo',
+        title: 'Findimo',
+        thumbnail: require('./thumbnail-findimo.png'),
+        images: [
+          require('./img/findimo-1.jpg'),
+          require('./img/findimo-2.jpg')
+        ]
+      },
+      {
+        id: 'delicius',
+        title: 'Delicius',
+        thumbnail: require('./thumbnail-delicius.png'),
+        images: [
+          require('./img/delicius-1.jpg'),
+          require('./img/delicius-2.jpg'),
+          require('./img/delicius-3.jpg')
+        ]
+      },
+      {
+        id: 'chitchat',
+        title: 'Chit Chat',
+        thumbnail: require('./thumbnail-delicius.png'),
+        images: [
+          require('./img/delicius-1.jpg'),
+          require('./img/delicius-2.jpg'),
+          require('./img/delicius-3.jpg')
+        ]
+      },
+      {
+        id: 'goldize',
+        title: 'The Source',
+        thumbnail: require('./thumbnail-delicius.png'),
+        images: [
+          require('./img/delicius-1.jpg'),
+          require('./img/delicius-2.jpg'),
+          require('./img/delicius-3.jpg')
+        ]
+      },
+      {
+        id: 'jeuxdugolfe',
+        title: 'Jeux du Golfe',
+        thumbnail: require('./thumbnail-delicius.png'),
+        images: [
+          require('./img/delicius-1.jpg'),
+          require('./img/delicius-2.jpg'),
+          require('./img/delicius-3.jpg')
+        ]
+      },
+      {
+        id: 'thesource',
+        title: 'The Source',
+        thumbnail: require('./thumbnail-delicius.png'),
+        images: [
+          require('./img/delicius-1.jpg'),
+          require('./img/delicius-2.jpg'),
+          require('./img/delicius-3.jpg')
+        ]
+      }
     ]
 
     this.state = {
@@ -86,6 +149,7 @@ class ProjectComponent extends React.Component {
 
     return(
       <div id={s.container}>
+      <div id='works'></div>
         <h1 data-aos='fade-up'>
           {tr('projects-title')}
           <div className={s.border} data-aos='fade-up'></div>

@@ -13,8 +13,8 @@ export default class Carousel extends React.Component {
 
     this.slides = props.children
 
-    /*if(props.autoPlay)
-      this.interval = setInterval(this.nextSlide, 3000)*/
+    if(props.autoPlay)
+      this.interval = setInterval(this.nextSlide, 3000)
   }
 
   nextSlide = () => {
@@ -59,8 +59,22 @@ export default class Carousel extends React.Component {
     return(
       <div id={s.container} >
         <div id={s.controls}>
-          <div className={s.arrow} onClick={this.previousSlide} ><ArrowLeft className={s.arrowSvg} /></div>
-          <div className={s.arrow} onClick={this.nextSlide} ><ArrowRight className={s.arrowSvg} /></div>
+          <div 
+            className={s.arrow}
+            onClick={() => {
+              clearInterval(this.interval)
+              this.previousSlide()
+            }} >
+            <ArrowLeft className={s.arrowSvg} />
+          </div>
+          <div 
+            className={s.arrow}
+            onClick={() => {
+              clearInterval(this.interval)
+              this.nextSlide()
+            }} >
+            <ArrowRight className={s.arrowSvg} />
+          </div>
         </div>
         <div id={s.overflowHidden}>
           <div id={s.slides}

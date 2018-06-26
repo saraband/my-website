@@ -22,9 +22,9 @@ class BannerComponent extends React.Component {
       <div id={s.container}>
         <div id={s.navMenu} data-aos='fade-in'>
           <Logo id={s.logo}/>
-          <MenuItem>{tr('presentation-work-link')}</MenuItem>
-          <MenuItem>{tr('presentation-about-link')}</MenuItem>
-          <MenuItem>{tr('presentation-contact-link')}</MenuItem>
+          <MenuItem href='#works'>{tr('presentation-work-link')}</MenuItem>
+          <MenuItem href='#about'>{tr('presentation-about-link')}</MenuItem>
+          <MenuItem href='#contact'>{tr('presentation-contact-link')}</MenuItem>
         </div>
         <div id={s.langMenu} data-aos='fade-in'>
           <MenuItem selected={lang === 'en'}

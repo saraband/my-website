@@ -44,6 +44,7 @@ class AboutComponent extends React.Component {
 
     return(
       <div id={s.container} style={{backgroundImage: `url(${pattern})`}}>
+      <div id='about'></div>
         <h1 data-aos='fade-up'>
           {tr('about-title')}
           <div className={s.border} data-aos='fade-up'></div>

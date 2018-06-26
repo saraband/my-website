@@ -3,8 +3,6 @@ import s from './LoadingIcon.module.scss'
 
 export default (props) => (
   <div className={s.container} {...props}>
-    <div className={s.topBar}></div>
-    <div className={s.middleBar}></div>
-    <div className={s.bottomBar}></div>
+    {new Array(8).fill(1).map((e, i) => <div style={{animationDelay: i * 0.2 + 's'}}></div>)}
   </div>
 )

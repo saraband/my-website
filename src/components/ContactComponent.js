@@ -71,6 +71,7 @@ class ContactComponent extends React.Component {
 
     return(
       <div id={s.container} style={{backgroundImage: `url(${pattern})`}}>
+      <div id='contact'></div>
         <h1 data-aos='fade-up'>
           {tr('contact-title')}
           <div className={s.border} data-aos='fade-up'></div>
