@@ -40,7 +40,7 @@ class AboutComponent extends React.Component {
   }
 
   render() {
-    const { tr } = this.props
+    const { tr, lang } = this.props
 
     return(
       <div id={s.container} style={{backgroundImage: `url(${pattern})`}}>
@@ -59,7 +59,7 @@ class AboutComponent extends React.Component {
             <div id={s.buttons}>
               <a href='https://github.com/saraband' target='_blank'><Github className={s.buttonSvg} /><span>Github</span></a>
               <a href='https://www.linkedin.com/in/yassine-hermellin/' target='_blank'><LinkedIn className={s.buttonSvg} />LinkedIn</a>
-              <a href='github' target='_blank'><DownloadCV className={s.buttonSvg} />Curriculum</a>
+              <a href={`/CV_${lang}.pdf`} target='_blank'><DownloadCV className={s.buttonSvg} />Curriculum</a>
             </div>
           </div>
           <div id={s.right}>
@@ -73,7 +73,8 @@ class AboutComponent extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    tr: getTrFn(state.lang)
+    tr: getTrFn(state.lang),
+    lang: state.lang
   }
 }
 
