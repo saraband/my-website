@@ -81,6 +81,7 @@ class ContactComponent extends React.Component {
     })
     .then(() => {
       this.setState({sent: true})
+      console.log(params.join('&'))
     })
 
     // Send form
@@ -106,14 +107,23 @@ class ContactComponent extends React.Component {
           {tr('contact-title')}
           <div className={s.border} data-aos='fade-up'></div>
         </h1>
+
+        {/* NETLIFY */}
+        <div dangerouslySetInnerHTML={{__html: `
+          <form name='contact' netlify netlify-honeypot='bot-field' hidden>
+            <input type='text' name='name' />
+            <input type='text' name='email' />
+            <input type='text' name='phone' />
+            <textarea name="message"></textarea>
+          </form>
+        `}}></div>
+
+
         <form
           disabled={sent}
           onSubmit={this.handleSubmit}
           autoComplete='off'
-          data-test='test'
-          netlify
-          name='contact'
-          netlify-honeypot="bot-field">
+          data-test='test'>
           <Input 
             error={errors.name}
             value={name}
