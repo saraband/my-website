@@ -51,8 +51,8 @@ class ProjectComponent extends React.Component {
           'Adobe Suite'
         ],
         images: [
-          require('./img/findimo-1.jpg'),
-          require('./img/findimo-2.jpg')
+          require('./img/findimo-0.jpg'),
+          require('./img/findimo-1.jpg')
         ]
       },
       {
@@ -69,9 +69,9 @@ class ProjectComponent extends React.Component {
           'Adobe Suite'
         ],
         images: [
+          require('./img/delicius-0.jpg'),
           require('./img/delicius-1.jpg'),
-          require('./img/delicius-2.jpg'),
-          require('./img/delicius-3.jpg')
+          require('./img/delicius-2.jpg')
         ]
       },
       {
@@ -134,7 +134,7 @@ class ProjectComponent extends React.Component {
           'Adobe Suite'
         ],
         images: [
-          require('./img/wip.jpg')
+          require('./img/wip.png')
         ]
       },
     ]
