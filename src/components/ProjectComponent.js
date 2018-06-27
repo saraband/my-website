@@ -168,6 +168,12 @@ class ProjectComponent extends React.Component {
       technologies
     } = currentProject
 
+    const rightStyleForVideo = {
+      height: '100%',
+      position: 'absolute',
+      right: '0'
+    }
+
     if(isShowingProject) {
       return(
         <div id={s.container}>
@@ -188,7 +194,7 @@ class ProjectComponent extends React.Component {
               }
             </div>
           {/* style => bug carousel */}
-            <div id={s.right} style={{height: (video ? '100%' : null)}} >
+            <div id={s.right} className={video ? s.rightStyleForVideo : null} >
               {video && video()}
               {!video && <div id={s.carousel}  data-aos='flip-up'>
                   <Carousel autoPlay={true}>

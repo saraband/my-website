@@ -38,6 +38,7 @@
 
     @media (max-width: 768px) {
       flex-direction: column;
+      justify-content: space-evenly;
     }
 
     #description {
@@ -133,11 +134,22 @@
       }
     }
 
+    .rightStyleForVideo {
+      height: 100%;
+      position: absolute !important;
+      right: 0;
+
+      @media (max-width: 768px) {
+        position: unset !important;
+      }
+    }
+
     #right {
       width: 60%;
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;
       padding-bottom: 75px;
 
       @media (max-width: 768px) {
@@ -148,6 +160,10 @@
         width: 90%;
         height: 100%;
         border: 0;
+
+        @media (max-width: 768px) {
+          position: unset !important;
+        }
       }
 
       #carousel {
