@@ -78,6 +78,7 @@ class ProjectComponent extends React.Component {
     if(isShowingProject) {
       return(
         <div id={s.container}>
+        <div id='works'></div>
           <div id={s.project}>
             <div id={s.description} data-aos='fade-right'>
 
