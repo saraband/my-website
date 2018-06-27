@@ -1,7 +1,5 @@
 # Source of my website
 
-View it at this ad
-
 ## Source folders
 
 * [src/components](https://github.com/saraband/my-website/tree/master/src/components) - Main site components folders
