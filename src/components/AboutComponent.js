@@ -1,7 +1,10 @@
 import React from 'react'
-import getTrFn from './Translation'
 import { connect } from 'react-redux'
 import s from './AboutComponent.module.scss'
+import './aosAnimations.css'
+
+import getTrFn from './Translation'
+
 import patternPng from './pattern.png'
 import GithubSvg from './github.svg'
 import LinkedInSvg from './linkedin.svg'
