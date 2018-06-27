@@ -73,8 +73,6 @@
 
         &:hover {
           opacity: 1;
-          /*margin-left: 0px;
-          padding-left: 115px;*/
           text-decoration: underline;
         }
 
@@ -134,6 +132,7 @@
       }
     }
 
+    /* Override style for making video projects responsive */
     .rightStyleForVideo {
       height: 100%;
       position: absolute !important;
@@ -248,15 +247,6 @@
         transition: all 0.1s ease-in-out;
         height: 100%;
       }
-    }
-
-    #window {
-      height: 60vh;
-      border: 5px solid #d5d5d5;
-      border-top: 20px solid #d5d5d5;
-      border-radius: 10px;
-      width: 90%;
-      flex-grow: 1;
     }
 
     .arrow {

@@ -1,13 +1,20 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import getTrFn from './Translation'
 import s from './ProjectComponent.module.scss'
+
+import getTrFn from './Translation'
+import projects from './ProjectsData'
 import Image from './Image'
 import Carousel from './Carousel'
-import ListSvg from './sort.svg'
-import Mouse from './mouse.svg'
-import pattern from './pattern2.jpg'
 
+import ListSvg from './sort.svg'
+import MouseSvg from './mouse.svg'
+import patternPng from './pattern.png'
+
+/*
+** Thumbnails items shown in the
+** `Some of my works` section
+*/
 const ProjectItem = ({
   src,
   onClick,
@@ -35,109 +42,6 @@ const ProjectItem = ({
 class ProjectComponent extends React.Component {
   constructor(props) {
     super(props)
-
-    this.projects = [
-      {
-        id: 'findimo',
-        title: 'Findimo',
-        thumbnail: require('./thumbnail-findimo.png'),
-        visit: '/findimo/',
-        technologies: [
-          'React',
-          'Redux',
-          'Javascript',
-          'HTML',
-          'CSS3',
-          'Adobe Suite'
-        ],
-        images: [
-          require('./img/findimo-0.jpg'),
-          require('./img/findimo-1.jpg')
-        ]
-      },
-      {
-        id: 'delicius',
-        title: 'Delicius',
-        visit: '/delicius/',
-        thumbnail: require('./thumbnail-delicius.png'),
-        technologies: [
-          'React',
-          'Redux',
-          'Javascript',
-          'HTML',
-          'CSS3',
-          'Adobe Suite'
-        ],
-        images: [
-          require('./img/delicius-0.jpg'),
-          require('./img/delicius-1.jpg'),
-          require('./img/delicius-2.jpg')
-        ]
-      },
-      {
-        id: 'goldize',
-        title: 'Goldize',
-        thumbnail: require('./goldize-thumbnail.jpg'),
-        technologies: [
-          'After Effects',
-          'Illustrator',
-          'Photoshop'
-        ],
-        video: () => (
-          <iframe id='videoframe' src='https://player.vimeo.com/video/107622034?title=0&byline=0&portrait=0' 
-            frameBorder='0'
-            allowFullScreen>
-          </iframe>
-        ),
-      },
-      {
-        id: 'jdg',
-        title: 'Jeux du Golfe',
-        thumbnail: require('./jdg-thumbnail.jpg'),
-        technologies: [
-          'Illustrator',
-          'Photoshop',
-          'Indesign'
-        ],
-        images: [
-          require('./img/jdg-0.jpg'),
-          require('./img/jdg-1.jpg'),
-          require('./img/jdg-2.jpg')
-        ]
-      },
-      {
-        id: 'thesource',
-        title: 'The Source',
-        thumbnail: require('./thesource-thumbnail.jpg'),
-        technologies: [
-          'Illustrator',
-          'Photoshop',
-          'Indesign'
-        ],
-        images: [
-          require('./img/thesource-0.jpg'),
-          require('./img/thesource-1.jpg'),
-          require('./img/thesource-2.jpg')
-        ]
-      },
-      {
-        id: 'chitchat',
-        title: 'Chit Chat',
-        visit: '/chit-chat/',
-        thumbnail: require('./chitchat-thumbnail.jpg'),
-        technologies: [
-          'React',
-          'Redux',
-          'Javascript',
-          'HTML',
-          'CSS3',
-          'Adobe Suite'
-        ],
-        images: [
-          require('./img/wip.png')
-        ]
-      },
-    ]
 
     this.state = {
       currentProject: {},
@@ -168,46 +72,56 @@ class ProjectComponent extends React.Component {
       technologies
     } = currentProject
 
-    const rightStyleForVideo = {
-      height: '100%',
-      position: 'absolute',
-      right: '0'
-    }
-
+    /*
+    **  PROJECT INFORMATIONS
+    */
     if(isShowingProject) {
       return(
         <div id={s.container}>
           <div id={s.project}>
             <div id={s.description} data-aos='fade-right'>
-              <a onClick={() => this.setState({isShowingProject: false})}><ListSvg id={s.listSvg} />{tr('projects-back-to-projects')}</a>
+
+              {/* Back to projects button */}
+              <a onClick={() => this.setState({isShowingProject: false})}>
+                <ListSvg id={s.listSvg} />
+                {tr('projects-back-to-projects')}
+              </a>
+
+              {/* Project description */}
               <h3>{title}</h3>
               <h4>{tr(id)['subtitle']}</h4>
               <p>{tr(id)['description']}</p>
               <p><strong>{tr('projects-technologies-used')}</strong>:&nbsp;{technologies.join(', ')}.</p>
+
+              {/* If it's possible to visit the project website, show a link to it */}
               {visit && 
                 <a href={visit}
                   target='_blank'
-                  style={{backgroundImage: `url(${pattern})`}}>
+                  style={{backgroundImage: `url(${patternPng})`}}>
                     {tr('projects-visit-website')}
-                    <Mouse id={s.mouse} />
+                    <MouseSvg id={s.mouse} />
                 </a>
               }
             </div>
-          {/* style => bug carousel */}
+
+            {/* Carousel or video depending on the project */}
             <div id={s.right} className={video ? s.rightStyleForVideo : null} >
-              {video && video()}
-              {!video && <div id={s.carousel}  data-aos='flip-up'>
+              {video ? video() : (
+                <div id={s.carousel}  data-aos='flip-up'>
                   <Carousel autoPlay={true}>
                     {images.map((imgSrc, i) => <Image key={i} src={imgSrc}/>)}
                   </Carousel>
                 </div>
-              }
+              )}
             </div>
           </div>
         </div>
       )
     }
 
+    /*
+    **  PROJECTS THUMBNAILS LIST
+    */
     return(
       <div id={s.container}>
       <div id='works'></div>
@@ -216,7 +130,7 @@ class ProjectComponent extends React.Component {
           <div className={s.border} data-aos='fade-up'></div>
         </h1>
         <div id={s.projects} >
-          {this.projects.map((p, i) => (
+          {projects.map((p, i) => (
             <ProjectItem
               {...p}
               onClick={() => this.handleViewProject(p)}

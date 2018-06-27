@@ -1,8 +1,0 @@
-[data-aos='widthUp'] {
-  width: 0%;
-  transition-property: width;
-}
-
-[data-aos='widthUp'].aos-animate {
-  width: 100%;
-}

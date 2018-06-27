@@ -1,14 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import './index.scss'
+import '../../node_modules/aos/dist/aos.css'
+
 import PresentationComponent from 'Components/PresentationComponent'
 import ProjectComponent from 'Components/ProjectComponent'
 import AboutComponent from 'Components/AboutComponent'
 import ContactComponent from 'Components/ContactComponent'
+
 import {
   setLang
 } from 'Actions/index'
-import '../../node_modules/aos/dist/aos.css'
 
 class App extends React.Component {
   constructor(props) {
@@ -50,6 +52,7 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
+    
   }
 }
 

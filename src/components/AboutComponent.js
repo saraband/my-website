@@ -2,12 +2,14 @@ import React from 'react'
 import getTrFn from './Translation'
 import { connect } from 'react-redux'
 import s from './AboutComponent.module.scss'
-import pattern from './pattern2.jpg'
-import Github from './github.svg'
-import LinkedIn from './linkedin.svg'
-import DownloadCV from './download.svg'
-import './aosAnimations.css'
+import patternPng from './pattern.png'
+import GithubSvg from './github.svg'
+import LinkedInSvg from './linkedin.svg'
+import DownloadCVSvg from './download.svg'
 
+/*
+** Skill bars component
+*/
 const SkillComponent = ({children, value}) => (
   <div className={s.skillContainer} data-aos='fade-up' >
     <p className={s.skillName}>{children}</p>
@@ -40,10 +42,13 @@ class AboutComponent extends React.Component {
   }
 
   render() {
-    const { tr, lang } = this.props
+    const {
+      tr,
+      lang
+    } = this.props
 
     return(
-      <div id={s.container} style={{backgroundImage: `url(${pattern})`}}>
+      <div id={s.container} style={{backgroundImage: `url(${patternPng})`}}>
       <div id='about'></div>
         <h1 data-aos='fade-up'>
           {tr('about-title')}
@@ -51,17 +56,33 @@ class AboutComponent extends React.Component {
         </h1>
         <div id={s.leftAndRight}>
           <div id={s.left} data-aos='fade-right'>
+
+            {/* About  text*/}
             <h3>{tr('about-subtitle')}</h3>
             <p>{tr('about-text-1')}</p>
             <p>{tr('about-text-2')}</p>
             <p>{tr('about-text-3')}</p>
             <p style={{marginTop: '30px'}}><strong>{tr('about-text-4')}</strong></p>
+
+            {/* About links */}
             <div id={s.buttons}>
-              <a href='https://github.com/saraband' target='_blank'><Github className={s.buttonSvg} /><span>Github</span></a>
-              <a href='https://www.linkedin.com/in/yassine-hermellin/' target='_blank'><LinkedIn className={s.buttonSvg} />LinkedIn</a>
-              <a href={`/CV_${lang}.pdf`} target='_blank'><DownloadCV className={s.buttonSvg} />Curriculum</a>
+              <a href='https://github.com/saraband' target='_blank'>
+                <GithubSvg className={s.buttonSvg} />
+                <span>Github</span>
+              </a>
+              <a href='https://www.linkedin.com/in/yassine-hermellin/' target='_blank'>
+                <LinkedInSvg className={s.buttonSvg} />
+                <span>LinkedIn</span>
+              </a>
+              <a href={`/CV_${lang}.pdf`} target='_blank'>
+                <DownloadCVSvg className={s.buttonSvg} />
+                <span>Curriculum</span>
+              </a>
             </div>
+
           </div>
+
+          {/* Skills bars */}
           <div id={s.right}>
             {this.skills.map((sk, i) => <SkillComponent value={sk.value} key={i} >{sk.name}</SkillComponent>)}
           </div>

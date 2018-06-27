@@ -15,6 +15,12 @@ const intervals = [
   {label: 'second',   seconds: 0}
 ]
 
+/*
+** Receives a int timestamp as arg
+** Returns a string telling how much time has passed since
+**
+** ex: `5 hours ago`
+*/
 export const timeSince = (date) => {
   if((Date.now() - date) / 1000 < 60)
     return 'just now';
@@ -30,6 +36,7 @@ export const sleep = /*async*/ (ms) => {
   return new Promise((resolve, reject) => setTimeout(resolve, ms))
 }
 
+// Separates thousands with a space (ex: 180000 -> 180 000)
 export const prettyPrice = (price) => {
   if(price < 1000)
     return price

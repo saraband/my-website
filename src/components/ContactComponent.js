@@ -1,14 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import getTrFn from './Translation'
 import s from './ContactComponent.module.scss'
-import pattern from './pattern2.jpg'
-import InfoSvg from './info.svg'
+
+import getTrFn from './Translation'
 import {
   Input,
   Textarea,
   Button
 } from './Form'
+
+import patternPng from './pattern.png'
+import InfoSvg from './info.svg'
 
 class ContactComponent extends React.Component {
   constructor(props) {
@@ -31,6 +33,7 @@ class ContactComponent extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
+    // A few regex to check the form fields
     const isValid = {
       name: (v) => v && v.length > 0,
       email: (v) => v && v.length > 0 && /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(v),
@@ -64,6 +67,7 @@ class ContactComponent extends React.Component {
 
     this.setState({isSending: true})
 
+    // Send data
     fetch('/', {
       headers: {
         'Accept': 'application/json',
@@ -76,9 +80,6 @@ class ContactComponent extends React.Component {
     .then(() => {
       this.setState({sent: true})
     })
-
-    // Send form
-    this.setState({sent: true})
   }
 
   render() {
@@ -93,17 +94,15 @@ class ContactComponent extends React.Component {
       errors
     } = this.state
 
-    console.log(errors)
-
     return(
-      <div id={s.container} style={{backgroundImage: `url(${pattern})`}}>
+      <div id={s.container} style={{backgroundImage: `url(${patternPng})`}}>
       <div id='contact'></div>
         <h1 data-aos='fade-up'>
           {tr('contact-title')}
           <div className={s.border} data-aos='fade-up'></div>
         </h1>
 
-        {/* NETLIFY */}
+        {/* NETLIFY FORM */}
         <div style={{display: 'none'}} dangerouslySetInnerHTML={{__html: `
           <form name='contact' netlify netlify-honeypot='bot-field' hidden>
             <input type='text' name='name' />
@@ -148,9 +147,10 @@ class ContactComponent extends React.Component {
             />
           <div id={s.botForm}>
             <p>{Object.keys(errors).length > 0 && <span><InfoSvg id={s.infoSvg}/>{tr('contact-error-fields')}</span>}</p>
-            <Button style={{width: '200px', margin: '0', alignSelf: 'end'}} >{sent ? tr('contact-button-sent') : tr('contact-button')}</Button>
+            <Button style={{width: '200px', margin: '0', alignSelf: 'end'}} >
+              {sent ? tr('contact-button-sent') : tr('contact-button')}
+            </Button>
           </div>
-        {/*} animation button qui se remplit depuis le milieu */}
         </form>
       </div>
     )

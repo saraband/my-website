@@ -10,5 +10,6 @@ export const replaceRenderer = ({ bodyComponent, replaceBodyHTMLString }) => {
             {bodyComponent}
         </Provider>
     )
+    
     replaceBodyHTMLString(renderToString(<ConnectedBody/>))
 }
