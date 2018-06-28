@@ -1,0 +1,63 @@
+@import 'colors';
+@import 'utils';
+
+$banner_height: 50px;
+
+#container {
+  background-color: $dark_grey;
+  height: $banner_height;
+  @include flex(row);
+  justify-content: center;
+
+  a {
+    cursor: pointer;
+  }
+
+  #body {
+    width: 1050px;
+    height: 100%;
+    @include flex(row);
+    justify-content: space-between;
+    height: $banner_height;
+
+    .link {
+      height: 100%;
+      font-size: 14px;
+      color: white;
+      @include flex(row);
+      @include box-sizing(border-box);
+      justify-content: center;
+      align-items: center;
+      padding-left: 15px;
+      padding-right: 15px;
+      border-top: 3px solid transparent;
+      border-bottom: 3px solid transparent;
+    }
+
+    .linkSelected {
+      border-bottom: 3px solid $blue;
+    }
+
+    #left {
+      height: 100%;
+      @include flex(row);
+      align-items: center;
+
+      #logo {
+        @include flex(row);
+        background-color: $blue;
+        padding: 5px;
+
+        #logoPng {
+          height: $banner_height - 10px;
+        }
+      }
+    }
+
+    #right {
+      height: 100%;
+      @include flex(row);
+      align-items: center;
+    }
+  }
+}

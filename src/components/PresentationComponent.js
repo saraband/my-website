@@ -20,6 +20,13 @@ class PresentationComponent extends React.Component {
           <h1 data-aos='fade-left'>{tr('presentation-title')}</h1>
           <h2 data-aos='fade-right'>{tr('presentation-subtitle')}</h2>
         </div>
+        {/*TEST BG ANIMATED {new Array(5).fill(1).map((e, i) => (
+          <div className={s.bgAnimation}
+            style={{
+              animationDelay: i * 2 + 's',
+              height: i * 20 + '%'
+            }}></div>
+        ))}*/}
         <Graph id={s.graph} data-aos='fade-up' data-aos-delay={300} />
       </div>
     )

@@ -1,27 +1,52 @@
 @import 'colors';
 @import 'animations';
 
+/*
+@keyframes BgAnimation {
+  0% {
+    opacity: 1;
+    -webkit-clip-path: polygon(0 100%, 0 55%, 24% 38%, 33% 44%, 51% 50%, 69% 38%, 84% 40%, 93% 51%, 100% 59%, 100% 100%);
+    clip-path: polygon(0 100%, 0 55%, 24% 38%, 33% 44%, 51% 50%, 69% 38%, 84% 40%, 93% 51%, 100% 59%, 100% 100%);
+  } 20% {
+    opacity: 1;
+    -webkit-clip-path: polygon(0 100%, 0 63%, 20% 54%, 38% 41%, 59% 54%, 67% 45%, 76% 54%, 83% 65%, 100% 68%, 100% 100%);
+    clip-path: polygon(0 100%, 0 63%, 20% 54%, 38% 41%, 59% 54%, 67% 45%, 76% 54%, 83% 65%, 100% 68%, 100% 100%);
+  } 40% {
+    -webkit-clip-path: polygon(0 100%, 0 74%, 7% 55%, 26% 43%, 50% 57%, 54% 54%, 86% 45%, 94% 57%, 100% 53%, 100% 100%);
+    clip-path: polygon(0 100%, 0 74%, 7% 55%, 26% 43%, 50% 57%, 54% 54%, 86% 45%, 94% 57%, 100% 53%, 100% 100%);
+  } 60% {
+    -webkit-clip-path: polygon(0 100%, 0 34%, 8% 43%, 34% 63%, 54% 70%, 62% 57%, 82% 56%, 92% 69%, 100% 75%, 100% 100%);
+    clip-path: polygon(0 100%, 0 34%, 8% 43%, 34% 63%, 54% 70%, 62% 57%, 82% 56%, 92% 69%, 100% 75%, 100% 100%);
+  } 80% {
+    -webkit-clip-path: polygon(0 100%, 0 34%, 23% 39%, 47% 52%, 56% 50%, 71% 66%, 82% 56%, 93% 47%, 100% 34%, 100% 100%);
+    clip-path: polygon(0 100%, 0 34%, 23% 39%, 47% 52%, 56% 50%, 71% 66%, 82% 56%, 93% 47%, 100% 34%, 100% 100%);
+  } 100% {
+    opacity: 1;
+    -webkit-clip-path: polygon(0 100%, 0 55%, 24% 38%, 33% 44%, 51% 50%, 69% 38%, 84% 40%, 93% 51%, 100% 59%, 100% 100%);
+    clip-path: polygon(0 100%, 0 55%, 24% 38%, 33% 44%, 51% 50%, 69% 38%, 84% 40%, 93% 51%, 100% 59%, 100% 100%);
+  }
+}*/
+
 #container {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   position: relative;
-
-  #bgAnimation {
+/*
+  .bgAnimation {
+    opacity: 0;
     position: absolute;
+    bottom: 0;
     width: 100%;
-    height: 100%;
     z-index: -1;
-
-      .bar {
-        position: absolute;
-        border: 1px solid blue;
-        overflow: hidden;
-        background-color: red;
-      }
-  }
+    background-color: rgba(255, 0, 0, 0.05);
+    -webkit-clip-path: polygon(0 100%, 0 55%, 24% 38%, 33% 44%, 51% 50%, 69% 38%, 84% 40%, 93% 51%, 100% 59%, 100% 100%);
+    clip-path: polygon(0 100%, 0 55%, 24% 38%, 33% 44%, 51% 50%, 69% 38%, 84% 40%, 93% 51%, 100% 59%, 100% 100%);
+    animation: BgAnimation 15s ease-in-out infinite;
+  }*/
 
   #title {
     display:flex;
