@@ -1,7 +1,10 @@
 @import 'utils';
+@import 'colors';
 
 #container {
   height: 100%;
+  border: 0;
+  background-color: transparent;
   padding-left: 15px;
   padding-right: 30px;
   @include flex(row);
@@ -13,4 +16,36 @@
   background-position: 80% center;
   background-repeat: no-repeat;
   background-size: 20px 20px;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+
+  &:hover, &.toggled {
+    background-color: #606060;
+  }
+
+  #dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border-radius: 2px;
+    margin-top: 15px;
+    width: 100%;
+    color: #3a3a3a;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    @include flex(column);
+    animation: fadeDown 0.2s ease-in-out forwards;
+
+    a {
+      padding: 10px;
+      font-size: 1em;
+      cursor: pointer;
+      z-index: 50;
+
+      &:hover {
+        background-color: $blue;
+        color: white;
+      }
+    }
+  }
 }

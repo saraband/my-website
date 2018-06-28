@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import s from './index.module.scss'
 import BannerComponent from 'AppsComponents/radio-app/BannerComponent'
+import BodyComponent from 'AppsComponents/radio-app/BodyComponent'
 
 class App extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class App extends React.Component {
     return(
       <div id={s.container}>
         <BannerComponent />
+        <BodyComponent />
       </div>
     )
   }

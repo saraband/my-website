@@ -11,11 +11,13 @@ export default class InputAutoComplete extends React.Component {
       toggleAC: false,
       selected: -1
     }
+
+    this.filteredList = []
   }
 
   handleKeyPress = (e) => {
     const { toggleAC, selected } = this.state
-    const listLength = this.props.list.length
+    const listLength = this.filteredList.length
     const code = e.which
 
     if(!toggleAC)
@@ -25,11 +27,14 @@ export default class InputAutoComplete extends React.Component {
       this.setState({selected: (selected === -1 || selected === 0) ? -1 : selected - 1})
     if(code === 40)
       this.setState({selected: selected + 1 < listLength ? selected + 1 : listLength - 1})
+    if(code === 13 && selected !== -1)
+      this.setState({filter: this.filteredList[selected]})
   }
 
   render() {
     const { filter, toggleAC, selected} = this.state
     const { list } = this.props
+    this.filteredList = list.filter(el => el.toLowerCase().includes(filter.toLowerCase()))
 
     return(
       <div id={s.container}>
@@ -41,14 +46,14 @@ export default class InputAutoComplete extends React.Component {
             filter: e.target.value,
             toggleAC: e.target.value !== ''
           })}
-          onKeyPress={this.handleKeyPress}
-          onBlur={() => this.setState({toggleAC: false})}
+          onKeyDown={this.handleKeyPress}
+          onBlur={() => this.setState({toggleAC: false, selected: -1})}
           onFocus={() => this.setState({toggleAC: filter !== ''})}
           value={filter}
           />
         {toggleAC && (
           <div className={s.autoCompleteContainer}>
-            {list.filter(el => el.toLowerCase().includes(filter.toLowerCase())).map((el, i) => (
+            {this.filteredList.map((el, i) => (
               <p
                 key={i}
                 onClick={e => {

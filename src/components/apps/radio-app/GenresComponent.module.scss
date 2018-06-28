@@ -1,0 +1,51 @@
+@import 'utils';
+
+#container {
+  flex-grow: 0;
+  width: 300px;
+  @include flex(row);
+
+
+   a {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    font-size: 0.7em;
+    color: #3a3a3a;
+
+    &.selected {
+      border-radius: 5px 0 0 5px;
+      background-color: #f3f3f3;
+    }
+
+    &:hover {
+      background-color: #f3f3f3;
+    }
+   }
+
+  #left {
+    width: 150px;
+
+    #subcategories {
+      @include flex(column);
+      color: #3a3a3a;
+      font-size: 0.9em;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #e3e3e3;
+    }
+
+    #genres {
+      @include flex(column);
+    }
+  }
+
+  #right {
+    @include flex(column);
+    background-color: #f3f3f3;
+    height: 100%;
+    width: 150px;
+  }
+}
