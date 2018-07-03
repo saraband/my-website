@@ -7,6 +7,7 @@
     "@jacobmischka/gatsby-plugin-react-svg": "^1.1.0",
     "aos": "^2.3.0",
     "babel-plugin-transform-regenerator": "^6.26.0",
+    "bluebird": "^3.5.1",
     "gatsby": "^1.9.247",
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-netlify": "^1.0.19",
@@ -14,11 +15,14 @@
     "gatsby-plugin-purify-css": "^2.2.1",
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-sass": "^1.0.26",
+    "path": "^0.12.7",
     "react-anchor-link-smooth-scroll": "^1.0.10",
+    "react-flip-move": "^3.0.2",
     "react-helmet": "^5.2.0",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^3.3.3"
   },
   "keywords": [
     "gatsby"

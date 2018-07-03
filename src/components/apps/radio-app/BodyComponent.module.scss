@@ -9,6 +9,7 @@
     width: 1050px;
     margin-top: 30px;
     @include flex(row);
+    position: relative;
 
     #body {
       flex-grow: 1;

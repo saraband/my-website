@@ -4,6 +4,7 @@ import s from './BodyComponent.module.scss'
 import GenresComponent from './GenresComponent'
 import PlayPng from './play.png'
 import ThumbnailJpg from './thumbnail.jpg'
+import Player from './Player'
 
 const Loading = () => (
   <div className={s.loading}>
@@ -48,6 +49,7 @@ class BodyComponent extends React.Component {
     return(
       <div id={s.container}>
         <div id={s.fullBody}>
+          <Player />
           <GenresComponent onClick={this.handleLoadGenre} />
           <div id={s.body}>
             {isLoading && <Loading />}
