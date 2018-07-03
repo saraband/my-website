@@ -5,6 +5,12 @@ import s from './PresentationComponent.module.scss'
 import BannerComponent from 'Components/BannerComponent'
 import Graph from './graph-3.svg'
 
+const animateLetters = (string) => string.split('').map((char, i) => {
+  return <span style={{display: 'inline-block', position: 'relative'}} key={i} data-aos='fade-down-bubbly' data-aos-duration={300} data-aos-delay={i*50}>{char}</span>
+})
+
+const Test = () => <h1 data-aos='fade-up'>test</h1>
+
 class PresentationComponent extends React.Component {
   constructor(props) {
     super(props)
@@ -27,7 +33,7 @@ class PresentationComponent extends React.Component {
               height: i * 20 + '%'
             }}></div>
         ))}*/}
-        <Graph id={s.graph} data-aos='fade-up' data-aos-delay={300} />
+        <Graph id={s.graph} data-aos='flip-up' data-aos-delay={300} />
       </div>
     )
   }

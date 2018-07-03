@@ -14,7 +14,7 @@ import DownloadCVSvg from './download.svg'
 ** Skill bars component
 */
 const SkillComponent = ({children, value}) => (
-  <div className={s.skillContainer} data-aos='fade-up' >
+  <div className={s.skillContainer} data-aos='fade-up'>
     <p className={s.skillName}>{children}</p>
     <div className={s.skillBar} >
       <div style={{width: `${value}%`, height: '100%'}}>
