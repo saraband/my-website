@@ -1,21 +1,5 @@
 @import 'colors';
 
-#container {
-  position: sticky;
-  top: 35px;
-  margin-right: 35px;
-  margin-top: 35px;
-  width: 300px;
-  background-color: white;
-  border: 1px solid #e3e3e3;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  padding: 20px;
-
-  form {
-    display: flex;
-    flex-direction: column;
-
     #placeInput {
       position: relative;
       width: 100%;
@@ -24,20 +8,6 @@
       input {
         flex-grow: 1;
       }
-    }
-
-    input {
-      border: 1px solid $blue;
-      color: $blue;
-      font-size: 15px;
-      padding: 10px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      background-position: 10px 8px;
-      background-size: auto 20px;
-      background-repeat: no-repeat;
-      border-radius: 2px;
-      padding-left: 40px;
     }
 
     #searchButton {
@@ -55,21 +25,7 @@
         }
       }
 
-      button {
-        padding: 10px;
-        border: none;
-        font-size: 20px;
-        background-color: tomato;
-        margin-top: 10px;
-        color: white;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        border-radius: 2px;
-        transition: all 0.1s linear;
-
-        #searchSvg {
+      #searchSvg {
           height: 18px;
         }
 
@@ -77,17 +33,8 @@
           margin-left: 15px;
         }
 
-
-        &:hover {
-          opacity: 0.8;
-        }
-
-        &:disabled {
-          opacity: 0.5;
-        }
       }
-    }
-  }
+    
 
   .flexRow {
     display: flex;
@@ -105,4 +52,3 @@
       background-size: auto 15px;
     }
   }
-}

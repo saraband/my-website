@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import './index.scss'
 import '../../node_modules/aos/dist/aos.css'
 
 import PresentationComponent from 'Components/PresentationComponent'

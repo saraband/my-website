@@ -12,6 +12,13 @@ import EuroPng from './euro.png'
 import HouseSvg from './house.svg'
 import TagSvg from './tag.svg'
 
+import {
+  StyledInputComponent,
+  Form,
+  Input,
+  Button
+} from './styles/InputComponentStyles'
+
 const formInitialState = {
   priceMin: '',
   priceMax: '',
@@ -27,9 +34,12 @@ class InputComponent extends React.Component {
   constructor(props) {
     super(props)
 
-    this.state = {...formInitialState}
+    this.state = {
+      ...formInitialState
+    }
   }
 
+  // Function called whenever a change occurs in the form
   handleChange = (event) => {
     const {
       name,
@@ -59,13 +69,7 @@ class InputComponent extends React.Component {
     this.props.requestList({...this.state});
   }
 
-  handleSelectPlace = (place) => {
-    this.setState({place: place})
-  }
-
-  reinitializeForm = () => {
-    this.setState({...formInitialState})
-  }
+  reinitializeForm = () => this.setState({...formInitialState})
 
   handleSubmit = (event) => {
     event.preventDefault()
@@ -98,8 +102,8 @@ class InputComponent extends React.Component {
     const { isRetrievingData } = this.props
 
     return(
-      <div id={s.container}>
-        <form onSubmit={this.handleSubmit} >
+      <StyledInputComponent>
+        <Form onSubmit={this.handleSubmit} >
           <ImmoSelect
             onChange={this.handleChange}
             name='actionType'
@@ -121,10 +125,11 @@ class InputComponent extends React.Component {
             <p value='appartment'>Appartments</p>
           </ImmoSelect>
           <div id={s.placeInput}>
-            <input
+            <Input
               type='search'
               placeholder='Location, city'
-              name='place' onChange={this.handleChange}
+              name='place'
+              onChange={this.handleChange}
               value={place}
               autoComplete='off'
               onFocus={() => setTimeout(() => this.setState({isPlaceInputFocus: true}), 100)}
@@ -134,7 +139,7 @@ class InputComponent extends React.Component {
             {isPlaceInputFocus ? <AutoCompletePlace filter={place} onSelect={this.handleSelectPlace}/> : null}
           </div>
           <div className={s.flexRow}>
-            <input
+            <Input
               type='text'
               placeholder='Price (Min)'
               name='priceMin' onChange={this.handleChange} 
@@ -143,7 +148,7 @@ class InputComponent extends React.Component {
               autoComplete='off'
               />
             <p>&nbsp;&nbsp;à&nbsp;&nbsp;</p>
-            <input
+            <Input
               type='text'
               placeholder='Price (Max)'
               name='priceMax' onChange={this.handleChange} 
@@ -152,7 +157,7 @@ class InputComponent extends React.Component {
               autoComplete='off'
               />
           </div>
-          <input
+          <Input
             type='text'
             placeholder='Area (Min. in m²)'
             name='areaMin'
@@ -161,7 +166,7 @@ class InputComponent extends React.Component {
             style={{backgroundImage: `url(${AreaPng})`}}
             autoComplete='off'
             />
-          <input
+          <Input
             type='text'
             placeholder='Number of room (Min)'
             name='numRoomsMin' onChange={this.handleChange} 
@@ -171,10 +176,10 @@ class InputComponent extends React.Component {
             />
           <div id={s.searchButton}>
             <a onClick={this.reinitializeForm}>Reinitialize form</a>
-            <button disabled={isRetrievingData} ><SearchSvg id={s.searchSvg} /><p>Search</p></button>
+            <Button disabled={isRetrievingData} ><SearchSvg id={s.searchSvg} /><p>Search</p></Button>
           </div>
-        </form>
-      </div>
+        </Form>
+      </StyledInputComponent>
     )
   }
 }

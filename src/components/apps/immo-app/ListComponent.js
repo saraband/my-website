@@ -8,6 +8,7 @@ import SortSvg from './sort.svg'
 import LoadingSvg from './loading.svg'
 import s from './ListComponent.module.scss'
 import LoadingIcon from './LoadingIcon'
+import Link from 'gatsby-link'
 
 import { getRandomInt } from 'Utils/index'
 
