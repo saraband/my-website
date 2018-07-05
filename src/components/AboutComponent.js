@@ -10,7 +10,8 @@ import GithubSvg from './github.svg'
 import LinkedInSvg from './linkedin.svg'
 import DownloadCVSvg from './download.svg'
 import styled from 'styled-components'
-import { FlexRow } from 'Utils/styles'
+import { FlexRow, FlexCol } from 'Utils/styles'
+import Colors from './Colors'
 
 /*
 ** Skill bars component
@@ -23,21 +24,89 @@ const StyledSkillComponent = FlexRow.extend`
   transition: all 0.2s ease-in-out;
 `
 
+const SkillName = FlexRow.withComponent('p').extend`
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0;
+  width: 200px;
+  font-size: 18px;
+  background-color: white;
+  color: ${Colors.RED};
+`
+
+const SkillBar = FlexRow.extend`
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  background-color: tomato;
+`
+
+const SkillBarFill = styled.div`
+  background-color: bisque;
+  height: 100%;
+`
+
+const SkillValue = styled.p`
+  flex-grow: 0;
+  background-color: unset;
+  color: white;
+  float: right;
+  padding: 10px;
+  font-size: 15px;
+`
+
 const SkillComponent = ({children, value}) => (
-  <div className={s.skillContainer} data-aos='fade-up'>
-    <p className={s.skillName}>{children}</p>
-    <div className={s.skillBar} >
+  <StyledSkillComponent data-aos='fade-up'>
+    <SkillName>{children}</SkillName>
+    <SkillBar>
       <div style={{width: `${value}%`, height: '100%'}}>
-        <div className={s.skillBarFill} data-aos='widthUp' data-aos-delay={200}></div>
+        <SkillBarFill data-aos='widthUp' data-aos-delay={200} />
       </div>
-      <p>{value}%</p>
-    </div>
-  </div>
+      <SkillValue>{value}%</SkillValue>
+    </SkillBar>
+  </StyledSkillComponent>
 )
 
 /*
 **  ABOUT COMPONENT
 */
+const StyledAboutComponent = FlexCol.extend`
+  justify-content: center;
+  align-items: center;
+  background-color: ${Colors.RED};
+  background-image: url(${patternPng});
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  color: white;
+  padding-bottom: 50px;
+  width: 100vw;
+`
+
+const StyledSectionTitle = FlexCol.withComponent('h1').extend`
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 50px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+`
+
+const SectionTitleBorder = styled.div`
+  animation: widthIn 0.2s forwards ease-in-out;
+  height: 5px;
+  background-color: white;
+  margin-top: 15px;
+  width: 50%;
+`
+
+const SectionTitle = ({children}) => (
+  <StyledSectionTitle>
+    {children}
+    <SectionTitleBorder />
+  </StyledSectionTitle>
+)
+
 class AboutComponent extends React.Component {
   constructor(props) {
     super(props)
@@ -64,12 +133,9 @@ class AboutComponent extends React.Component {
     } = this.props
 
     return(
-      <div id={s.container} style={{backgroundImage: `url(${patternPng})`}}>
+      <StyledAboutComponent>
       <div id='about'></div>
-        <h1 data-aos='fade-up'>
-          {tr('about-title')}
-          <div className={s.border} data-aos='fade-up'></div>
-        </h1>
+        <SectionTitle>{tr('about-title')}</SectionTitle>
         <div id={s.leftAndRight}>
           <div id={s.left} data-aos='fade-right'>
 
@@ -103,7 +169,7 @@ class AboutComponent extends React.Component {
             {this.skills.map((sk, i) => <SkillComponent value={sk.value} key={i} >{sk.name}</SkillComponent>)}
           </div>
         </div>
-      </div>
+      </StyledAboutComponent>
     )
   }
 }

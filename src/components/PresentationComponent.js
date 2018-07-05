@@ -25,9 +25,10 @@ const Title = styled.h1`
   text-align: center;
   color: ${Colors.BLACK};
   font-size: 50px;
+  margin: 0;
 `
 
-const Subtitle = Title.extend`
+const Subtitle = Title.withComponent('h2').extend`
   font-family: 'Open Sans Light', Arial, sans-serif;
   font-size: 20px;
 `
