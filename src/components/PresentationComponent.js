@@ -1,15 +1,43 @@
 import React from 'react'
 import getTrFn from './Translation'
 import { connect } from 'react-redux'
-import s from './PresentationComponent.module.scss'
 import BannerComponent from 'Components/BannerComponent'
 import Graph from './graph-3.svg'
+import styled from 'styled-components'
+import { FlexCol } from 'Utils/styles'
+import Colors from './Colors'
 
-const animateLetters = (string) => string.split('').map((char, i) => {
-  return <span style={{display: 'inline-block', position: 'relative'}} key={i} data-aos='fade-down-bubbly' data-aos-duration={300} data-aos-delay={i*50}>{char}</span>
-})
+const StyledPresentation = FlexCol.extend`
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+`
 
-const Test = () => <h1 data-aos='fade-up'>test</h1>
+const TitlesContainer = FlexCol.extend`
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+`
+
+const Title = styled.h1`
+  text-align: center;
+  color: ${Colors.BLACK};
+  font-size: 50px;
+`
+
+const Subtitle = Title.extend`
+  font-family: 'Open Sans Light', Arial, sans-serif;
+  font-size: 20px;
+`
+
+const graphStyles = {
+  height: '60%',
+  maxWidth: '70%',
+  minWidth: '300px',
+  transformOrigin: '50% 100%',
+}
 
 class PresentationComponent extends React.Component {
   constructor(props) {
@@ -20,21 +48,14 @@ class PresentationComponent extends React.Component {
     const { tr } = this.props
 
     return(
-      <div id={s.container}>
+      <StyledPresentation>
         <BannerComponent />
-        <div id={s.title}>
-          <h1 data-aos='fade-left'>{tr('presentation-title')}</h1>
-          <h2 data-aos='fade-right'>{tr('presentation-subtitle')}</h2>
-        </div>
-        {/*TEST BG ANIMATED {new Array(5).fill(1).map((e, i) => (
-          <div className={s.bgAnimation}
-            style={{
-              animationDelay: i * 2 + 's',
-              height: i * 20 + '%'
-            }}></div>
-        ))}*/}
-        <Graph id={s.graph} data-aos='flip-up' data-aos-delay={300} />
-      </div>
+        <TitlesContainer>
+          <Title data-aos='fade-left'>{tr('presentation-title')}</Title>
+          <Subtitle data-aos='fade-right'>{tr('presentation-subtitle')}</Subtitle>
+        </TitlesContainer>
+        <Graph style={graphStyles} data-aos='flip-up' data-aos-delay={300} />
+      </StyledPresentation>
     )
   }
 }

@@ -39,7 +39,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id='app-container'>
+      <div style={{width: '100%', overflow: 'hidden'}}>
         <PresentationComponent />
         <AboutComponent />
         <ProjectComponent />

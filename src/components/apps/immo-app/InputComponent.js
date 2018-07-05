@@ -12,6 +12,7 @@ import EuroPng from './euro.png'
 import HouseSvg from './house.svg'
 import TagSvg from './tag.svg'
 
+import { FlexRow } from 'Utils/styles'
 import {
   StyledInputComponent,
   Form,
@@ -70,6 +71,7 @@ class InputComponent extends React.Component {
   }
 
   reinitializeForm = () => this.setState({...formInitialState})
+  handleSelectPlace = (place) => this.setState({place})
 
   handleSubmit = (event) => {
     event.preventDefault()
@@ -141,6 +143,7 @@ class InputComponent extends React.Component {
           <div className={s.flexRow}>
             <Input
               type='text'
+              style={{fontSize: '3em'}}
               placeholder='Price (Min)'
               name='priceMin' onChange={this.handleChange} 
               value={priceMin}

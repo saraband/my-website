@@ -1,6 +1,10 @@
 import styled from 'styled-components'
-import { FlexCol, FlexRow } from 'Utils/styles'
 import Colors from './Colors'
+import {
+  FlexCol,
+  FlexRow,
+  FadeRightKeyframes
+} from 'Utils/styles'
 
 export const StyledInputComponent = styled.div`
   position: sticky;

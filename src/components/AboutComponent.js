@@ -9,10 +9,20 @@ import patternPng from './pattern.png'
 import GithubSvg from './github.svg'
 import LinkedInSvg from './linkedin.svg'
 import DownloadCVSvg from './download.svg'
+import styled from 'styled-components'
+import { FlexRow } from 'Utils/styles'
 
 /*
 ** Skill bars component
 */
+const StyledSkillComponent = FlexRow.extend`
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  transition: all 0.2s ease-in-out;
+`
+
 const SkillComponent = ({children, value}) => (
   <div className={s.skillContainer} data-aos='fade-up'>
     <p className={s.skillName}>{children}</p>
@@ -25,6 +35,9 @@ const SkillComponent = ({children, value}) => (
   </div>
 )
 
+/*
+**  ABOUT COMPONENT
+*/
 class AboutComponent extends React.Component {
   constructor(props) {
     super(props)
