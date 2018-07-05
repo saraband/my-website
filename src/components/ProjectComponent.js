@@ -10,6 +10,8 @@ import Carousel from './Carousel'
 import ListSvg from './sort.svg'
 import MouseSvg from './mouse.svg'
 import patternPng from './pattern.png'
+import styled from 'styled-components'
+import CubeProject from './CubeProject'
 
 /*
 ** Thumbnails items shown in the
@@ -38,6 +40,34 @@ const ProjectItem = ({
     </div>
   )
 }
+
+/*
+const Thumbnail = styled.img`
+  width: 150px;
+  height: 150px;
+`
+
+const Info = styled.div`
+  width: 150px;
+  height: 150px;
+  color: white;
+`
+
+const ProjectItem = ({
+  src,
+  onClick,
+  thumbnail,
+  title,
+  tr,
+  id
+}) => {
+  return(
+    <CubeProject>
+      <Thumbnail src={thumbnail} />
+      <Info>Salut</Info>
+    </CubeProject>
+  )
+}*/
 
 class ProjectComponent extends React.Component {
   constructor(props) {
@@ -130,11 +160,14 @@ class ProjectComponent extends React.Component {
           {tr('projects-title')}
           <div className={s.border} data-aos='fade-up'></div>
         </h1>
-        <div id={s.projects} >
+        <div id={s.projects}>
           {projects.map((p, i) => (
             <ProjectItem
               {...p}
-              onClick={() => this.handleViewProject(p)}
+              onClick={() => {
+                document.getElementById('works').scrollIntoView()
+                this.handleViewProject(p)
+              }}
               key={i}
               tr={tr}
               />

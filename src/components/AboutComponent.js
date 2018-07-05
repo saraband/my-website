@@ -9,13 +9,14 @@ import patternPng from './pattern.png'
 import GithubSvg from './github.svg'
 import LinkedInSvg from './linkedin.svg'
 import DownloadCVSvg from './download.svg'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { FlexRow, FlexCol } from 'Utils/styles'
 import Colors from './Colors'
 
 /*
 ** Skill bars component
 */
+
 const StyledSkillComponent = FlexRow.extend`
   width: 100%;
   height: 30px;
@@ -81,6 +82,7 @@ const StyledAboutComponent = FlexCol.extend`
   color: white;
   padding-bottom: 50px;
   width: 100vw;
+  position: relative;
 `
 
 const StyledSectionTitle = FlexCol.withComponent('h1').extend`
